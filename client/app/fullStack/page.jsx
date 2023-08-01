@@ -1,9 +1,9 @@
-import React from 'react'
+import "style.css"
 
 const page = () => {
   return (
     <div>
-       <img src="../../" alt="" />
+       <img src="./fullStack.png" alt="" />
     </div>
   )
 }
