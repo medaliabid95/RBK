@@ -1,4 +1,4 @@
-/* Add your existing CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
 
 body, html {
   height: 100%;
@@ -6,50 +6,48 @@ body, html {
   padding: 0;
 }
 
-.container {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 1fr; 
-  grid-template-columns: 1fr; 
-  place-items: center; 
-  position: relative; /* Ensure proper stacking context */
-  background-image: url("../../public/fullStack.png"); /* Background image */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.web-dev {
+  position: relative;
+  width: 100%;
 }
 
-.background-overlay {
-  position: absolute;
+.container {
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Overlay to make text more readable */
+  margin: 0;
+}
+
+.background-image {
+  position: relative;
+  width: 100%;
 }
 
 .text-container {
-  text-align: center;
-  z-index: 1; /* Ensure the text is above the background overlay */
-}
-
-.p {
-  font-size: 3vw;
-  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
   color: whitesmoke;
+  font-size: 3vw;
+  font-weight: 900;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
-  margin: 0; /* Remove default margin */
+  text-align: center;
+  width: 100%;
 }
 
 .announcement {
   background-color: #f0044b;
-  position: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(191px, 1fr));
   width: 100%;
   padding: 10px 0;
   overflow: hidden;
-  z-index: 1; /* Ensure the announcement band is above other elements */
+  z-index: 1;
 }
 
 .text-ads {
   font-size: 1.2rem;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -73,50 +71,49 @@ body, html {
   }
 }
 
+@media (max-width: 768px) {
+  .text-ads {
+    font-size: 1rem;
+  }
+}
+
 .cards {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(191px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Add gap between cards */
+  gap: 20px;
   justify-content: center;
-  background-color: black; /* Box color */
-  padding: 40px; /* Add padding around the cards */
+  background-color: black;
+  padding: 60px;
 }
 
 .card {
-  width: 191px;
-  height: 244px;
-  background-color: #18191B; /* Card color */
+  display: grid;
+  background-color: #18191B;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20) inset;
-  position: relative; /* Ensure icons are positioned relative to the card */
 }
 
 .description {
   color: #FFF;
   text-align: center;
-  font-family: Space Grotesk;
-  font-size: 12px; /* Adjust the font size of the description */
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16px; /* 160% */
+  line-height: 16px;
   letter-spacing: 0.2px;
 }
 
 .numOfCard {
   color: #FFF;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.64px;
   text-align: center;
-  margin-bottom: 3px; 
 }
 
 .title {
   color: #FFF;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -127,7 +124,7 @@ body, html {
 
 .title::after {
   content: "";
-  display: block; 
+  display: block;
   width: 100%;
   height: 1px;
   background-color: #3E3F41;
@@ -135,21 +132,25 @@ body, html {
 }
 
 .icons {
-  display: absolute ;
-  align-items: center; 
-  justify-content: center; 
-  width: 30px; 
-  height: 43px; 
-  margin-right: 6px; 
+  display: flex;
+  gap: 20px;
+  place-items: center;
+  justify-content: center;
 }
 
-.icons img {
-  width: 30px; 
-  height: 30px; 
-  margin: 0 6px; 
+.icon {
+  justify-content: center;
+  width: 40px;
+  height: 43px;
+  margin: 0 6px;
+  place-items: center;
 }
 
-
+.icon1 {
+  justify-content: center;
+  width: 40px;
+  height: 43px;
+}
 
 /* Animation to show the cards one after another */
 @keyframes showCard {
@@ -163,76 +164,221 @@ body, html {
   }
 }
 
-
-
 .pre-requis {
-  position: absolute;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .parent-card {
-  width: 651px;
-  height: 363px;
-  background-color: whitesmoke; 
-  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20) inset;
-  position: relative; 
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  padding: 30px;
-  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.parent-card:before {
+  background-image: url('../../public/Portal.svg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .top-left {
-
-  width: 162px;
-  height: 162px;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .bottom-right {
-
-  width: 162px;
-  height: 162px;
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
-.h1{
-  color: #000;
-  font-family: Space Grotesk;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.72px;
+@media (max-width: 768px) {
+  .parent-card {
+    max-width: 100%;
+  }
 }
 
-.h2{
-  color: #000;
-  font-family: Space Grotesk;
+/* Keep the existing styles for prog-title1 and prog-title2 */
+.prog-title1 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.prog-title2 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.prog-title2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  margin: 10px 0;
+}
+
+.selectBar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.week::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #3E3F41;
+  margin: 10px 0;
+}
+
+.week {
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0 5px;
+}
+
+.week:hover {
+  color: #ff04bb;
+}
+
+.contenu {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.right-side {
+  flex: 2;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.image-contenu {
+  max-width: 100%;
+  height: auto;
+}
+
+.after-image {
+  margin-top: 20px;
+}
+
+.contenu-description p {
+  margin: 0;
+  padding: 5px 0;
+  line-height: 1.5;
+}
+
+.programme ::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #3E3F41;
+  margin: 10px 0;
+}
+
+/* Styling for the main container */
+
+.bourse {
+  background-color: #f0044b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust the height to your preference */
+}
+
+/* Styling for card-bourse1 */
+.card-bourse1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 10px; /* Add some spacing between the cards */
+  animation: slideInLeft 1s ease; /* Animation for card-bourse1 */
+}
+
+/* Styling for card-bourse2 */
+.card-bourse2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideInRight 1s ease; /* Animation for card-bourse2 */
+}
+
+/* Styling for text inside cards */
+.text-bourse1, .text-bourse2 {
+  color: black;
+}
+
+/* Animation keyframes for slideInLeft */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation keyframes for slideInRight */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.last {
+  text-align: center;
+}
+
+.last-title {
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.4px;
 }
 
-.Pargraphe{
-  color: #000;
-  font-family: Space Grotesk;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.28px;
+.span1 {
+  color: #ff0044bb;
 }
+
+.last-description .span2 {
+  font-weight: bold;
+}
+
+.last-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.last-card1, .last-card2 {
+  flex-basis: 45%;
+}
+
 .bold{
-  color: #000;
-font-family: Space Grotesk;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.28px;
+  font-weight: bold;
 }
