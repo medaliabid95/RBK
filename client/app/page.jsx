@@ -1,9 +1,10 @@
 import React from 'react'
-const Page = ()=>{
-    return(
-        <div>
-            aaa
-        </div>
+import "./landing.css"
+const page = () => {
+    return (
+        <div>page</div>
     )
 }
-export default Page
+
+export default page
+
