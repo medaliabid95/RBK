@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27");
+
 * {
   margin: 0;
   padding: 0;
@@ -25,67 +27,22 @@ body {
   text-align: center;
   width: 100%;
 }
-/* .aws-rbk-title{
-  margin-top: 3%;
-  text-align: center;
-}
-.aws-rbk-title img{
-  width: 15%;
-}
-.aws-description-container{
-  width: 90%;
-  text-align: center;
-  height: 100vh;
-  margin: 0 auto;
-}
-.aws-rbk-title p {
-  width: 30%;
-  margin: 0 auto;
-  font-weight: 600;
-  font-size: 1.2vw;
-}
-.aws-rbk-title p span {
-  background-color: #F89E2D;
-  color: white;
-}
-.steps-container{
-  display: flex;
-  justify-content: space-between;
-}
-.step{
-  width: 40%;
-    text-align: center;
-}
-.step embed {
-  width: 50%;
-}
-.step p{
-  width: 59%;
-  font-size: 1.5vw;
-}
-.video-container{
-  margin: 8% 0%;
-}
- */
 
-
-
- /* Mobile-first styles */
+/* Mobile-first styles */
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
+  font-family: Space Grotesk;
 }
 .aws-rbk-title img {
   width: 60px; /* Adjust this value as needed */
 }
 .aws-description-container {
   width: 90%;
-  text-align: center;
   margin: 0 auto;
   padding: 20px;
   /* background-image: url("../../public/Cloudss.png"); */
   background-size: cover;
-
 }
 
 .aws-rbk-title p {
@@ -94,10 +51,11 @@ body {
   margin: 0 auto;
   font-weight: 600;
   font-size: 14px; /* Adjust this value as needed */
+  font-family: Space Grotesk;
 }
 
 .aws-rbk-title p span {
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
 }
 
@@ -126,60 +84,63 @@ body {
 }
 
 .video-container {
-  margin: 8% 0;
-}
-.aws-btn{
-    width: 15%;
-    font-size: 2vw;
-    background-color: #F89E2D;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-}
-.about{
+  width: 60%;
 
-  background-color: #FFFFFFD9;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+/* .video-container img {
+  position: absolute;
+  width: 100%;
+  height: 88vh;
+} */
+.video-container video {
+  width: 100%;
+}
+.aws-btn {
+  width: 15%;
+  font-size: 2vw;
+  background-color: #f89e2d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.about {
+  background-color: #ffffffd9;
   border-radius: 10px;
   box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
   width: 50%;
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
-  /* font-family: Space Grotesk; */
+  font-family: Space Grotesk;
 }
-.content{
+.content {
   margin-top: 20px;
 }
-.planning-description{
+.planning-description {
   padding: 45px;
 }
-.planning{
+.planning {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
 }
 .planning div {
   width: 49%;
-  
 }
-.planning-title{
+.planning-title {
   width: 41%;
   font-weight: 800;
   line-height: 1.5;
-  
 }
-.planning-title span{
-  color:#F89E2D;
+.planning-title span {
+  color: #f89e2d;
 }
-.Video{
-  padding: 30px;
-}
-.Video img{
-  width: 90%;
 
-}
-.planning-content{
+.planning-content {
   font-weight: 300;
   font-size: 1.2vw;
 }
@@ -195,7 +156,6 @@ body {
     width: 48%;
     max-width: 300px; /* Adjust this value as needed */
     text-align: center;
-   
   }
   .step embed {
     max-width: 100px; /* Adjust this value as needed */
@@ -204,21 +164,20 @@ body {
     font-size: 16px; /* Increase font size for larger screens */
   }
 }
-.planining-btn{
-  background-color: #F89E2D;
+.planining-btn {
+  background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   /* width: 15%; */
-    font-size: 1.6vw;
-    margin-top:10%;
-
+  font-size: 1.6vw;
+  margin-top: 10%;
 }
 .aws-btn {
   width: 100%;
   font-size: 2vw;
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
@@ -242,7 +201,7 @@ body {
   /* Add more styles for even larger screens if needed */
 }
 .about {
-  background-color: #FFFFFFD9;
+  background-color: #ffffffd9;
   border-radius: 10px;
   box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
   width: 90%;
@@ -268,7 +227,7 @@ body {
   /* Add more styles for even larger screens if needed */
 }
 .planining-btn {
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
@@ -292,7 +251,6 @@ body {
   /* Add more styles for even larger screens if needed */
 }
 
-
 @media screen and (min-width: 1024px) {
   .aws-rbk-title p {
     font-size: 18px; /* Further increase font size for even larger screens */
@@ -310,7 +268,106 @@ body {
 }
 .video-container {
   margin: 8% 0;
-  width: 80%; /* Increase the width of the video container */
-  max-width: 800px; /* Set a maximum width for the video container */
-  margin: 0 auto; /* Center the video container */
+  width: 80%;
+
+  margin: 0 auto;
+}
+.programme {
+  width: 100%;
+  background-color: #f89e2d;
+}
+.programme h2 {
+  color: white;
+  padding: 18px;
+  text-align: center;
+}
+.programme p {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2vw;
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card-item {
+  margin: 20px;
+  width: 27%;
+  height: 350px;
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.card-item p {
+  color: #f89e2d;
+  font-family: Space Grotesk;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.criteres-title {
+  text-align: center;
+  line-height: 2;
+  font-size: 1.2vw;
+}
+
+.criteres-btn-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about ul li {
+  font-size: 1.1vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-item {
+    width: 40%;
+  }
+
+  .card-item p {
+    font-size: 2.5vw;
+  }
+
+  .criteres-title {
+    font-size: 2vw;
+  }
+
+  .about ul li {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    width: 100%;
+  }
+
+  .card-item {
+    width: 90%;
+  }
+
+  .card-item p {
+    font-size: 4.5vw;
+  }
+
+  .criteres-title {
+    font-size: 3vw;
+  }
+
+  .about ul li {
+    font-size: 3vw;
+  }
 }

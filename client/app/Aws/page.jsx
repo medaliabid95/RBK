@@ -34,7 +34,10 @@ const page = () => {
             </div>
           </div>
           <div className="video-container">
-            <iframe src="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4"></iframe>
+            {/* <img src="whatiscomputing.png" alt="aws" /> */}
+            <video controls="controls">
+              <source src="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className="steps-container">
             <div className="step">
@@ -90,6 +93,81 @@ const page = () => {
           </div>
         </div>
       </section>
+      <section className="programme">
+        <h2>À propos du programme</h2>
+        <p>
+          Le programme AWS re/Start enseigne les principes de base du cloud AWS
+          pour aider les apprenants à réussir dans des postes de niveau débutant
+          dans le cloud. Grâce à des exercices basés sur des scénarios, des
+          ateliers pratiques et des cours, les apprenants acquièrent des
+          compétences en Linux, Python, en réseau, en sécurité et en bases de
+          données relationnelles.
+        </p>
+        <div className="cards-container">
+          <div className="card-item">
+            <p>1</p>
+            <p>Cloud Foundation</p>
+          </div>
+          <div className="card-item">
+            <p>2</p>
+            <p>Linux Fundamentals</p>
+          </div>
+          <div className="card-item">
+            <p>3</p>
+            <p>Networking Fundamentals</p>
+          </div>
+          <div className="card-item">
+            <p>4</p>
+            <p>Security Fundamentals</p>
+          </div>
+          <div className="card-item">
+            <p>5</p>
+            <p>Python Programming</p>
+          </div>
+          <div className="card-item">
+            <p>6</p>
+            <p>Databases Fundamentals</p>
+          </div>
+          <div className="card-item">
+            <p>7</p>
+            <p>AWS Core Services</p>
+          </div>
+          <div className="card-item">
+            <p>8</p>
+            <p>Employability Skills</p>
+          </div>
+          <div className="card-item">
+            <p>9</p>
+            <p>Cloud Practitioner Certification Practice</p>
+          </div>
+        </div>
+      </section>
+      <section className="critères">
+        <div className="criteres-title">
+          <h2>Critères d'éligibilité</h2>
+          <p>Formation Gratuite et aucun prérequis technique ! Mais…</p>
+        </div>
+        <div className="about">
+          
+          
+              <ul>
+                <li>Être âgé(e) de plus de 18 ans.</li>
+                <li>Aptitude à lire, écrire et communiquer en français et en anglais</li>
+                <li>Posséder le minimum de culture numérique (aucune connaissance en programmation n’est requise)</li>
+                <li>tre à la recherche d’un emploi ou d’une nouvelle expérience professionnelle.​Être disponible</li>
+                <li>Être disponible, pendant toute la durée du programme (du lundi au vendredi, de 9h à 17h)</li>
+                <li>Aucun engagement professionnel ni académique</li>
+                <li>Intéressé(e) par le domaine des TICs et prêt(e) à intégrer le marché de l’emploi immédiatement suite à la formation</li>
+              </ul>
+          
+        </div>
+        <div className="criteres-btn-container">
+        <button className="planining-btn">S'inscrire</button>
+        </div>
+      
+      </section>
+
+        
     </div>
   );
 };
