@@ -7,11 +7,6 @@
      font-family: 'Space Grotesk';
  }
 
- body {
-     background: url(../../public/emploi-apres-diplome.png) no-repeat;
-     background-size: cover;
- }
-
  li,
  a,
  button {
@@ -110,3 +105,8 @@
  .nav-links li a:hover::after {
      width: 100%;
  }
+
+ /* 
+ @media (max-width:) {
+    
+ } */
