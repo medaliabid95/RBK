@@ -1,0 +1,116 @@
+ @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Space Grotesk';
+ }
+
+ li,
+ a,
+ button {
+     text-decoration: none;
+ }
+
+ .buttons {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 10px;
+
+ }
+
+ .header {
+     width: 100%;
+     position: fixed;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 30px 10%;
+     border-bottom: 0.2px #CCCCCC solid;
+     z-index: 999;
+     background-color: rgba(0, 0, 0, 0);
+ }
+
+ .logo {
+     cursor: pointer;
+
+ }
+
+ .nav-links ul {
+     list-style: none;
+     width: 100%;
+ }
+
+ .nav-links li {
+     float: left;
+     position: relative;
+     width: auto;
+
+ }
+
+ .nav-links li>a {
+     color: white;
+     display: block;
+     font-size: 19px;
+     padding: 0px 20px;
+     text-align: center;
+     text-decoration: none;
+ }
+
+ #submenu li>a {
+     color: black;
+     font-weight: bold;
+     margin: 0;
+     padding: 5px 20px;
+     font-size: 15px;
+ }
+
+ #submenu {
+     width: max-content;
+     background-color: rgb(255, 255, 255);
+     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.559);
+     border-radius: .25rem;
+     left: 0;
+     top: calc(100% + 0.75rem);
+     padding: .75rem;
+     opacity: 0;
+     position: absolute;
+     visibility: none;
+     z-index: 1;
+     transform: translateY(-10px);
+     transition: opacity .5s ease-in-out 0s, transform .5s ease-in-out 0s;
+
+ }
+
+ li:hover ul#submenu {
+     opacity: 1;
+     transform: translateY(0);
+     top: calc(100% + 0.75rem);
+
+ }
+
+ #submenu li {
+     float: none;
+     width: 100%;
+ }
+
+ .nav-links li a::after {
+     content: "";
+     display: block;
+     width: 0px;
+     height: 2px;
+     border-radius: 5px;
+     background: #FF007B;
+     transition: width 0.5s ease 0s;
+ }
+
+ .nav-links li a:hover::after {
+     width: 100%;
+ }
+
+ /* 
+ @media (max-width:) {
+    
+ } */
