@@ -173,7 +173,6 @@ const Page = () => {
       <div className="container">
         <img className="background-image" src="./fullStack.png" alt="Background" />
         <div className="text-container">Full-stack JavaScript Professional</div>
-      </div>
 
       {/* announcement */}
       <div className="announcement">
@@ -184,7 +183,7 @@ const Page = () => {
           <p>Profitez d'une bourse exceptionnelle de -40%</p>
         </div>
       </div>
-
+      </div>
       {/* cards */}
       <div className="cards">
         <div className="card">
@@ -220,7 +219,7 @@ const Page = () => {
             leur suivi. Travailler en équipe et collaborer avec Git & GithHub..
           </p>
           <div className="icons">
-            <img className="icon1" src="./git.svg" alt="" />
+            <img className="icon" src="./git.svg" alt="" />
           </div>
         </div>
         <div className="card">
@@ -230,7 +229,7 @@ const Page = () => {
             Savoir vulgariser du code auprès d'une personne non technique.
           </p>
           <div className="icons">
-            <img className="icon1" src="./plus.svg" alt="" />
+            <img className="icon" src="./plus.svg" alt="" />
           </div>
         </div>
       </div>
@@ -344,8 +343,10 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <button>Postuler</button>
+        <button className="button" >Postuler</button>
       </div>
+
+
     </div>
   );
 };

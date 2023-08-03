@@ -1,38 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
 
+
+*{
+  padding: 0;
+}
+
 body, html {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .web-dev {
+  font-family: 'Space Grotesk', sans-serif;
   position: relative;
-  width: 100%;
 }
 
 .container {
   position: relative;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f0044b;
 }
 
 .background-image {
   position: relative;
   width: 100%;
+  height: auto;
+  
 }
 
 .text-container {
   position: absolute;
   top: 50%;
+  left: 20%;
   transform: translate(0, -50%);
   color: whitesmoke;
   font-size: 3vw;
-  font-weight: 900;
+  font-weight: bold;
   font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  width: 100%;
 }
 
 .announcement {
@@ -78,28 +86,36 @@ body, html {
 }
 
 .cards {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(191px, 1fr)); /* Responsive grid */
-  gap: 20px;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   background-color: black;
-  padding: 60px;
+  
 }
 
 .card {
-  display: grid;
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease;
   background-color: #18191B;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20) inset;
 }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
 
 .description {
   color: #FFF;
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.2px;
 }
@@ -165,41 +181,51 @@ body, html {
 }
 
 .pre-requis {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  padding: 50px 0;
+  background-color: #f0f0f0;
+  text-align: center;
 }
 
 .parent-card {
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.parent-card:before {
-  background-image: url('../../public/Portal.svg');
+.card-pre-requis {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.top-left,
+.bottom-right {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  width: 150px;
+  opacity: 0.3;
 }
 
 .top-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  top: -20px;
+  left: -20px;
 }
 
 .bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+  bottom: -20px;
+  right: -20px;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0044bb;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -209,6 +235,11 @@ body, html {
 }
 
 /* Keep the existing styles for prog-title1 and prog-title2 */
+.Programme {
+  padding: 50px 0;
+}
+
+
 .prog-title1 {
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -240,19 +271,28 @@ body, html {
   width: 100%;
   height: 1px;
   background-color: #3E3F41;
-  margin: 10px 0;
+  margin:  0;
+  
+ 
 }
+
 
 .week {
   font-family: 'Space Grotesk', sans-serif;
   cursor: pointer;
   padding: 20px;
   margin: 0 5px;
+  transform: translateY(10px);
+  transition: transform .3s  ease-in-out;
 }
 
 .week:hover {
   color: #ff04bb;
+  transform: translateY(0);
 }
+
+
+
 
 .contenu {
   display: flex;
@@ -355,30 +395,60 @@ body, html {
 }
 
 .last {
+  padding: 50px 0;
   text-align: center;
 }
 
 .last-title {
-  font-size: 20px;
-}
-
-.span1 {
-  color: #ff0044bb;
-}
-
-.last-description .span2 {
+  font-size: 32px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .last-cards {
   display: flex;
   justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-.last-card1, .last-card2 {
-  flex-basis: 45%;
+.last-card1,
+.last-card2 {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.bold{
-  font-weight: bold;
+.last-image {
+  width: 100px;
+  height: auto;
+}
+
+.last-description {
+  margin-top: 10px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .contenu {
+    flex-direction: column;
+  }
+
+  .image-contenu {
+    width: 100%;
+    height: auto;
+  }
+
 }
