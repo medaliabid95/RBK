@@ -30,55 +30,11 @@ body {
   width: 100%;
 }
 
-/* .aws-rbk-title{
-  margin-top: 3%;
-  text-align: center;
-}
-.aws-rbk-title img{
-  width: 15%;
-}
-.aws-description-container{
-  width: 90%;
-  text-align: center;
-  height: 100vh;
-  margin: 0 auto;
-}
-.aws-rbk-title p {
-  width: 30%;
-  margin: 0 auto;
-  font-weight: 600;
-  font-size: 1.2vw;
-}
-.aws-rbk-title p span {
-  background-color: #F89E2D;
-  color: white;
-}
-.steps-container{
-  display: flex;
-  justify-content: space-between;
-}
-.step{
-  width: 40%;
-    text-align: center;
-}
-.step embed {
-  width: 50%;
-}
-.step p{
-  width: 59%;
-  font-size: 1.5vw;
-}
-.video-container{
-  margin: 8% 0%;
-}
- */
-
-
-
 /* Mobile-first styles */
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
+  font-family: Space Grotesk;
 }
 
 .aws-rbk-title img {
@@ -88,12 +44,10 @@ body {
 
 .aws-description-container {
   width: 90%;
-  text-align: center;
   margin: 0 auto;
   padding: 20px;
   /* background-image: url("../../public/Cloudss.png"); */
   background-size: cover;
-
 }
 
 .aws-rbk-title p {
@@ -102,12 +56,11 @@ body {
   /* Adjust this value as needed */
   margin: 0 auto;
   font-weight: 600;
-  font-size: 14px;
-  /* Adjust this value as needed */
+  font-size: 14px; /* Adjust this value as needed */
 }
 
 .aws-rbk-title p span {
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
 }
 
@@ -139,20 +92,26 @@ body {
 }
 
 .video-container {
-  margin: 8% 0;
+  width: 60%;
+
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
 
-.aws-btn {
-  width: 15%;
-  font-size: 2vw;
-  background-color: #F89E2D;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
+.video-container video {
+  width: 100%;
 }
-
-.about {
+.aws-btn{
+    width: 15%;
+    font-size: 2vw;
+    background-color: #F89E2D;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+.about{
 
   background-color: #FFFFFFD9;
   border-radius: 10px;
@@ -162,18 +121,15 @@ body {
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
-  /* font-family: Space Grotesk; */
+  font-family: Space Grotesk;
 }
-
-.content {
+.content{
   margin-top: 20px;
 }
-
-.planning-description {
+.planning-description{
   padding: 45px;
 }
-
-.planning {
+.planning{
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
@@ -181,30 +137,25 @@ body {
 
 .planning div {
   width: 49%;
-
+  
 }
-
-.planning-title {
+.planning-title{
   width: 41%;
   font-weight: 800;
   line-height: 1.5;
-
+  
 }
-
-.planning-title span {
-  color: #F89E2D;
+.planning-title span{
+  color:#F89E2D;
 }
-
-.Video {
+.Video{
   padding: 30px;
 }
-
-.Video img {
+.Video img{
   width: 90%;
 
 }
-
-.planning-content {
+.planning-content{
   font-weight: 300;
   font-size: 1.2vw;
 }
@@ -226,7 +177,7 @@ body {
     max-width: 300px;
     /* Adjust this value as needed */
     text-align: center;
-
+   
   }
 
   .step embed {
@@ -239,23 +190,22 @@ body {
     /* Increase font size for larger screens */
   }
 }
-
-.planining-btn {
+.planining-btn{
   background-color: #F89E2D;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   /* width: 15%; */
-  font-size: 1.6vw;
-  margin-top: 10%;
+    font-size: 1.6vw;
+    margin-top:10%;
 
 }
 
 .aws-btn {
   width: 100%;
   font-size: 2vw;
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
@@ -284,7 +234,7 @@ body {
 }
 
 .about {
-  background-color: #FFFFFFD9;
+  background-color: #ffffffd9;
   border-radius: 10px;
   box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
   /* Shadow effect */
@@ -314,7 +264,7 @@ body {
 }
 
 .planining-btn {
-  background-color: #F89E2D;
+  background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
@@ -342,7 +292,6 @@ body {
   /* Add more styles for even larger screens if needed */
 }
 
-
 @media screen and (min-width: 1024px) {
   .aws-rbk-title p {
     font-size: 18px;
@@ -368,10 +317,7 @@ body {
 
 .video-container {
   margin: 8% 0;
-  width: 80%;
-  /* Increase the width of the video container */
-  max-width: 800px;
-  /* Set a maximum width for the video container */
-  margin: 0 auto;
-  /* Center the video container */
+  width: 80%; /* Increase the width of the video container */
+  max-width: 800px; /* Set a maximum width for the video container */
+  margin: 0 auto; /* Center the video container */
 }
