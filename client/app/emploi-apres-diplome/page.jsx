@@ -1,6 +1,15 @@
-import React from "react"
+"use client"
+import React, { useEffect, useRef } from "react"
+import Lottie from "lottie-react"
+import computerAnimation from "../../public/computerAnimation.json"
+import community from "../../public/community.json"
+import talent from "../../public/talent.json"
+import meeting from "../../public/meeting.json"
+import service from "../../public/service.json"
+import career from "../../public/career.json"
 import "./emploiCSS.css"
 const Emploi = () => {
+
 
     return (
         <div className="main-container">
@@ -28,7 +37,8 @@ const Emploi = () => {
             </div>
             <div className="four-5-grid">
                 <div id="box-grid-1">
-                    <img src="service.png" className="four-5-grid-img" />
+                    {/* <div  className="four-5-grid-img" ref={container}></div> */}
+                    <Lottie loop={true} className="four-5-grid-img" animationData={computerAnimation}/>
                 </div>
                 <div className="four-5-grid-content-free" id="box-grid-2">
                     <h1 className="four-5-grid-title" id="larger-title">Notre <span className="rose">service de carrières</span> sera là pour vous.</h1>
@@ -39,10 +49,13 @@ const Emploi = () => {
                     <p className="four-5-grid-paragraph">Une semaine de plus de 40 heures de formation dédiée à la recherche d'emploi et plusieurs sessions de formation tout au long de votre parcours de formation.</p>
                 </div>
                 <div className="four-5-grid-content" id="box-grid-4">
-                    <h1 className="four-5-grid-title">Faire carrière chez RBK</h1>
-                    <p className="four-5-grid-paragraph">Comme beaucoup de nos diplômés, rejoignez<br /> notre équipe à la fin de votre cursus et faites carrière en tant que IT trainer,<br /> nous vous formons et aidons à progresser parmi<br /> nos équipes. Optez pour cette option<br /> pour de larges perspectives<br /> d'avenir. Sky is the limit !</p>
-                    <img src="Faire carriere.png" className="four-5-grid-img-2" />
-                </div>
+                    <div className="text-adjust-grid">
+                        <h1 className="four-5-grid-title" >Faire carrière chez RBK</h1>
+                        <p className="four-5-grid-paragraph" >Comme beaucoup de nos diplômés, rejoignez<br /> notre équipe à la fin de votre cursus et faites carrière en tant que IT trainer,<br /> nous vous formons et aidons à progresser parmi<br /> nos équipes. Optez pour cette option<br /> pour de larges perspectives<br /> d'avenir. Sky is the limit !</p>
+                    </div>
+                    {/* <img src="Faire carriere.png" className="four-5-grid-img-2" /> */}
+                    <Lottie loop={true} className="four-5-grid-img-2" animationData={career}/>
+                </div>  
                 <div className="four-5-grid-content" id="box-grid-5">
                     <h1 className="four-5-grid-title">Coaching individuel <br />personnalisé</h1>
                     <p className="four-5-grid-paragraph">Rencontrez notre équipe du services carrières pour des sessions de coaching individuelle afin de vous aider à définir votre parcours professionnel et de revoir votre stratégie de candidature et <br />vos documents.</p>
@@ -77,14 +90,16 @@ const Emploi = () => {
             </div>
             <div className="second-grid">
                 <div className="second-grid-box" id="second-grid-box-1">
-                    <img className="photo-number" src="Rejoignez.png" alt="" />
+                    {/* <img className="photo-number" src="Rejoignez.png" alt="" /> */}
+                    <Lottie loop={true} className="photo-number" animationData={community}/>
                     <div className="grid-box-grid">
                         <h1 className="second-grid-box-title">Rejoignez un réseau solide</h1>
                         <p className="second-grid-box-paragraph">Accédez à une communauté de 1000+ talents technologiques au sein d'un réseau de recrutement solide regroupant les meilleures entreprises technologiques</p>
                     </div>
                 </div>
                 <div className="second-grid-box" id="second-grid-box-2">
-                    <img className="photo-number" src="talent.png" alt="" />
+                    {/* <img className="photo-number" src="talent.png" alt="" /> */}
+                    <Lottie loop={true} className="photo-number" animationData={talent}/>
                     <div className="grid-box-grid">
                         <h1 className="second-grid-box-title">Rencontrez des talents tech uniques</h1>
                         <p className="second-grid-box-paragraph">Nos diplômés combinent souvent leurs compétences technologiques avec leurs expériences ou études antérieures et ils sont impatients de continuer à apprendre.</p>
@@ -95,14 +110,16 @@ const Emploi = () => {
                     <p className="second-grid-box-paragraph">RBK rend plus facile que jamais la recherche de candidats développeurs qualifiés ayant les compétences et les capacités de programmation dont vous avez besoin. Des développeurs front-end et back-end aux développeurs full stack et aux praticiens certifiés AWS Cloud, votre prochain développeur est ici.</p>
                 </div>
                 <div className="second-grid-box" id="second-grid-box-3">
-                    <img className="photo-number" src="Gratuite.png" alt="" />
+                    {/* <img className="photo-number" src="Gratuite.png" alt="" /> */}
+                    <Lottie loop={true} className="photo-number" animationData={meeting}/>
                     <div className="grid-box-grid">
                         <h1 className="second-grid-box-title">Gratuité des services</h1>
                         <p className="second-grid-box-paragraph">Nos services d'accompagnement à l'embauche de nos diplômés sont gratuits pour les entreprises</p>
                     </div>
                 </div>
                 <div className="second-grid-box" id="second-grid-box-4">
-                    <img className="photo-number" src="Assistez.png" />
+                    {/* <img className="photo-number" src="Assistez.png" /> */}
+                    <Lottie loop={true} className="photo-number" animationData={service}/>
                     <div className="grid-box-grid">
                         <h1 className="second-grid-box-title">Assistez à nos job fairs</h1>
                         <p className="second-grid-box-paragraph">Nous organisons des salons de l'emploi pour que nos diplômés et nos partenaires de recrutement puissent se rencontrer et évaluer s'il y a un ajustement mutuel.</p>
