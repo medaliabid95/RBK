@@ -6,32 +6,57 @@ body {
 }
 
 .text-btn {
-    color: white;
-    font-size: 16;
+    color: rgb(0, 0, 0);
+    font-size: 0.9vw;
     font-family: Space Grotesk;
     font-weight: 400;
     letter-spacing: 0.32;
     word-wrap: break-word;
 }
 
-.text-btn:hover,
 .border-btn:hover {
     background-color: #FF007B;
-    transition: 0.4s ease-in;
+    transition: 0.5s ease-in-out;
     border: none;
-
-
 
 }
 
+.text-btn:hover {
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
 .border-btn {
-    width: 112px;
-    height: 38px;
+    width: 6vw;
+    height: 2vw;
     padding: 10px;
     border-radius: 5px;
-    border: 0.25px white solid;
+    border: 1px rgb(0, 0, 0) solid;
     justify-content: center;
     align-items: center;
     gap: 10px;
     display: inline-flex;
+}
+
+@media (max-width:1200px) {
+    .text-btn {
+        color: rgb(0, 0, 0);
+        font-size: 1.1vw;
+        font-family: Space Grotesk;
+        font-weight: 400;
+        letter-spacing: 0.32;
+        word-wrap: break-word;
+    }
+
+    .border-btn {
+        width: 7vw;
+        height: 2vw;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px rgb(0, 0, 0) solid;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        display: inline-flex;
+    }
 }

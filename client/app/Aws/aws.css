@@ -3,17 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 .image-aws-container {
   position: relative;
   width: 100%;
 }
+
 .image-aws-container img {
   width: 100%;
 }
+
 .title {
   position: absolute;
   top: 50%;
@@ -25,6 +29,7 @@ body {
   text-align: center;
   width: 100%;
 }
+
 /* .aws-rbk-title{
   margin-top: 3%;
   text-align: center;
@@ -70,14 +75,17 @@ body {
 
 
 
- /* Mobile-first styles */
+/* Mobile-first styles */
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
 }
+
 .aws-rbk-title img {
-  width: 60px; /* Adjust this value as needed */
+  width: 60px;
+  /* Adjust this value as needed */
 }
+
 .aws-description-container {
   width: 90%;
   text-align: center;
@@ -90,10 +98,12 @@ body {
 
 .aws-rbk-title p {
   width: 100%;
-  max-width: 400px; /* Adjust this value as needed */
+  max-width: 400px;
+  /* Adjust this value as needed */
   margin: 0 auto;
   font-weight: 600;
-  font-size: 14px; /* Adjust this value as needed */
+  font-size: 14px;
+  /* Adjust this value as needed */
 }
 
 .aws-rbk-title p span {
@@ -109,7 +119,8 @@ body {
 
 .step {
   width: 100%;
-  max-width: 250px; /* Adjust this value as needed */
+  max-width: 250px;
+  /* Adjust this value as needed */
   margin-bottom: 20px;
   text-align: center;
   margin: 20px auto;
@@ -117,104 +128,130 @@ body {
 
 .step embed {
   width: 50%;
-  max-width: 80px; /* Adjust this value as needed */
+  max-width: 80px;
+  /* Adjust this value as needed */
 }
 
 .step p {
   width: 100%;
-  font-size: 14px; /* Adjust this value as needed */
+  font-size: 14px;
+  /* Adjust this value as needed */
 }
 
 .video-container {
   margin: 8% 0;
 }
-.aws-btn{
-    width: 15%;
-    font-size: 2vw;
-    background-color: #F89E2D;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
+
+.aws-btn {
+  width: 15%;
+  font-size: 2vw;
+  background-color: #F89E2D;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
 }
-.about{
+
+.about {
 
   background-color: #FFFFFFD9;
   border-radius: 10px;
-  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
+  /* Shadow effect */
   width: 50%;
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
   /* font-family: Space Grotesk; */
 }
-.content{
+
+.content {
   margin-top: 20px;
 }
-.planning-description{
+
+.planning-description {
   padding: 45px;
 }
-.planning{
+
+.planning {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
 }
+
 .planning div {
   width: 49%;
-  
+
 }
-.planning-title{
+
+.planning-title {
   width: 41%;
   font-weight: 800;
   line-height: 1.5;
-  
+
 }
-.planning-title span{
-  color:#F89E2D;
+
+.planning-title span {
+  color: #F89E2D;
 }
-.Video{
+
+.Video {
   padding: 30px;
 }
-.Video img{
+
+.Video img {
   width: 90%;
 
 }
-.planning-content{
+
+.planning-content {
   font-weight: 300;
   font-size: 1.2vw;
 }
+
 /* Media Queries */
 @media screen and (min-width: 768px) {
   .aws-rbk-title img {
-    width: 100px; /* Increase image size for larger screens */
+    width: 100px;
+    /* Increase image size for larger screens */
   }
+
   .aws-rbk-title p {
-    font-size: 16px; /* Increase font size for larger screens */
+    font-size: 16px;
+    /* Increase font size for larger screens */
   }
+
   .step {
     width: 48%;
-    max-width: 300px; /* Adjust this value as needed */
+    max-width: 300px;
+    /* Adjust this value as needed */
     text-align: center;
-   
+
   }
+
   .step embed {
-    max-width: 100px; /* Adjust this value as needed */
+    max-width: 100px;
+    /* Adjust this value as needed */
   }
+
   .step p {
-    font-size: 16px; /* Increase font size for larger screens */
+    font-size: 16px;
+    /* Increase font size for larger screens */
   }
 }
-.planining-btn{
+
+.planining-btn {
   background-color: #F89E2D;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   /* width: 15%; */
-    font-size: 1.6vw;
-    margin-top:10%;
+  font-size: 1.6vw;
+  margin-top: 10%;
 
 }
+
 .aws-btn {
   width: 100%;
   font-size: 2vw;
@@ -229,22 +266,28 @@ body {
 @media screen and (min-width: 768px) {
   .aws-btn {
     width: 50%;
-    font-size: 16px; /* Increase font size for larger screens */
+    font-size: 16px;
+    /* Increase font size for larger screens */
   }
+
   /* Add more styles for larger screens if needed */
 }
 
 @media screen and (min-width: 1024px) {
   .aws-btn {
     width: 30%;
-    font-size: 18px; /* Further increase font size for even larger screens */
+    font-size: 18px;
+    /* Further increase font size for even larger screens */
   }
+
   /* Add more styles for even larger screens if needed */
 }
+
 .about {
   background-color: #FFFFFFD9;
   border-radius: 10px;
-  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
+  /* Shadow effect */
   width: 90%;
   margin: 20px auto;
   line-height: 2;
@@ -257,6 +300,7 @@ body {
     width: 70%;
     padding: 50px;
   }
+
   /* Add more styles for larger screens if needed */
 }
 
@@ -265,8 +309,10 @@ body {
     width: 50%;
     padding: 60px;
   }
+
   /* Add more styles for even larger screens if needed */
 }
+
 .planining-btn {
   background-color: #F89E2D;
   color: white;
@@ -280,37 +326,52 @@ body {
 /* Media Queries */
 @media screen and (min-width: 768px) {
   .planining-btn {
-    font-size: 16px; /* Increase font size for larger screens */
+    font-size: 16px;
+    /* Increase font size for larger screens */
   }
+
   /* Add more styles for larger screens if needed */
 }
 
 @media screen and (min-width: 1024px) {
   .planining-btn {
-    font-size: 18px; /* Further increase font size for even larger screens */
+    font-size: 18px;
+    /* Further increase font size for even larger screens */
   }
+
   /* Add more styles for even larger screens if needed */
 }
 
 
 @media screen and (min-width: 1024px) {
   .aws-rbk-title p {
-    font-size: 18px; /* Further increase font size for even larger screens */
+    font-size: 18px;
+    /* Further increase font size for even larger screens */
   }
+
   .step {
     width: 40%;
-    max-width: 400px; /* Adjust this value as needed */
+    max-width: 400px;
+    /* Adjust this value as needed */
   }
+
   .step embed {
-    max-width: 300px; /* Adjust this value as needed */
+    max-width: 300px;
+    /* Adjust this value as needed */
   }
+
   .step p {
-    font-size: 18px; /* Further increase font size for even larger screens */
+    font-size: 18px;
+    /* Further increase font size for even larger screens */
   }
 }
+
 .video-container {
   margin: 8% 0;
-  width: 80%; /* Increase the width of the video container */
-  max-width: 800px; /* Set a maximum width for the video container */
-  margin: 0 auto; /* Center the video container */
+  width: 80%;
+  /* Increase the width of the video container */
+  max-width: 800px;
+  /* Set a maximum width for the video container */
+  margin: 0 auto;
+  /* Center the video container */
 }
