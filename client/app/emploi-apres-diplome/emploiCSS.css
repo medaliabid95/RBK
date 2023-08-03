@@ -2,6 +2,7 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -32,7 +33,6 @@ header {
 
 .header-content {
     position: absolute;
-    color: red;
     top: 50%;
     transform: translate(0, -50%);
     color: whitesmoke;
@@ -119,6 +119,44 @@ header {
         grid-column-end: 6;
         grid-row: 3;
     }
+    #box-grid-4 {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr 1fr;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+    .text-adjust-grid{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .four-5-grid-img-2{
+        margin: 5%;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    #box-grid-1 {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+    }
+    .four-5-grid-img{
+        height: 80%;
+        width: 80%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
 }
 
 .box-stat {
@@ -196,7 +234,7 @@ header {
     }
     .four-5-grid-img{
         height: 70%;
-        width: 50%;
+        width: 70%;
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 1;
@@ -215,12 +253,27 @@ header {
     }
 
     #box-grid-4 {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr 1fr;
         grid-column-start: 3;
         grid-column-end: 4;
         grid-row-start: 2;
         grid-row-end: 4;
     }
-
+    .text-adjust-grid{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .four-5-grid-img-2{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
     #box-grid-9 {
         grid-column-start: 1;
         grid-column-end: 3;
