@@ -8,12 +8,16 @@ const navbar = () => {
             <img src="./RBK-Logo.svg" alt="Logo" className='logo' />
             <nav className='nav-links'>
                 <ul>
-                    <li><a href="#">Nos programmes</a></li>
+                    <li><a href="#">Nos programmes</a><ul id="submenu">
+                        <li><a href="#">Développeur web</a></li>
+                        <li><a href="#">Cloud computing AWS re/start</a></li>
+                    </ul></li>
                     <li>
                         <a href="#">Nos BootCamps</a>
                         <ul id="submenu">
-                            <li><a href="#">Développeur web</a></li>
-                            <li><a href="#">Cloud computing AWS re/start</a></li>
+                            <li><a href="#">RebootKamp El Gazala</a></li>
+                            <li><a href="#">RebootKamp Sousse</a></li>
+                            <li><a href="#">RebootKamp El Kef</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Emploi après diplome</a></li>
