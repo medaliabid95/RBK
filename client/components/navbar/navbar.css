@@ -21,12 +21,15 @@
 
  }
 
- header {
+ .header {
+     position: fixed;
      display: flex;
      justify-content: space-between;
      align-items: center;
      padding: 30px 10%;
      border-bottom: 0.2px #CCCCCC solid;
+     z-index: 999;
+     background-color: rgba(0, 0, 0, 0);
  }
 
  .logo {
