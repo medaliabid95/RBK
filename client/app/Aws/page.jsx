@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div className="aws-container">
       <section className="image-aws-container">
-        <img src="./aws.png" alt="aws" />
+        <img src="./aws2.png" alt="aws" />
         <div className="title">AWS Certified Cloud practitioner</div>
       </section>
       <section className="aws-description-container">

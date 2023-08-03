@@ -4,7 +4,7 @@ import "./navbar.css"
 import Button from '../Universal button/button'
 const navbar = () => {
     return (
-        <header>
+        <header className='header'>
             <img src="./RBK-Logo.svg" alt="Logo" className='logo' />
             <nav className='nav-links'>
                 <ul>
