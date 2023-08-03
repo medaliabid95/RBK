@@ -5,7 +5,7 @@ const Emploi = () => {
     return (
         <div className="main-container">
             <header className="main-header">
-                <img className="emploi-apres-diplome-image" src="emploi-apres-diplome.png" />
+                <img className="emploi-apres-diplome-image" src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" />
                 <h1 className="header-content">Emploi après diplôme</h1>
             </header>
             <div className="black-container">
