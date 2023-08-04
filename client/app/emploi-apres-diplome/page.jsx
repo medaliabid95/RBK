@@ -1,12 +1,13 @@
 "use client"
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import Lottie from "lottie-react"
-import computerAnimation from "../../public/computerAnimation.json"
+import Computer from "@/components/computer" 
 import community from "../../public/community.json"
 import talent from "../../public/talent.json"
 import meeting from "../../public/meeting.json"
 import service from "../../public/service.json"
 import career from "../../public/career.json"
+import Slider from "@/components/infinite-slider/infinite-slider"
 import "./emploiCSS.css"
 const Emploi = () => {
 
@@ -38,7 +39,9 @@ const Emploi = () => {
             <div className="four-5-grid">
                 <div id="box-grid-1">
                     {/* <div  className="four-5-grid-img" ref={container}></div> */}
-                    <Lottie loop={true} className="four-5-grid-img" animationData={computerAnimation}/>
+                    <div className="four-5-grid-img" >
+                        <Computer />
+                    </div>
                 </div>
                 <div className="four-5-grid-content-free" id="box-grid-2">
                     <h1 className="four-5-grid-title" id="larger-title">Notre <span className="rose">service de carrières</span> sera là pour vous.</h1>
@@ -88,6 +91,9 @@ const Emploi = () => {
                     <img className="text-box-img" src="Scroll Up.png" alt="" />
                 </div>
             </div>
+            <div>
+                <Slider />
+            </div>
             <div className="second-grid">
                 <div className="second-grid-box" id="second-grid-box-1">
                     {/* <img className="photo-number" src="Rejoignez.png" alt="" /> */}
@@ -106,8 +112,8 @@ const Emploi = () => {
                     </div>
                 </div>
                 <div className="second-grid-box-free">
-                    <h1 className="second-grid-box-title">Vous êtes <span className="rose">une entreprise ?</span></h1>
-                    <p className="second-grid-box-paragraph">RBK rend plus facile que jamais la recherche de candidats développeurs qualifiés ayant les compétences et les capacités de programmation dont vous avez besoin. Des développeurs front-end et back-end aux développeurs full stack et aux praticiens certifiés AWS Cloud, votre prochain développeur est ici.</p>
+                    <h1 className="second-grid-box-free-title">Vous êtes <span className="rose">une entreprise ?</span></h1>
+                    <p className="second-grid-box-free-paragraph">RBK rend plus facile que jamais la recherche de candidats développeurs qualifiés ayant les compétences et les capacités de programmation dont vous avez besoin. Des développeurs front-end et back-end aux développeurs full stack et aux praticiens certifiés AWS Cloud, votre prochain développeur est ici.</p>
                 </div>
                 <div className="second-grid-box" id="second-grid-box-3">
                     {/* <img className="photo-number" src="Gratuite.png" alt="" /> */}
@@ -131,6 +137,43 @@ const Emploi = () => {
                     <img className="three-photos-grid-class" src="image 17.png" id="three-photos-grid-3" />
                 </div>
             </div>
+            <div className="before-automatic-slider">
+                <h1 className="before-automatic-slider-title">Ils <span className="rose">recrutent</span> parmi nos diplômés</h1>
+                <p className="before-automatic-slider-paragraph">More than 100 hiring partners and lots of cool recruiting events.</p>
+            </div>
+            <div className="automatic-slider">
+                <div className="slider">
+                    <div className="slide-track">
+                        <div className="slide">
+                            <img src="access.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="orange.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="talan.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="pwc.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="office.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="intigo.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="vega.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="next-step.webp" alt="" />
+                        </div>
+                        <div className="slide">
+                            <img src="think-it.webp" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </div>
     )
 }
