@@ -5,17 +5,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 .image-aws-container {
   position: relative;
   width: 100%;
 }
+
 .image-aws-container img {
   width: 100%;
 }
+
 .title {
   position: absolute;
   top: 50%;
@@ -28,30 +32,30 @@ body {
   width: 100%;
 }
 
-/* Mobile-first styles */
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk';
 }
+
 .aws-rbk-title img {
-  width: 60px; /* Adjust this value as needed */
+  width: 60px;
 }
+
 .aws-description-container {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
-  /* background-image: url("../../public/Cloudss.png"); */
   background-size: cover;
 }
 
 .aws-rbk-title p {
   width: 100%;
-  max-width: 400px; /* Adjust this value as needed */
+  max-width: 400px;
   margin: 0 auto;
   font-weight: 600;
-  font-size: 14px; /* Adjust this value as needed */
-  font-family: Space Grotesk;
+  font-size: 14px;
+  font-family: 'Space Grotesk';
 }
 
 .aws-rbk-title p span {
@@ -67,7 +71,7 @@ body {
 
 .step {
   width: 100%;
-  max-width: 250px; /* Adjust this value as needed */
+  max-width: 250px;
   margin-bottom: 20px;
   text-align: center;
   margin: 20px auto;
@@ -75,29 +79,26 @@ body {
 
 .step embed {
   width: 50%;
-  max-width: 80px; /* Adjust this value as needed */
+  max-width: 80px;
 }
 
 .step p {
   width: 100%;
-  font-size: 14px; /* Adjust this value as needed */
+  font-size: 14px;
 }
 
 .video-container {
   width: 60%;
-
   margin: 0 auto;
   text-align: center;
   position: relative;
 }
-/* .video-container img {
-  position: absolute;
-  width: 100%;
-  height: 88vh;
-} */
+
 .video-container video {
-  width: 100%;
+  width: 50%;
+  border-radius: 18px;
 }
+
 .aws-btn {
   width: 15%;
   font-size: 2vw;
@@ -106,36 +107,44 @@ body {
   border: none;
   padding: 10px;
   border-radius: 10px;
+  margin: 0 auto;
 }
+
 .about {
   background-color: #ffffffd9;
   border-radius: 10px;
-  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
   width: 50%;
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk';
 }
+
 .content {
   margin-top: 20px;
 }
+
 .planning-description {
   padding: 45px;
 }
+
 .planning {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
 }
+
 .planning div {
   width: 49%;
 }
+
 .planning-title {
   width: 41%;
   font-weight: 800;
   line-height: 1.5;
 }
+
 .planning-title span {
   color: #f89e2d;
 }
@@ -144,38 +153,19 @@ body {
   font-weight: 300;
   font-size: 1.2vw;
 }
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  .aws-rbk-title img {
-    width: 100px; /* Increase image size for larger screens */
-  }
-  .aws-rbk-title p {
-    font-size: 16px; /* Increase font size for larger screens */
-  }
-  .step {
-    width: 48%;
-    max-width: 300px; /* Adjust this value as needed */
-    text-align: center;
-  }
-  .step embed {
-    max-width: 100px; /* Adjust this value as needed */
-  }
-  .step p {
-    font-size: 16px; /* Increase font size for larger screens */
-  }
-}
+
 .planining-btn {
   background-color: #f89e2d;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
-  /* width: 15%; */
   font-size: 1.6vw;
   margin-top: 10%;
 }
+
 .aws-btn {
-  width: 100%;
+  
   font-size: 2vw;
   background-color: #f89e2d;
   color: white;
@@ -184,48 +174,16 @@ body {
   border-radius: 10px;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  .aws-btn {
-    width: 50%;
-    font-size: 16px; /* Increase font size for larger screens */
-  }
-  /* Add more styles for larger screens if needed */
-}
-
-@media screen and (min-width: 1024px) {
-  .aws-btn {
-    width: 30%;
-    font-size: 18px; /* Further increase font size for even larger screens */
-  }
-  /* Add more styles for even larger screens if needed */
-}
 .about {
   background-color: #ffffffd9;
   border-radius: 10px;
-  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
   width: 90%;
   margin: 20px auto;
   line-height: 2;
   padding: 40px;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  .about {
-    width: 70%;
-    padding: 50px;
-  }
-  /* Add more styles for larger screens if needed */
-}
-
-@media screen and (min-width: 1024px) {
-  .about {
-    width: 50%;
-    padding: 60px;
-  }
-  /* Add more styles for even larger screens if needed */
-}
 .planining-btn {
   background-color: #f89e2d;
   color: white;
@@ -236,51 +194,17 @@ body {
   margin-top: 10%;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  .planining-btn {
-    font-size: 16px; /* Increase font size for larger screens */
-  }
-  /* Add more styles for larger screens if needed */
-}
-
-@media screen and (min-width: 1024px) {
-  .planining-btn {
-    font-size: 18px; /* Further increase font size for even larger screens */
-  }
-  /* Add more styles for even larger screens if needed */
-}
-
-@media screen and (min-width: 1024px) {
-  .aws-rbk-title p {
-    font-size: 18px; /* Further increase font size for even larger screens */
-  }
-  .step {
-    width: 40%;
-    max-width: 400px; /* Adjust this value as needed */
-  }
-  .step embed {
-    max-width: 300px; /* Adjust this value as needed */
-  }
-  .step p {
-    font-size: 18px; /* Further increase font size for even larger screens */
-  }
-}
-.video-container {
-  margin: 8% 0;
-  width: 80%;
-
-  margin: 0 auto;
-}
 .programme {
   width: 100%;
   background-color: #f89e2d;
 }
+
 .programme h2 {
   color: white;
   padding: 18px;
   text-align: center;
 }
+
 .programme p {
   width: 70%;
   text-align: center;
@@ -312,7 +236,7 @@ body {
 
 .card-item p {
   color: #f89e2d;
-  font-family: Space Grotesk;
+  font-family: 'Space Grotesk';
   font-size: 1.5vw;
   font-weight: 500;
 }
@@ -331,8 +255,103 @@ body {
 .about ul li {
   font-size: 1.1vw;
 }
+.btn-container{
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .aws-rbk-title img {
+    width: 100px;
+  }
+  .aws-rbk-title p {
+    font-size: 16px;
+  }
+  .step {
+    width: 48%;
+    max-width: 300px;
+    text-align: center;
+  }
+  .step embed {
+    max-width: 100px;
+  }
+  .step p {
+    font-size: 16px;
+  }
+
+  .planining-btn {
+    font-size: 16px;
+  }
+
+  .aws-btn {
+  
+    font-size: 16px;
+  }
+
+  .about {
+    width: 70%;
+    padding: 50px;
+  }
+
+  .criteres-title {
+    font-size: 2vw;
+  }
+
+  .about ul li {
+    font-size: 2vw;
+  }
+  .video-container video {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .aws-btn {
+    /* width: 30%; */
+    font-size: 18px;
+  }
+
+  .about {
+    width: 70%;
+    padding: 60px;
+  }
+
+  .planining-btn {
+    font-size: 18px;
+  }
+
+  .aws-rbk-title p {
+    font-size: 18px;
+  }
+
+  .step {
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .step embed {
+    max-width: 300px;
+  }
+
+  .step p {
+    font-size: 18px;
+  }
+
+  .criteres-title {
+    font-size: 18px;
+  }
+
+  .about ul li {
+    font-size: 18px;
+  }
+  .video-container video {
+    width: 60%;
+  }
+}
 
 @media screen and (max-width: 1200px) {
+  
   .card-item {
     width: 40%;
   }
@@ -350,17 +369,33 @@ body {
   }
 }
 
+
 @media screen and (max-width: 768px) {
+  .planining-btn{
+    font-size: 5vw !important;
+  }
+  .video-container {
+    width: 100%;
+ 
+  }
+  
+  .video-container video {
+    width: 100%;
+  }
+  .content {
+    font-size: 70%;
+  }
   .cards-container {
     width: 100%;
+    justify-content: center;
   }
 
   .card-item {
-    width: 90%;
+    width: 70%;
   }
 
   .card-item p {
-    font-size: 4.5vw;
+    font-size: 4.2vw;
   }
 
   .criteres-title {
@@ -370,4 +405,66 @@ body {
   .about ul li {
     font-size: 3vw;
   }
+
+}
+.planning {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.planning div {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.planning-title {
+  width: 100%;
+  font-weight: 800;
+  line-height: 1.5;
+
+}
+
+
+
+.planining-btn {
+  background-color: #f89e2d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.6vw;
+  margin-top: 10%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .planning div {
+    width: 49%;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .planning div {
+    
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .planning div {
+    width: 47%;
+   
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .planning div {
+    width: 100%;
+    text-align: center;
+  }
+
 }
