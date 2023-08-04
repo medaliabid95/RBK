@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import "./style.css";
-
+import button from "@/components/Universal button/button";
 const Page = () => {
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(0);
 
@@ -44,7 +44,7 @@ const Page = () => {
     (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week2.jpg" alt="Image" />
+          <img className="image-contenu" src="./wee7.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -76,7 +76,7 @@ const Page = () => {
      (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week3.jpeg" alt="Image" />
+          <img className="image-contenu" src="./frontend.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -103,7 +103,7 @@ const Page = () => {
     (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week4.jpg" alt="Image" />
+          <img className="image-contenu" src="./week9.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -121,7 +121,7 @@ const Page = () => {
   (
     <div className="contenu">
       <div className="left-side">
-        <img className="image-contenu" src="./week5.jpg" alt="Image" />
+        <img className="image-contenu" src="./week8.gif" alt="Image" />
         <div className="after-image"></div>
       </div>
       <div className="right-side">
@@ -269,7 +269,7 @@ const Page = () => {
 
       {/* Programme */}
       <div className="Programme">
-        <h1 className="prog-title1">Découvrez le programme en détail</h1>
+        <div className="prog-title1">Découvrez le programme en détail</div>
         <div className="prog-title2">
           Consultez le programme de notre formation, semaine par semaine.
         </div>
