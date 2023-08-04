@@ -1,26 +1,22 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import "./navbar.css"
 import Button from '../Universal button/button'
 const navbar = () => {
-    const hamburger = document.querySelector(".hamburger");
-    console.log(hamburger);
-    const navMenu = document.querySelector(".nav-menu");
-    console.log(navMenu);
-    hamburger?.addEventListener("click", () => {
-        console.log("a");
-        // hamburger.classList.add("active")
-        navMenu.classList.toggle("active")
-    })
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active")
-        navMenu.classList.remove("active")
-    }))
+    const navRef = useRef()
+    const btnRef = useRef()
+    const btn2Ref = useRef()
+    const showNavbar = () => {
+        navRef.current.classList.toggle("active")
+        btnRef.current.classList.toggle("active")
+        btn2Ref.current.classList.toggle("active")
+
+    }
     return (
         <header className='header'>
             <img src="./RBK-Logo.svg" alt="Logo" className='logo' />
             <nav className='nav-links'>
-                <ul className='nav-menu'>
+                <ul ref={navRef} className='nav-menu'>
                     <li><a href="#" className='nav-link'>Nos programmes</a><ul id="submenu">
                         <li><a href="#" className='nav-link'>Développeur web</a></li>
                         <li><a href="#" className='nav-link'>Cloud computing AWS re/start</a></li>
@@ -45,11 +41,13 @@ const navbar = () => {
                         </ul> </li>
                 </ul>
             </nav>
-            <div className='buttons'>
+            <div ref={btn2Ref} className='buttons'>
                 <a href="#" className='btn'><Button label={"Inscription"} /></a>
                 <a href="#" className='btn'><Button label={"Login"} /></a>
             </div>
-            <div className='hamburger' >
+            <div className='hamburger' ref={btnRef} onClick={(e) => {
+                showNavbar();
+            }} >
                 <span className='bar'></span>
                 <span className='bar'></span>
                 <span className='bar'></span>
