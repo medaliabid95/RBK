@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import "./footer.css"
-import Button from '../Universal button/button'
 const footer = () => {
     return (
         <footer>
