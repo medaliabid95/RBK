@@ -1,6 +1,10 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/navbar'
+import Footer from '@/components/footer/footer'
 import BotpressWebchat from '@/components/chatBot/BotpressWebchat'
+
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,14 +15,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+   <html lang="en">
       <head>
         <script src="https://cdn.botpress.cloud/webchat/v0/inject.js" ></script> 
       </head> 
       <body >
- 
+        <Navbar/>
         <BotpressWebchat/>
         {children}
+         <Footer/>
       </body>
     </html>
   )
