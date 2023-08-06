@@ -44,7 +44,7 @@ const Page = () => {
     (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week2.jpg" alt="Image" />
+          <img className="image-contenu" src="./wee7.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -76,7 +76,7 @@ const Page = () => {
      (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week3.jpeg" alt="Image" />
+          <img className="image-contenu" src="./frontend.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -103,7 +103,7 @@ const Page = () => {
     (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week4.jpg" alt="Image" />
+          <img className="image-contenu" src="./week9.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -121,7 +121,7 @@ const Page = () => {
   (
     <div className="contenu">
       <div className="left-side">
-        <img className="image-contenu" src="./week5.jpg" alt="Image" />
+        <img className="image-contenu" src="./week8.gif" alt="Image" />
         <div className="after-image"></div>
       </div>
       <div className="right-side">
@@ -269,7 +269,7 @@ const Page = () => {
 
       {/* Programme */}
       <div className="Programme">
-        <h1 className="prog-title1">Découvrez le programme en détail</h1>
+        <div className="prog-title1">Découvrez le programme en détail</div>
         <div className="prog-title2">
           Consultez le programme de notre formation, semaine par semaine.
         </div>
@@ -333,13 +333,14 @@ const Page = () => {
           <div className="last-card1">
             <img className="last-image" src="./image 7.svg" alt="Card 1" />
             <div className="last-description">
-              Paiement comptant <span className="span2">6786 TND</span> au lieu de 11310 TND
+              Paiement comptant <span className="span2">6786 TND</span> au lieu de
+             <span className="removed" > 11310 TND</span>
             </div>
           </div>
           <div className="last-card2">
             <img className="last-image" src="./image 8.svg" alt="Card 2" />
             <div className="last-description">
-              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de 3770 TND x 3
+              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de <span className="removed"> 3770 TND x 3</span> 
             </div>
           </div>
         </div>
