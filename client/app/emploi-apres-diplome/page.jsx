@@ -58,15 +58,15 @@ const Emploi = () => {
                 <div className="three-box-container">
                     <div className="box-stat" id="box-1">
                         <h1 className="statNumbers"><Number n={1000} /><span>+</span></h1>
-                        <p className="stat-desc">1000 Diplômés de RBK<br /> depuis 2016</p>
+                        <p className="stat-desc"> Diplômés de RBK<br /> depuis 2016</p>
                     </div>
                     <div className="box-stat" id="box-2">
                         <h1 className="statNumbers" ><Number n={93} /><span>%</span></h1>
-                        <p className="stat-desc">93% Taux d'employabilité<br /> de nos étudiants</p>
+                        <p className="stat-desc">Taux d'employabilité<br /> de nos étudiants</p>
                     </div>
                     <div className="box-stat" id="box-3">
                         <h1 className="statNumbers"><Number n={1251} /><span>TND</span></h1>
-                        <p className="stat-desc">1251 Comme 1er salaire<br /> moyen (2022)</p>
+                        <p className="stat-desc"> Comme 1er salaire<br /> moyen (2022)</p>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./landing.css"
-import Imagee from '../components/contactImage/ContactImage.jsx'
+import BlackContainerNumbers from '@/components/black-container-numbers/black-container-numbers'
+import VideoPlayer from '@/components/Player/VideoPlayer'
 const page = () => {
     return (
         <div className='landing-container'>
@@ -48,6 +49,15 @@ const page = () => {
                 <div className='sticker' id='sticker-1'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>Format flexible de 5 à 12 mois</span></div>
                 <div className='sticker' id='sticker-2'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>1 professeur pour 7 étudiants</span></div>
                 <div className='sticker' id='sticker-3'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>Sur le campus ou en ligne</span></div>
+                <div id='hr-line2'> </div>
+                <BlackContainerNumbers number={1000} label={"+"} idstat={"stat1"} textStat={"Diplômés de RBK depuis 2016"} />
+                <BlackContainerNumbers number={93} label={"%"} idstat={"stat2"} textStat={"Taux d'employabilité de nos étudiants"} />
+                <BlackContainerNumbers number={1000} idstat={"stat3"} textStat={"De cours en seulement 5 mois"} spanid={"time-spent"} indc={"h"} />
+                <BlackContainerNumbers number={1251} idstat={"stat4"} textStat={"Comme 1er salaire moyen (2022)"} spanid={"money-spent"} indc={"TND"} />
+            </section>
+
+            <section className='videos-and-about'>
+                <VideoPlayer videoSrc={"videos/rbkVid.mp4"} thumbnailSrc={"safa-Thumbnail.png"} />
             </section>
         </div >
     )
