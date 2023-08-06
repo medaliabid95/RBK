@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from "react";
+
+import Link from "next/link";
 import "./style.css";
 
 const Page = () => {
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(0);
-
   const handleWeekClick = (index) => {
     setSelectedWeekIndex(index);
   };
@@ -264,7 +265,7 @@ const Page = () => {
             </p>
             <img className="top-left" src="./Portal.svg" alt="background" />
             <img className="bottom-right" src="./Portal.svg" alt="background" />
-            <button className="button">Postuler</button>
+            <Link href='/postuler' ><button className="button" >Postuler</button></Link>
           </div>
         </div>
       </div>
@@ -346,7 +347,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <button className="button" >Postuler</button>
+        <Link href='/postuler' ><button className="button" >Postuler</button></Link>
       </div>
 
     </div>
