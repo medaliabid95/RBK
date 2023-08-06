@@ -16,7 +16,7 @@ const page = () => {
                         <p id='question'>Que voulez-vous étudier ? <span className='pinkies'>*</span> </p>
                         <div className='radio-container'><input type="radio" id='dev-web-radio' />  <span id='dev-web'>Développement Web</span></div>
                         <div className='info'>
-                            <p id='required' className='pinkies'>Champs Obligatoires</p>
+                            <p id='required' className='pinkies'>Champs Obligatoires *</p>
                             <input id='inp1' type="text" placeholder='Prenom *' />
                             <input id='inp2' type="text" placeholder='Nom de famille *' />
                             <input id='inp3' type="email" placeholder='Votre e-mail *' />
@@ -41,6 +41,13 @@ const page = () => {
                     </div>
                 </div>
             </section >
+            <section className='black-container'>
+                <div id='awd-title'>5 mois pour devenir Developpeur Full-Stack</div>
+                <div id='awd-resume'>L'objectif de cette formation est de permettre à toute personne, quel que soit son niveau initial (débutant, curieux ou avancé) ou son profil(reconversion professionnelle, montée en compétences…), d'acquérir les notions techniques et humaines nécessaires pour débuter avec succès une carrière dans la tech</div>
+                <div className='sticker' id='sticker-1'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>Format flexible de 5 à 12 mois</span></div>
+                <div className='sticker' id='sticker-2'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>1 professeur pour 7 étudiants</span></div>
+                <div className='sticker' id='sticker-3'><span className='star'><img src="icons8-star-100.png" alt="" /></span><span className='sticker-text'>Sur le campus ou en ligne</span></div>
+            </section>
         </div >
     )
 }
