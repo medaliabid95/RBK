@@ -4,7 +4,7 @@ import "./footer.css"
 const footer = () => {
     return (
         <footer>
-            <div className='container'>
+            <div className='container-footer'>
                 <div className='sec logo-footer-container '>
                     <img src="./RBK-white.png" alt="Logo" className=' logo-footer' />
                 </div>
