@@ -247,10 +247,14 @@ body {
   line-height: 2;
   font-size: 1.2vw;
 }
+.criteres {
+  margin-bottom: 6%;
+}
 
 .criteres-btn-container {
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 6%;
 }
 
 .about ul li {

@@ -6,8 +6,9 @@ import diplome from "../../public/diplome.json";
 import competence from "../../public/competence.json";
 import VideoPlayer from "@/components/Player/VideoPlayer";
 import Lottiee from "../../components/animations/Animation";
-import Header from "@/components/header/header.jsx";       
-import Imagee from "../../components/contactImage/ContactImage.jsx"
+import Header from "@/components/AwsHeader/header.jsx";   
+import AWS from '../../components/RbkTitle/RbkAws.jsx'    
+
 
 
 
@@ -21,14 +22,7 @@ const Page = () => {
         <Header/>
       </section>
       <section className="aws-description-container">
-        <div className="aws-rbk-title">
-          <img src="./RBK.png" alt="Rbk" />
-          <img src="./awsRestart.png" alt="aws" />
-          <p>
-            Apprenez le cloud computing et lancez votre carrière dans le cloud
-            avec <span>AWS re/Start</span>
-          </p>
-        </div>
+      <AWS/>
         <div className="description-container">
           <div className="steps-container">
             <div className="step">
@@ -100,8 +94,8 @@ const Page = () => {
             </p>
           </div>
           <div className="video">
-            <Imagee imgSrc="./Video.png"  arr1={  [0, 0.1, 0.5, 1]} arr2={[1000, 1000, 0, 0]}/>
-            {/* <img src="./Video.png" alt="video" /> */}
+           
+            <img  src="./Video.png" alt="video" />
           </div>
         </div>
       </section>
@@ -188,6 +182,8 @@ const Page = () => {
           <button className="planining-btn">S'inscrire</button>
         </div>
       </section>
+
+
     </div>
   );
 };
