@@ -10,7 +10,7 @@ const Page = () => {
     prenom: '',
     nom: '',
     email: '',
-    phone: '', // Use 'phone' instead of 'telephone' and 'code'
+    phone: '', 
     accept: false,
   });
 
