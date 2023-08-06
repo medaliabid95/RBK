@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import "./style.css";
-import button from "@/components/Universal button/button";
+
 const Page = () => {
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(0);
 
@@ -333,13 +333,14 @@ const Page = () => {
           <div className="last-card1">
             <img className="last-image" src="./image 7.svg" alt="Card 1" />
             <div className="last-description">
-              Paiement comptant <span className="span2">6786 TND</span> au lieu de 11310 TND
+              Paiement comptant <span className="span2">6786 TND</span> au lieu de
+             <span className="removed" > 11310 TND</span>
             </div>
           </div>
           <div className="last-card2">
             <img className="last-image" src="./image 8.svg" alt="Card 2" />
             <div className="last-description">
-              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de 3770 TND x 3
+              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de <span className="removed"> 3770 TND x 3</span> 
             </div>
           </div>
         </div>
