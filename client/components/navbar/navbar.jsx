@@ -18,8 +18,8 @@ const navbar = () => {
             <nav className='nav-links'>
                 <ul ref={navRef} className='nav-menu'>
                     <li><a href="#" className='nav-link'>Nos programmes</a><ul id="submenu">
-                        <li><a href="#" className='nav-link'>Développeur web</a></li>
-                        <li><a href="#" className='nav-link'>Cloud computing AWS re/start</a></li>
+                        <li><a href="/fullStack" className='nav-link'>Développeur web</a></li>
+                        <li><a href="/Aws" className='nav-link'>Cloud computing AWS re/start</a></li>
                     </ul></li>
                     <li>
                         <a href="#" className='nav-link'>Nos BootCamps</a>
@@ -29,12 +29,12 @@ const navbar = () => {
                             <li><a href="#">RebootKamp El Kef</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" className='nav-link'>Contact</a></li>
+                    <li><a href="/contact" className='nav-link'>Contact</a></li>
                     <li><a href="#" className='nav-link'>Autres</a>
                         <ul id="submenu">
                             <li><a href="#">Continuer a l’étranger</a></li>
                             <li><a href="#">Projets récemment publiés</a></li>
-                            <li><a href="#">Emploi après diplome</a></li>
+                            <li><a href="/emploi-apres-diplome">Emploi après diplome</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="#">Blog</a></li>
 

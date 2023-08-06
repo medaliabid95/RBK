@@ -347,7 +347,6 @@ const Page = () => {
         <button className="button" >Postuler</button>
       </div>
 
-
     </div>
   );
 };
