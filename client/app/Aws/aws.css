@@ -25,17 +25,19 @@ body {
   top: 50%;
   transform: translate(0, -50%);
   color: whitesmoke;
-  font-size: 3vw;
+  font-size: 5vw;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
-  width: 100%;
+  width: 100%;;
 }
-
+.diplome div{
+  width: 80% !important;
+}
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .aws-rbk-title img {
@@ -55,7 +57,7 @@ body {
   margin: 0 auto;
   font-weight: 600;
   font-size: 14px;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .aws-rbk-title p span {
@@ -77,15 +79,12 @@ body {
   margin: 20px auto;
 }
 
-.step embed {
-  width: 50%;
-  max-width: 80px;
-}
-
 .step p {
-  width: 100%;
-  font-size: 14px;
-}
+  font-size: 1rem;
+  color: #808080d1;
+  font-weight: bold;
+} 
+
 
 .video-container {
   width: 60%;
@@ -118,7 +117,7 @@ body {
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .content {
@@ -143,6 +142,7 @@ body {
   width: 41%;
   font-weight: 800;
   line-height: 1.5;
+  font-size: 1.4rem;
 }
 
 .planning-title span {
@@ -151,7 +151,7 @@ body {
 
 .planning-content {
   font-weight: 300;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .planining-btn {
@@ -165,7 +165,6 @@ body {
 }
 
 .aws-btn {
-  
   font-size: 2vw;
   background-color: #f89e2d;
   color: white;
@@ -207,9 +206,9 @@ body {
 
 .programme p {
   width: 70%;
-  text-align: center;
+
   margin: 0 auto;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -219,6 +218,8 @@ body {
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
+  text-align: center;
+  margin-bottom: 6%;
 }
 
 .card-item {
@@ -236,7 +237,7 @@ body {
 
 .card-item p {
   color: #f89e2d;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   font-size: 1.5vw;
   font-weight: 500;
 }
@@ -255,7 +256,7 @@ body {
 .about ul li {
   font-size: 1.1vw;
 }
-.btn-container{
+.btn-container {
   width: 100%;
   text-align: center;
 }
@@ -273,19 +274,14 @@ body {
     max-width: 300px;
     text-align: center;
   }
-  .step embed {
-    max-width: 100px;
-  }
-  .step p {
-    font-size: 16px;
-  }
+
+   
 
   .planining-btn {
     font-size: 16px;
   }
 
   .aws-btn {
-  
     font-size: 16px;
   }
 
@@ -303,6 +299,9 @@ body {
   }
   .video-container video {
     width: 100%;
+  }
+  .planning div {
+    width: 49%;
   }
 }
 
@@ -330,13 +329,9 @@ body {
     max-width: 400px;
   }
 
-  .step embed {
-    max-width: 300px;
-  }
+  
 
-  .step p {
-    font-size: 18px;
-  }
+
 
   .criteres-title {
     font-size: 18px;
@@ -348,10 +343,12 @@ body {
   .video-container video {
     width: 60%;
   }
+  .planning div {
+    width: 48%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-  
   .card-item {
     width: 40%;
   }
@@ -369,29 +366,27 @@ body {
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  .planining-btn{
+  .planining-btn {
     font-size: 5vw !important;
   }
   .video-container {
     width: 100%;
- 
   }
-  
+
   .video-container video {
     width: 100%;
   }
   .content {
-    font-size: 70%;
-  }
+    font-size: 0.9em;
+}
   .cards-container {
     width: 100%;
     justify-content: center;
   }
 
   .card-item {
-    width: 70%;
+    width: 56%;
   }
 
   .card-item p {
@@ -405,7 +400,6 @@ body {
   .about ul li {
     font-size: 3vw;
   }
-
 }
 .planning {
   display: flex;
@@ -423,10 +417,7 @@ body {
   width: 100%;
   font-weight: 800;
   line-height: 1.5;
-
 }
-
-
 
 .planining-btn {
   background-color: #f89e2d;
@@ -439,32 +430,18 @@ body {
   display: block;
   margin: 0 auto;
 }
-
-@media screen and (min-width: 768px) {
-  .planning div {
-    width: 49%;
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
-}
 
-@media screen and (min-width: 1024px) {
-  .planning div {
-    
-    width: 48%;
-  }
-}
+
 
 @media screen and (min-width: 1200px) {
   .planning div {
     width: 47%;
-   
   }
 }
 
-@media screen and (max-width: 768px) {
-  .planning div {
-    width: 100%;
-    text-align: center;
-  }
-
-}
