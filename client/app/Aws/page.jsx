@@ -1,19 +1,24 @@
 
-
 import "./aws.css";
-import LottieAnimation from "../../components/animations/LottieAnimation.js"
-import talent from "../../public/talent.json"
-import formation from "../../public/formation.json"
-import diplome from "../../public/diplome.json"
-import competence from "../../public/competence.json"
+import talent from "../../public/talent.json";
+import formation from "../../public/formation.json";
+import diplome from "../../public/diplome.json";
+import competence from "../../public/competence.json";
 import VideoPlayer from "@/components/Player/VideoPlayer";
+import Lottiee from "../../components/animations/Animation";
+import Header from "@/components/header/header.jsx";       
+import Imagee from "../../components/contactImage/ContactImage.jsx"
+
+
+
 
 const Page = () => {
+  
   return (
     <div className="aws-container">
       <section className="image-aws-container">
         <img src="./aws2.png" alt="aws" />
-        <div className="title">AWS Certified Cloud practitioner</div>
+        <Header/>
       </section>
       <section className="aws-description-container">
         <div className="aws-rbk-title">
@@ -27,39 +32,41 @@ const Page = () => {
         <div className="description-container">
           <div className="steps-container">
             <div className="step">
-            <LottieAnimation animation={talent} />
+              
+              <Lottiee animation={talent} />
               <p>
                 Entrez en contact avec des employeurs et démarrez votre carrière
               </p>
             </div>
             <div className="step">
-            <LottieAnimation animation={formation} />
+              <Lottiee animation={formation} />
               <p>
                 Accédez à une formation gratuite, immersive et axée sur les
                 compétences
               </p>
             </div>
           </div>
-     <VideoPlayer videoSrc='https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4' thumbnailSrc="whatiscomputing.png" />
+          <VideoPlayer
+            videoSrc="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4"
+            thumbnailSrc="whatiscomputing.png"
+          />
           <div className="steps-container">
-            <div className="step">
-            <LottieAnimation animation={diplome} />
+            <div className="step diplome">
+              <Lottiee animation={diplome} />
               <p>
-              Obtenir un diplôme avec des compétences prêtes pour l'emploi 
+                Obtenir un diplôme avec des compétences prêtes pour l'emploi
               </p>
             </div>
             <div className="step">
-            <LottieAnimation animation={competence} />
-              
-              <p>
-              Développez des compétences   alignées sur la certification AWS
+              <Lottiee animation={competence} />
 
+              <p>
+                Développez des compétences alignées sur la certification AWS
               </p>
             </div>
           </div>
           <div className="btn-container">
-
-          <button className="planining-btn">S'inscrire</button>
+            <button className="planining-btn">S'inscrire</button>
           </div>
           <div className="about">
             <h2>
@@ -86,15 +93,15 @@ const Page = () => {
             <p className="planning-content">
               Grâce à des exercices, des ateliers et des cours basés sur des
               scénarios tirés du monde réel, les apprenants développent leurs
-              compétences en Linux, en Python, en réseau, en sécurité et en bases
-              de données relationnelles. Il aura l'opportunité de passer les
-              certifications propres aux outils, systèmes et logiciels de Cloud
-              AWS (Amazon Web Services)
+              compétences en Linux, en Python, en réseau, en sécurité et en
+              bases de données relationnelles. Il aura l'opportunité de passer
+              les certifications propres aux outils, systèmes et logiciels de
+              Cloud AWS (Amazon Web Services)
             </p>
-          
           </div>
           <div className="video">
-            <img src="./Video.png" alt="video" />
+            <Imagee imgSrc="./Video.png"  arr1={  [0, 0.1, 0.5, 1]} arr2={[1000, 1000, 0, 0]}/>
+            {/* <img src="./Video.png" alt="video" /> */}
           </div>
         </div>
       </section>
