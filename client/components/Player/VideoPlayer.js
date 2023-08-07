@@ -1,10 +1,9 @@
 "use client"
-import { useRef, useState, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const controls = useAnimation();
   
   const togglePlay = () => {
@@ -16,7 +15,7 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
       video.pause();
     }
 
-    setIsPlaying(!video.paused);
+    
   };
 
   useLayoutEffect(() => {
