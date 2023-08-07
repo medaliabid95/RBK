@@ -41,7 +41,6 @@ header {
     text-transform: uppercase;
     text-align: center;
     width: 100%;
- 
 }
 
 
@@ -165,6 +164,10 @@ header {
     }
 }
 
+
+
+
+
 .box-stat {
     background-color: #18191B;
     border-radius: 10px;
@@ -175,21 +178,23 @@ header {
     padding-bottom: 1%;
     text-align: center;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 .statNumbers {
-    text-align: center;
+    /* text-align: center; */
     color: white;
     font-family: Space Grotesk;
-    padding: 3%;
 }
-
+#span-after-number{
+    align-items: flex-end;
+    color: white;
+    font-family: Space Grotesk;
+}
 .stat-desc {
     text-align: center;
     color: white;
     font-family: Space Grotesk;
-    padding: 3%;
 }
 
 
