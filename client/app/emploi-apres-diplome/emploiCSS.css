@@ -175,22 +175,18 @@ header {
     padding-bottom: 1%;
     text-align: center;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 .statNumbers {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     color: white;
     font-family: Space Grotesk;
-    padding: 3%;
 }
-
 .stat-desc {
     text-align: center;
     color: white;
     font-family: Space Grotesk;
-    padding: 3%;
 }
 
 

@@ -55,10 +55,6 @@ const page = () => {
                 <BlackContainerNumbers number={1000} idstat={"stat3"} textStat={"De cours en seulement 5 mois"} spanid={"time-spent"} indc={"h"} />
                 <BlackContainerNumbers number={1251} idstat={"stat4"} textStat={"Comme 1er salaire moyen (2022)"} spanid={"money-spent"} indc={"TND"} />
             </section>
-
-            <section className='videos-and-about'>
-                <VideoPlayer videoSrc={"videos/rbkVid.mp4"} thumbnailSrc={"safa-Thumbnail.png"} />
-            </section>
         </div >
     )
 }
