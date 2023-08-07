@@ -42,7 +42,11 @@ const navbar = () => {
                 </ul>
             </nav>
             <div ref={btn2Ref} className='buttons'>
-                <a href="" className='btn'><Button label={"Inscription"} /></a>
+
+
+
+                <a href="/postuler" className='btn'><Button label={"Inscription"} /></a>
+
                 <a href="#" className='btn'><Button label={"Login"} /></a>
             </div>
             <div className='hamburger' ref={btnRef} onClick={(e) => {
