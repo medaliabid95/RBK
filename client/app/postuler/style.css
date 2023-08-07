@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
-
+nextjs-portal {
+  display: none;
+}
 
 .card-container {
   font-family: 'Space Grotesk', sans-serif;

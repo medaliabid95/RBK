@@ -1,29 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27");
+
+nextjs-portal {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 h1 {
   margin: 5vh 0 0 0;
   font-size: max(4vw, 1.6rem);
 }
+
 .contact-container h3 {
   font-size: max(2.2vw, 1.3rem);
   margin-bottom: max(0.95rem, 0.5rem);
   color: #ff007b;
   font-weight: bold;
 }
+
 p {
   margin-left: min(9%, 40px);
   font-size: 1.2rem;
 }
+
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: max(5vh, 2rem);
 }
+
 .image-contact-container {
   position: relative;
   width: 100%;
@@ -45,23 +55,28 @@ p {
   width: 100%;
   letter-spacing: 1vw;
 }
+
 .qui-nous-somme {
   width: 90%;
   margin: 10vh auto;
   display: flex;
   padding: 0 2%;
 }
+
 .qui-nous-somme img {
-  
+
   width: 40%;
   border-radius: 10px;
 }
-.rbk-imagess{
+
+.rbk-imagess {
   display: none;
 }
+
 .qui-nous-somme ul {
   margin-left: min(9%, 40px);
 }
+
 .qui-nous-somme-item {
   display: flex;
   flex-direction: column;
@@ -69,11 +84,13 @@ p {
   width: 40%;
   line-height: 1.5;
 }
+
 .qui-nous-somme .rotate {
   width: 10%;
   height: 100%;
   background-color: white;
 }
+
 .contact-form h1 {
   font-size: 5vw;
   font-weight: 900;
@@ -85,28 +102,33 @@ p {
   letter-spacing: 2px;
   word-wrap: break-word;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
+
 .form-container {
   width: 90%;
   display: flex;
   justify-content: space-around;
 }
+
 .rbk-infos {
   padding: 1.2vw;
   width: 40%;
 }
+
 .info-item {
   display: flex;
   align-items: center;
   width: 90%;
   margin-top: 20px;
-  font-size: max(1.2vw,1.1rem);
+  font-size: max(1.2vw, 1.1rem);
 }
+
 .form {
   padding: 1.2vw;
   width: 40%;
@@ -114,15 +136,18 @@ p {
   display: flex;
   flex-direction: column;
 }
+
 .form input {
   border: 1px solid gray;
   border-radius: 5px;
 }
+
 .nom input {
   width: 45%;
   padding: 0.5vw;
   font-size: 1.2vw;
 }
+
 .nom {
   display: flex;
   justify-content: space-between;
@@ -135,6 +160,7 @@ p {
 
   margin-top: 2%;
 }
+
 .message-input {
   width: 100%;
   padding: 0.5vw;
@@ -145,6 +171,7 @@ p {
   border: 1px solid;
   outline: none;
 }
+
 .form button {
   width: 30%;
   background-color: #ff007b;
@@ -163,16 +190,20 @@ p {
   .qui-nous-somme {
     margin: 5vh auto;
   }
+
   .qui-nous-somme-item {
     margin-top: 100px;
   }
+
   .qui-nous-somme img {
     width: 40%;
     border-radius: 10px;
     height: max-content;
   }
 }
+
 @media (max-width: 992px) {
+
   /* .image-contact-container .contact-img {
     width: 130%;
   } */
@@ -182,25 +213,32 @@ p {
     width: 100%;
     margin: 3vh auto;
   }
+
   .qui-nous-somme-item {
     width: 100%;
     margin: 0 auto;
   }
+
   .qui-nous-somme img {
     width: 80%;
     margin-bottom: max(5vh, 2rem);
   }
+
   .outcomes {
     margin: 0 auto;
   }
+
   .outcomes img {
     display: none;
   }
-  .rbk-imagess{
+
+  .rbk-imagess {
     display: block;
   }
 }
+
 @media (max-width: 768px) {
+
   /* .qui-nous-somme img {
     display: block;
   } */
@@ -209,18 +247,20 @@ p {
     flex-direction: column-reverse;
     align-items: center;
   }
+
   .form {
     width: 100%;
 
   }
-  .rbk-infos{
+
+  .rbk-infos {
     width: 100%;
   }
-  .form input{
-    
+
+  .form input {
+
     padding: 0.5vw;
-    font-size: min(4vw,1.2rem);
+    font-size: min(4vw, 1.2rem);
   }
 
 }
-

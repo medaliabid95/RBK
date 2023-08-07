@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import Number from '../numbers/from0'
-import "../../app/landing.css"
+import Number from '../../numbers/from0'
+import "../../../app/landing.css"
 const blackContainerNumbers = ({ number, label, spanid, idstat, textStat, indc }) => {
     return (
         <>
