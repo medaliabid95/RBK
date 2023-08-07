@@ -22,7 +22,10 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
   useLayoutEffect(() => {
     const handleScroll = () => {
       const { top } = videoRef.current.getBoundingClientRect();
-      const isVisible = top < window.innerHeight && top > -videoRef.current.clientHeight;
+      console.log(top)
+      console.log(window.innerHeight )
+      const isVisible = top < window.innerHeight
+      
 
       if (isVisible) {
         controls.start({ x: 0, opacity: 1 ,transition: { duration: 0.1, ease: "easeInOut" } });
@@ -36,11 +39,11 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
     window.addEventListener('scroll', handleScroll);
 
    
-    handleScroll();
+   
 
    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+  }, []);
 
   return (
     <motion.div
