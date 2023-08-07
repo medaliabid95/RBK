@@ -179,10 +179,12 @@ header {
 }
 
 .statNumbers {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     color: white;
     font-family: Space Grotesk;
 }
+
 .stat-desc {
     text-align: center;
     color: white;
