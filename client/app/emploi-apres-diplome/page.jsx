@@ -1,13 +1,7 @@
 import React from "react"
-
-// import community from "../../public/community.json"
-// import talent from "../../public/talent.json"
-// import meeting from "../../public/meeting.json"
-// import service from "../../public/service.json"
-// import career from "../../public/career.json"
 import Slider from "@/components/infinite-slider/infinite-slider"
 import Number from "@/components/numbers/from0"
-import {Header} from "@/components/main-header/Header.jsx"
+import {MainHeader} from "@/components/main-header/Header.jsx"
 import { TenBoxes } from "@/components/ten-boxes-container/tenBoxes.jsx"
 import  FourBoxes  from "@/components/four-boxes/FourBoxes.jsx"
 import { BeforeSlider } from "@/components/before-slider/BeforeSlider.jsx"
@@ -16,17 +10,12 @@ const Emploi = () => {
     
     return (
         <div className="main-container">
-            {/* <header className="main-header">
-                <img className="emploi-apres-diplome-image" src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" />
-                <h1 className="header-content hidden" >Emploi après diplôme</h1>
-            </header> */}
-            <Header />
+            <MainHeader img={"https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" } text={"emploi apres diplome"}/>
             <div className="black-container">
                 <h1 className="block-title">Obtenez votre job de rêve grâce<br /> à notre <span className="rose">services carrières.</span></h1>
                 <h3 className="block-desc">Notre Service carrières vous accompagne de manière<br /> personnalisée pour vous préparer à décrocher un emploi<br /> grâce à notre réseau de partenaires employeurs.</h3>
                 <div className="three-box-container">
                     <div className="box-stat" id="box-1">
-
                         <div><h1 className="statNumbers"><Number n={1000} /><span id="span-after-number">+</span></h1></div>
                         <p className="stat-desc">Diplômés de RBK<br /> depuis 2016</p>
                     </div>

@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <script src="https://cdn.botpress.cloud/webchat/v0/inject.js" ></script> 
       </head> 
       <body >
-        <Navbar/>
+          <Navbar/>
         <BotpressWebchat/>
         {children}
          <Footer/>
