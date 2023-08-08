@@ -1,10 +1,9 @@
 "use client"
-import { useRef, useState, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const controls = useAnimation();
   
   const togglePlay = () => {
@@ -16,13 +15,16 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
       video.pause();
     }
 
-    setIsPlaying(!video.paused);
+    
   };
 
   useLayoutEffect(() => {
     const handleScroll = () => {
       const { top } = videoRef.current.getBoundingClientRect();
-      const isVisible = top < window.innerHeight && top > -videoRef.current.clientHeight;
+      console.log(top)
+      console.log(window.innerHeight )
+      const isVisible = top < window.innerHeight
+      
 
       if (isVisible) {
         controls.start({ x: 0, opacity: 1 ,transition: { duration: 0.1, ease: "easeInOut" } });
@@ -36,11 +38,11 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
     window.addEventListener('scroll', handleScroll);
 
    
-    handleScroll();
+   
 
    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+  }, []);
 
   return (
     <motion.div
