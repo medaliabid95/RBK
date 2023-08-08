@@ -23,10 +23,10 @@ const Continuer = () => {
             <MainHeader img={"/a-letranger.png"} text={"Continuer a l'étranger"}/>
             <div className="intro">
             <h1 className="intro-title">Alternance et <span className="rose">Mobilité internationale</span></h1>
-                <div className="intro-text">
+                
                     <p className="intro-paragraph">RBK offre un soutien personnalisé à chaque diplômé souhaitant poursuivre ses études à l'étranger dans l'un de nos établissements partenaires grâce à notre département de mobilité internationale.</p>
                     <button>S'inscrie</button>
-                </div>
+                
                 <img className="globe" src="globe.png" alt="" />
             </div>
             <div className="text" data-aos="fade-up"
