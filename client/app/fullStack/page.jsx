@@ -77,9 +77,9 @@ const Page = () => {
           <div className="contenu-description">
             <p className="bold">Computer science Fundamentals</p>
 
-            <p>During the 12-week immersive, you’ll be primarily working in pairs and 
+            <p>During the 12-week immersive, you’ll be primarily working in pairs and
               groups over 2-daysprints,putting in 11-hour days at a minimum, 6 days a week.
-              </p>
+            </p>
             <p>
               Our instructional content gives you just enough scaffolding so you can get
               to the real work of solving coding problems in the context of actual applications.
@@ -98,8 +98,8 @@ const Page = () => {
         </div>
       </div>
     ),
-     // week3
-     (
+    // week3
+    (
       <div className="contenu">
         <div className="left-side">
           <img className="image-contenu" src="./frontend.gif" alt="Image" />
@@ -137,60 +137,60 @@ const Page = () => {
             <p className="bold">Solo Week</p>
             <ul>
               <li>There are no scheduled lectures this week. You'll be able to get some rest and work on an individual project.</li>
-              <li>Application Design and Development</li>     
+              <li>Application Design and Development</li>
             </ul>
           </div>
         </div>
       </div>
     ),
-  //week5
-  (
-    <div className="contenu">
-      <div className="left-side">
-        <img className="image-contenu" src="./week8.gif" alt="Image" />
-        <div className="after-image"></div>
-      </div>
-      <div className="right-side">
-        <div className="contenu-description">
-          <p className="bold">Application design and development</p>
-          <p>Work in teams to develop functional applications, using new technologies, and putting your bug-testing skills to the test. You'll learn how to:</p>   
-          <p>Work on several projects</p>
-          <ul>
-            <li>Building applications from scratch</li>
-            <li>Working on legacy code bases</li>
-            <li>Using new languages( TypeScript, Dart..)</li>
-          </ul>
-          <p>Bolster your code</p>
-          <ul>
-            <li>Using new technologies ( Angular, Flutter, Redux...)</li>
-            <li>Testing</li>
-            <li>Continuous Development</li>
-          </ul>
-          <p>Practice Advanced Team Dynamics</p>
-          <ul>
-            <li>Agile Workflow</li>
-            <li>Iterative development</li>
-            <li>Advanced git techniques</li>
-          </ul>
+    //week5
+    (
+      <div className="contenu">
+        <div className="left-side">
+          <img className="image-contenu" src="./week8.gif" alt="Image" />
+          <div className="after-image"></div>
+        </div>
+        <div className="right-side">
+          <div className="contenu-description">
+            <p className="bold">Application design and development</p>
+            <p>Work in teams to develop functional applications, using new technologies, and putting your bug-testing skills to the test. You'll learn how to:</p>
+            <p>Work on several projects</p>
+            <ul>
+              <li>Building applications from scratch</li>
+              <li>Working on legacy code bases</li>
+              <li>Using new languages( TypeScript, Dart..)</li>
+            </ul>
+            <p>Bolster your code</p>
+            <ul>
+              <li>Using new technologies ( Angular, Flutter, Redux...)</li>
+              <li>Testing</li>
+              <li>Continuous Development</li>
+            </ul>
+            <p>Practice Advanced Team Dynamics</p>
+            <ul>
+              <li>Agile Workflow</li>
+              <li>Iterative development</li>
+              <li>Advanced git techniques</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  ),
-  //week6
-  (
-    <div className="contenu">
-      <div className="left-side">
-        <img className="image-contenu" src="./week6.jpg" alt="Image" />
-        <div className="after-image"></div>
-      </div>
-      <div className="right-side">
-        <div className="contenu-description">
-          <p className="bold">Get your dream job with our career services.</p>
-          <p>Our career services will get you ready to land a job in tech through personal coaching and a network of 100+ hiring partners.</p>
+    ),
+    //week6
+    (
+      <div className="contenu">
+        <div className="left-side">
+          <img className="image-contenu" src="./week6.jpg" alt="Image" />
+          <div className="after-image"></div>
+        </div>
+        <div className="right-side">
+          <div className="contenu-description">
+            <p className="bold">Get your dream job with our career services.</p>
+            <p>Our career services will get you ready to land a job in tech through personal coaching and a network of 100+ hiring partners.</p>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
   ];
 
   return (
@@ -200,15 +200,15 @@ const Page = () => {
         <img className="background-image" src="./fullStack.png" alt="Background" />
         <div className="text-container hidden" >Full-stack JavaScript Professional</div>
 
-      {/* announcement */}
-      <div className="announcement">
-        <div className="text-ads">
-          <p>Profitez d'une bourse exceptionnelle de -40%</p>
-          <p>Profitez d'une bourse exceptionnelle de -40%</p>
-          <p>Profitez d'une bourse exceptionnelle de -40%</p>
-          <p>Profitez d'une bourse exceptionnelle de -40%</p>
+        {/* announcement */}
+        <div className="announcement">
+          <div className="text-ads">
+            <p>Profitez d'une bourse exceptionnelle de -40%</p>
+            <p>Profitez d'une bourse exceptionnelle de -40%</p>
+            <p>Profitez d'une bourse exceptionnelle de -40%</p>
+            <p>Profitez d'une bourse exceptionnelle de -40%</p>
+          </div>
         </div>
-      </div>
       </div>
       {/* cards */}
       <div className="cards">
@@ -314,26 +314,26 @@ const Page = () => {
           >
             WEEK 7
           </li>
-          <li 
-          className="week"
-          onClick={() => handleWeekClick(2)}
-          onMouseOver={() => handleWeekClick(2)}
+          <li
+            className="week"
+            onClick={() => handleWeekClick(2)}
+            onMouseOver={() => handleWeekClick(2)}
           >WEEK 8-12
           </li>
-          <li 
-          className="week"
-          onClick={() => handleWeekClick(3)}
-          onMouseOver={() => handleWeekClick(3)}
+          <li
+            className="week"
+            onClick={() => handleWeekClick(3)}
+            onMouseOver={() => handleWeekClick(3)}
           >WEEK 13</li>
-          <li 
-          className="week"
-          onClick={() => handleWeekClick(4)}
-          onMouseOver={() => handleWeekClick(4)}
+          <li
+            className="week"
+            onClick={() => handleWeekClick(4)}
+            onMouseOver={() => handleWeekClick(4)}
           >WEEK 14-19</li>
           <li
-           className="week"
-           onClick={() => handleWeekClick(5)}
-           onMouseOver={() => handleWeekClick(5)}
+            className="week"
+            onClick={() => handleWeekClick(5)}
+            onMouseOver={() => handleWeekClick(5)}
           >CAREER SERVICE</li>
         </ul>
 
@@ -360,13 +360,13 @@ const Page = () => {
             <img className="last-image" src="./image 7.svg" alt="Card 1" />
             <div className="last-description">
               Paiement comptant <span className="span2">6786 TND</span> au lieu de
-             <span className="removed" > 11310 TND</span>
+              <span className="removed" > 11310 TND</span>
             </div>
           </div>
           <div className="last-card2">
             <img className="last-image" src="./image 8.svg" alt="Card 2" />
             <div className="last-description">
-              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de <span className="removed"> 3770 TND x 3</span> 
+              Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de <span className="removed"> 3770 TND x 3</span>
             </div>
           </div>
         </div>

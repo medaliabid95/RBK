@@ -1,13 +1,6 @@
 "use client"
 import { useLottie, useLottieInteractivity } from "lottie-react";
-import diplome from "../../public/diplome.json"
 
-// const style = {
-//   height: 300,
- 
-//   borderStyle: "solid",
-//   borderRadius: 7,
-// };
 
 
 const Example = ({animation}) => {
