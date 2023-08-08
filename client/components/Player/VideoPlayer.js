@@ -18,38 +18,38 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
     
   };
 
-  useLayoutEffect(() => {
-    const handleScroll = () => {
-      const { top } = videoRef.current.getBoundingClientRect();
-      console.log(top)
-      console.log(window.innerHeight )
-      const isVisible = top < window.innerHeight
+  // useLayoutEffect(() => {
+  //   const handleScroll = () => {
+  //     const { top } = videoRef.current.getBoundingClientRect();
+  //     console.log(top)
+  //     console.log(window.innerHeight )
+  //     const isVisible = top < window.innerHeight
       
 
-      if (isVisible) {
-        controls.start({ x: 0, opacity: 1 ,transition: { duration: 0.1, ease: "easeInOut" } });
-      } else {
-        controls.start({ x: -300, opacity: 0.4 , transition: { duration: 0.1, ease: "easeOut" } });
-      }
+  //     if (isVisible) {
+  //       controls.start({ x: 0, opacity: 1 ,transition: { duration: 0.1, ease: "easeInOut" } });
+  //     } else {
+  //       controls.start({ x: -300, opacity: 0.4 , transition: { duration: 0.1, ease: "easeOut" } });
+  //     }
      
-    };
+  //   };
 
  
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
    
    
 
    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   return (
     <motion.div
-      className="video-container"
-      initial={{ x: -300, opacity: 0 }}
-      animate={controls}
-      transition={{ type: 'cool', stiffness: 100, damping: 15 }}
+      // className="video-container"
+      // initial={{ x: -300, opacity: 0 }}
+      // animate={controls}
+      // transition={{ type: 'cool', stiffness: 100, damping: 15 }}
     >
       <video onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
         <source src={videoSrc} type="video/mp4" />

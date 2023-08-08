@@ -8,6 +8,7 @@ import VideoPlayer from "@/components/Player/VideoPlayer";
 import Lottiee from "../../components/animations/Animation";
 import Header from "@/components/AwsHeader/header.jsx";   
 import AWS from '../../components/RbkTitle/RbkAws.jsx'    
+import Cards from "@/components/awsCards/Cards.jsx";
 
 
 
@@ -109,44 +110,7 @@ const Page = () => {
           compétences en Linux, Python, en réseau, en sécurité et en bases de
           données relationnelles.
         </p>
-        <div className="cards-container">
-          <div className="card-item">
-            <p>1</p>
-            <p>Cloud Foundation</p>
-          </div>
-          <div className="card-item">
-            <p>2</p>
-            <p>Linux Fundamentals</p>
-          </div>
-          <div className="card-item">
-            <p>3</p>
-            <p>Networking Fundamentals</p>
-          </div>
-          <div className="card-item">
-            <p>4</p>
-            <p>Security Fundamentals</p>
-          </div>
-          <div className="card-item">
-            <p>5</p>
-            <p>Python Programming</p>
-          </div>
-          <div className="card-item">
-            <p>6</p>
-            <p>Databases Fundamentals</p>
-          </div>
-          <div className="card-item">
-            <p>7</p>
-            <p>AWS Core Services</p>
-          </div>
-          <div className="card-item">
-            <p>8</p>
-            <p>Employability Skills</p>
-          </div>
-          <div className="card-item">
-            <p>9</p>
-            <p>Cloud Practitioner Certification Practice</p>
-          </div>
-        </div>
+<Cards/>
       </section>
       <section className="critères">
         <div className="criteres-title">
