@@ -26,6 +26,7 @@ const Emploi = () => {
                 <h3 className="block-desc">Notre Service carrières vous accompagne de manière<br /> personnalisée pour vous préparer à décrocher un emploi<br /> grâce à notre réseau de partenaires employeurs.</h3>
                 <div className="three-box-container">
                     <div className="box-stat" id="box-1">
+
                         <div><h1 className="statNumbers"><Number n={1000} /><span id="span-after-number">+</span></h1></div>
                         <p className="stat-desc">Diplômés de RBK<br /> depuis 2016</p>
                     </div>
