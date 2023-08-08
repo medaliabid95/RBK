@@ -26,90 +26,51 @@
 }
 
 .card {
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: none;
-  background: linear-gradient(-45deg,  #b34fe0, #ff007b, #0000ff);
+  background: linear-gradient(-45deg, #d20039, #b34fe0, #ff007b, #0000ff);
   background-size: 400% 400%;
   animation: change 15s ease infinite;
 }
 
-.card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.card h1 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 20px;
-}
-
-.card p {
-  font-size: 1.2rem;
-  color: #fff;
-  line-height: 1.6;
-}
-
-.card form {
-  margin-top: 20px;
-}
-
-.card form label {
+.form label {
   display: block;
-  font-size: 1.2rem;
-  color: #fff;
   margin-bottom: 5px;
-}
-
-.card form input,
-.card form select,
-.card form .checkbox {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.card form input[type='checkbox'] {
-  margin-right: 5px;
-  width: auto;
-}
-
-.card form .country-code-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 10px;
-  align-items: center;
-}
-
-.card form .country-code {
-  width: 100%;
-}
-
-.card form input[type='submit'] {
-  display: block;
-  margin-top: 20px;
-  width: 100%;
-  padding: 10px;
-  background-color: #f0044b;
-  color: #fff;
-  font-size: 1.2rem;
   font-weight: bold;
+}
+
+.form select,
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form button {
+  padding: 10px 20px;
+  background-color: #ff007b;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-.card form input[type='submit']:hover {
-  background-color: #d20039;
+.form button[type='button'] {
+  background-color: #007bff;
+  margin-right: 10px;
 }
 
-
+.postuler-img {
+  display: flex;
+  background: linear-gradient(-45deg, #d20039, #b34fe0, #ff007b, #0000ff);
+  background-size: 400% 400%;
+  animation: change 15s ease infinite;
+  place-content: center;
+}
 
 @keyframes change {
   0% {
@@ -124,16 +85,18 @@
 }
 
 
-
 @media (max-width: 726px) {
   .text-container {
     font-size: 6vw;
   }
 }
 
-
 @media (max-width: 410px) {
   .text-container {
-   display: none;
+    font-size: 10px;
+    position: inherit;
+  }
+  .card {
+    max-width: 100%;
   }
 }
