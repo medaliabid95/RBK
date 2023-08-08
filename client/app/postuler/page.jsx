@@ -49,7 +49,6 @@ const Page = () => {
           <input type="checkbox" id="accept" name="accept" checked={formData.accept} onChange={(e) => setFormData((prevData) => ({ ...prevData, accept: e.target.checked }))} required />
           <label htmlFor="accept">En soumettant ce formulaire, j'accepte la politique de confidentialité de RBK.</label>
           </div>
-
           <input type="submit" value="Poursuivre ma condidature" />
         </form>
       </div>

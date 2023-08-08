@@ -1,7 +1,6 @@
 'use client'
 import { useEffect } from 'react';
 
-
 const BotpressWebchat = () => {
   useEffect(() => {
     window.botpressWebChat.init({
