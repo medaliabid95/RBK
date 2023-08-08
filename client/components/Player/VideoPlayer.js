@@ -51,7 +51,7 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
       // animate={controls}
       // transition={{ type: 'cool', stiffness: 100, damping: 15 }}
     >
-      <video onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
+      <video className='landing-video' onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
         <source src={videoSrc} type="video/mp4" />
       </video>
     </motion.div>
