@@ -20,7 +20,7 @@ const Continuer = () => {
     return (
         <div className="main-container">
             <header className="main-header">
-                <img className="continuer-a-letranger-image" src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" />
+                <img className="continuer-a-letranger-image" src="/a-letranger.png" />
                 <h1 className="header-content hidden" >Continuer a l'étranger</h1>
             </header>
             <div className="intro">
