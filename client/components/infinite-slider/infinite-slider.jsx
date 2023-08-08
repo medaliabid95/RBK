@@ -79,10 +79,9 @@ const Slider = () => {
         const autoPlay = () => {
             if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
             // Autoplay the carousel after every 2500 ms
-            timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+            timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 1500);
         }
         autoPlay();
-
         carousel.addEventListener("mousedown", dragStart);
         carousel.addEventListener("mousemove", dragging);
         document.addEventListener("mouseup", dragStop);
