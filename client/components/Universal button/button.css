@@ -6,7 +6,6 @@ body {
 }
 
 .text-btn {
-    color: rgb(0, 0, 0);
     font-size: 0.9vw;
     font-family: Space Grotesk;
     font-weight: 400;
@@ -31,7 +30,6 @@ body {
     height: 2vw;
     padding: 10px;
     border-radius: 5px;
-    border: 1px rgb(0, 0, 0) solid;
     justify-content: center;
     align-items: center;
     gap: 10px;
