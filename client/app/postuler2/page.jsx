@@ -46,13 +46,16 @@ const Page = () => {
   };
   
   
+
   const bot = () => {
-    window.botpressWebChat.sendPayload({
-      type: 'text',
-      text: 'merci de choisir RBK'
-    });
-  };
-  
+    console.log('hi')
+      window.botpressWebChat.sendPayload({
+        type: 'text',
+        text: 'merci de choisir RBK'
+      });
+    }
+
+
  
   return (
     
@@ -97,9 +100,9 @@ const Page = () => {
           <Link href='/postuler'>
           <button type='button'>Retour</button>
          </Link>
-          <Link href='/'>
+       
            <button   type='submit' >Poursuivre ma candidature</button>
-        </Link>  
+     
         </div>
       </form>
     </div>
