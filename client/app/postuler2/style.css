@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
 
+.container{
+  background: linear-gradient(-45deg, #b34fe0, #ff007b, #f0024b);
+  background-size: 400% 400%;
+  animation: change 15s ease infinite;
+}
+
 .background-image {
   position: relative;
   width: 100%;
   height: auto;
+  
 }
 
 .text-container {
@@ -23,6 +30,9 @@
   gap: 20px;
   justify-items: center;
   padding: 20px;
+  background: linear-gradient(-45deg,#b34fe0, #ff007b, #f0024b);
+  background-size: 400% 400%;
+  animation: change 15s ease infinite;
 }
 
 .card {
@@ -30,15 +40,14 @@
   margin: 0 auto;
   padding: 20px;
   border: none;
-  background: linear-gradient(-45deg, #d20039, #b34fe0, #ff007b, #0000ff);
-  background-size: 400% 400%;
-  animation: change 15s ease infinite;
+ 
 }
 
 .form label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #fff;
 }
 
 .form select,
@@ -66,9 +75,6 @@
 
 .postuler-img {
   display: flex;
-  background: linear-gradient(-45deg, #d20039, #b34fe0, #ff007b, #0000ff);
-  background-size: 400% 400%;
-  animation: change 15s ease infinite;
   place-content: center;
 }
 
@@ -87,14 +93,13 @@
 
 @media (max-width: 726px) {
   .text-container {
-    font-size: 6vw;
+    display : none ;
   }
 }
 
 @media (max-width: 410px) {
   .text-container {
-    font-size: 10px;
-    position: inherit;
+    display: none;
   }
   .card {
     max-width: 100%;

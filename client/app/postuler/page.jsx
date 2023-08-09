@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-
-
+import Link from "next/link";
 import './style.css';
 
 const Page = () => {
@@ -17,18 +16,23 @@ const Page = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
+  };
+    
+  const isFormDataEmpty = () => {
+    return (
+      !formData.prenom ||
+      !formData.nom ||
+      !formData.email ||
+      !formData.phone
+    );
   };
 
   return (
     <div className='card-container'>
-
       <div className="container">
         <img className="background-image" src="./fullStack.png" alt="Background" />
         <div className="text-container hidden" >Postuler maintenant et profiter d'une bourse de 40%</div>
        </div> 
-
-
      <div className='card-image-postuler-grid-2'>
       <div className='card'>       
         <h1>Réservez votre place en suivant ces quelques étapes simples.</h1>
@@ -57,11 +61,17 @@ const Page = () => {
             <input type="checkbox" id="accept" name="accept" checked={formData.accept} onChange={(e) => setFormData((prevData) => ({ ...prevData, accept: e.target.checked }))} required />
             <label htmlFor="accept">En soumettant ce formulaire, j'accepte la politique de confidentialité de RBK.</label>
           </div>
-              <input type="submit" value="Poursuivre ma condidature" />
+          <Link
+               href={{
+                pathname: '/postuler2',
+                query: { ...formData },
+              }}
+              passHref
+            ><input type="submit" value="Poursuivre ma condidature"  disabled={isFormDataEmpty()}/>  </Link>
             </form>
           </div>
        <div>
-       <img className='postuler-img' src="./Postuler.png" alt="" />
+       <img className='postuler-img' src="./Postuler2.png" alt="" />
        </div>
        </div>
        

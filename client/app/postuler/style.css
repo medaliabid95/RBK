@@ -1,20 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card-container{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: linear-gradient(-45deg,  #b34fe0, #ff007b, #f0024b);
+  background-size: 400% 400%;
+  animation: change 15s ease infinite;
+}
 
 .background-image {
   position: relative;
   width: 100%;
-  height: auto;
+  height: auto;  
 }
 
 .text-container {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 10%;
   transform: translate(0, -50%);
   color: whitesmoke;
   font-size: 3vw;
   font-weight: bold;
   font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
 }
 
 .card-image-postuler-grid-2 {
@@ -23,6 +38,9 @@
   gap: 20px;
   justify-items: center;
   padding: 20px;
+  background: linear-gradient(-45deg,   #b34fe0, #ff007b, #f0024b);
+  background-size: 400% 400%;
+  animation: change 15s ease infinite;
 }
 
 .card {
@@ -30,9 +48,8 @@
   margin: 0 auto;
   padding: 20px;
   border: none;
-  background: linear-gradient(-45deg,  #b34fe0, #ff007b, #0000ff);
-  background-size: 400% 400%;
-  animation: change 15s ease infinite;
+ 
+  border-radius: 10px;
 }
 
 .card img {
@@ -66,14 +83,22 @@
 }
 
 .card form input,
-.card form select,
-.card form .checkbox {
+.card form select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
+
+
+.card form .checkbox{
+  width: 100%;
+  padding: 10px;
+  border: none; 
+
+}
+
 
 .card form input[type='checkbox'] {
   margin-right: 5px;
@@ -109,6 +134,18 @@
   background-color: #d20039;
 }
 
+#phone-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+label[for="phone-select"] {
+  width: 100%;
+}
+
 
 
 @keyframes change {
@@ -123,17 +160,18 @@
   }
 }
 
-
-
 @media (max-width: 726px) {
   .text-container {
-    font-size: 6vw;
+   display : none ; 
   }
 }
 
-
 @media (max-width: 410px) {
   .text-container {
-   display: none;
+    display: none;
+  }
+
+  #phone-select {
+    font-size: 0.9rem;
   }
 }

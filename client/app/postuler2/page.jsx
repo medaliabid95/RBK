@@ -1,8 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import './style.css';
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams);
+
   const [selectedFormat, setSelectedFormat] = useState('');
   const [selectedSession, setSelectedSession] = useState('');
   const [age, setAge] = useState('');
@@ -31,13 +36,27 @@ const Page = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(selectedFormat);
+    queryParams.formule = selectedFormat ;
+    queryParams.session = selectedSession ; 
+    queryParams.age = age ; 
+    queryParams.city = city ;
+    queryParams.compus =  selectedCampus ; 
+    console.log(queryParams);
+    bot()
   };
-
+  
+  
+  const bot = () => {
+    window.botpressWebChat.sendPayload({
+      type: 'text',
+      text: 'merci de choisir RBK'
+    });
+  };
+  
+ 
   return (
     
   <div className='postuler2'>
-
      <div className="container">
         <img className="background-image" src="./fullStack.png" alt="Background" />
         <div className="text-container hidden" >Postuler maintenant et profiter d'une bourse de 40%</div>
@@ -75,19 +94,20 @@ const Page = () => {
           </select>
         </div>
         <div className='card-footer'>
+          <Link href='/postuler'>
           <button type='button'>Retour</button>
-          <button type='submit'>Poursuivre ma candidature</button>
+         </Link>
+          <Link href='/'>
+           <button   type='submit' >Poursuivre ma candidature</button>
+        </Link>  
         </div>
       </form>
     </div>
 
     <div>
-       <img className='postuler-img' src="./Postuler.png" alt="" />
+       <img className='postuler-img' src="./Postuler2.png" alt="" />
        </div>
        </div>
-       
-
-
     </div>
   );
 };
