@@ -18,8 +18,8 @@
      justify-content: space-between;
      align-items: center;
      gap: 10px;
-
  }
+
 
  .header {
      width: 100%;
@@ -29,10 +29,13 @@
      justify-content: space-between;
      align-items: center;
      padding: 20px 10%;
-     border-bottom: 0.2px #CCCCCC solid;
      z-index: 999;
-     background-color: rgba(255, 255, 255, 0.904);
+     /* background-color: transparent; */
      box-shadow: 0 0 5px rgba(0, 0, 0, 0.629);
+ }
+
+ .activated {
+     background-color: whitesmoke;
  }
 
  .logo {
@@ -169,7 +172,6 @@
          background-color: rgba(255, 255, 255, 0.282);
          text-align: center;
          transition: 0.3s;
-
      }
 
      .buttons.active {
@@ -184,13 +186,27 @@
          top: 9.9vw;
          gap: 0;
          flex-direction: row;
-         background-color: rgb(255, 255, 255);
          box-shadow: 0px 5px 5px 0 #00000048;
-         width: 100%;
+         width: 50%;
          text-align: center;
          transition: 0.3s;
      }
-
+     /* #nos-programmes{
+        grid-row-start: 2;
+        grid-row-end: 3;
+     }
+     #nos-bootcamps{
+        grid-row-start: 3;
+        grid-row-end: 4;
+     }
+     #contact{
+        grid-row-start: 4;
+        grid-row-end: 5;
+     }
+     #autres{
+        grid-row-start: 6;
+        grid-row-end: 7;
+     } */
      .nav-links li>a {
          color: rgb(0, 0, 0);
          display: block;

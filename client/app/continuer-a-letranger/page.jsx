@@ -98,36 +98,36 @@ const Continuer = () => {
                 <p className="text-paragraph">Les étudiants certifiés par les bootcamps de RBK ont la garantie d’être acceptés dans l’une de nos universités et écoles partenaires en France ou à Dubai, si ils remplissent les conditions d’éligibilité. Faute de quoi, RBK s’engage à rembourser à l’étudiant les frais de son dossier mobilité-internationale.</p>
             </div>
             <div className="four-boxes">
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content" id="front-content-div">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content" id="front-content-div">
                             <p>Taux d’</p><span className="rose front-content-size">acceptation de l'altérnance</span>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <p>
                                 RBK et ses partenaires ne peuvent garantir que l’étudiant arrives à décrocher un emploi en tant qu’altérant, ce processus étant un processus de recrutement des entreprises qui sont totalement indépendantes. Par ailleurs, le service carrières proposera à l’étudiant des solutions pour améliorer son profil et son employabilité localement et à l’étranger (Formation en langues, stages, projets, etc. qu'il pourra réaliser par ses propres moyens si besoin), il pourra par la suite postuler à nouveau et reprendre le processus pour continuer ses études à l’étranger.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
                             <p>Taux d’</p><span className="rose front-content-size">acceptation du Visa</span>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <p>
                                 A titre indicatif et afin de donner une idée sur les taux d’acceptation moyen des trois dernières années, qui varie d’une année à une autre, les postulants à nos écoles partenaires on eu un taux d'acceptation du visa de 67% pour la France et de plus de 91% pour Dubai.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
                            <span className="rose front-content-size">Frais </span><p>&nbsp;de souscription</p>
                         </div>
-                        <div class="content hidden">
+                        <div className="content hidden">
                             <p>
                                 418 DT HT (19% TVA)
                                 Hors tout autre frais relatifs à votre dossier qui peuvent résulter du processus par la suite
@@ -135,12 +135,12 @@ const Continuer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
                             <p>Qui est &nbsp;</p><span className="rose front-content-size">éligible</span>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <p>
                             1. être diplômé d'un programme bootcamp de RBK<br />
                             2. Avoir un bachelor, License ou équivalent pour les programmes de niveau Master, et équivalent bac pour l'entrée au niveau bachelor. Admission possible en 3eme année de bachelor pour ceux qui ont un BTS ou un BTP.<br />
