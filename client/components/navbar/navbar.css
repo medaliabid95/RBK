@@ -88,12 +88,12 @@
 
  }
 
- li:hover ul#submenu {
+ /* li:hover ul#submenu {
      opacity: 1;
      transform: translateY(0);
      top: calc(100% + 0.75rem);
 
- }
+ } */
 
  #submenu li {
      float: none;

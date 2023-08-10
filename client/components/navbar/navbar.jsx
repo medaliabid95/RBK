@@ -14,7 +14,7 @@ const navbar = () => {
     }
     return (
         <header className='header'>
-            <a href="http://localhost:3000/"><img src="./RBK-Logo.svg" alt="Logo" className='logo' /></a>
+            <a href="#"><img src="../RBK-Logo.svg" alt="Logo" className='logo' /></a>
             <nav className='nav-links'>
                 <ul ref={navRef} className='nav-menu'>
                     <li><a href="#" className='nav-link'>Nos programmes</a><ul id="submenu">
