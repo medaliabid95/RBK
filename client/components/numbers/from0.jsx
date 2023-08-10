@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 import { UseSpring, animated, useSpring } from "react-spring"
 
