@@ -5,7 +5,7 @@ const footer = () => {
         <footer>
             <div className='container-footer'>
                 <div className='sec logo-footer-container '>
-                    <img src="./RBK-white.png" alt="Logo" className=' logo-footer' />
+                    <img src="../RBK-white.png" alt="Logo" className=' logo-footer' />
                 </div>
                 <div className='sec nosProgrammes ' >
                     <h3>Nos Programmes</h3>
