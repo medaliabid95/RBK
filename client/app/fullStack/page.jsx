@@ -212,7 +212,7 @@ const Page = () => {
       </div>
       {/* cards */}
       <div className="cards">
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">1</p>
           <p className="title">Front End</p>
           <p className="description">
@@ -224,7 +224,7 @@ const Page = () => {
             <img className="icon" src="./css.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">2</p>
           <p className="title">Back End</p>
           <p className="description">
@@ -237,7 +237,7 @@ const Page = () => {
             <img className="icon" src="./MySQL.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">3</p>
           <p className="title">Competence</p>
           <p className="description">
@@ -248,7 +248,7 @@ const Page = () => {
             <img className="icon" src="./git.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">4</p>
           <p className="title">Devenir Pro</p>
           <p className="description">

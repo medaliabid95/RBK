@@ -153,7 +153,7 @@ html {
 
 }
 
-.card {
+.card-1 {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -163,7 +163,7 @@ html {
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20) inset;
 }
 
-.card:hover {
+.card-1:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

@@ -82,8 +82,8 @@ const Page = () => {
         <img className="background-image" src="./fullStack.png" alt="Background" />
         <div className="text-container hidden" >Postuler maintenant et profiter d'une bourse de 40%</div>
        </div>
-   <div className='card-image-postuler-grid-2'>
-    <div className='card'>
+   <div className='card-image-postuler-grid'>
+    <div className='card-postuler2'>
       <form onSubmit={handleSubmit} className='form'>
         <div className='card-body'>
           <label>Sélectionnez le format souhaité</label>

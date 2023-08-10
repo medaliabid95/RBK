@@ -21,7 +21,7 @@ body {
   transform: translateX(0);
 }
 
-.card-container{
+.card-container-1{
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -37,7 +37,7 @@ body {
   height: auto;  
 }
 
-.text-container {
+.text-container-1 {
   position: absolute;
   top: 20%;
   left: 10%;
@@ -60,7 +60,7 @@ body {
   animation: change 15s ease infinite;
 }
 
-.card {
+.card-2 {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -69,38 +69,38 @@ body {
   border-radius: 10px;
 }
 
-.card img {
+.card-2 img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.card h1 {
+.card-2 h1 {
   font-size: 1.8rem;
   font-weight: bold;
   color: #fff;
   margin-top: 20px;
 }
 
-.card p {
+.card-2 p {
   font-size: 1.2rem;
   color: #fff;
   line-height: 1.6;
 }
 
-.card form {
+.card-2 form {
   margin-top: 20px;
 }
 
-.card form label {
+.card-2 form label {
   display: block;
   font-size: 1.2rem;
   color: #fff;
   margin-bottom: 5px;
 }
 
-.card form input,
-.card form select{
+.card-2 form input,
+.card-2 form select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -109,7 +109,7 @@ body {
 }
 
 
-.card form .checkbox{
+.card-2 form .checkbox{
   width: 100%;
   padding: 10px;
   border: none; 
@@ -117,23 +117,23 @@ body {
 }
 
 
-.card form input[type='checkbox'] {
+.card-2 form input[type='checkbox'] {
   margin-right: 5px;
   width: auto;
 }
 
-.card form .country-code-container {
+.card-2 form .country-code-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
   align-items: center;
 }
 
-.card form .country-code {
+.card-2 form .country-code {
   width: 100%;
 }
 
-.card form input[type='submit'] {
+.card-2 form input[type='submit'] {
   display: block;
   margin-top: 20px;
   width: 100%;
@@ -147,7 +147,7 @@ body {
   cursor: pointer;
 }
 
-.card form input[type='submit']:hover {
+.card-2 form input[type='submit']:hover {
   background-color: #d20039;
 }
 

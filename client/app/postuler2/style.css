@@ -41,7 +41,7 @@ nextjs-portal {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.card-image-postuler-grid-2 {
+.card-image-postuler-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
@@ -52,7 +52,7 @@ nextjs-portal {
   animation: change 15s ease infinite;
 }
 
-.card {
+.card-postuler2 {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -112,7 +112,7 @@ nextjs-portal {
   .text-container {
     display : none ;
   }
-  .card {
+  .card-postuler2 {
     width: 100%;
   }
    .form option{
@@ -126,7 +126,7 @@ nextjs-portal {
   .text-container {
     display: none;
   }
-  .card {
+  .card-postuler2 {
     max-width: 100%;
   }
   .form option{
