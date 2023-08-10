@@ -179,14 +179,14 @@ label[for="phone-select"] {
 
 @media (max-width: 1000px) {
   .text-container {
-   display : none ; 
+    position: absolute ; 
   }
 
 }
 
 @media (max-width: 410px) {
   .text-container {
-    display: none;
+    position: absolute ; 
   }
 
 }

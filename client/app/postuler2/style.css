@@ -18,6 +18,7 @@ nextjs-portal {
 
 
 .container{
+  position: relative;
   background: linear-gradient(-45deg, #b34fe0, #ff007b, #f0024b);
   background-size: 400% 400%;
   animation: change 15s ease infinite;
@@ -110,7 +111,8 @@ nextjs-portal {
 
 @media (max-width: 726px) {
   .text-container {
-    display : none ;
+    display : absolute ;
+    font-size: 1.2rem;
   }
   .card-postuler2 {
     width: 100%;
@@ -124,7 +126,8 @@ nextjs-portal {
 
 @media (max-width: 410px) {
   .text-container {
-    display: none;
+     position : absolute ;
+    font-size: 0.8rem;
   }
   .card-postuler2 {
     max-width: 100%;
