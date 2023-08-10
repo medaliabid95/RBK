@@ -14,7 +14,7 @@ const BotpressWebchat = () => {
       "phoneNumber": "+216 71 85 85 85",
       "emailAddress": "hello@rbk.tn",
       "website": "https://www.rbktunisia.com/",
-      "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/08108bc3-7c4d-41ff-9624-2b926a2a8fea/v63723/style.css",
+      "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/08108bc3-7c4d-41ff-9624-2b926a2a8fea/v40749/style.css",
       "useSessionStorage": true,
       "showBotInfoPage": true,
       "enableConversationDeletion": true
