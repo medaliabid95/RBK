@@ -11,7 +11,7 @@ const page = () => {
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >
-                <img src="landing-pic.png" alt="landing" />
+                <img src="/images/man-and-woman-collaborating-in-tech-industry.avif" alt="landing" />
                 <div className='btn-img-container'>
                     <a href='#'><div className='border-btn-4'>
                         <div className='text-btn-4'>Postuler</div>
