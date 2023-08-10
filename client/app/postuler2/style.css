@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
 
+
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+
 .container{
   background: linear-gradient(-45deg, #b34fe0, #ff007b, #f0024b);
   background-size: 400% 400%;
@@ -95,6 +110,14 @@
   .text-container {
     display : none ;
   }
+  .card {
+    width: 100%;
+  }
+   .form option{
+    width : 30% ;
+    font-size: 0.9rem;
+   }
+  
 }
 
 @media (max-width: 410px) {
@@ -104,4 +127,9 @@
   .card {
     max-width: 100%;
   }
+  .form option{
+    width : 30% ;
+    font-size: 0.9rem;
+   }
+  
 }

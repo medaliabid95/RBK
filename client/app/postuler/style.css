@@ -4,6 +4,19 @@ body {
   padding: 0;
 }
 
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 .card-container{
   position: relative;
   width: 100%;
@@ -160,10 +173,11 @@ label[for="phone-select"] {
   }
 }
 
-@media (max-width: 726px) {
+@media (max-width: 1000px) {
   .text-container {
    display : none ; 
   }
+
 }
 
 @media (max-width: 410px) {
@@ -171,7 +185,5 @@ label[for="phone-select"] {
     display: none;
   }
 
-  #phone-select {
-    font-size: 0.9rem;
-  }
 }
+

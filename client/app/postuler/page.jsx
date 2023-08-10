@@ -1,11 +1,32 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from "next/link";
 import './style.css';
 
 const Page = () => {
+  useEffect(() => {
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show")
+            }
+            else {
+                entry.target.classList.remove("show")
+            }
+        })
+    })
+    const hiddenElements = document.querySelectorAll(".hidden")
+    hiddenElements.forEach((el) => observer.observe(el))
+})
+  
+
+
+
+
+
   const [formData, setFormData] = useState({
     prenom: '',
     nom: '',
@@ -38,16 +59,16 @@ const Page = () => {
         <h1>Réservez votre place en suivant ces quelques étapes simples.</h1>
         <p>Lorsque vous déposez votre candidature, notre équipe Admission vous recontacte rapidement pour planifier un entretien de 30 minutes afin de discuter avec vous de votre projet professionnel.</p>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="prenom">Prénom:</label>
+          <label htmlFor="prenom ">Prénom: *</label>
           <input type="text" id="prenom" name="prenom" value={formData.prenom} onChange={(e) => setFormData((prevData) => ({ ...prevData, prenom: e.target.value }))} required />
 
-          <label htmlFor="nom">Nom de famille:</label>
+          <label htmlFor="nom">Nom de famille: *</label>
           <input type="text" id="nom" name="nom" value={formData.nom} onChange={(e) => setFormData((prevData) => ({ ...prevData, nom: e.target.value }))} required />
 
-          <label htmlFor="email">Votre e-mail:</label>
+          <label htmlFor="email">Votre e-mail: *</label>
           <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData((prevData) => ({ ...prevData, email: e.target.value }))} required />
 
-          <label htmlFor="phone">Téléphone:</label>
+          <label htmlFor="phone">Téléphone: *</label>
           <PhoneInput
             id="phone"
             name="phone"

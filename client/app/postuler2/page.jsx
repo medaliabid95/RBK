@@ -1,10 +1,30 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import './style.css';
 
 const Page = () => {
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show")
+            }
+            else {
+                entry.target.classList.remove("show")
+            }
+        })
+    })
+    const hiddenElements = document.querySelectorAll(".hidden")
+    hiddenElements.forEach((el) => observer.observe(el))
+})
+  
+
+
+
+
   const searchParams = useSearchParams();
   const queryParams = Object.fromEntries(searchParams);
 
@@ -49,10 +69,8 @@ const Page = () => {
 
   const bot = () => {
     console.log('hi')
-      window.botpressWebChat.sendPayload({
-        type: 'text',
-        text: 'merci de choisir RBK'
-      });
+      window.botpressWebChat.sendEvent({type: 'show' });
+      window.botpressWebChat.sendEvent({type: 'trigger' });
     }
 
 
@@ -72,7 +90,7 @@ const Page = () => {
           <select value={selectedFormat} onChange={handleFormatChange}>
             <option value=''>Choisissez un format</option>
             <option value='tempsPlein'>Temps plein (19 semaines)</option>
-            <option value='tempsPartiel'>Temps partiel (40 semaines, distanciel)</option>
+            <option value='tempsPartiel'>Temps partiel (40 semaines)</option>
           </select>
 
           <label>Sélectionnez la session à laquelle vous souhaitez participer:</label>
@@ -97,9 +115,9 @@ const Page = () => {
           </select>
         </div>
         <div className='card-footer'>
-          <Link href='/postuler'>
-          <button type='button'>Retour</button>
-         </Link>
+          
+        <button type='button'  onClick={()=> {history.back()}}>Retour</button>
+   
        
            <button   type='submit' >Poursuivre ma candidature</button>
      

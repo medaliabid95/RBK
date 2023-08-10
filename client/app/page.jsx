@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+import React , {useState}from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import VideoPlayer from '@/components/Player/VideoPlayer'
 import TitleText from '@/components/landing-page-components/title-text/title-text'
 import Form from '@/components/landing-page-components/form-container/form'
 const page = () => {
+
+   
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >
