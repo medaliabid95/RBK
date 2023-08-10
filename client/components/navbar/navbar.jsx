@@ -36,7 +36,7 @@ const navbar = () => {
                             <li><a href="#">Projets récemment publiés</a></li>
                             <li><a href="/emploi-apres-diplome">Emploi après diplome</a></li>
                             <li><a href="#">Events</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="/Blogs">Blog</a></li>
 
                         </ul> </li>
                 </ul>

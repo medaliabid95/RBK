@@ -3,8 +3,12 @@ import React,{useEffect} from 'react'
 import "./BlogCard.css"
 import { RiTimer2Fill } from "react-icons/ri";
 import { AiTwotoneHeart } from "react-icons/ai";
+import { useRouter } from 'next/navigation'
+ 
+
 
 const BlogCard = ({src}) => {
+  const router=useRouter()
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -21,7 +25,9 @@ const BlogCard = ({src}) => {
         hiddenElements.forEach((el) => observer.observe(el))
     })
   return (
-<div className="blog-card-cotainer hidden">
+<div  onClick={()=>{
+  router.push('/Blogs/1', { scroll: true })
+}}className="blog-card-cotainer hidden">
         <img className="blog-image" src={src} alt="" />
         <div className="blog">
           <p className="blog-date">
