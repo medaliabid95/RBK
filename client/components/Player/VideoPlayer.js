@@ -1,60 +1,28 @@
 "use client"
 import { useRef, useLayoutEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-
-const VideoPlayer = ({ videoSrc, thumbnailSrc }) => {
+import { FaPlay } from 'react-icons/fa';
+import '../landing-page-components/carouselle-section/carouselle.css'
+const VideoPlayer = ({ videoSrc, thumbnailSrc,setPlay,play }) => {
   const videoRef = useRef(null);
   const controls = useAnimation();
   
   const togglePlay = () => {
     const video = videoRef.current;
-
     if (video.paused) {
       video.play();
+      setPlay(0)
     } else {
       video.pause();
+      setPlay(1)
     }
-
-    
   };
-
-  // useLayoutEffect(() => {
-  //   const handleScroll = () => {
-  //     const { top } = videoRef.current.getBoundingClientRect();
-  //     console.log(top)
-  //     console.log(window.innerHeight )
-  //     const isVisible = top < window.innerHeight
-      
-
-  //     if (isVisible) {
-  //       controls.start({ x: 0, opacity: 1 ,transition: { duration: 0.1, ease: "easeInOut" } });
-  //     } else {
-  //       controls.start({ x: -300, opacity: 0.4 , transition: { duration: 0.1, ease: "easeOut" } });
-  //     }
-     
-  //   };
-
- 
-  //   window.addEventListener('scroll', handleScroll);
-
-   
-   
-
-   
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
   return (
-    <motion.div
-      // className="video-container"
-      // initial={{ x: -300, opacity: 0 }}
-      // animate={controls}
-      // transition={{ type: 'cool', stiffness: 100, damping: 15 }}
-    >
+    <>  {play === 1 ? (<FaPlay className='playbutton' onClick={() => { togglePlay(); setPlay(0) }} />) : ""}
       <video className='landing-video' onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
         <source src={videoSrc} type="video/mp4" />
       </video>
-    </motion.div>
+      </>
   );
 };
 
