@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
  * {
      margin: 0;
@@ -18,10 +18,10 @@
      justify-content: space-between;
      align-items: center;
      gap: 10px;
+
  }
 
-
- .header {
+ .header-nav {
      width: 100%;
      position: fixed;
      top: 0;
@@ -29,13 +29,10 @@
      justify-content: space-between;
      align-items: center;
      padding: 20px 10%;
+     border-bottom: 0.2px #CCCCCC solid;
      z-index: 999;
-     /* background-color: transparent; */
+     background-color: rgba(255, 255, 255, 0.904);
      box-shadow: 0 0 5px rgba(0, 0, 0, 0.629);
- }
-
- .activated {
-     background-color: whitesmoke;
  }
 
  .logo {
@@ -88,11 +85,11 @@
      z-index: 1;
      transform: translateY(-10px);
      transition: opacity .5s ease-in-out 0s, transform .5s ease-in-out 0s;
-
  }
 
- li:hover ul#submenu {
+ li:hover ul#submenu {    
      opacity: 1;
+     display: initial;
      transform: translateY(0);
      top: calc(100% + 0.75rem);
 
@@ -172,6 +169,7 @@
          background-color: rgba(255, 255, 255, 0.282);
          text-align: center;
          transition: 0.3s;
+
      }
 
      .buttons.active {
@@ -186,27 +184,13 @@
          top: 9.9vw;
          gap: 0;
          flex-direction: row;
+         background-color: rgb(255, 255, 255);
          box-shadow: 0px 5px 5px 0 #00000048;
-         width: 50%;
+         width: 100%;
          text-align: center;
          transition: 0.3s;
      }
-     /* #nos-programmes{
-        grid-row-start: 2;
-        grid-row-end: 3;
-     }
-     #nos-bootcamps{
-        grid-row-start: 3;
-        grid-row-end: 4;
-     }
-     #contact{
-        grid-row-start: 4;
-        grid-row-end: 5;
-     }
-     #autres{
-        grid-row-start: 6;
-        grid-row-end: 7;
-     } */
+
      .nav-links li>a {
          color: rgb(0, 0, 0);
          display: block;
