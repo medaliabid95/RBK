@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           {/* <NabBar2 /> */}
         {/* <BotpressWebchat/> */}
         {children}
-         <Footer/>
+         {/* <Footer/> */}
       </body>
     </html>
   )
