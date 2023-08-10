@@ -1,17 +1,17 @@
-"use client"
-import React, { useRef } from 'react'
-import "./navbar.css"
-import Button from '../Universal button/button'
-const navbar = () => {
-    const navRef = useRef()
-    const btnRef = useRef()
-    const btn2Ref = useRef()
-    const showNavbar = () => {
-        navRef.current.classList.toggle("active")
-        btnRef.current.classList.toggle("active")
-        btn2Ref.current.classList.toggle("active")
+    "use client"
+    import React, { useRef } from 'react'
+    import "./navbar.css"
+    import Button from '../Universal button/button'
+    const navbar = () => {
+        const navRef = useRef()
+        const btnRef = useRef()
+        const btn2Ref = useRef()
+        const showNavbar = () => {
+            navRef.current.classList.toggle("active")
+            btnRef.current.classList.toggle("active")
+            btn2Ref.current.classList.toggle("active")
 
-    }
+
     return (
         <header className='header-nav'>
             <a href="http://localhost:3000/"><img src="../RBK-Logo.svg" alt="Logo" className='logo' /></a>
@@ -38,27 +38,28 @@ const navbar = () => {
                             <li><a href="#">Events</a></li>
                             <li><a href="/Blogs">Blog</a></li>
 
-                        </ul> </li>
-                </ul>
-            </nav>
-            <div ref={btn2Ref} className='buttons'>
+
+                            </ul> </li>
+                    </ul>
+                </nav>
+                <div ref={btn2Ref} className='buttons'>
 
 
 
-                <a href="/postuler" className='btn'><Button label={"Inscription"} /></a>
+                    <a href="/postuler" className='btn'><Button label={"Inscription"} /></a>
 
-                <a href="#" className='btn'><Button label={"Login"} /></a>
-            </div>
-            <div className='hamburger' ref={btnRef} onClick={(e) => {
-                showNavbar();
-            }} >
-                <span className='bar'></span>
-                <span className='bar'></span>
-                <span className='bar'></span>
-            </div>
-        </header>
+                    <a href="#" className='btn'><Button label={"Login"} /></a>
+                </div>
+                <div className='hamburger' ref={btnRef} onClick={(e) => {
+                    showNavbar();
+                }} >
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                </div>
+            </header>
 
-    )
-}
+        )
+    }
 
-export default navbar
+    export default navbar

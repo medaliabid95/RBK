@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap%27');
+
 nextjs-portal {
     display: none;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +27,7 @@ body {
 }
 
 
-.main-header{
+.main-header {
     position: relative;
     width: 100%;
     background-color: black;
@@ -64,6 +66,8 @@ body {
     filter: blur(0);
     transform: translateX(0);
 }
+
+/* pc */
 @media (min-width: 992px) {
     .emploi-apres-diplome-image {
         width: 100%;
@@ -72,10 +76,29 @@ body {
     }
 }
 
-@media (max-widh : 992px){
+/* phone */
+@media (max-widh : 992px) {
     .emploi-apres-diplome-image {
         width: 100%;
         height: auto;
         background-size: cover;
     }
+}
+
+/* .events-intro{
+    color: rgba(0, 0, 0, 0.419);
+    width: 100%;
+    align-items: center;
+    font-family: Space Grotesk;
+} */
+
+.events-intro h1 {
+    color: rgba(0, 0, 0, 0.627);
+    text-align: center;
+    font-family: Space Grotesk;
+    padding-top: 2%;
+    font-size: 1vw;
+    margin: 0 auto;
+    width: 70%;
+    padding-bottom: 5%;
 }
