@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect } from "react";
+import { MainHeader } from "@/components/main-header/Header.jsx";
 import "./continue.css"
 const Continuer = () => {
     useEffect(() => {
@@ -19,16 +20,13 @@ const Continuer = () => {
     })
     return (
         <div className="main-container">
-            <header className="main-header">
-                <img className="continuer-a-letranger-image" src="/a-letranger.png" />
-                <h1 className="header-content hidden" >Continuer a l'étranger</h1>
-            </header>
+            <MainHeader img={"/a-letranger.png"} text={"Continuer a l'étranger"}/>
             <div className="intro">
-                <div className="intro-text">
-                    <h1 className="intro-title">Alternance et <span className="rose">Mobilité internationale</span></h1>
+            <h1 className="intro-title">Alternance et <span className="rose">Mobilité internationale</span></h1>
+                
                     <p className="intro-paragraph">RBK offre un soutien personnalisé à chaque diplômé souhaitant poursuivre ses études à l'étranger dans l'un de nos établissements partenaires grâce à notre département de mobilité internationale.</p>
                     <button>S'inscrie</button>
-                </div>
+                
                 <img className="globe" src="globe.png" alt="" />
             </div>
             <div className="text" data-aos="fade-up"
@@ -57,7 +55,6 @@ const Continuer = () => {
             <div className="foreign-programmes">
                 <div className="vertical-line hidden"></div>
                 <h1 className="foreign-programmes-title" id="foreign-programmes-title-one">Un réseau <span className="rose">d'écoles partenaires</span> à l'internationale</h1>
-                <h1 className="foreign-programmes-title" id="foreign-programmes-title-two">Un large choix de <span className="rose">programmes</span></h1>
                 <div className="arrows">
                     <div className="arrow-one hidden"><div className="black"></div><h1>Open IT à Montpellier</h1><img src="Arrow.png" alt="" /></div>
                     <div className="arrow-one hidden"><div className="black"></div><h1>ESTIAM à Lyon</h1><img src="Arrow.png" alt="" /></div>
@@ -65,6 +62,7 @@ const Continuer = () => {
                     <div className="arrow-one hidden"><div className="black"></div><h1>Akalis à Paris</h1><img src="Arrow.png" alt="" /></div>
                     <div className="arrow-one hidden"><div className="black"></div><h1>Collège de Paris à Dubaï</h1><img src="Arrow.png" alt="" /></div>
                 </div>
+                <h1 className="foreign-programmes-title" id="foreign-programmes-title-two">Un large choix de <span className="rose">programmes</span></h1>
                 <div className="programme">
                     <div className="programme-box left">
                         <h1 className="programme-title one">Programmes <span className="rose">Bachelor</span></h1>
@@ -100,39 +98,36 @@ const Continuer = () => {
                 <p className="text-paragraph">Les étudiants certifiés par les bootcamps de RBK ont la garantie d’être acceptés dans l’une de nos universités et écoles partenaires en France ou à Dubai, si ils remplissent les conditions d’éligibilité. Faute de quoi, RBK s’engage à rembourser à l’étudiant les frais de son dossier mobilité-internationale.</p>
             </div>
             <div className="four-boxes">
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content" id="front-content-div">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content" id="front-content-div">
                             <p>Taux d’</p><span className="rose front-content-size">acceptation de l'altérnance</span>
                         </div>
-                        <div class="content">
-                            {/* <p class="heading">Card Hover</p> */}
+                        <div className="content">
                             <p>
                                 RBK et ses partenaires ne peuvent garantir que l’étudiant arrives à décrocher un emploi en tant qu’altérant, ce processus étant un processus de recrutement des entreprises qui sont totalement indépendantes. Par ailleurs, le service carrières proposera à l’étudiant des solutions pour améliorer son profil et son employabilité localement et à l’étranger (Formation en langues, stages, projets, etc. qu'il pourra réaliser par ses propres moyens si besoin), il pourra par la suite postuler à nouveau et reprendre le processus pour continuer ses études à l’étranger.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
                             <p>Taux d’</p><span className="rose front-content-size">acceptation du Visa</span>
                         </div>
-                        <div class="content">
-                            {/* <p class="heading">Card Hover</p> */}
+                        <div className="content">
                             <p>
                                 A titre indicatif et afin de donner une idée sur les taux d’acceptation moyen des trois dernières années, qui varie d’une année à une autre, les postulants à nos écoles partenaires on eu un taux d'acceptation du visa de 67% pour la France et de plus de 91% pour Dubai.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
                            <span className="rose front-content-size">Frais </span><p>&nbsp;de souscription</p>
                         </div>
-                        <div class="content hidden">
-                            {/* <p class="heading">Card Hover</p> */}
+                        <div className="content hidden">
                             <p>
                                 418 DT HT (19% TVA)
                                 Hors tout autre frais relatifs à votre dossier qui peuvent résulter du processus par la suite
@@ -140,13 +135,12 @@ const Continuer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="card-container hidden">
-                    <div class="card">
-                        <div class="front-content">
-                            <p>Qui est </p><span className="rose front-content-size">éligible</span>
+                <div className="card-container hidden">
+                    <div className="card">
+                        <div className="front-content">
+                            <p>Qui est &nbsp;</p><span className="rose front-content-size">éligible</span>
                         </div>
-                        <div class="content">
-                            {/* <p class="heading">Card Hover</p> */}
+                        <div className="content">
                             <p>
                             1. être diplômé d'un programme bootcamp de RBK<br />
                             2. Avoir un bachelor, License ou équivalent pour les programmes de niveau Master, et équivalent bac pour l'entrée au niveau bachelor. Admission possible en 3eme année de bachelor pour ceux qui ont un BTS ou un BTP.<br />

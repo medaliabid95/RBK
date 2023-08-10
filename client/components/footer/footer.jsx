@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import "./footer.css"
 const footer = () => {
@@ -16,7 +15,7 @@ const footer = () => {
                         </li>
                         <li className='footer-link aws'><a href="#">Cloud computing AWS re/start</a></li>
                     </ul>
-                    <hr id='hr-line' />
+                   
                     <div className='sec nosBootcamps'>
                         <h3>Nos BootCamps</h3>
                         <ul className='footer-links'>

@@ -2,9 +2,12 @@
 import React , {useState}from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
-import VideoPlayer from '@/components/Player/VideoPlayer'
+import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'
 import TitleText from '@/components/landing-page-components/title-text/title-text'
 import Form from '@/components/landing-page-components/form-container/form'
+import Companies from '@/components/landing-page-components/companies-section/Companies'
+import AutoSlider from '@/components/Automatic-slider/AutoSlider'
+import Certification from '@/components/landing-page-components/Certification/Certification'
 const page = () => {
 
    
@@ -43,9 +46,16 @@ const page = () => {
                 <BlackContainerNumbers number={1000} idstat={"stat3"} textStat={"De cours en seulement 5 mois"} spanid={"time-spent"} indc={"h"} />
                 <BlackContainerNumbers number={1251} idstat={"stat4"} textStat={"Comme 1er salaire moyen (2022)"} spanid={"money-spent"} indc={"TND"} />
             </section>
-            {/* <section className='video-and-about-container'>
-                <VideoPlayer  videoSrc={"/videos/rbkVid.mp4"} thumbnailSrc={"/safa-Thumbnail.png"} />
-                </section> */}
+            <section className='video-and-about-container'>
+                <Carouselle />
+            </section>
+            <section className='companies-container'>
+                <Companies />
+            </section>
+            <AutoSlider />
+            <section className='certifications-container'>
+                <Certification />
+            </section>
         </div >
     )
 }
