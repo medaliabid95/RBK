@@ -1313,14 +1313,34 @@ body {
     /* don't change this*/
     grid-column-gap: 80px;
     padding: 70px 30px;
-}
-
-.landing-video-container {
-    grid-column: 12
+    overflow: hidden;
 }
 
 .landing-video {
-    width: 437px;
+    width: 30vw;
     border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.66);
+}
+
+.companies-container {
+    display: grid;
+    /* don't change this*/
+    grid-template-columns: repeat(10, 1fr);
+    /* don't change this*/
+    grid-auto-rows: minmax(100px, auto);
+    /* don't change this*/
+    grid-column-gap: 80px;
+    padding: 0px 30px;
+    overflow: hidden;
+}
+
+.certifications-container {
+    display: grid;
+    /* don't change this*/
+    grid-template-columns: repeat(12, 1fr);
+    /* don't change this*/
+    grid-auto-rows: minmax(100px, auto);
+    /* don't change this*/
+    grid-column-gap: 80px;
+    padding: 70px 30px;
+    overflow: hidden;
 }
