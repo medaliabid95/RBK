@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React , {useState}from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'
@@ -8,6 +9,8 @@ import Companies from '@/components/landing-page-components/companies-section/Co
 import AutoSlider from '@/components/Automatic-slider/AutoSlider'
 import Certification from '@/components/landing-page-components/Certification/Certification'
 const page = () => {
+
+   
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >

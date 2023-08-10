@@ -1,30 +1,39 @@
 'use client'
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 
 import Link from "next/link";
 import "./style.css";
 
 const Page = () => {
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(0);
+  
+  useEffect(() => {
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show")
+            }
+            else {
+                entry.target.classList.remove("show")
+            }
+        })
+    })
+    const hiddenElements = document.querySelectorAll(".hidden")
+    hiddenElements.forEach((el) => observer.observe(el))
+})
+  
+  
+  
+  
+  
+  
+  
   const handleWeekClick = (index) => {
     setSelectedWeekIndex(index);
   };
 
-  useEffect(() => {
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show")
-        }
-        else {
-          entry.target.classList.remove("show")
-        }
-      })
-    })
-    const hiddenElements = document.querySelectorAll(".hidden")
-    hiddenElements.forEach((el) => observer.observe(el))
-  })
+   
 
   const weeksData = [
     // week1
@@ -189,7 +198,7 @@ const Page = () => {
       {/* background */}
       <div className="container">
         <img className="background-image" src="./fullStack.png" alt="Background" />
-        <div className="text-container hidden">Full-stack JavaScript Professional</div>
+        <div className="text-container hidden" >Full-stack JavaScript Professional</div>
 
         {/* announcement */}
         <div className="announcement">
@@ -203,7 +212,7 @@ const Page = () => {
       </div>
       {/* cards */}
       <div className="cards">
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">1</p>
           <p className="title">Front End</p>
           <p className="description">
@@ -215,7 +224,7 @@ const Page = () => {
             <img className="icon" src="./css.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">2</p>
           <p className="title">Back End</p>
           <p className="description">
@@ -228,7 +237,7 @@ const Page = () => {
             <img className="icon" src="./MySQL.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">3</p>
           <p className="title">Competence</p>
           <p className="description">
@@ -239,7 +248,7 @@ const Page = () => {
             <img className="icon" src="./git.svg" alt="" />
           </div>
         </div>
-        <div className="card">
+        <div className="card-1">
           <p className="numOfCard">4</p>
           <p className="title">Devenir Pro</p>
           <p className="description">
@@ -252,7 +261,7 @@ const Page = () => {
       </div>
 
       {/* pré requis */}
-      <div className="pre-requis">
+      <div className="pre-requis hidden">
         <div className="parent-card">
           <div className="card-pre-requis">
             <h1 className="h1">Pré-requis</h1>
