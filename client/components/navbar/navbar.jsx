@@ -31,8 +31,7 @@ const navbar = () => {
             </div>
             {color ? (hamburger ? (<div className='hamburger-container'><FontAwesomeIcon icon={faX} style={{ color: "black", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(false), setActive("") }} /></div>) : (<div className='hamburger-container'><FaBars style={{ color: "black", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(true); setActive("active") }} /></div>)) : (hamburger ? (<div className='hamburger-container'><FontAwesomeIcon icon={faX} style={{ color: "white", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(false); setActive("") }} /></div>) : (<div className='hamburger-container'><FaBars style={{ color: "white", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(true), setActive("active") }} /></div>))}
         </header >
+        )
+    }
 
-    )
-}
-
-export default navbar
+    export default navbar
