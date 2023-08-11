@@ -2,6 +2,9 @@
 import React, { useState,useEffect } from 'react'
 import Link from 'next/link'
 import "./form.css"
+
+
+
 const form = () => {
    
 
@@ -12,6 +15,14 @@ const form = () => {
         accept: false,
       });
 
+
+      const isFormDataEmpty = () => {
+        return (
+          !formData.prenom ||
+          !formData.nom ||
+          !formData.email 
+        );
+      };
 
     useEffect(() => {
 
@@ -43,16 +54,25 @@ const form = () => {
                 <input type="checkbox" id='tac-checkbox' /> <span id='tac' value={formData.accept} onChange={(e) => setFormData((prevData) => ({ ...prevData, accept: e.target.checked }))}>En soumettant ce formulaire, j'accepte la politique de confidentialité de RBK.</span>
             </div>
             <div className='btn-form-container'>
-            <Link
-                    href={{
-                    pathname: '/postuler2',
-                    query: { ...formData },
-                    }}
-                    passHref
-           >   
-                    <div className='border-btn-3'>
-                    <div className='text-btn-3'>Poursuivre</div>
-                </div></Link></div>
+                {isFormDataEmpty() ? (
+                    <div className='border-btn-3 disabled-btn'>
+                        <div className='text-btn-3'>Poursuivre</div>
+                    </div>
+                ) : (
+                    <Link
+                        href={{
+                            pathname: '/postuler2',
+                            query: { ...formData },
+                        }}
+                        passHref
+                       >
+                            <div className='border-btn-3'>
+                                <div className='text-btn-3'>Poursuivre</div>
+                            </div>
+                   
+                    </Link>
+                )}
+            </div>
         </form>
     )
 }

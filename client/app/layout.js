@@ -15,19 +15,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-   <html lang="en">
+    <html lang="en">
       <head>
-        <script src="https://cdn.botpress.cloud/webchat/v0/inject.js" ></script> 
         <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossorigin="anonymous"></script>
-      </head> 
-      <body >
-          <Navbar/>
-        
-        {/* <BotpressWebchat/> */}
+      </head>
+      <body>
+        <Navbar />
+        <BotpressWebchat />
+
         {children}
-         <Footer/>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
-  
+
+
+
+
+
+

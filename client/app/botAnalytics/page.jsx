@@ -1,6 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
+
+
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
 import axios from 'axios';
 
 const AnalyticsPage = () => {
@@ -25,38 +27,22 @@ const AnalyticsPage = () => {
         const usersData = usersResponse.data;
         const conversationsData = conversationsResponse.data;
         const messagesData = messagesResponse.data;
-          
-        const processedData = usersData.users.map(user => {
-          const matchingConversation = conversationsData.conversations.find(conversation => {
-            return conversation.tags && conversation.tags['webchat:id'] === user.id;
-          });
 
-          const matchingMessage = messagesData.messages.find(message => {
-            return message.conversationId === matchingConversation?.id;
-          });
-
-          return {
-            name: new Date(user.createdAt).toLocaleDateString(),
-            users: 1,
-            conversations: matchingConversation ? matchingConversation.conversationCount : 0,
-            messages: matchingMessage ? matchingMessage.messageCount : 0
-          };
-        });
-
-        // Aggregate statistics for total users, conversations, and messages
-        const totalUsers = processedData.length;
-        const totalConversations = processedData.reduce((sum, entry) => sum + entry.conversations, 0);
-        const totalMessages = processedData.reduce((sum, entry) => sum + entry.messages, 0);
-      console.log(totalConversations);
-
-        // Add aggregated data to the chart data
+      
+        const totalUsers = usersData.users.length;
+        const totalConversations = conversationsData.conversations.length;
+        const totalMessages = messagesData.messages.length ;
+           console.log(totalConversations)
+       
+           const createdAtData = conversationsData.conversations.map(conversation => conversation.createdAt);
+                       
         setChartData([
-          ...processedData,
           {
             name: 'Total',
             users: totalUsers,
             conversations: totalConversations,
-            messages: totalMessages
+            messages: totalMessages,
+            created_at: createdAtData
           }
         ]);
       } catch (error) {
@@ -72,9 +58,10 @@ const AnalyticsPage = () => {
       <h1>Chatbot Analytics</h1>
       <BarChart width={800} height={400} data={chartData}>
         <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
+        <XAxis dataKey='created_at' />
         <YAxis />
         <Legend />
+        <Tooltip contentStyle={{ backgroundColor: '#f5f5f5', border: '1px solid #dcdcdc' }} />
         <Bar dataKey='users' fill='#8884d8' name='Users' />
         <Bar dataKey='conversations' fill='#82ca9d' name='Conversations' />
         <Bar dataKey='messages' fill='#ffc658' name='Messages' />
@@ -84,3 +71,5 @@ const AnalyticsPage = () => {
 };
 
 export default AnalyticsPage;
+
+
