@@ -19,7 +19,7 @@ nextjs-portal {
 
 .container{
   position: relative;
-  background: linear-gradient(-45deg, #b34fe0, #ff007b, #f0024b);
+  background: linear-gradient(-45deg ,#8865ff, #fb9ec4, #ffc7ba);
   background-size: 400% 400%;
   animation: change 15s ease infinite;
 }
@@ -48,7 +48,7 @@ nextjs-portal {
   gap: 20px;
   justify-items: center;
   padding: 20px;
-  background: linear-gradient(-45deg,#b34fe0, #ff007b, #f0024b);
+  background: linear-gradient(-45deg,#8865ff, #fb9ec4, #ffc7ba);
   background-size: 400% 400%;
   animation: change 15s ease infinite;
 }
@@ -79,7 +79,7 @@ nextjs-portal {
 
 .form button {
   padding: 10px 20px;
-  background-color: #ff007b;
+  background-color: #000;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -87,7 +87,7 @@ nextjs-portal {
 }
 
 .form button[type='button'] {
-  background-color: #007bff;
+  background-color: #000;
   margin-right: 10px;
 }
 
@@ -112,7 +112,8 @@ nextjs-portal {
 @media (max-width: 726px) {
   .text-container {
     display : absolute ;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
   }
   .card-postuler2 {
     width: 100%;
@@ -127,7 +128,8 @@ nextjs-portal {
 @media (max-width: 410px) {
   .text-container {
      position : absolute ;
-    font-size: 0.8rem;
+     font-size: 1rem;
+     text-align: center;
   }
   .card-postuler2 {
     max-width: 100%;
