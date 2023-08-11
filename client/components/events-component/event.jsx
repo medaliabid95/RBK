@@ -1,8 +1,21 @@
 "use client"
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { useRouter } from 'next/navigation'
+import axios from 'axios'
 import "./event.css"
-export const Event = ({ title, date, photo, desc }) => {
+export const Event = () => {
+    const [events,setEvents]=useState([])
+
+    useEffect(()=>{
+        fetch()
+    },[])
+
+    const fetch=()=>{
+        axios.get("http://localhost:3001/events/getAllEvents")
+        .then((res)=>setEvents(res.data))
+        .catch((err)=>console.log(err))
+    }
+
     const router=useRouter()
     return (
         <div className='one-event'>
