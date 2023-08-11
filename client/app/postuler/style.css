@@ -145,6 +145,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+ 
 }
 
 .card-2 form input[type='submit']:hover {

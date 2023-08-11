@@ -85,10 +85,17 @@ nextjs-portal {
   border-radius: 3px;
   cursor: pointer;
 }
+.form button:hover {
+  background-color: #ccc;
+}
 
 .form button[type='button'] {
   background-color: #000;
   margin-right: 10px;
+}
+
+.form button[type='button']:hover {
+  background-color: #ccc;
 }
 
 .postuler-img {
