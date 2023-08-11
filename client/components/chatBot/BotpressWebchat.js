@@ -3,7 +3,11 @@ import { useEffect } from 'react';
 
 const BotpressWebchat = () => {
   useEffect(() => {
-    window.botpressWebChat?.init({
+    const script = document.createElement('script');
+    script.src = 'https://cdn.botpress.cloud/webchat/v0/inject.js';
+    script.async = true;
+    script.onload = () => {
+    window.botpressWebChat.init({
       "composerPlaceholder": "Chat with RBK ",
       "botId": "5d7a71d0-8c0a-4544-84b8-fff1969c069e",
       "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
@@ -19,7 +23,11 @@ const BotpressWebchat = () => {
       "showBotInfoPage": true,
       "enableConversationDeletion": true
   });
-
+};
+      document.head.appendChild(script);
+      return () => {
+        document.head.removeChild(script);
+};
   }, []);
 
   return null; 

@@ -83,6 +83,7 @@ const Page = () => {
             <label htmlFor="accept">En soumettant ce formulaire, j'accepte la politique de confidentialité de RBK.</label>
           </div>
           <Link
+               style={{textDecoration : 'none'}}
                href={{
                 pathname: '/postuler2',
                 query: { ...formData },
