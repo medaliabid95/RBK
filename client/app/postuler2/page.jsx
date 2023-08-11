@@ -1,7 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import './style.css';
+import axios from 'axios';
 
 const Page = () => {
 
@@ -54,7 +56,7 @@ const Page = () => {
     setSelectedCampus(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     queryParams.formule = selectedFormat ;
     queryParams.session = selectedSession ; 
@@ -62,14 +64,20 @@ const Page = () => {
     queryParams.city = city ;
     queryParams.compus =  selectedCampus ; 
     console.log(queryParams);
-    bot()
+    try {
+      const response = await axios.post('http://127.0.0.1:3001/students/add', queryParams);
+      console.log('Student added successfully:', response.data);
+      bot();
+    } catch (error) {
+      console.error('Error adding student:', error);
+    }
   };
   
   
 
   const bot = () => {
     console.log('hi')
-      window.botpressWebChat.sendEvent({type: 'show' });
+    
       window.botpressWebChat.sendEvent({type: 'trigger' });
     }
 
@@ -89,15 +97,15 @@ const Page = () => {
           <label>Sélectionnez le format souhaité</label>
           <select value={selectedFormat} onChange={handleFormatChange}>
             <option value=''>Choisissez un format</option>
-            <option value='tempsPlein'>Temps plein (19 semaines)</option>
-            <option value='tempsPartiel'>Temps partiel (40 semaines)</option>
+            <option value='Temps plein (19 semaines)'>Temps plein (19 semaines)</option>
+            <option value='Temps partiel (40 semaines)'>Temps partiel (40 semaines)</option>
           </select>
 
           <label>Sélectionnez la session à laquelle vous souhaitez participer:</label>
           <select value={selectedSession} onChange={handleSessionChange}>
             <option value=''>Choisissez une session</option>
-            <option value='session1'>Session 1</option>
-            <option value='session2'>Session 2</option>
+            <option value='Session 1'>Session 1</option>
+            <option value='Session 2'>Session 2</option>
           </select>
 
           <label>Âge</label>
@@ -109,18 +117,18 @@ const Page = () => {
           <label>Votre campus</label>
           <select value={selectedCampus} onChange={handleCampusChange}>
             <option value=''>Choisissez un campus</option>
-            <option value='tunis'>Tunis</option>
-            <option value='elKef'>El Kef</option>
-            <option value='sousse'>Sousse</option>
+            <option value='Tunis'>Tunis</option>
+            <option value='El Kef'>El Kef</option>
+            <option value='Sousse'>Sousse</option>
           </select>
         </div>
         <div className='card-footer'>
           
         <button type='button'  onClick={()=> {history.back()}}>Retour</button>
-   
        
-           <button   type='submit' >Poursuivre ma candidature</button>
-     
+      
+         <button   type='submit' >Poursuivre ma candidature</button>
+        
         </div>
       </form>
     </div>

@@ -21,7 +21,7 @@ const BotpressWebchat = () => {
       "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/08108bc3-7c4d-41ff-9624-2b926a2a8fea/v33693/style.css",
       "useSessionStorage": true,
       "showBotInfoPage": true,
-      "enableConversationDeletion": true
+      "enableConversationDeletion": false
   });
 };
       document.head.appendChild(script);

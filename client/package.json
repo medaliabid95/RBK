@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
+    "draft-js": "^0.11.7",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.15.0",
     "lottie-react": "^2.4.0",
@@ -25,6 +26,7 @@
     "react-draft-wysiwyg": "^1.15.0",
     "react-icons": "^4.10.1",
     "react-phone-number-input": "^3.3.1",
+    "react-router-dom": "^6.15.0",
     "react-spring": "^9.7.2",
     "recharts": "^2.7.3",
     "styled-components": "^6.0.7"
