@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import "./landing.css"
+import "../landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'
-import TitleText from '@/components/landing-page-components/title-text/title-text'
+import TitleText3 from '@/components/RBK-SOUSSE-components/titleText3'
 import Form from '@/components/landing-page-components/form-container/form'
 import Companies from '@/components/landing-page-components/companies-section/Companies'
 import AutoSlider from '@/components/Automatic-slider/AutoSlider'
@@ -20,7 +20,7 @@ const page = () => {
                         <div className='text-btn-4'>Postuler</div>
                     </div></a></div>
                 <div className="form-text-container">
-                    <TitleText />
+                    <TitleText3 />
                     <Form />
                 </div>
             </section>
@@ -56,6 +56,7 @@ const page = () => {
             <section className='certifications-container'>
                 <Certification />
             </section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.2253925530297!2d10.600589702435892!3d35.81317145790937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8b77ff1cf6b5%3A0x2486a20a3973f4d3!2sRebootkamp!5e1!3m2!1sen!2stn!4v1691759336617!5m2!1sen!2stn" style={{ width: "100%", height: "700px", border: "0px" }} allowfullscreen="" loading="lazy" ma referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div >
     )
 }
