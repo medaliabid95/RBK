@@ -18,13 +18,14 @@ export default function RootLayout({ children }) {
    <html lang="en">
       <head>
         <script src="https://cdn.botpress.cloud/webchat/v0/inject.js" ></script> 
+        <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossorigin="anonymous"></script>
       </head> 
       <body >
           <Navbar/>
-          {/* <NabBar2 /> */}
-        {/* <BotpressWebchat/> */}
+        
+        <BotpressWebchat/>
         {children}
-         {/* <Footer/> */}
+         <Footer/>
       </body>
     </html>
   )

@@ -36,6 +36,7 @@ footer {
 .footer-link>a {
     color: white;
     font-size: 16px;
+    text-decoration: none;
 }
 
 .logo-footer-container {
@@ -153,7 +154,7 @@ footer {
         padding-top: 5%;
         color: #78797C;
         grid-column: 1/5;
-        grid-row: 3;
+        grid-row: 4;
         align-self: end;
     }
 
@@ -200,5 +201,84 @@ footer {
 
     .followus {
         grid-row: 3/5;
+    }
+}
+
+@media (max-width:598px) {
+    footer .nosProgrammes {
+        grid-column: 1/4;
+        grid-row-start: 2;
+    }
+
+
+    footer {
+        width: 100%;
+        padding: 50px 30px;
+    }
+
+    .followus {
+        grid-column-start: 1;
+    }
+
+    .copy-right-text {
+        position: absolute;
+        top: 90%;
+
+        grid-column: 1/5;
+    }
+
+    .follow-us-second-container {
+        color: #78797C;
+        grid-row-start: 2;
+    }
+
+    .logo-footer {
+        grid-row: 2;
+        margin-right: 70px;
+    }
+
+    .followus {
+        grid-row: 3;
+        margin-bottom: 60px;
+    }
+
+    .footer-link>a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+}
+
+@media (max-width:320px) {
+
+    .autres {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .logo-footer {
+        grid-row: 2;
+        margin-right: 70px;
+        align-self: end;
+    }
+
+    .followus {
+        grid-row: 5;
+        margin-bottom: 60px;
+    }
+
+    .footer-link>a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .logo-footer-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
     }
 }
