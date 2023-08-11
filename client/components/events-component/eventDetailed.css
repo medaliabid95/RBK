@@ -42,7 +42,10 @@
         padding: 3%;
         font-family: Space Grotesk;
     }
-
+    .pre-description{
+        text-align: center;
+        font-size: 1vw;
+    }
     .event-detaield-info {
         padding-top: 1%;
         padding-bottom: 1%;
@@ -76,13 +79,15 @@
         gap: 0.5rem;
         margin: 3% auto;
         background-color: #FF007B;
-        width: 35vw;
+        width: 45vw;
+        height: 10vh;
         color: white;
         padding: 1%;
     }
 
     .event-button a {
-        text-decoration: underline
+        text-decoration: underline;
+        
     }
 
     .heure {
@@ -94,8 +99,12 @@
         text-align: center;
         padding: 3%;
         font-family: Space Grotesk;
+        font-size: 5vw;
     }
-
+    .pre-description{
+        text-align: center;
+        font-size: 3vw;
+    }
     .event-detaield-info {
         padding-top: 1%;
         padding-bottom: 1%;

@@ -7,6 +7,7 @@ export const EventDetailed = ({ img, title, desc, owner, date }) => {
   return (
     <div className='event-detailed-container'>
       <h1 className='event-detailed-title'>From Packing Packages to Programmer | How Judah M Accelerated His Career Path Into Tech</h1>
+      <p className='pre-description'>Vous êtes curieux de découvrir le monde du développement web? Vous voulez en savoir plus sur notre programme de formation? Vous vous demandez comment RBK Tunisia peut vous aider à lancer votre carrière dans la tech? Alors, notre Journée Portes Ouvertes est l'événement parfait pour vous!</p>
       <button className='event-button'>Les inscriptions sont closes<a>Voir d'autres événements</a></button>
       <img src="../0.jpg" alt="" />
       <h5 className='event-detaield-info'>heure et lieu </h5>
