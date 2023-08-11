@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const BotpressWebchat = () => {
   useEffect(() => {
-    window.botpressWebChat.init({
+    window.botpressWebChat?.init({
       "composerPlaceholder": "Chat with RBK ",
       "botId": "5d7a71d0-8c0a-4544-84b8-fff1969c069e",
       "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
