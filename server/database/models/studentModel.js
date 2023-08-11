@@ -43,6 +43,7 @@ const Student = sequelize.define("Student", {
     type: DataTypes.ENUM("Tunis", "El Kef", "Sousse"),
     allowNull: false,
   },
+
 });
 
  

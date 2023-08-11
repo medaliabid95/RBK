@@ -1,6 +1,8 @@
 
 const  Student  = require('../database/models/studentModel');
 
+
+console.log(Student);
 const createStudent = async (req, res) => {
   try {
     const student = await Student.create(req.body);

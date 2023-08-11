@@ -1,9 +1,8 @@
 "use client"
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import "./certification.css"
 const Certification = () => {
-    const router = useRouter()
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -66,9 +65,9 @@ const Certification = () => {
                         <p className='resume-in-cert'><span className='bold-text'>Examens: </span>Examen toutes les 6 semaines et projet de fin d’études</p>
                     </div>
                 </div>
-                <div onClick={() => router.push("#")} className='cert-btn-container'><div className='border-btn-7'>
+                <div className='cert-btn-container'><Link href={"/fullStack"}><div className='border-btn-7'>
                     <div className='text-btn-7'>Découvrez plus</div>
-                </div></div>
+                </div></Link></div>
             </div>
 
             <div className='AWS-cert-card hidden10'>
@@ -84,9 +83,9 @@ const Certification = () => {
                             *La formation et la certification AWS re/start est100% gratuite pour tous et accessible sans obligation d'achat, elle est offerte par RBK et AWS</p>
                     </div>
                 </div>
-                <div onClick={() => router.push("#")} className='cert-btn-container'><div className='border-btn-8'>
+                <div className='cert-btn-container'><Link href={"/Aws"}><div className='border-btn-8'>
                     <div className='text-btn-8'>Découvrez plus</div>
-                </div></div>
+                </div></Link></div>
             </div>
         </>
     )
