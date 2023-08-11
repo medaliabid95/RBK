@@ -2,9 +2,6 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/navbar'
 import Footer from '@/components/footer/footer'
 import BotpressWebchat from '@/components/chatBot/BotpressWebchat'
-// import { NabBar2 } from '@/components/navbar2/NabBar2.jsx'
-
-
 
 const inter = Inter({ subsets: ['latin'] })
 

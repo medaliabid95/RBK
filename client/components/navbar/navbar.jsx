@@ -10,7 +10,7 @@ const navbar = () => {
     const [active, setActive] = useState("")
     const [hamburger, setHamburger] = useState(false)
     const changeColor = () => {
-        if (window.scrollY >= 200) {
+        if (window.scrollY > 0) {
             setColor(true);
         } else setColor(false);
     }
@@ -22,7 +22,7 @@ const navbar = () => {
                 {color ? (<li className="nav-link" ><a href='/' style={{ color: "black" }} >Acceuil</a></li>) : (<li className="nav-link"><a href='/'>Acceuil</a></li>)}
                 {color ? (<li className="nav-link" ><a style={{ color: "black" }} className='sub-menu-arrow-black'>Nos programmes</a><ul className='dropdown'><li><a href='/fullStack'>Développeur web</a></li><li><a href='/Aws'>Cloud computing AWS re/start</a></li></ul></li>) : (<li className="nav-link"><a className='sub-menu-arrow-white'>  Nos programmes</a><ul className='dropdown'><li><a href='/fullStack' >Développeur web</a></li><li><a href='/Aws'>Cloud computing AWS re/start</a></li></ul></li>)}
                 {color ? (<li className="nav-link" ><a style={{ color: "black" }} className='sub-menu-arrow-black'>Nos BootCamps</a><ul className='dropdown'><li><a href='/RBK-TUNIS'>RebootKamp El Gazala</a></li><li><a href='/RBK-SOUSSE'>RebootKamp Sousse</a></li><li><a href='/RBK-ELKEF'>RebootKamp El Kef</a></li></ul></li>) : (<li className="nav-link"><a className='sub-menu-arrow-white'>Nos BootCamps</a><ul className='dropdown'><li><a href='/RBK-TUNIS'>RebootKamp El Gazala</a></li><li><a href='/RBK-SOUSSE'>RebootKamp Sousse</a></li><li><a href='/RBK-ELKEF'>RebootKamp El Kef</a></li></ul></li>)}
-                {color ? (<li className="nav-link" ><a style={{ color: "black" }}>Contact</a></li>) : (<li className="nav-link"><a href="#">Contact</a></li>)}
+                {color ? (<li className="nav-link" ><a href='/contact' style={{ color: "black" }}>Contact</a></li>) : (<li className="nav-link"><a href='/contact'>Contact</a></li>)}
                 {color ? (<li className="nav-link" ><a style={{ color: "black", }} className='sub-menu-arrow-black'>Autres</a><ul className='dropdown'><li><a href='/emploi-apres-diplome'>Emploi après diplome</a></li><li><a href='/continuer-a-letranger'>Continuer a l’étranger</a></li><li><a href='/events'>Events</a></li><li><a href='/Blogs'>Blog</a></li><li><a href="recent-projects">Projets récemment publiés</a></li></ul></li>) : (<li className="nav-link"><a className='sub-menu-arrow-white'>Autres</a><ul className='dropdown'><li><a href='/emploi-apres-diplome'>Emploi après diplome</a></li><li><a href='/continuer-a-letranger'>Continuer a l’étranger</a></li><li><a href='/events'>Events</a></li><li><a href='/Blogs'>Blog</a></li><li><a href="recent-projects">Projets récemment publiés</a></li></ul></li>)}
 
             </ul>

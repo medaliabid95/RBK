@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import Sidebar from '@/components/sidebar/sidebar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -11,7 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+       <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossorigin="anonymous"></script>
+      <body className={inter.className}><Sidebar/>{children}</body>
     </html>
   )
 }
