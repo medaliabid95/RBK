@@ -3,7 +3,7 @@ import React from 'react'
 import "./eventDetailed.css"
 import Phoyo from "../../public/0.jpg"
 import { MainHeader } from '../main-header/Header'
-export const EventDetailed = ({ img, title, desc, owner, date }) => {
+export const EventDetailed = ({ img, title, desc, date }) => {
   return (
     <div className='event-detailed-container'>
       <h1 className='event-detailed-title'>From Packing Packages to Programmer | How Judah M Accelerated His Career Path Into Tech</h1>

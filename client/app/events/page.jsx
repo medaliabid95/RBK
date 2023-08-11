@@ -12,8 +12,6 @@ const Events = () => {
           <h2>Come join one of our workshops and learn how to code for free. Our coding workshops range from beginner-friendly to intermediate-friendly as we aim to help you get started on your journey of learning to code. Our goal is to offer these workshops as both a utility for learning the fundamentals of programming and as a teaser of our fun and intuitive teaching style that you will experience in <span className='rose'>RBK</span></h2>
         </div>
        <Event/>
-       <Event/>
-
     </div>
   )
 }

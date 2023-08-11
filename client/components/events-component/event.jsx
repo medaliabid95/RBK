@@ -1,40 +1,40 @@
 "use client"
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import "./event.css"
 export const Event = () => {
-    const [events,setEvents]=useState([])
+    const [events, setEvents] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch()
-    },[])
+    }, [])
 
-    const fetch=()=>{
+    const fetch = () => {
         axios.get("http://localhost:3001/events/getAllEvents")
-        .then((res)=>setEvents(res.data))
-        .catch((err)=>console.log(err))
+            .then((res) => setEvents(res.data))
+            .catch((err) => console.log(err))
     }
 
-    const router=useRouter()
+    const router = useRouter()
     return (
-        <div className='one-event'>
-                <div className='event-date'>
-                    <img src="dateicon.png" alt="" />
-                    <h3>24/12/2099</h3>
-            </div>
-            <h1 className='event-title'>From Packing Packages to Programmer | How Judah M Accelerated His Career Path Into Tech</h1>
-            <div className='event-paragraph truncate'>Disclaimer: Coding Dojo cannot guarantee employment,
-                salary, or career advancement. The experience of this alumnus/alumna may not be representative of all students.
-                Pre-Dojo: Worked in a UPS warehouse and did...Disclaimer: Coding Dojo cannot guarantee employment, salary, or career advancement.
-                The experience of this alumnus/alumna may not be representative of all students. Pre-Dojo: Worked in a UPS warehouse and did...
-                Disclaimer: Coding Dojo cannot guarantee employment, salary, or career advancement. The experience of this alumnus/alumna may not
-                be representative of all students. Pre-Dojo: Worked in a UPS warehouse and did</div>
-            <button onClick={() => {
-                router.push('/events/1')
-            }} className='read-more'>read more</button>
-            <img className='event-img' src="0.jpg" alt="" />
-            <div className='line-after'></div>
+        <div>
+            {events.map((event) => (
+                <div className='one-event'>
+                    <div className='event-date'>
+                        <img src="dateicon.png" alt="" />
+                        <h3>{event.date}</h3>
+                    </div>
+                    <h1 className='event-title'>{event.title}</h1>
+                    <div className='event-paragraph truncate'>{event.description}</div>
+                    <button onClick={() => {
+                        router.push(`/events/${event.id}`)
+                    }} className='read-more'>read more</button>
+                    <img className='event-img' src="0.jpg" alt="" />
+                    <div className='line-after'></div>
+                </div>
+            ))}
         </div>
+
     )
 }
