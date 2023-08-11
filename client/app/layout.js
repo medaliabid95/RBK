@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/navbar'
 import Footer from '@/components/footer/footer'
 import BotpressWebchat from '@/components/chatBot/BotpressWebchat'
-
+// import { NabBar2 } from '@/components/navbar2/NabBar2.jsx'
 
 
 
@@ -18,9 +18,11 @@ export default function RootLayout({ children }) {
    <html lang="en">
       <head>
         <script src="https://cdn.botpress.cloud/webchat/v0/inject.js" ></script> 
+        <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossorigin="anonymous"></script>
       </head> 
       <body >
-        <Navbar/>
+          <Navbar/>
+        
         <BotpressWebchat/>
               {children}
          <Footer/>

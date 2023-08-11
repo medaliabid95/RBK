@@ -1,10 +1,17 @@
 import React from 'react'
 import { MainHeader } from '@/components/main-header/Header'
+import { Event } from '@/components/events-component/event'
 import "./events.css"
 const Events = () => {
   return (
     <div>
         <MainHeader img={"https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} text={"events"} />
+        <div className='events-intro'>
+          <h1>Come join one of our workshops and learn how to code for free. Our coding workshops range from beginner-friendly to intermediate-friendly as we aim to help you get started on your journey of learning to code. Our goal is to offer these workshops as both a utility for learning the fundamentals of programming and as a teaser of our fun and intuitive teaching style that you will experience in RBK</h1>
+        </div>
+       <Event/>
+       <Event/>
+
     </div>
   )
 }
