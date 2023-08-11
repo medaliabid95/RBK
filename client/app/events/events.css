@@ -15,7 +15,7 @@ body {
     box-sizing: border-box;
 }
 
-.main-container {
+/* .main-container {
     margin: 0;
     padding: 0;
 }
@@ -30,8 +30,7 @@ body {
 .main-header {
     position: relative;
     width: 100%;
-    background-color: black;
-}
+} */
 
 
 
@@ -74,14 +73,70 @@ body {
         height: 100vh;
         background-size: cover;
     }
+    .events-intro h1 {
+        color: rgba(0, 0, 0, 0.627);
+        text-align: center;
+        font-family: Space Grotesk;
+        padding-top: 2%;
+        font-size: 3.5vw;
+        margin: 0 auto;
+        width: 70%;
+        padding-bottom:2%;;
+    }
+    
+    .into-line{
+        height: 0.5vh;
+        width: 10%;
+        margin: 0 auto;
+        background-color:rgba(0, 0, 0, 0.627);
+    }
+    
+    .events-intro h2 {
+        color: rgba(0, 0, 0, 0.627);
+        text-align: center;
+        font-family: Space Grotesk;
+        padding-top: 2%;
+        font-size: 1vw;
+        margin: 0 auto;
+        width: 70%;
+        padding-bottom: 5%;
+    }
 }
 
 /* phone */
-@media (max-widh : 992px) {
+@media (max-width : 992px) {
     .emploi-apres-diplome-image {
         width: 100%;
         height: auto;
         background-size: cover;
+    }
+    .events-intro h1 {
+        color: rgba(0, 0, 0, 0.627);
+        text-align: center;
+        font-family: Space Grotesk;
+        padding-top: 2%;
+        font-size: 6vw;
+        margin: 0 auto;
+        width: 70%;
+        padding-bottom:2%;;
+    }
+    
+    .into-line{
+        height: 0.3vh;
+        width: 10%;
+        margin: 0 auto;
+        background-color:rgba(0, 0, 0, 0.627);
+    }
+    
+    .events-intro h2 {
+        color: rgba(0, 0, 0, 0.627);
+        text-align: center;
+        font-family: Space Grotesk;
+        padding-top: 2%;
+        font-size: 3vw;
+        margin: 0 auto;
+        width: 70%;
+        padding-bottom: 5%;
     }
 }
 
@@ -92,13 +147,3 @@ body {
     font-family: Space Grotesk;
 } */
 
-.events-intro h1 {
-    color: rgba(0, 0, 0, 0.627);
-    text-align: center;
-    font-family: Space Grotesk;
-    padding-top: 2%;
-    font-size: 1vw;
-    margin: 0 auto;
-    width: 70%;
-    padding-bottom: 5%;
-}
