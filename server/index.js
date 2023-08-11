@@ -25,7 +25,7 @@ app.listen(PORT, function () {
   console.log("Listening on port " + PORT);
 });
 
-sequelize.authenticate().then(() => {
+sequelize.sync().then(() => {
   console.log("Connection has been established successfully");
 }).catch((err) => {
   console.error("Unable to connect to the database:", err);
