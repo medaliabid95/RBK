@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import './style.css';
 
 const Page = () => {
@@ -69,7 +70,7 @@ const Page = () => {
 
   const bot = () => {
     console.log('hi')
-      window.botpressWebChat.sendEvent({type: 'show' });
+    
       window.botpressWebChat.sendEvent({type: 'trigger' });
     }
 
@@ -117,10 +118,10 @@ const Page = () => {
         <div className='card-footer'>
           
         <button type='button'  onClick={()=> {history.back()}}>Retour</button>
-   
        
-           <button   type='submit' >Poursuivre ma candidature</button>
-     
+       {/* <Link href={{pathname: '/'}}> */}
+         <button   type='submit' >Poursuivre ma candidature</button>
+        {/* </Link> */}
         </div>
       </form>
     </div>
