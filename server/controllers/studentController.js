@@ -40,16 +40,11 @@ const updateStudent = async (req, res) => {
   const studentId = req.params.id;
 
   try {
-    const [updatedCount, updatedStudents] = await Student.update(req.body, {
+     await Student.update(req.body, {
       where: { id: studentId },
       returning: true,
     });
-
-    if (updatedCount > 0) {
-      res.status(200).json(updatedStudents[0]);
-    } else {
-      res.status(404).json({ message: 'Student not found' });
-    }
+      res.status(200).json("updated");
   } catch (error) {
     res.status(400).json({ message: 'Error updating student', error: error.message });
   }

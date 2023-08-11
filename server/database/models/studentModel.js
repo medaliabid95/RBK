@@ -32,7 +32,7 @@ const Student = sequelize.define("Student", {
     allowNull: false,
   },
   age: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   city: {
@@ -46,5 +46,5 @@ const Student = sequelize.define("Student", {
 
 });
 
-
+ 
 module.exports = Student;
