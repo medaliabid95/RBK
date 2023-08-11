@@ -7,15 +7,15 @@ const Event = sequelize.define("Event", {
     allowNull: false,
   },
   preDescription: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
   },
   description:{
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
   },
   heure: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   lieu: {
@@ -23,7 +23,7 @@ const Event = sequelize.define("Event", {
     allowNull: false,
   },
   image :{
-    type:DataTypes.STRING,
+    type:DataTypes.TEXT,
     allowNull:false,
   }
 });
