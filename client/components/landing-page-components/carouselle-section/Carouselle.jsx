@@ -1,12 +1,11 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import VideoCarouselle from '../video-carouselle/videoCarouselle'
 import "./carouselle.css"
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 import Data from './data'
 const Carouselle = () => {
-    const router = useRouter()
     const [slide, setSlide] = useState(false)
     useEffect(() => {
 
@@ -59,9 +58,9 @@ const Carouselle = () => {
             <p className='vc-title hidden4'>Vie candidat</p>
             <p className='experience hidden4'>Une expérience <span className='pinkie'>immersive</span> unique</p>
             <div className='hr-line3'></div>
-            <div onClick={() => router.push("#")} className='vc-container'><div className='border-btn-5'>
+            <div className='vc-container'><Link href={"/postuler"}><div className='border-btn-5'>
                 <div className='text-btn-5'>Postuler</div>
-            </div></div>
+            </div></Link></div>
 
             <div className='circles-container'>
                 <span className={current === 0 ? "circle active" : "circle"}></span>

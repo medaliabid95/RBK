@@ -78,6 +78,7 @@
     font-weight: 500;
     transition: 0.4s ease-in-out;
     font-size: 19px;
+    cursor: pointer;
 }
 
 .nav-link a:hover {
@@ -365,6 +366,7 @@
         background-color: #FF007B;
         text-align: center;
     }
+
     .dropdown a {
         color: black;
         display: block;

@@ -18,7 +18,11 @@ const titleText = () => {
         hiddenElements.forEach((el) => observer.observe(el))
     })
     return (
-        <div className="title hidden1"><p id="title1">TRANSFORME TON <span className='pinkies'>AVENIR,</span> APPRENDS A <span className='pinkies'>CODER.</span></p><p id="title2">REJOINGEZ NOTRE BOOTCAMP A <span className='pinkies'>TUNIS.</span></p></div>
+        <div className="title hidden1"><p id="title1">TRANSFORME TON <span className='pinkies'>AVENIR,</span> APPRENDS A <span className='pinkies'>CODER.</span></p><p id="title2" >REJOINGEZ NOTRE BOOTCAMP A <span className='pinkies animated-text'   ><div class="animation">
+            <div class="first"><div>TUNIS.</div></div>
+            <div class="second"><div>EL KEF.</div></div>
+            <div class="third"><div>SOUSSE.</div></div>
+        </div></span></p></div>
     )
 }
 
