@@ -49,6 +49,7 @@ const form = () => {
                 <input id='inp1' type="text" placeholder='Prenom *'  value={formData.prenom} onChange={(e) => setFormData((prevData) => ({ ...prevData, prenom: e.target.value }))}/>
                 <input id='inp2' type="text" placeholder='Nom de famille *' value={formData.nom} onChange={(e) => setFormData((prevData) => ({ ...prevData, nom: e.target.value }))}/>
                 <input id='inp3' type="email" placeholder='Votre e-mail *'value={formData.email} onChange={(e) => setFormData((prevData) => ({ ...prevData, email: e.target.value }))} />
+                <input id='inp4'  type="text" placeholder='Votre Téléphone *'value={formData.phone} onChange={(e) => setFormData((prevData) => ({ ...prevData, phone: e.target.value }))} />
             </div>
             <div className='tac-container'>
                 <input type="checkbox" id='tac-checkbox' /> <span id='tac' value={formData.accept} onChange={(e) => setFormData((prevData) => ({ ...prevData, accept: e.target.checked }))}>En soumettant ce formulaire, j'accepte la politique de confidentialité de RBK.</span>
