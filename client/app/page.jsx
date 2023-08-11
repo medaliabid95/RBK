@@ -7,15 +7,15 @@ import Form from '@/components/landing-page-components/form-container/form'
 import Companies from '@/components/landing-page-components/companies-section/Companies'
 import AutoSlider from '@/components/Automatic-slider/AutoSlider'
 import Certification from '@/components/landing-page-components/Certification/Certification'
+import Postuler from '@/components/landing-page-components/postuler-form/postuler'
 const page = () => {
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >
                 <img src="/images/man-and-woman-collaborating-in-tech-industry.avif" alt="landing" />
                 <div className='btn-img-container'>
-                    <a href='#'><div className='border-btn-4'>
-                        <div className='text-btn-4'>Postuler</div>
-                    </div></a></div>
+                    <Postuler />
+                </div>
                 <div className="form-text-container">
                     <TitleText />
                     <Form />

@@ -96,3 +96,22 @@
 
     }
 }
+
+@media (max-width:430px) {
+    .title-companies {
+        grid-column: 1/6;
+        place-self: center start;
+        text-align: center;
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    .text-companies {
+        grid-column: 1/6;
+        place-self: center end;
+        text-align: center;
+        font-size: 19px;
+
+    }
+}
+
