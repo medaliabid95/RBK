@@ -31,7 +31,7 @@
 }
 
 .animation div:first-child {
-    animation: text-animation 8s infinite;
+    animation: text-animation 7s infinite;
 }
 
 @keyframes text-animation {

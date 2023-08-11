@@ -1,5 +1,5 @@
 'use client'
-import React , {useState}from 'react'
+import React, { useState } from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'
@@ -8,10 +8,9 @@ import Form from '@/components/landing-page-components/form-container/form'
 import Companies from '@/components/landing-page-components/companies-section/Companies'
 import AutoSlider from '@/components/Automatic-slider/AutoSlider'
 import Certification from '@/components/landing-page-components/Certification/Certification'
-import Postuler from '@/components/landing-page-components/postuler-form/postuler'
 const page = () => {
 
-   
+
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >
@@ -57,6 +56,7 @@ const page = () => {
             <section className='certifications-container'>
                 <Certification />
             </section>
+            {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d479.35232800683906!2d10.186953691968773!3d36.89429538575124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb32a574f131%3A0x736d6f5853a1bd2e!2sRebootkamp!5e1!3m2!1sen!2stn!4v1691758008392!5m2!1sen!2stn" style={{ width: "100%", height: "700px", border: "0px" }} allowfullscreen="" loading="lazy" ma referrerpolicy="no-referrer-when-downgrade"></iframe> */}
         </div >
     )
 }
