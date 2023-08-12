@@ -1,0 +1,15 @@
+.add-event-container h1 {
+    color: #ff007b;
+    padding: 5%;
+    font-family: Arial, sans-serif;
+}
+
+.add-event-container h2 {
+    color: rgba(0, 0, 0, 0.59);
+}
+
+.text-editor {
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 200px;
+}
