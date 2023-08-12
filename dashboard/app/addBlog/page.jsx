@@ -12,7 +12,8 @@ const page = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [file, setFile] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [title,setTitle]=useState("")
+  const [title, setTitle] = useState("");
+  const [descriptionn, setDesc] = useState("");
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -21,14 +22,19 @@ const page = () => {
   const onSave = () => {
     const contentState = editorState.getCurrentContent();
     const rawContentState = convertToRaw(contentState);
-
-    // localStorage.setItem("blog", JSON.stringify(rawContentState));
-    axios.post("http://127.0.0.1:3001/blogs/add",{
-      title:title,
-      image:imageUrl,
-      content:JSON.stringify(rawContentState)
-    }).then(res=>console.log(res))
-    .catch(err=>console.log(errw))
+    if(!title||!descriptionn||!JSON.stringify(rawContentState)){
+      return
+    }
+ 
+    axios
+      .post("http://127.0.0.1:3001/blogs/add", {
+        title: title,
+        image: imageUrl,
+        description: descriptionn,
+        content: JSON.stringify(rawContentState),
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
   const handlePastedText = (text, html, editorState) => {
     const contentState = ContentState.createFromText(text);
@@ -49,7 +55,7 @@ const page = () => {
       .then((res) => {
         setImageUrl(res.data.secure_url);
         setIsLoading(false);
-        console.log("imageee")
+        console.log("imageee");
       })
       .catch((err) => console.log(err));
   };
@@ -70,20 +76,31 @@ const page = () => {
       <div className="input-container">
         <label htmlFor="blogTitle">Titre du blog :</label>
         <input
-        value={title}
+          value={title}
           type="text"
           id="blogTitle"
           placeholder="Entrez le titre du blog"
-          onChange={(e)=>setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
+      </div>
+      <div className="input-container">
+        <label htmlFor="descritption">Description du blog :</label>
+        <textarea
+          value={descriptionn}
+          type="text"
+          id="desc-input"
+          placeholder="description..."
+          onChange={(e) => setDesc(e.target.value)}
+        ></textarea>
       </div>
       <div className="image-upload-container">
         {imageUrl ? (
-              <div className="image-preview">
-              <button onClick={()=>setImageUrl("")} className="change-image">Changer l'image</button>
-              <img src={imageUrl} alt="Uploaded" />
-            </div>
-          
+          <div className="image-preview">
+            <button onClick={() => setImageUrl("")} className="change-image">
+              Changer l'image
+            </button>
+            <img src={imageUrl} alt="Uploaded" />
+          </div>
         ) : (
           <>
             {" "}
@@ -94,7 +111,7 @@ const page = () => {
                 id="imageInput"
                 className="image-input"
                 accept="image/*"
-                 onChange={(e)=>setFile(e.target.files[0])} 
+                onChange={(e) => setFile(e.target.files[0])}
               />
               <div className="upload-icon">
                 <BsFillImageFill
@@ -111,7 +128,9 @@ const page = () => {
                 ou cliquez pour la sélectionner
               </p>
             </label>
-            <button onClick={uploadImage} className="upload-button">Upload Image</button>
+            <button onClick={uploadImage} className="upload-button">
+              Upload Image
+            </button>
           </>
         )}
       </div>
