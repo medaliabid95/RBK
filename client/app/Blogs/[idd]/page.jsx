@@ -1,23 +1,44 @@
-"use client";
-import React from "react";
+"use client"
+import React,{useState,useEffect} from "react";
 import "./one.css";
 import { RiTimer2Fill } from "react-icons/ri";
 import { LuMoreVertical } from "react-icons/lu";
 import { EditorState, ContentState, convertFromRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import moment from "moment";
 
-const page = ({ params }) => {
-  if (!localStorage.getItem("blog")) {
+
+
+const getBlog = (id) => {
+  return fetch(`http://localhost:3001/blogs/getOne/${id}`).then((res) =>
+    res.json()
+  );
+};
+
+const page =  ({params}) => {
+
+  const [blog, setBlog] = useState(null);
+  console.log(blog)
+  useEffect(() => {
+    if (params.idd) {
+      getBlog(params.idd).then((fetchedBlog) => {
+        setBlog(fetchedBlog);
+      });
+    }
+  }, [params.idd]);
+
+  
+  if (!blog) {
+    console.log("yess")
     return null;
   }
-  console.log(params.blog);
-  // const blogId=Router.query.blog
-  const contentState = convertFromRaw(JSON.parse(localStorage.getItem("blog")));
+  const contentState = convertFromRaw(JSON.parse(blog.content));
   const editorState = EditorState.createWithContent(contentState);
-  // console.log(JSON.parse(localStorage.getItem("blog")).blocks[0].text)
+  const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
   return (
     <div className="one-post-container">
+      
       <div className="admin-details">
         <div className="user-info">
           <img src="../creator.png" alt="avatar" />
@@ -25,7 +46,7 @@ const page = ({ params }) => {
             <p>Moez temimi</p>
             <p>Admin</p>
             <div className="blog-date">
-              <RiTimer2Fill /> 6 min read // July 10, 2023
+              <RiTimer2Fill /> 2 min read // {formattedDate}
             </div>
           </div>
         </div>
@@ -34,8 +55,9 @@ const page = ({ params }) => {
       <h1 className="blog-title">
         ReBootKamp ( RBK ) ouvre un nouveau hackerspace au Kef
       </h1>
-      <img className="blog-imagee" src="../typescript.png" alt="" />
+      <img className="blog-imagee" src={blog.image} alt="" />
       <div className="content">
+        {blog.description}
         <Editor editorState={editorState} toolbarHidden readOnly />
       </div>
     </div>

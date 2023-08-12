@@ -167,6 +167,16 @@ gap: 25px;
   .text-editor button:hover {
     background-color: #e6006e;
   }
+  #desc-input{
+    width: 50%;
+    min-height: 10vh;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+
+  }
   .image-preview {
     position: relative;
     width: 100%;
