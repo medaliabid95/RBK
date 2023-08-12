@@ -1,6 +1,8 @@
+'use client'
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Sidebar from "@/components/sidebar/sidebar";
+import React, { useState, useEffect } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -9,16 +11,30 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedLocation = sessionStorage.getItem('location');
+    const storedImage = sessionStorage.getItem('image');
+    const storedName = sessionStorage.getItem('name');
+     
+    console.log(storedLocation);
+    if (storedLocation && storedImage && storedName) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+  
+
   return (
     <html lang="en">
       <script
         src="https://kit.fontawesome.com/d05e64aa0f.js"
-        crossorigin="anonymous"
-      ></script>
+        crossOrigin="anonymous">
+      </script>
       <body className={inter.className}>
         <div className="dashboard-container">
-        <Sidebar />
-        {children}
+          {isLoggedIn && <Sidebar />}
+          {children}
         </div>
       </body>
     </html>

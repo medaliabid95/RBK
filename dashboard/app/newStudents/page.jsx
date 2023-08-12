@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import styles from './style.css';
+import Sidebar from "@/components/sidebar/sidebar";
 
 const StudentPage = () => {
   const [studentData, setStudentData] = useState([]);
@@ -20,6 +21,7 @@ const StudentPage = () => {
   };
 
   return (
+    <div>
     <div className={styles.card}>
       <h1>inscriptions récentes</h1>
       <table className={styles.table}>
@@ -50,6 +52,7 @@ const StudentPage = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };
