@@ -2,7 +2,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Sidebar from "@/components/sidebar/sidebar";
-import React, { useState, useEffect } from "react";
+import React  from "react";
+import { usePathname } from "next/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,19 +12,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const path = usePathname()
+   const location = sessionStorage.getItem('location');
+   const image = sessionStorage.getItem('image');
+   const name = sessionStorage.getItem('name'); 
 
-  useEffect(() => {
-    const storedLocation = sessionStorage.getItem('location');
-    const storedImage = sessionStorage.getItem('image');
-    const storedName = sessionStorage.getItem('name');
-     
-    console.log(storedLocation);
-    if (storedLocation && storedImage && storedName) {
-      setIsLoggedIn(true);
-    }
-  }, []);
-  
+
+
+
+   const condition = () =>{
+                  if(path === '/'){
+                    return 
+                  }
+                  else if(!location && !image && !name){
+                    return
+                  }
+                  else return <Sidebar />
+   }
 
   return (
     <html lang="en">
@@ -33,7 +38,7 @@ export default function RootLayout({ children }) {
       </script>
       <body className={inter.className}>
         <div className="dashboard-container">
-          {isLoggedIn && <Sidebar />}
+          {condition()}
           {children}
         </div>
       </body>

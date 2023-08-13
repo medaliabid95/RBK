@@ -1,11 +1,18 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import styles from './style.css';
-import Sidebar from "@/components/sidebar/sidebar";
+
 
 const StudentPage = () => {
   const [studentData, setStudentData] = useState([]);
-
+ 
+  
+    const location = sessionStorage.getItem('location');
+    const image = sessionStorage.getItem('image');
+    const name = sessionStorage.getItem('name');
+   
+  
+   
   useEffect(() => {
     fetchStudentData();
   }, []);
@@ -19,6 +26,12 @@ const StudentPage = () => {
       console.error('Error fetching data:', error);
     }
   };
+   
+
+  if(!location && !image && !name) {
+    return (<div className='not-found'>404 not found</div>)
+  }
+  else {
 
   return (
     <div>
@@ -54,7 +67,10 @@ const StudentPage = () => {
       </table>
     </div>
     </div>
-  );
+  );}
+
+
 };
+
 
 export default StudentPage;

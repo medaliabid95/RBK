@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
+import jwtDecode from 'jwt-decode';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const Login = () => {
       });
 
       const token = response.data.token;
-      var payload = JSON.parse(window.atob(token.split('.')[1]));
+      const payload = jwtDecode(token);
       const { name, compus, image } = payload;
 
       sessionStorage.setItem('name', name);
