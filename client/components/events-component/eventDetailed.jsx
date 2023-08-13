@@ -27,7 +27,7 @@ console.log(param);
           <img src={event.image} alt="" />
           <h5 className='event-detaield-info'>heure et lieu </h5>
           <div className='heure'>
-            <p >{event.date}</p>
+            <p >{event.heure}</p>
             <p>{event.lieu}</p>
           </div>
           <h1 className='event-detaield-info'> À propos de l'événement</h1>
