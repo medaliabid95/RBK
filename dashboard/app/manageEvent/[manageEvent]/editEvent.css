@@ -1,3 +1,8 @@
+.add-event-container{
+    width: 60vw;
+    position: absolute;
+    left: 25%;
+}
 .add-event-container h1 {
     color: #ff007b;
     padding: 5%;
@@ -53,7 +58,7 @@ label{
     font-size: 1vw;
 }
 
-.add-event-container span {
+.required {
     color: rgba(0, 0, 0, 0.197);
     padding-bottom: 2%;
     font-size: 0.8vw;
