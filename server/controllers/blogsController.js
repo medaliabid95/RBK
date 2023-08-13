@@ -1,6 +1,8 @@
+const {Sequelize, where}=require("sequelize")
 const blogs = require("../database/models/blogsModel.js");
 
 const addBlog = async (req, res) => {
+    console.log(req.body)
     try {
         const blog = await blogs.create(req.body);
         res.status(201).json(blog);
@@ -58,6 +60,40 @@ const deleteBlog = async (req, res) => {
         res.status(500).json(error);
     }
 };
+const updateVues = async (req, res) => {
+   
+    try {
+        const blog = await blogs.findByPk(req.params.id);
+
+        if (!blog) {
+            res.status(404).json({ message: "Blog not found" });
+            return;
+        }
+
+        await blog.update({ vues: Sequelize.literal('vues + 1') });
+
+        res.status(200).json(blog);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+const updateLikes= async (req, res) => {
+   
+    try {
+        const blog = await blogs.findByPk(req.params.id);
+
+        if (!blog) {
+            res.status(404).json({ message: "Blog not found" });
+            return;
+        }
+
+        await blog.update({ likes: Sequelize.literal('likes + 1') });
+
+        res.status(200).json(blog);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
 
 module.exports = {
     addBlog,
@@ -65,4 +101,6 @@ module.exports = {
     getAllBlogs,
     updateBlog,
     deleteBlog,
+    updateVues,
+    updateLikes
 };

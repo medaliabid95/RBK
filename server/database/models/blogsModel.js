@@ -13,6 +13,10 @@ const blogs = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -21,9 +25,13 @@ const blogs = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    video:{
-        type:DataTypes.TEXT,
-        allowNull:true
+      likes:{
+      type:DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    vues:{
+      type:DataTypes.INTEGER,
+      defaultValue: 0
     }
   },
   {
