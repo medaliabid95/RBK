@@ -1,6 +1,6 @@
 import React from 'react'
 import "./sidebar.css"
-import { faLocationDot, faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot, faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const sidebar = () => {
     return (
@@ -17,6 +17,11 @@ const sidebar = () => {
                     Projet récemment publié
                 </a></li>
             </ul>
+            <div className='profile-container'>
+                <img src="test.png" alt="" />
+                <p className='profile-Fullname'>Siraj (admin)</p>
+            </div>
+            <div><FontAwesomeIcon className="logout-icon" icon={faRightFromBracket} /></div>
         </header>
 
     )

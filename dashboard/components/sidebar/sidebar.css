@@ -58,3 +58,34 @@ body {
     color: #FF007B;
 
 }
+
+.profile-container {
+    display: flex;
+    place-self: end;
+    position: absolute;
+    top: 92%;
+    gap: 10px;
+}
+
+.profile-container img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.profile-Fullname {
+    color: black;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 1vw;
+}
+
+.logout-icon {
+    position: absolute;
+    margin-top: 58%;
+    margin-left: 83%;
+    width: 1.5vw;
+    color: black;
+    cursor: pointer;
+}
