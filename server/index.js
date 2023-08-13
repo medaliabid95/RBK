@@ -7,7 +7,7 @@ const studentRoutes = require("./routes/studentRoutes");
 const eventsRoutes=require("./routes/eventsRoutes.js")
 const adminRoutes=require("./routes/adminRoutes.js")
 const blogsRoutes=require("./routes/blogsRoutes.js")
-console.log(adminRoutes)
+
 
 console.log(eventsRoutes)
 
