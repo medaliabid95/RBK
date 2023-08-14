@@ -9,29 +9,30 @@
 	justify-content: center;
 	min-height: 100vh;
 	padding-left: 32%;
-  
+
 }
 
-.screen {		
-	background:  #ff007b;		
-	position: relative;	
+.screen {
+	background: #ff007b;
+	position: relative;
 	height: 600px;
-	width: 360px;	
+	width: 360px;
 	box-shadow: 0px 0px 24px #5C5696;
 
 }
 
 
-.span{
+.span {
 	text-align: center;
-	color : white;
+	color: white;
 
 }
+
 .screen__content {
 	z-index: 1;
-	position: relative;	
+	position: relative;
 	height: 100%;
-    padding: 0 auto ;
+	padding: 0 auto;
 }
 
 
@@ -43,8 +44,8 @@
 }
 
 .login__field {
-	padding: 20px 0px;	
-	position: relative;	
+	padding: 20px 0px;
+	position: relative;
 }
 
 .login__icon {
@@ -68,7 +69,15 @@
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: #6A679E; 
+	border-bottom-color: #6A679E;
+}
+
+.login__input::placeholder {
+	color: white
+}
+
+.login__input {
+	color: white;
 }
 
 .login__submit {
@@ -102,6 +111,6 @@
 	color: #ff007b;
 }
 
-.error{
+.error {
 	color: #fff;
 }
