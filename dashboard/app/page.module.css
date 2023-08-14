@@ -68,8 +68,7 @@
 .login__input:focus,
 .login__input:hover {
 	outline: none;
-	border-bottom-color: #6A679E;
-
+	border-bottom-color: #6A679E; 
 }
 
 .login__submit {
