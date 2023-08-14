@@ -19,7 +19,7 @@ const StudentPage = () => {
 
   const fetchStudentData = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:3001/students/getOne/${location}`);
+      const response = await fetch('http://127.0.0.1:3001/students/getAll');
       const data = await response.json();
       setStudentData(data);
     } catch (error) {
@@ -43,6 +43,7 @@ const StudentPage = () => {
              <th>Name</th>
              <th>Phone</th>
              <th>Email</th>
+             <th>Campus</th>   
              <th>Session</th>
              <th>Formule</th>
              <th>Age</th>
@@ -55,6 +56,7 @@ const StudentPage = () => {
               <td>{`${student.nom} ${student.prenom}`}</td>
               <td>{student.phone}</td>
               <td>{student.email}</td>
+              <td>{student.compus}</td>
               <td>{student.session}</td>
               <td>{student.formule}</td>
               <td>{student.age}</td>
