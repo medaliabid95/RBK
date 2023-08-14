@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import "./editEvent.css"
 import axios from 'axios';
-import { useParams } from 'next/navigation'
+
+import { useParams,useRouter } from 'next/navigation'
 import { BsFillImageFill } from "react-icons/bs";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -11,7 +12,8 @@ import { EditorState, convertToRaw, ContentState } from "draft-js";
 const EditEvent = () => {
     const param = useParams()
     const id = param.manageEvent
-    
+    const router = useRouter(); 
+    // const  manageEvent = router.query.manageEvent;
     const [event, setEvent] = useState([])
     const [jsonHtml, setJsonHtml] = useState();
     const [file, setFile] = useState(event.image)
@@ -69,7 +71,7 @@ const EditEvent = () => {
             heure: date,
             description: JSON.stringify(rawContentState.blocks[0].text)
         })
-        .then((res)=>alert("Updated event"))
+        .then((res)=>{alert("Updated event");router.push("/manageEvent")})
         .catch((err)=>alert("Error updating event"))
     }
     
