@@ -7,6 +7,7 @@ import Header from "../../components/blogsHeader/Header.jsx";
 import BlogCard from "@/components/blogsCard/BlogCard.jsx";
 import FilterBlog from "@/components/BlogsFilter/FilterBlog.jsx";
 
+
 const BlogsPage = () => {
   const [blogs, setBlogs] = useState([]);
 
@@ -41,6 +42,7 @@ const BlogsPage = () => {
           <BlogCard key={blog.id} blog={blog} handleVuee={handleVuee} />
         ))}
       </section>
+   
     </div>
   );
 };
