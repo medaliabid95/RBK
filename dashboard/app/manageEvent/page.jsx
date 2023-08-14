@@ -4,6 +4,9 @@ import axios from 'axios'
 import Link from 'next/link'
 import "./manageEvents.css"
 const ManageEvents = () => {
+    const location = sessionStorage.getItem('location');
+    const image = sessionStorage.getItem('image');
+    const name = sessionStorage.getItem('name');
     const [originalEvents, setOriginalEvents] = useState([]);
     const [events, setEvents] = useState([])
     const [deleted, setDeleted] = useState(false)
@@ -42,6 +45,10 @@ const ManageEvents = () => {
             .then((res) => { alert(`evenet with id ${id} was deleted`); setDeleted(!deleted) })
             .catch((err) => alert("failed to delete event"))
     }
+    if(!location && !image && !name) {
+        return (<div className='not-found'>404 not found</div>)
+      }
+      else {
     return (
         <div className='big-container'>
             <div className='container-container'>
@@ -70,6 +77,6 @@ const ManageEvents = () => {
             ))}
         </div>
 
-    )
+    )}
 }
 export default ManageEvents;
