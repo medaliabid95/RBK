@@ -19,7 +19,7 @@ const VideoPlayer = ({ videoSrc, thumbnailSrc,setPlay,play }) => {
   };
   return (
     <>  {play === 1 ? (<FaPlay className='playbutton' onClick={() => { togglePlay(); setPlay(0) }} />) : ""}
-      <video className='landing-video' onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
+      <video className='video' onClick={togglePlay} ref={videoRef} controls={false} poster={thumbnailSrc}>
         <source src={videoSrc} type="video/mp4" />
       </video>
       </>

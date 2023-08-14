@@ -21,11 +21,11 @@ const getAllStudents = async (req, res) => {
   }
 };
 
-const getStudentById = async (req, res) => {
-  const studentId = req.params.id;
+const getStudentByCompus = async (req, res) => {
+  const studentCompus = req.params.compus;
 
   try {
-    const student = await Student.findByPk(studentId);
+    const student = await Student.findAll({where : {compus :studentCompus }});
     if (student) {
       res.status(200).json(student);
     } else {
@@ -71,7 +71,7 @@ const deleteStudent = async (req, res) => {
 module.exports = {
   createStudent,
   getAllStudents,
-  getStudentById,
+  getStudentByCompus,
   updateStudent,
   deleteStudent,
 };
