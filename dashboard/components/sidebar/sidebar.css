@@ -94,7 +94,7 @@ body {
     position: relative;
     display: none;
     list-style: none;
-    transition:.3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .sb-submenu-link {
@@ -119,4 +119,5 @@ body {
 
 .sub-menu-icon {
     cursor: pointer;
+
 }

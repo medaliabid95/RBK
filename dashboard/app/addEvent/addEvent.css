@@ -1,0 +1,161 @@
+.add-event-container h1 {
+    color: #ff007b;
+    padding: 5%;
+    font-family: Arial, sans-serif;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label{
+    cursor: pointer;
+}
+
+.image-input{
+    
+    cursor: pointer;
+    text-align: center;
+    height: 10vh;
+    width: 40vw;
+    border : 1mm ridge rgb(19, 19, 19);
+    border-radius: 10px;
+    background-color:#ff007b34;
+}
+.image-input img{
+    place-self: center;
+    height: 80%;
+    width: 15%;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.image-input-label{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+.button-post {
+    color: whitesmoke;
+    background-color: #ff007b;
+    height: 4vh;
+    width: 6vw;
+    border: none;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+.add-event-container h2 {
+    color: rgba(0, 0, 0, 0.59);
+    padding-bottom: 2%;
+    font-size: 1vw;
+}
+
+.add-event-container span {
+    color: rgba(0, 0, 0, 0.197);
+    padding-bottom: 2%;
+    font-size: 0.8vw;
+}
+
+.toolbarClassName {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    padding: 5px;
+}
+
+/* Styling for the editor wrapper */
+.wrapperClassName {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Styling for the editor content */
+.editorClassName {
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    overflow-y: auto;
+}
+
+/* Styling for the editor placeholder text */
+.public-DraftEditorPlaceholder-root {
+    color: #999;
+}
+
+/* Styling for the editor content */
+.public-DraftEditor-content {
+    min-height: 200px;
+    font-size: 1rem;
+    color: #333;
+    overflow-y: auto;
+}
+
+.text-editor {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.form__group {
+    position: relative;
+    margin-bottom: 1%;
+}
+
+.form__field {
+    border: 1px solid silver !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #313a46;
+    height: 40px;
+    padding: 0rem 15px;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    top: 10px;
+    border-right: none;
+    border-left: none;
+}
+
+.form__label {
+    background-color: white;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    color: #9b9b9b;
+    display: block;
+    font-size: .9em;
+    margin-left: 10px;
+    padding: 0 10px;
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    transition: 0.2s;
+}
+
+.form__field:focus {
+    border: 1px solid #B9192C !important;
+    outline: none;
+}
+
+.form__field:focus~.form__label {
+    background-color: white;
+    border-right: 1px solid #B9192C;
+    border-left: 1px solid #B9192C;
+    color: #B9192C;
+    font-size: .9em;
+    margin-left: 10px;
+    padding: 0 10px;
+    position: absolute;
+    top: -10px;
+    transition: 0.2s;
+}

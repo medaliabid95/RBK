@@ -4,8 +4,13 @@ const cors = require("cors");
 const sequelize = require("./database/configdb");
 const { Sequelize } = require("sequelize");
 const studentRoutes = require("./routes/studentRoutes"); 
-const eventsRoutes=require("./routes/eventsRoutes.js");
+const eventsRoutes=require("./routes/eventsRoutes.js")
 const projectsRoutes=require("./routes/rProjectRoutes");
+const adminRoutes=require("./routes/adminRoutes.js")
+const blogsRoutes=require("./routes/blogsRoutes.js")
+
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,8 +25,11 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 
 app.use("/students", studentRoutes);
-app.use("/events",eventsRoutes);
 app.use("/projects",projectsRoutes)
+app.use("/events",eventsRoutes)
+app.use("/admin",adminRoutes)
+app.use("/blogs",blogsRoutes)
+
 
 sequelize.sync()
 .then(()=>{
