@@ -1,61 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: space Grotesk;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: space Grotesk;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+
 .header-sidebar {
-  position: sticky;
-  top: 0;
-  width: 20%;
-  height: 100vh;
-  display: block;
-  padding: 15px 15px;
-  background-color: white;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    display: block;
+    padding: 15px 15px;
+    background-color: white;
 }
 
 .logo-nav {
-  padding: 20px 10px;
+    padding: 20px 10px;
 }
 
 .location {
-  padding: 10px 10px;
+    padding: 10px 10px;
 }
 
 #location-sidebard {
-  font-size: 1.5vw;
-  margin-left: 3px;
-  color: black;
-  font-weight: bold;
+    font-size: 1.5vw;
+    margin-left: 3px;
+    color: black;
+    font-weight: bold;
 }
 
 .side-links {
-  list-style: none;
-  padding: 30px 10px;
+    list-style: none;
+    padding: 30px 10px;
 }
 
 .side-link {
-  padding: 20px 0;
-  font-size: 1.2vw;
-
-  border-bottom: 1px solid#ccc;
+    padding: 20px 0;
+    font-size: 1.2vw;
+    color: black;
+    border-bottom: 1px solid#ccc;
 }
 
 .side-anchor-link {
-  padding: 0 8px;
-  transition: 0.2s ease-in-out;
-  text-decoration: none;
-  color: black;
+    padding: 0 8px;
+    transition: 0.2s ease-in-out;
 }
 
 .side-link:hover .side-anchor-link {
-  color: #ff007b;
+    color: #FF007B;
+
+}
+
+.profile-container {
+    display: flex;
+    place-self: end;
+    position: absolute;
+    top: 92%;
+    gap: 10px;
+}
+
+.profile-container img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.profile-Fullname {
+    color: black;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 1vw;
+}
+
+.logout-icon {
+    position: absolute;
+  
+    margin-left: 83%;
+    width: 1.5vw;
+    color: black;
+    cursor: pointer;
 }

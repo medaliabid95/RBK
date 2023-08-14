@@ -27,6 +27,10 @@ const admin = sequelize.define("admin", {
     type: DataTypes.TEXT,
     allowNull: true,
   },
+  compus:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 
 module.exports = admin;
