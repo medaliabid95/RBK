@@ -17,7 +17,7 @@ const cards = () => {
     console.log(newc.getTime());
     const [timeAgo, setTimeAgo] = useState(null)
 
-    return (<div className='cs-container'><p className='title-cards-section'> Projet récemment publié </p>
+    return (<div className='cs-container'><p className='title-cards-section'> Projets récemments publiés </p>
         <div className='cards-section-inner-container'>
             {Videos.map((video, i) => {
                 return (<div className='one-video' key={i} >
@@ -28,13 +28,11 @@ const cards = () => {
                         muted={false}
                     />
                     <span className='video-info'>
-                        <img src="/images/test.png" alt="" className='project-img' />
                         <span className='project-name'>{video.title}</span>
                         <span className='project-timeAgo'>{timeAgo && timeAgo.format(video.date)}</span>
                     </span>
-
                     <span className='more-details'> <FontAwesomeIcon icon={faCircleInfo} style={{ color: "#ffffff", }} />Plus de détails</span>
-
+                    <p className='desc-demo'>Lorem ipsum dolor sit amet  consectetur asdazdazdazdazdazdazdazdazdazdzadazdazd</p>
                 </div>
                 )
 

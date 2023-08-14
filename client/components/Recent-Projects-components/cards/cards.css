@@ -19,9 +19,8 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
     margin-top: 30px;
-    height: 23.4vh;
+    gap: 20px;
     object-fit: cover;
 }
 
@@ -30,8 +29,6 @@ body {
     font-size: 2vw;
     font-weight: bold;
 }
-
-
 
 .one-video {
     position: relative;
@@ -56,7 +53,7 @@ body {
 .more-details {
     display: flex;
     position: relative;
-    top: -30%;
+    top: -21%;
     left: 5%;
     color: white;
     pointer-events: none;
@@ -75,7 +72,7 @@ body {
 }
 
 .project-timeAgo {
-    margin-left: 25%;
+    margin-left: 40%;
     place-self: center;
 }
 
@@ -83,6 +80,14 @@ body {
     width: 9%;
     border: 1px black solid;
     border-radius: 30px;
+}
+
+.desc-demo {
+    position: relative;
+    margin-left: 3%;
+    bottom: 5%;
+    width: 50%;
+    word-break: break-all;
 }
 
 @keyframes gradient {

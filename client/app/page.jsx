@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'

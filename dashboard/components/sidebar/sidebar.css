@@ -82,10 +82,41 @@ body {
 }
 
 .logout-icon {
-    position: absolute;
-    margin-top: 58%;
-    margin-left: 83%;
+    position: relative;
+    left: 300%;
+    top: 50%;
     width: 1.5vw;
     color: black;
+    cursor: pointer;
+}
+
+.side-bar-submenu {
+    position: relative;
+    display: none;
+    list-style: none;
+    transition:.3s ease-in-out;
+}
+
+.sb-submenu-link {
+    text-decoration: none;
+    padding: 5px 20px;
+    padding-left: 20%;
+    font-size: 1vw;
+}
+
+.sb-submenu-link:hover {
+    color: #FF007B;
+}
+
+.side-link:hover .side-bar-submenu {
+    display: block;
+
+}
+
+.sb-link {
+    margin-left: 2%;
+}
+
+.sub-menu-icon {
     cursor: pointer;
 }
