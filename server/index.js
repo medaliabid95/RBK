@@ -5,11 +5,10 @@ const sequelize = require("./database/configdb");
 const { Sequelize } = require("sequelize");
 const studentRoutes = require("./routes/studentRoutes"); 
 const eventsRoutes=require("./routes/eventsRoutes.js")
+const projectsRoutes=require("./routes/rProjectRoutes");
 const adminRoutes=require("./routes/adminRoutes.js")
 const blogsRoutes=require("./routes/blogsRoutes.js")
 const commentsRoutes=require("./routes/commentsRoutes.js")
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -23,10 +22,12 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 
 app.use("/students", studentRoutes);
+app.use("/projects",projectsRoutes)
 app.use("/events",eventsRoutes)
 app.use("/admin",adminRoutes)
 app.use("/blogs",blogsRoutes)
 app.use("/",commentsRoutes)
+
 
 sequelize.sync()
 .then(()=>{
