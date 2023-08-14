@@ -114,7 +114,7 @@ const BlogCard = ({ blog, handleVuee }) => {
               {blog.likes} j'aime
             </p>
             <p className="vues">{blog.vues} vues</p>
-            <p className="comments">0 commentaires</p>
+            <p className="comments">{blog.comments.length} commentaire</p>
           <div className="likes">
             {blog.likes}
             <AiFillHeart style={{ fill: "red" }} />
