@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.4.0",
     "draft-js": "^0.11.7",
+    "moment": "^2.29.4",
     "next": "13.4.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
