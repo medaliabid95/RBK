@@ -1,5 +1,5 @@
 const {Sequelize, where}=require("sequelize")
-const blogs = require("../database/models/blogsModel.js");
+const {blogs,comments} = require("../database/models/blogsModel.js");
 
 const addBlog = async (req, res) => {
     console.log(req.body)
@@ -13,7 +13,9 @@ const addBlog = async (req, res) => {
 
 const getBlog = async (req, res) => {
     try {
-        const blog = await blogs.findByPk(req.params.id);
+        const blog = await blogs.findByPk(req.params.id,{
+            include: comments
+        });
         if (!blog) {
             res.status(404).json({ message: "Blog not found" });
         } else {
@@ -26,7 +28,9 @@ const getBlog = async (req, res) => {
 
 const getAllBlogs = async (req, res) => {
     try {
-        const allBlogs = await blogs.findAll();
+        const allBlogs = await blogs.findAll({
+            include: comments
+        });
         res.status(200).json(allBlogs);
     } catch (error) {
         res.status(500).json(error);
@@ -78,6 +82,7 @@ const updateVues = async (req, res) => {
     }
 };
 const updateLikes= async (req, res) => {
+    console.log(req.body.like)
    
     try {
         const blog = await blogs.findByPk(req.params.id);
@@ -87,7 +92,7 @@ const updateLikes= async (req, res) => {
             return;
         }
 
-        await blog.update({ likes: Sequelize.literal('likes + 1') });
+        await blog.update({ likes: Sequelize.literal(`likes ${req.body.like}`) });
 
         res.status(200).json(blog);
     } catch (error) {

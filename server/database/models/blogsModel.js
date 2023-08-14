@@ -25,18 +25,49 @@ const blogs = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-      likes:{
-      type:DataTypes.INTEGER,
-      defaultValue: 0
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
-    vues:{
-      type:DataTypes.INTEGER,
-      defaultValue: 0
+    vues: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+const comments = sequelize.define(
+  "comments",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement:true
+    },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    accepted:{
+      type:DataTypes.TINYINT,
+      defaultValue:1
     }
   },
   {
     timestamps: true,
   }
 );
-
-module.exports =blogs;
+blogs.hasMany(comments, {
+  foreignKey: "blogId", 
+  onDelete: "CASCADE", 
+});
+comments.belongsTo(blogs, {
+  foreignKey: "blogId",
+});
+module.exports = { blogs, comments };

@@ -15,7 +15,7 @@ const Emploi = () => {
                 <h1 className="block-title">Obtenez votre job de rêve grâce<br /> à notre <span className="rose">services carrières.</span></h1>
                 <h3 className="block-desc">Notre Service carrières vous accompagne de manière<br /> personnalisée pour vous préparer à décrocher un emploi<br /> grâce à notre réseau de partenaires employeurs.</h3>
                 <div className="three-box-container">
-                    <div className="box-stat" id="box-1">
+                    <div className="box-stat" id="box-1">import AutoSlider from "@/components/Automatic-slider/AutoSlider.jsx";
                         <div><h1 className="statNumbers"><Number n={1000} /><span id="span-after-number">+</span></h1></div>
                         <p className="stat-desc">Diplômés de RBK<br /> depuis 2016</p>
                     </div>

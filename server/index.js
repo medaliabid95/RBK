@@ -7,9 +7,8 @@ const studentRoutes = require("./routes/studentRoutes");
 const eventsRoutes=require("./routes/eventsRoutes.js")
 const adminRoutes=require("./routes/adminRoutes.js")
 const blogsRoutes=require("./routes/blogsRoutes.js")
+const commentsRoutes=require("./routes/commentsRoutes.js")
 
-
-console.log(eventsRoutes)
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,6 +26,7 @@ app.use("/students", studentRoutes);
 app.use("/events",eventsRoutes)
 app.use("/admin",adminRoutes)
 app.use("/blogs",blogsRoutes)
+app.use("/",commentsRoutes)
 
 sequelize.sync()
 .then(()=>{

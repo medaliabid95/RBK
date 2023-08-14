@@ -100,8 +100,10 @@ body {
   position: relative;
 }
 
-.video-container video {
+
+.video {
   width: 50%;
+  margin: 0 auto;
   border-radius: 18px;
 }
 
@@ -295,7 +297,7 @@ body {
   .planining-btn {
     font-size: 16px;
   }
-
+ 
   .aws-btn {
     font-size: 16px;
   }
@@ -313,9 +315,7 @@ body {
     font-size: 2vw;
   }
 
-  .video-container video {
-    width: 100%;
-  }
+
 
   .planning div {
     width: 49%;
@@ -358,8 +358,9 @@ body {
     font-size: 18px;
   }
 
-  .video-container video {
+  .video {
     width: 60%;
+   
   }
 
   .planning div {
@@ -394,7 +395,7 @@ body {
     width: 100%;
   }
 
-  .video-container video {
+  .video {
     width: 100%;
   }
 
@@ -466,5 +467,10 @@ body {
 @media screen and (min-width: 1200px) {
   .planning div {
     width: 47%;
+  }
+}
+@media (max-width:992px){
+  .video{
+    width: 80%;
   }
 }
