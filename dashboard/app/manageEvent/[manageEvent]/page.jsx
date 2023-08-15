@@ -48,6 +48,7 @@ const EditEvent = () => {
             .then((res) => {
                 setTitle(res.data.title);
                 setFile(res.data.image);
+                setImageUrl(res.data.image)
                 setAddress(res.data.lieu);
                 setPreDescription(res.data.preDescription);
                 setDate(res.data.heure);
@@ -56,23 +57,36 @@ const EditEvent = () => {
             })
             .catch((err) => console.log(err))
     }
-
+    const uploadImage = async () => {
+        const form = new FormData();
+        form.append("file", file);
+        form.append("upload_preset", "travelMind");
+        await axios
+            .post("https://api.cloudinary.com/v1_1/do25iiz1j/upload", form)
+            .then((res) => {
+                setImageUrl(res.data.secure_url);
+                setIsLoading(false);
+                console.log("imageee");
+            })
+            .catch((err) => console.log(err));
+    };
 
     const update = async (id) => {
         const contentState = editorState.getCurrentContent();
         const rawContentState = convertToRaw(contentState);
-        const form = new FormData()
-        form.append("file", file)
-        form.append("upload_preset", "blogging")
-        const res = await axios.post("https://api.cloudinary.com/v1_1/dx3tuofza/upload", form)
-        const url = res.data.secure_url
+        const contentPlainText = EditorState.createWithContent(contentState).getCurrentContent().getPlainText();
+        // const form = new FormData()
+        // form.append("file", file)
+        // form.append("upload_preset", "blogging")
+        // const res = await axios.post("https://api.cloudinary.com/v1_1/dx3tuofza/upload", form)
+        // const url = res.data.secure_url
         axios.put(`http://localhost:3001/events/updateOne/${id}`, {
             title: title,
             preDescription: preDescription,
-            image: url,
+            image: imageUrl,
             lieu: adress,
             heure: date,
-            description: JSON.stringify(rawContentState.blocks[0].text)
+            description:contentPlainText
         })
             .then((res) => { alert("Updated event"); router.push("/manageEvent") })
             .catch((err) => alert("Error updating event"))
@@ -90,7 +104,7 @@ const EditEvent = () => {
         return (
             <div className='add-event-container'>
                 <h1>Creez un nouveau event</h1>
-                <h2>titre du event : <span>*required</span></h2>
+                <h2>titre du event : <span className='required'>*required</span></h2>
                 <div class="form__group">
                     <input type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} class="form__field w-100" placeholder="titre" />
                     <label for="name" class="form__label"> titre </label>
@@ -100,10 +114,13 @@ const EditEvent = () => {
                     <input type="text" value={preDescription} onChange={(e) => setPreDescription(e.target.value)} class="form__field w-100" placeholder="sous description" />
                     <label for="name" class="form__label"> sous description </label>
                 </div>
-                <h2>ajouter une image : <span>*required</span></h2>
+                <h2>ajouter une image : <span className='required'>*required</span></h2>
                 <div className="image-upload-container">
                     {imageUrl ? (
                         <div className="image-preview">
+                            <button onClick={() => setImageUrl("")} className="change-image">
+                                Changer l'image
+                            </button>
                             <img src={imageUrl} alt="Uploaded" />
                         </div>
                     ) : (
@@ -133,20 +150,23 @@ const EditEvent = () => {
                                     ou cliquez pour la sélectionner
                                 </p>
                             </label>
+                            <button onClick={uploadImage} className="upload-button">
+                                Upload Image
+                            </button>
                         </>
                     )}
                 </div>
-                <h2>adress : <span>*required</span></h2>
+                <h2>adress : <span  className='required'>*required</span></h2>
                 <div class="form__group">
                     <input type="text" value={adress} class="form__field w-100" onChange={(e) => setAddress(e.target.value)} placeholder="adress" />
                     <label for="name" class="form__label"> adress </label>
                 </div>
-                <h2>date : <span>*required</span></h2>
+                <h2>date : <span className='required'>*required</span></h2>
                 <div class="form__group">
                     <input type="text" value={date} class="form__field w-100" onChange={(e) => setDate(e.target.value)} placeholder="date" />
                     <label for="name" class="form__label"> date </label>
                 </div>
-                <h2>description du blog : <span>*required</span></h2>
+                <h2>description du blog : <span className='required'>*required</span></h2>
                 <div className="text-editor">
                     <Editor
                         editorState={editorState}

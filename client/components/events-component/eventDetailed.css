@@ -12,8 +12,7 @@
     }
 
     .event-detailed-desc {
-        word-spacing: 0.1vw;
-        line-height: 1.8;
+        padding-bottom:8%;
     }
 
     .event-button {
@@ -29,7 +28,8 @@
     }
 
     .event-button a {
-        text-decoration: underline
+        text-decoration: underline;
+        
     }
 
     .heure {
@@ -69,25 +69,23 @@
     }
 
     .event-detailed-desc {
-        word-spacing: 0.1vw;
-        line-height: 1.8;
+        padding-bottom: 9%;
     }
 
     .event-button {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        gap: 0.5rem;
         margin: 3% auto;
         background-color: #FF007B;
         width: 45vw;
-        height: 10vh;
+        height: 100%;
         color: white;
         padding: 1%;
     }
 
     .event-button a {
         text-decoration: underline;
-        
+        grid-row:2
     }
 
     .heure {

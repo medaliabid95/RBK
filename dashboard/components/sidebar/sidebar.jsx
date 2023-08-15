@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import "./sidebar.css";
-import { faLocationDot, faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faPlus ,faListCheck ,faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
