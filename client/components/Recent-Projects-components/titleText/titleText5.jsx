@@ -18,7 +18,7 @@ const titleText5 = () => {
         hiddenElements.forEach((el) => observer.observe(el))
     })
     return (
-        <div><h1 className='text5-h1 hidden8'>TURN YOUR <span id="text5-success"></span></h1></div>
+        <div><h1 className='text5-h1 hidden8'><span id="text5-success"></span></h1></div>
     )
 }
 
