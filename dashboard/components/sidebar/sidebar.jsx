@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import "./sidebar.css";
-import { faLocationDot, faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faBorderAll, faInbox, faPeopleGroup, faDiagramProject, faFeather, faCalendar, faRightFromBracket,faPlus,faListCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
             </div>
             <ul className='side-links'>
 
-                <li className='side-link'><span><FontAwesomeIcon icon={faBorderAll} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Tous les demandes</a></li>
+                <li className='side-link'><span><FontAwesomeIcon icon={faBorderAll} style={{ width: "21px" }} /></span><a href="/allStudents" className='side-anchor-link'>Tous les demandes</a></li>
                 <li className='side-link'><span><FontAwesomeIcon icon={faInbox} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Tous les messages</a></li>
 
                 <li className='side-link'><span><FontAwesomeIcon icon={faPeopleGroup} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Cohorts</a></li>
