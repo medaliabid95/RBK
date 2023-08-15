@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter,useSearchParams } from 'next/navigation';
 import './style.css';
 import axios from 'axios';
 
@@ -25,7 +24,7 @@ const Page = () => {
   
 
 
-
+ const router = useRouter()
 
   const searchParams = useSearchParams();
   const queryParams = Object.fromEntries(searchParams);
@@ -64,10 +63,10 @@ const Page = () => {
     queryParams.city = city ;
     queryParams.compus =  selectedCampus ; 
     console.log(queryParams);
+    bot();
     try {
       const response = await axios.post('http://127.0.0.1:3001/students/add', queryParams);
       console.log('Student added successfully:', response.data);
-      bot();
     } catch (error) {
       console.error('Error adding student:', error);
     }
@@ -76,8 +75,7 @@ const Page = () => {
   
 
   const bot = () => {
-    console.log('hi')
-    
+      console.log('bot')
       window.botpressWebChat.sendEvent({type: 'trigger' });
     }
 
@@ -127,7 +125,7 @@ const Page = () => {
         <button type='button'  onClick={()=> {history.back()}}>Retour</button>
        
       
-         <button   type='submit' >Poursuivre ma candidature</button>
+         <button  onClick={()=>router.push('/')}  type='submit' >Poursuivre ma candidature</button>
         
         </div>
       </form>

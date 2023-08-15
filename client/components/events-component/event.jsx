@@ -20,19 +20,18 @@ export const Event = () => {
     return (
         <div>
             {events.map((event) => (
-                <div className='one-event'>
-                    <div className='event-date'>
-                        <img src="date++.png" alt="" />
+                <div className='one-event-x'>
+                    <div className='event-date-x'>
+                        <img src="date.png" alt="" />
                         <h3>{event.heure}</h3>
                     </div>
-                    <h1 className='event-title'>{event.title}</h1>
-                    <div className='event-paragraph truncate'>{event.description}</div>
-                    <Link className='read-more' href={`/events/${event.id}`}>
-                   <span className='read-more-text'>read more</span>
+                    <h1 className='event-title-x'>{event.title}</h1>
+                    <div className='event-paragraph-x truncate'>{event.description}</div>
+                    <Link className='read-more-x' href={`/events/${event.id}`}>
+                   <span className='read-more-text-x'>read more</span>
                     </Link>
-                    
-                    <img className='event-img' src={event.image} alt="" />
-                    <div className='line-after'></div>
+                    <img className='event-img-x' src={event.image} alt="" />
+                    <div className='line-after-x'></div>
                 </div>
             ))}
         </div>

@@ -36,22 +36,31 @@ const AddEvent = () => {
         return "handled";
     };
 
+    const uploadImage = async () => {
+        const form = new FormData();
+        form.append("file", file);
+        form.append("upload_preset", "travelMind");
+        await axios
+            .post("https://api.cloudinary.com/v1_1/do25iiz1j/upload", form)
+            .then((res) => {
+                setImageUrl(res.data.secure_url);
+                setIsLoading(false);
+                console.log("imageee");
+            })
+            .catch((err) => console.log(err));
+    };
+
     const postEvent = async () => {
         const contentState = editorState.getCurrentContent();
         const rawContentState = convertToRaw(contentState);
-        const form = new FormData()
-        form.append("file", file)
-        form.append("upload_preset", "blogging")
-        const res = await axios.post("https://api.cloudinary.com/v1_1/dx3tuofza/upload", form)
-        const url = res.data.secure_url
-        console.log(title, url, preDescription, adress, date);
+        const contentPlainText = EditorState.createWithContent(contentState).getCurrentContent().getPlainText();
         axios.post("http://localhost:3001/events/addEvent", {
             title: title,
             preDescription: preDescription,
-            image: url || file,
+            image: imageUrl,
             lieu: adress,
             heure: date,
-            description: JSON.stringify(rawContentState.blocks[0].text)
+            description: contentPlainText
         })
             .then((res) => {
                 setTitle("");
@@ -118,7 +127,9 @@ const AddEvent = () => {
                                     ou cliquez pour la sélectionner
                                 </p>
                             </label>
-                            
+                            <button onClick={uploadImage} className="upload-button">
+                                Upload Image
+                            </button>
                         </>
                     )}
                 </div>
@@ -127,7 +138,7 @@ const AddEvent = () => {
                     <input type="text" class="form__field w-100" onChange={(e) => setAddress(e.target.value)} placeholder="adress" />
                     <label for="name" class="form__label"> adress </label>
                 </div>
-                <h2>date : <span>*required</span></h2>
+                <h2>date : <span className='required'>*required</span></h2>
                 <div class="form__group">
                     <input type="text" class="form__field w-100" onChange={(e) => setDate(e.target.value)} placeholder="date" />
                     <label for="name" class="form__label">date </label>

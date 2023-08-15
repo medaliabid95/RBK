@@ -9,6 +9,7 @@ const projectsRoutes=require("./routes/rProjectRoutes");
 const adminRoutes=require("./routes/adminRoutes.js")
 const blogsRoutes=require("./routes/blogsRoutes.js")
 const commentsRoutes=require("./routes/commentsRoutes.js")
+const visitorRoutes = require('./routes/IncrementVisitors.js');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
 
-
+app.use("/visitors",visitorRoutes);
 
 app.use("/students", studentRoutes);
 app.use("/projects",projectsRoutes)
