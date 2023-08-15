@@ -98,13 +98,17 @@ body {
 }
 
 .sb-submenu-link {
-    text-decoration: none;
     padding: 5px 20px;
     padding-left: 20%;
     font-size: 1vw;
 }
 
-.sb-submenu-link:hover {
+.side-anchor-link {
+    text-decoration: none;
+    color: black;
+}
+
+.sb-link:hover {
     color: #FF007B;
 }
 
@@ -115,6 +119,8 @@ body {
 
 .sb-link {
     margin-left: 2%;
+    text-decoration: none;
+    color: black;
 }
 
 .sub-menu-icon {

@@ -1,46 +1,48 @@
-
-.body{
-    background-color: white;
+.body {
+  background-color: white;
 }
 
 
-h1{
-    color: #ff007b;
-    padding-left: 26%;
-}  
+h1 {
+  color: #ff007b;
+}
+
+#table-text-container {
+  margin: 20% 3%;
+}
+
 
 .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 
-  }
-  
-  table {
-    width: 75%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    margin-left: 27%;
-    
-  }
-  
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #e0e0e0;
-  }
-  
+}
+
+table {
+  width: 75%;
+  border-collapse: collapse;
+  margin-top: 15px;
+
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
