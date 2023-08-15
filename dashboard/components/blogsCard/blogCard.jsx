@@ -1,30 +1,64 @@
 "use client";
-import React from "react";
+import React,{useState,useRef} from "react";
 
 import { RiTimer2Fill } from "react-icons/ri";
 import { AiFillHeart } from "react-icons/ai";
+import { FiMoreVertical } from "react-icons/fi";
 import moment from "moment";
+import axios from "axios";
 
 
+const BlogCard = ({ blog,handleRefresh}) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
-const BlogCard = ({ blog }) => {
- 
+  
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const closeDropdown = () => {
+    setShowDropdown(false);
+  };
+
   if (!blog) {
     return null;
   }
 
+  const handleDocumentClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      closeDropdown();
+    }
+  };
 
+
+  document.addEventListener("mousedown", handleDocumentClick);
   const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
- 
+  const handleDeleteBlog=async(id)=>{
+    axios.delete(`http://localhost:3001/blogs/deleteOne/${id}`)
+    .then((res)=>handleRefresh())
+    .catch(err=>console.log("delete error"))
+}
+
  
   
   return (
-    <div className="blog-card-cotainer">
+<div className="blog-card-cotainer"  >
+      <div className="edit-blog">
+        <FiMoreVertical onClick={toggleDropdown} />
+        {showDropdown && (
+          <div ref={dropdownRef} className="dropdown">
+            {/* Dropdown content */}
+            <p onClick={()=>router.push(`/manageBlogs/${blog.id}`)}>Edit</p>
+            <p onClick={()=>handleDeleteBlog(blog.id)}>Delete</p>
+          </div>
+        )}
+      </div>
       <img
-        onClick={() => {
-          router.push(`/Blogs/${blog.id}`, { scroll: true });
+        // onClick={() => {
+        //   router.push(`/Blogs/${blog.id}`, { scroll: true });
        
-        }}
+        // }}
         className="blog-image"
         src={blog.image}
         alt=""

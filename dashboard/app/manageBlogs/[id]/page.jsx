@@ -1,44 +1,46 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./editBlog.css";
 import axios from "axios";
-import "./addBlog.css";
 import { BsFillImageFill } from "react-icons/bs";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { useRouter } from "next/navigation";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
+
 import { useRouter } from "next/navigation";
-const page = () => {
-  const router = useRouter()
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+const EditEvent = ({ params }) => {
+  const router=useRouter()
   const [jsonHtml, setJsonHtml] = useState();
-  const [imageUrl, setImageUrl] = useState("");
-  const [file, setFile] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
   const [descriptionn, setDesc] = useState("");
-  const router = useRouter();
+  const [imageUrl, setImageUrl] = useState("");
+
+  const [editorState, setEditorState] = useState(
+    EditorState.createWithContent(ContentState.createFromText(""))
+  );
+
+  useEffect(() => {
+    axios
+    .get(`http://localhost:3001/blogs/getOne/${params.id}`)
+    .then((res) => {
+      setTitle(res.data.title);
+      setImageUrl(res.data.image);
+      setDesc(res.data.description);
+      setEditorState(
+        EditorState.createWithContent(
+          ContentState.createFromText(res.data.description)
+        )
+      );
+    })
+    .catch((err) => console.log(err));
+  }, []);
+
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };
 
-  const onSave = () => {
-    const contentState = editorState.getCurrentContent();
-    const rawContentState = convertToRaw(contentState);
-    if (!title || !descriptionn || !JSON.stringify(rawContentState)) {
-      return
-    }
-
-    axios
-      .post("http://127.0.0.1:3001/blogs/add", {
-        title: title,
-        image: imageUrl,
-        description: descriptionn,
-        content: JSON.stringify(rawContentState),
-      })
-      .then((res) => router.push("/manageBlogs", { scroll: true }))
-      .catch((err) => console.log(err));
-  };
   const handlePastedText = (text, html, editorState) => {
     const contentState = ContentState.createFromText(text);
     const newEditorState = EditorState.push(
@@ -49,6 +51,24 @@ const page = () => {
     setEditorState(newEditorState);
     return "handled";
   };
+  
+
+  const update =  () => {
+    const contentState = editorState.getCurrentContent();
+    const rawContentState = convertToRaw(contentState);
+    
+    axios
+      .put(`http://localhost:3001/blogs/updateBlog/${params.id}`, {
+        title: title,
+        image: imageUrl,
+        content: JSON.stringify(rawContentState.blocks[0].text),
+        description:descriptionn
+      })
+      .then((res) => router.push("/manageBlogs"))
+      .catch((err) => alert("Error updating blog"));
+  };
+
+
   const uploadImage = async () => {
     const form = new FormData();
     form.append("file", file);
@@ -56,26 +76,15 @@ const page = () => {
     await axios
       .post("https://api.cloudinary.com/v1_1/do25iiz1j/upload", form)
       .then((res) => {
-        setImageUrl(res.data.secure_url);
-        setIsLoading(false);
-        console.log("imageee");
+        setImageUrl(res.data.secure_url)
       })
       .catch((err) => console.log(err));
   };
-
+  
   return (
     <div className="addBlog-container">
-      <h1 className="title">Créez un nouveau blog</h1>
-      <div>
-        <p>
-          1. Remplissez les informations nécessaires, telles que le titre et le
-          contenu du blog.
-        </p>
-        <p>
-          2. Vous pouvez ajouter une vidéo et une image en option pour enrichir
-          le contenu du blog.
-        </p>
-      </div>
+      <h1 className="title">Modifier le blog</h1>
+
       <div className="input-container">
         <label htmlFor="blogTitle">Titre du blog :</label>
         <input
@@ -102,7 +111,7 @@ const page = () => {
             <button onClick={() => setImageUrl("")} className="change-image">
               Changer l'image
             </button>
-            <img src={imageUrl} alt="Uploaded" />
+            <img className="Uploaded-image" src={imageUrl} alt="Uploaded" />
           </div>
         ) : (
           <>
@@ -147,11 +156,12 @@ const page = () => {
           handlePastedText={handlePastedText}
           onEditorStateChange={onEditorStateChange}
         />
-        <button onClick={onSave}>Save</button>
+       
+        <button onClick={()=>update()}>Save</button>
         <div>{jsonHtml}</div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default EditEvent;
