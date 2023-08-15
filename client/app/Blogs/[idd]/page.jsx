@@ -1,5 +1,5 @@
 "use client"
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./one.css";
 import { RiTimer2Fill } from "react-icons/ri";
 import { LuMoreVertical } from "react-icons/lu";
@@ -45,13 +45,13 @@ const deleteComment = (commentId) => {
   });
 };
 
-const page =  ({params}) => {
+const page = ({ params }) => {
 
   const [blog, setBlog] = useState(null);
-  const [Comment, setComment] = useState(""); 
+  const [Comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [editingCommentId, setEditingCommentId] = useState(null);
-  const [refresh,setRefresh]=useState(false)
+  const [refresh, setRefresh] = useState(false)
   const [showDropdown, setShowDropdown] = useState(null);
   console.log(blog)
   useEffect(() => {
@@ -63,9 +63,9 @@ const page =  ({params}) => {
         setComments(fetchedComments);
       });
     }
-  }, [params.idd,refresh]);
+  }, [params.idd, refresh]);
 
-  
+
   if (!blog) {
     console.log("yess")
     return null;
@@ -75,7 +75,7 @@ const page =  ({params}) => {
   const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
   const handleCommentSubmit = async () => {
     if (Comment.trim() !== "") {
- 
+
       const newComment = await addComment(blog.id, Comment);
       setComments((prevComments) => [...prevComments, newComment]);
       setComment("");
@@ -107,27 +107,27 @@ const page =  ({params}) => {
   return (
     <div className="one-post">
       <div className="one-post-container">
-      <div className="admin-details">
-        <div className="user-info">
-          <img src="../creator.png" alt="avatar" />
-          <div className="details">
-            <p>Moez temimi</p>
-            <p>Admin</p>
-            <div className="blog-date">
-              <RiTimer2Fill /> 2 min read // {formattedDate}
+        <div className="admin-details">
+          <div className="user-info">
+            <img src="/profil.png" alt="avatar" />
+            <div className="details">
+              <p>Admin</p>
+              <p></p>
+              <div className="blog-date">
+                <RiTimer2Fill /> 2 min read // {formattedDate}
+              </div>
             </div>
           </div>
+          <LuMoreVertical />
         </div>
-        <LuMoreVertical />
-      </div>
-      <h1 className="blog-title">
-        ReBootKamp ( RBK ) ouvre un nouveau hackerspace au Kef
-      </h1>
-      <img className="blog-imagee" src={blog.image} alt="" />
-      <div className="content">
-        {blog.description}
-        <Editor editorState={editorState} toolbarHidden readOnly />
-      </div>
+        <h1 className="blog-title">
+          {blog.title}
+        </h1>
+        <img className="blog-imagee" src={blog.image} alt="" />
+        <div className="content">
+          {blog.description}
+          <Editor editorState={editorState} toolbarHidden readOnly />
+        </div>
       </div>
       <div className="comment-section">
         <input
@@ -141,18 +141,18 @@ const page =  ({params}) => {
       <div className="comments-list">
         {blog.comments.map((comment, index) => (
           <div key={comment.id} className="comment">
-          <img src="../profil.png" alt="Avatar" className="avatar" />
-          <div className="comment-content">
-            <div className="comment-header">
-              <div>
+            <img src="../profil.png" alt="Avatar" className="avatar" />
+            <div className="comment-content">
+              <div className="comment-header">
+                <div>
 
-              <p className="comment-name">guest</p>
-              <p>{comment.content}</p>
+                  <p className="comment-name">guest</p>
+                  <p>{comment.content}</p>
+                </div>
+
               </div>
-             
             </div>
           </div>
-        </div>
         ))}
       </div>
     </div>
