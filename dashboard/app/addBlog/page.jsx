@@ -5,9 +5,11 @@ import "./addBlog.css";
 import { BsFillImageFill } from "react-icons/bs";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { useRouter } from "next/navigation";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
 import { useRouter } from "next/navigation";
 const page = () => {
+  const router = useRouter()
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [jsonHtml, setJsonHtml] = useState();
   const [imageUrl, setImageUrl] = useState("");
@@ -23,10 +25,10 @@ const page = () => {
   const onSave = () => {
     const contentState = editorState.getCurrentContent();
     const rawContentState = convertToRaw(contentState);
-    if(!title||!descriptionn||!JSON.stringify(rawContentState)){
+    if (!title || !descriptionn || !JSON.stringify(rawContentState)) {
       return
     }
- 
+
     axios
       .post("http://127.0.0.1:3001/blogs/add", {
         title: title,
@@ -34,7 +36,7 @@ const page = () => {
         description: descriptionn,
         content: JSON.stringify(rawContentState),
       })
-      .then((res) => router.push(`/manageBlogs/`, { scroll: true }))
+      .then((res) => router.push("/manageBlogs", { scroll: true }))
       .catch((err) => console.log(err));
   };
   const handlePastedText = (text, html, editorState) => {

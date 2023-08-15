@@ -35,7 +35,7 @@ const StudentPage = () => {
 
   return (
     <div>
-    <div className={styles.card}>
+    <div id='table-text-container' className={styles.card}>
       <h1>inscriptions récentes</h1>
       <table className={styles.table}>
         <thead>
