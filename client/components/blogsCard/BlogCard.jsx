@@ -121,8 +121,6 @@ const BlogCard = ({ blog, handleVuee }) => {
           </div>
           </div>
         </div>
-
- 
       </div>
     </div>
   );

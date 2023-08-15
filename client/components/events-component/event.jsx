@@ -22,7 +22,7 @@ export const Event = () => {
             {events.map((event) => (
                 <div className='one-event'>
                     <div className='event-date'>
-                        <img src="dateicon.png" alt="" />
+                        <img src="date++.png" alt="" />
                         <h3>{event.heure}</h3>
                     </div>
                     <h1 className='event-title'>{event.title}</h1>
