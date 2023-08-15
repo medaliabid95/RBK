@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.image-recentP-details-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-recentP-details-container img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.583);
+    filter: brightness(50%)
+}
+
+.projects-details-text-container {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.project-details-container {
+    margin: 5%;
+}
+
+
+.project-video-container {
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.project-video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.project-details-title {
+    text-align: center;
+    font-size: 2vw;
+    padding: 10px 10px;
+}
+
+.project-details-description {
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto;
+    font-size: 1vw;
+    padding-bottom: 20px;
+    color: #6c6b6b;
+}
+
+.about-project {
+    width: 60vw;
+    margin: 0 auto;
+    font-size: 2vw;
+    padding-top: 10px;
+    color: #6c6b6b;
+}
+
+.project-details-text {
+    width: 50vw;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 1vw;
+    letter-spacing: .9px;
+}
+
+img.github-icon {
+    width: 2.8vw;
+}
+
+.team-project {
+    width: 60vw;
+    margin: 0 auto;
+    font-size: 2vw;
+    padding-top: 10px;
+    color: #6c6b6b;
+}
+
+.data-team {
+    color: black;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.prject-hr-line {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.project-links-container {
+    display: flex;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.github-link {
+    align-self: center;
+    margin-left: 4%;
+    font-size: .9vw;
+}
+
+.github-link a {
+    text-decoration: none;
+    color: black;
+}
+
+.github-link a:hover {
+    color: #FF007B;
+}
+
+.like-button {
+    margin: 0 auto;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    transition: .5s ease-in-out;
+    align-self: center;
+}
+
+
+
+.heart {
+    position: relative;
+    left: 30%;
+    top: 30%;
+    color: rgba(255, 0, 0, 0.500);
+}
+
+@media screen and (max-width:1200px) {
+    .project-details-title {
+        font-size: 3vw;
+    }
+
+    .project-details-description {
+        font-size: 1.5vw;
+    }
+
+    .project-details-text {
+        font-size: 1.4vw;
+    }
+
+    .about-project {
+        font-size: 2.7vw;
+    }
+
+    .team-project {
+        font-size: 2.7vw;
+    }
+
+    .data-team {
+        font-size: 1.4vw;
+    }
+
+    .github-link {
+        font-size: 1.1vw;
+    }
+
+    img.github-icon {
+        width: 3.5vw;
+    }
+
+
+}
+
+@media screen and (max-width:998px) {
+      .project-video-container {
+        width: 70%;
+    }
+    .project-details-title {
+        font-size: 3.5vw;
+    }
+
+    .project-details-description {
+        font-size: 1.8vw;
+    }
+
+    .project-details-text {
+        font-size: 1.6vw;
+    }
+
+    .about-project {
+        font-size: 2.9vw;
+    }
+
+    .team-project {
+        font-size: 2.9vw;
+    }
+
+    .data-team {
+        font-size: 1.6vw;
+    }
+
+    .github-link {
+        font-size: 1.3vw;
+    }
+
+    img.github-icon {
+        width: 4vw;
+    }
+
+
+}
+
+@media screen and (max-width:730px) {
+    .project-video-container {
+        width: 70%;
+    }
+    .project-details-title {
+        font-size: 3.5vw;
+    }
+
+    .project-details-description {
+        font-size: 2vw;
+    }
+
+    .project-details-text {
+        font-size: 1.9vw;
+    }
+
+    .about-project {
+        font-size: 3.7vw;
+    }
+
+    .team-project {
+        font-size: 3.7vw;
+    }
+
+    .data-team {
+        font-size: 1.9vw;
+    }
+
+    .github-link {
+        font-size: 1.6vw;
+    }
+
+    img.github-icon {
+        width: 5vw;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .projects-details-text-container {
+        position: absolute;
+        top: 60%;
+        left: 10%;
+    }
+    .project-video-container {
+        width: 70%;
+    }
+    .project-details-description {
+        width: 70vw;
+     
+    }
+    .project-details-title {
+        font-size: 5vw;
+    }
+
+    .project-details-description {
+        font-size: 2.8vw;
+    }
+
+    .project-details-text {
+        font-size: 2.5vw;
+    }
+
+    .about-project {
+        font-size: 5vw;
+    }
+
+    .team-project {
+        font-size: 5vw;
+    }
+
+    .data-team {
+        font-size: 3vw;
+    }
+
+    .github-link {
+        font-size: 2.5vw;
+    }
+
+    img.github-icon {
+        width: 7vw;
+    }
+}
