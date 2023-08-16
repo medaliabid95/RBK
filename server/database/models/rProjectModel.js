@@ -18,10 +18,24 @@ const Project = sequelize.define("Projects",{
         type: DataTypes.STRING,
         allowNull:false
       },
-      url:{ //!github url
+    url:{ //!github url
         type: DataTypes.STRING,
         allowNull:false
       },
+    about:{ //! A propos
+        type: DataTypes.TEXT,
+        allowNull:false
+      },
+      likes:{
+        type:DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull:false
+      },
+      views:{
+        type:DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull:false
+      }
 });
 
 module.exports= Project

@@ -20,6 +20,7 @@
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.15.0",
     "javascript-time-ago": "^2.5.9",
+    "jwt-decode": "^3.1.2",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "moment": "^2.29.4",
@@ -33,7 +34,8 @@
     "react-router-dom": "^6.15.0",
     "react-spring": "^9.7.2",
     "recharts": "^2.7.3",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.0.7",
+    "universal-cookie": "^5.0.0"
   },
   "devDependencies": {
     "immutable": "^4.3.2"

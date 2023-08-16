@@ -11,17 +11,15 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  
-
-
   return (
    <html lang="en">
       <head>
         <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossOrigin="anonymous"></script>
       </head> 
       <body >
+        
           <Navbar/>
-          {<BotpressWebchat/>}
+          <BotpressWebchat/>
           {children}
           <Footer/>
       </body>
