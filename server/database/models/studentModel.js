@@ -44,6 +44,11 @@ const Student = sequelize.define("Student", {
     allowNull: false,
   },
 
+  Status: {
+    type: DataTypes.ENUM("En Cours", "Accepté", "Refusé"),
+    defaultValue:"En Cours"
+  }
+
 });
 
  

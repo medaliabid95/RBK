@@ -6,6 +6,7 @@ import styles from './style.css';
 const StudentPage = () => {
   const [studentData, setStudentData] = useState([]);
   const [visitCount, setVisitCount] = useState(0);
+  
 
   const location = sessionStorage.getItem('location');
   const image = sessionStorage.getItem('image');
@@ -21,6 +22,7 @@ const StudentPage = () => {
       const response = await fetch(`http://127.0.0.1:3001/students/getOne/${location}`);
       const data = await response.json();
       setStudentData(data);
+      console.log(data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -37,6 +39,64 @@ const StudentPage = () => {
     }
   };
 
+  const handleStatusChange = async (event, studentId) => {
+    const newStatus = event.target.value;
+    console.log(newStatus);
+    console.log(studentId);
+  
+    try {
+      await fetch(`http://127.0.0.1:3001/students/updateOne/${studentId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ Status: newStatus }),
+      });
+  
+      const updatedStudentData = studentData.map((student) => {
+        if (student.id === studentId) {
+          return { ...student, Status: newStatus };
+        }
+        return student;
+      });
+  
+      setStudentData(updatedStudentData);
+    } catch (error) {
+      console.error('Error updating status:', error);
+    }
+  };
+  
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'En Cours':
+        return 'white';
+      case 'Accepté':
+        return 'white';
+      case 'Refusé':
+        return 'white';
+      default:
+        return 'black';
+    }
+  };
+  
+  const getStatusBackgroundColor = (status) => {
+    switch (status) {
+      case 'En Cours':
+        return 'orange';
+      case 'Accepté':
+        return 'green';
+      case 'Refusé':
+        return 'red';
+      default:
+        return 'white'; // Default background color
+    }
+  };
+  
+
+
+
+
+
   if (!location && !image && !name) {
     return <div className='not-found'>404 not found</div>;
   }
@@ -48,6 +108,7 @@ const StudentPage = () => {
       <div className='statics-before-table'>
         <CardIcon icon="./vision.svg" label="Nombre de visiteurs" count={visitCount} />
         <CardIcon icon="./Inscription.svg" label="Nombre d'inscriptions" count={studentData.length} />
+        <CardIcon icon="./people.svg" label="Nombre de condidats" count={0} />
       </div>
       <div className={styles.card}>
         <h1>Inscriptions récentes</h1>
@@ -61,6 +122,7 @@ const StudentPage = () => {
               <th>Formule</th>
               <th>Age</th>
               <th>Ville</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -73,6 +135,15 @@ const StudentPage = () => {
                 <td>{student.formule}</td>
                 <td>{student.age}</td>
                 <td>{student.city}</td>
+                <td className="statusCell" style={{ color: getStatusColor(student.Status), backgroundColor: getStatusBackgroundColor(student.Status) }}>
+              <select 
+                value={student.Status}
+                onChange={(e) => handleStatusChange(e, student.id)}>
+                <option>En Cours</option>
+                <option>Accepté</option>
+                <option>Refusé</option>
+              </select>
+            </td>
               </tr>
             ))}
           </tbody>
