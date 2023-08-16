@@ -26,7 +26,7 @@ app.use("/projects",projectsRoutes)
 app.use("/events",eventsRoutes)
 app.use("/admin",adminRoutes)
 app.use("/blogs",blogsRoutes)
-app.use("/",commentsRoutes)
+app.use("/comments",commentsRoutes)
 
 
 sequelize.sync()

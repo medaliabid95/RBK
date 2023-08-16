@@ -33,8 +33,8 @@ const BlogsPage = () => {
   return (
     <div className="blogs-container">
       <section className="image-blogs-container">
-        <img src="Blogs.png" alt="aws" />
-        <Header />
+        <img src="/blog.jpg" alt="aws" />
+        <Header title="The Tech Blogs"/>
       </section>
       <section className="main">
         <FilterBlog />
