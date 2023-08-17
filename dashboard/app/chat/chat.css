@@ -26,3 +26,9 @@
 .ce-chat-subtitle-text{
   color: #FF007B;
 }
+.ce-my-message-bubble{
+  background: #FF007B !important;
+}
+.ce-my-message-timestamp{
+  color: #FF007B !important;
+}
