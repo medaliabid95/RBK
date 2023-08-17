@@ -1,4 +1,4 @@
-const User = require("../database/models/usersModel")
+const {User} = require("../database/models/usersModel")
 const {Sequelize}=require("sequelize")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -29,7 +29,7 @@ module.exports={
             res.status(401).json({ message: 'Incorrect password' });
             return;
         }
-        const token = jwt.sign({email:foundUser.email, username:foundUser.username, name : foundUser.firstName + " " + foundUser.lastName  , profilepic :foundUser.profilepic},
+        const token = jwt.sign({id:foundUser.id, email:foundUser.email, username:foundUser.username, name : foundUser.firstName + " " + foundUser.lastName  , profilepic :foundUser.profilepic},
         'user', { expiresIn: '1h' });
         res.status(200).json({ message: 'Login successful', token });
         }

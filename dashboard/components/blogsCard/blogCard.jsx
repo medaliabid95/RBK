@@ -6,12 +6,12 @@ import { AiFillHeart } from "react-icons/ai";
 import { FiMoreVertical } from "react-icons/fi";
 import moment from "moment";
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 
 const BlogCard = ({ blog,handleRefresh}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
-
+  const router=useRouter()
   
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);

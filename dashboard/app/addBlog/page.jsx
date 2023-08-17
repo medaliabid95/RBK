@@ -7,7 +7,7 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useRouter } from "next/navigation";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
-import { useRouter } from "next/navigation";
+
 const page = () => {
   const router = useRouter()
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -17,7 +17,7 @@ const page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [descriptionn, setDesc] = useState("");
-  const router = useRouter();
+  
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };

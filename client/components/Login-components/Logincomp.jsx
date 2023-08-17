@@ -2,18 +2,23 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Cookies from 'universal-cookie/cjs/Cookies';
-import jwt_decode from "jwt-decode";
+import { useRouter } from 'next/navigation';
+
 const Logincomp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const cookies = new Cookies();
+    const router=useRouter()
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/user/login', {
             email,
             password,
         })
-            .then((res) => { const decoded = jwt_decode(res?.data.token); cookies.set("userInfo", decoded) })
+            .then((res) => { 
+                cookies.set("userInfo", res?.data.token)
+                router.back() 
+            })
             .catch((err) => console.log(err))
     }
 
@@ -152,7 +157,7 @@ const Logincomp = () => {
                         </div>
                         <div className="footer-link padding-top--24">
                             <span>
-                                Vous n'avez pas de compte ? <a href="">S'inscrire</a>
+                                Vous n'avez pas de compte ? <a href="#">S'inscrire</a>
                             </span>
                             <div className="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                                 <span>

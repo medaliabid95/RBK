@@ -19,6 +19,7 @@ const BlogsPage = () => {
     axios
       .get("http://localhost:3001/blogs/getAll", { headers: { "Cache-Control": "no-store" } })
       .then((response) => {
+ 
         setBlogs(response.data);
       })
       .catch((error) => {
@@ -29,12 +30,14 @@ const BlogsPage = () => {
   const handleVuee = () => {
     getBlogs()
   };
-
+if(!blogs){
+  return null
+}
   return (
     <div className="blogs-container">
       <section className="image-blogs-container">
-        <img src="Blogs.png" alt="aws" />
-        <Header />
+        <img src="/blog.jpg" alt="aws" />
+        <Header title="The Tech Blogs"/>
       </section>
       <section className="main">
         <FilterBlog />

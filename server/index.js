@@ -16,7 +16,7 @@ const instructorRoutes = require("./routes/instructorRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({ origin: true }));
 app.use(cookieParser());
 
 app.use(express.json());
@@ -33,6 +33,7 @@ app.use("/blogs",blogsRoutes)
 app.use("/",commentsRoutes)
 app.use("/cohort",cohortRoutes)
 app.use("/instructor",instructorRoutes)
+app.use("/comments",commentsRoutes)
 
 sequelize.sync()
 .then(()=>{
