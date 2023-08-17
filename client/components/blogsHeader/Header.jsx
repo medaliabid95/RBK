@@ -2,7 +2,7 @@
 import React,{useEffect} from 'react'
 import "./blogs.css"
 
-const Header = () => {
+const Header = ({title}) => {
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -19,8 +19,8 @@ const Header = () => {
         hiddenElements.forEach((el) => observer.observe(el))
     })
   return (
-    <div className='title'>
-      The Tech Blog
+    <div className='title hidden'>
+      {title}
     </div>
   )
 }
