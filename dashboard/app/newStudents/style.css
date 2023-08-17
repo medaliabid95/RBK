@@ -1,22 +1,42 @@
 
-.body {
-  background-color: white;
+body,
+div,
+h1,
+table,
+th,
+td,
+select,
+option {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+body {
+ 
+  font-family: Arial, sans-serif;
+}
+
 
 .title {
   font-size: 3vw;
   margin: 0 auto;
   text-align: center;
   padding: 3%;
-
 }
+
+
 .location {
   color: #ff007b;
 }
-h1{
+
+
+h1 {
   padding: 3%;
   color: #ff007b;
 }
+
 
 .card {
   border: 1px solid #ccc;
@@ -25,6 +45,7 @@ h1{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
 }
+
 
 .table {
   width: 100%;
@@ -43,6 +64,7 @@ th {
   background-color: #f2f2f2;
 }
 
+
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -52,10 +74,11 @@ tr:hover {
 }
 
 
-.statics-before-table{
+.statics-before-table {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
 .card-icon {
   display: flex;
   align-items: center;
@@ -73,3 +96,25 @@ tr:hover {
   font-weight: bold;
   color: #333;
 }
+
+#visits {
+  color: #ff007b;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+
+.statusCell {
+  padding: 5px;
+  text-align: center;
+}
+
+.statusCell select {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  padding: 5px;
+}
+
+
+
