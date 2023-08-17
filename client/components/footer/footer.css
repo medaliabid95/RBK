@@ -250,6 +250,38 @@ footer {
 
 }
 
+@media screen and (max-width:374px) {
+    .autres {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .logo-footer {
+        grid-row: 2;
+        margin-right: 70px;
+        align-self: end;
+    }
+
+    .followus {
+        grid-row: 5;
+        margin-bottom: 60px;
+    }
+
+    .footer-link>a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .logo-footer-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+    }
+}
+
 @media (max-width:320px) {
 
     .autres {
