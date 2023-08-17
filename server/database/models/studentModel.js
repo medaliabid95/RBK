@@ -1,5 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configdb"); 
+const Cohort = require("./CohortModel")
+
 
 const Student = sequelize.define("Student", {
   prenom: {
@@ -50,6 +52,8 @@ const Student = sequelize.define("Student", {
   }
 
 });
+  
+Cohort.hasMany(Student,{foreignKey:'CohortId'})
+Student.belongsTo(Cohort,{foreignKey:'CohortId'})
 
- 
 module.exports = Student;
