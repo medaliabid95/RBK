@@ -68,33 +68,12 @@ const deleteStudent = async (req, res) => {
   }
 };
 
-const getStudentByDate = async (req, res) => {
-  const targetDate = req.params.date; // Assuming the date format is YYYY-MM-DD
 
-  try {
-    const students = await Student.findAll({
-      where: {
-        createdAt: {
-          [Op.between]: [new Date(targetDate), new Date(targetDate + ' 23:59:59')],
-        },
-      },
-    });
-
-    if (students.length > 0) {
-      res.status(200).json(students);
-    } else {
-      res.status(404).json({ message: 'No students found for the given date' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: 'Error retrieving students by date', error: error.message });
-  }
-};
 
 module.exports = {
   createStudent,
   getAllStudents,
   getStudentByCompus,
-  getStudentByDate, 
   updateStudent,
   deleteStudent,
 };
