@@ -12,7 +12,7 @@ const Instructor = sequelize.define("Instructor", {
     allowNull: true,
   },
   speciality: {
-    type: DataTypes.ENUM("developper", "softSkills"),
+    type: DataTypes.ENUM("developper", "classe cordinator"),
     allowNull: false,
   },
   disponibility: {
