@@ -6,7 +6,9 @@ import styles from './style.css';
 const StudentPage = () => {
   const [studentData, setStudentData] = useState([]);
   const [visitCount, setVisitCount] = useState(0);
-  
+  if (!studentData){
+    return null
+  }
 
   const location = sessionStorage.getItem('location');
   const image = sessionStorage.getItem('image');
