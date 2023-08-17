@@ -1,5 +1,5 @@
 const Project = require("../database/models/rProjectModel")
-
+const {Sequelize}=require("sequelize")
 module.exports={
      createProject: async (req,res)=>{
         try{
@@ -61,6 +61,42 @@ module.exports={
             }
         } catch (error) {
             res.status(500).json({ message: 'Error deleting project', error: error.message });
+        }
+    },
+     updateLikes : async (req, res) => {
+       
+        try {
+            const project = await Project.findByPk(req.params.id);
+    
+            if (!project) {
+                res.status(404).json({ message: "Project not found" });
+                return;
+            }
+    
+            await project.update({ likes: Sequelize.literal(`likes ${req.body.like}`) });
+    
+            res.status(200).json(project);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+     updateVues : async (req, res) => {
+   
+        try {
+            const project = await Project.findByPk(req.params.id);
+            
+    
+            if (!project) {
+                res.status(404).json({ message: "Project not found" });
+                return;
+            }
+    
+            await project.update({ views: Sequelize.literal('views + 1') });
+    
+            res.status(200).json(project);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error);
         }
     }
 

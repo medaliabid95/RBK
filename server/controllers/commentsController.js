@@ -1,6 +1,28 @@
 const { DataTypes } = require("sequelize");
-const {blogs,comments} = require("../database/models/blogsModel.js");
+const {blogs} = require("../database/models/blogsModel.js");
+const {User,comments}=require("../database/models/usersModel.js")
 
+const getComments = async (req, res) => {
+  console.log(req.params.blogId);
+  try {
+    const allComments = await comments.findAll({
+      where: {
+        blogId: req.params.blogId,
+      },
+      include: User,
+      order: [['createdAt', 'DESC']], // Order by 'createdAt' field in descending order
+    });
+
+    if (allComments.length === 0) {
+      res.status(400).json("no comments");
+      return;
+    }
+
+    res.status(200).json(allComments);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
 const addComment = async (req, res) => {
   console.log(req.body.content)
@@ -14,6 +36,7 @@ const addComment = async (req, res) => {
     const comment = await comments.create({
       content:req.body.content,
       blogId: req.params.blogId,
+      userId:req.params.userId
       
     });
 
@@ -73,4 +96,5 @@ module.exports = {
   deleteComment,
   updateCommentText,
   updateCommentAccepted,
+  getComments
 };

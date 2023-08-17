@@ -73,7 +73,6 @@ const Sidebar = () => {
           <a href="/manageBlogs" className="side-anchor-link">
             Blogs
           </a>
-
         </li>
         <li className="side-link">
           <span>

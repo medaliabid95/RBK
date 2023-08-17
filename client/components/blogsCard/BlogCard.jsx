@@ -11,7 +11,7 @@ const BlogCard = ({ blog, handleVuee }) => {
   const [likedBlogs, setLikedBlogs] = useState([]);
   const [comment, setComment] = useState(""); 
   const [comments, setComments] = useState([]);
-  const [showCommentsPopup, setShowCommentsPopup] = useState(false);
+
   if (!blog) {
     return null;
   }
@@ -114,7 +114,7 @@ const BlogCard = ({ blog, handleVuee }) => {
               {blog.likes} j'aime
             </p>
             <p className="vues">{blog.vues} vues</p>
-            <p className="comments">{blog.comments.length} commentaire</p>
+            <p className="comments">{comments.length} commentaire</p>
           <div className="likes">
             {blog.likes}
             <AiFillHeart style={{ fill: "red" }} />

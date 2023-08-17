@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React ,{useEffect, useState} from 'react'
 import "./landing.css"
 import BlackContainerNumbers from '@/components/landing-page-components/black-container-numbers/black-container-numbers'
 import Carouselle from '@/components/landing-page-components/carouselle-section/Carouselle'
@@ -9,8 +9,23 @@ import Companies from '@/components/landing-page-components/companies-section/Co
 import AutoSlider from '@/components/Automatic-slider/AutoSlider'
 import Certification from '@/components/landing-page-components/Certification/Certification'
 const page = () => {
+  
+     
+    useEffect(() => { 
+         if(sessionStorage.getItem('ipClient') === null) {
+        fetch('http://127.0.0.1:3001/visitors/increment', {
+          method: 'POST',
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Visitor count incremented:', data);
+            sessionStorage.setItem('ipClient',data.ipClient); 
 
-
+          })
+          .catch(error => {
+            console.error('Error incrementing visitor count:', error);
+          });}
+      }, []);
     return (
         <div className='landing-container'>
             <section className='image-landing-container' >

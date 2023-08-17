@@ -8,20 +8,22 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import moment from "moment";
 import Header from "../../../components/blogsHeader/Header.jsx";
-
+import jwt_decode from "jwt-decode";
+import Cookies from "universal-cookie";
+import { useRouter } from "next/navigation";
 const getBlog = (id) => {
   return fetch(`http://localhost:3001/blogs/getOne/${id}`).then((res) =>
     res.json()
   );
 };
 const getComments = (blogId) => {
-  return fetch(`http://localhost:3001/blogs/${blogId}/comments`).then((res) =>
+  return fetch(`http://localhost:3001/comments/getAll/${blogId}`).then((res) =>
     res.json()
   );
 };
 
-const addComment = (blogId, content) => {
-  return fetch(`http://localhost:3001/comments/${blogId}`, {
+const addComment = (blogId, content,userId) => {
+  return fetch(`http://localhost:3001/comments/${blogId}/${userId}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,9 +39,10 @@ const page = ({ params }) => {
   const [blog, setBlog] = useState(null);
   const [Comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-
   const [refresh, setRefresh] = useState(false);
-  
+  const [currentUser,setCurrentUser]=useState(null)
+    const cookie=new Cookies()
+    const router=useRouter()
 
   useEffect(() => {
     if (params.idd) {
@@ -50,9 +53,18 @@ const page = ({ params }) => {
         setComments(fetchedComments);
       });
     }
+    const token=cookie.get("userInfo")
+      if(token){
+        const decoded=jwt_decode(token)
+   
+        setCurrentUser(decoded)
+      }
+   
   }, [params.idd, refresh]);
-
-  if (!blog) {
+if(comments.length){
+  console.log("rafik",comments)
+}
+  if (!blog||!comments.length) {
     console.log("yess");
     return null;
   }
@@ -61,10 +73,9 @@ const page = ({ params }) => {
   const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
   const handleCommentSubmit = async () => {
     if (Comment.trim() !== "") {
-      const newComment = await addComment(blog.id, Comment);
-      setComments((prevComments) => [...prevComments, newComment]);
-      setComment("");
-      setRefresh(!refresh);
+      const newComment = await addComment(blog.id, Comment,currentUser.id);
+  
+      setComment("");setRefresh(!refresh);
     }
   };
 
@@ -107,20 +118,23 @@ const page = ({ params }) => {
           value={Comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button onClick={handleCommentSubmit}>Commenter</button>
+        {currentUser?<button onClick={handleCommentSubmit}>Commenter</button>:<button onClick={()=>router.push("/Login")}>Se connecter</button>}
       </div>
       <div className="comments-list">
-        {blog.comments.map((comment, index) => (
+        {comments.map((comment, index) => (
           <div key={comment.id} className="comment">
             <img src="../profil.png" alt="Avatar" className="avatar" />
             <div className="comment-content">
               <div className="comment-header">
                 <div>
-                  <p className="comment-name">guest</p>
+                  <p className="comment-name">{comment["User"]["firstName"]} {comment["User"].lastName}</p>
                   <p>{comment.content}</p>
+                  
+
                 </div>
               </div>
             </div>
+            <p className="comment-name">{moment(comment.createdAt).fromNow()}</p>
           </div>
         ))}
       </div>
