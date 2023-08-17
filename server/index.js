@@ -13,7 +13,7 @@ const visitorRoutes = require('./routes/IncrementVisitors.js');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({ origin: true }));
 app.use(cookieParser());
 
 app.use(express.json());
@@ -28,7 +28,6 @@ app.use("/events",eventsRoutes)
 app.use("/admin",adminRoutes)
 app.use("/blogs",blogsRoutes)
 app.use("/",commentsRoutes)
-
 
 sequelize.sync()
 .then(()=>{

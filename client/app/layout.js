@@ -20,10 +20,10 @@ export default function RootLayout({ children }) {
         <script src="https://kit.fontawesome.com/d05e64aa0f.js" crossOrigin="anonymous"></script>
       </head> 
       <body >
-          <Navbar/>
-          {<BotpressWebchat/>}
+          {/* <Navbar/> */}
+          {/* {<BotpressWebchat/>} */}
           {children}
-          <Footer/>
+          {/* <Footer/> */}
       </body>
     </html>
   )

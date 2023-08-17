@@ -28,7 +28,7 @@ const Sidebar = () => {
             <ul className='side-links'>
 
                 <li className='side-link'><span><FontAwesomeIcon icon={faBorderAll} style={{ width: "21px" }} /></span><a href="/allStudents" className='side-anchor-link'>Tous les demandes</a></li>
-                <li className='side-link'><span><FontAwesomeIcon icon={faInbox} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Tous les messages</a></li>
+                <li className='side-link'><span><FontAwesomeIcon icon={faInbox} style={{ width: "21px" }} /></span><a href="/chat" className='side-anchor-link'>Tous les messages</a></li>
 
                 <li className='side-link'><span><FontAwesomeIcon icon={faPeopleGroup} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Cohorts</a></li>
                 <li className='side-link'><span><FontAwesomeIcon icon={faFeather} style={{ width: "21px" }} /></span><a href="/" className='side-anchor-link'>Blogs</a><ul className='side-bar-submenu'><li className='sb-submenu-link'><span className="sub-menu-icon"><FontAwesomeIcon icon={faPlus} style={{ color: "#000000", width: "15px" }} /></span><a href="/addBlog" className='sb-link'>Créer un Blog</a></li><li className='sb-submenu-link'><span className="sub-menu-icon"><FontAwesomeIcon icon={faListCheck} style={{ color: "#000000", width: "15px" }} /></span><a href="" className='sb-link'>Modifier Blogs</a></li></ul></li>
