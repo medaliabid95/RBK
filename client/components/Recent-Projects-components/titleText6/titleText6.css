@@ -1,20 +1,13 @@
-nextjs-portal {
-    display: none;
-}
-
-.hidden {
+.hidden8 {
     opacity: 0;
     filter: blur(5px);
-    transform: translate(100%);
+    transform: translateY(-100%);
     transition: all 1s;
 }
 
-.show {
+
+.show8 {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
-}
-
-.blog-image {
-    cursor: pointer;
 }

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
-import "./titleText5.css"
-const titleText5 = () => {
+import "./titleText6.css"
+const TitleText6 = () => {
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -18,8 +18,8 @@ const titleText5 = () => {
         hiddenElements.forEach((el) => observer.observe(el))
     })
     return (
-        <div><h1 className='text5-h1 hidden8'><span id="text5-success"></span></h1></div>
+        <div><h1 className='text5-h1 hidden8'>Projets récemments publiés</h1></div>
     )
 }
 
-export default titleText5
+export default TitleText6

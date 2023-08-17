@@ -1,6 +1,6 @@
 .text5-h1 {
     color: #ffffff;
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: bold;
     font-family: monospace;
     letter-spacing: 7px;
@@ -9,7 +9,7 @@
 }
 
 #text5-success::before {
-    content: "IDEAS";
+    content: "";
     animation: animate infinite 5s;
     padding-left: 10px;
 
@@ -18,16 +18,26 @@
 @keyframes animate {
 
     0% {
-        content: "IDEAS";
+        content: "TURN";
+    }
+
+    25% {
+        content: "TURN YOUR";
     }
 
     50% {
-        content: "INTO";
+        content: "TURN YOUR IDEAS ";
     }
 
     75% {
-        content: "SUCCESS";
+        content: "TURN YOUR IDEAS INTO ";
     }
+
+    100% {
+        content: "TURN YOUR IDEAS INTO SUCCESS";
+    }
+
+
 }
 
 .hidden8 {
