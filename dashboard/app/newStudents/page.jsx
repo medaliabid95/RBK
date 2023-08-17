@@ -64,7 +64,10 @@ const StudentPage = () => {
     } catch (error) {
       console.error('Error updating status:', error);
     }
-  };
+  };  
+    
+   
+   
   
   const getStatusColor = (status) => {
     switch (status) {
@@ -88,12 +91,14 @@ const StudentPage = () => {
       case 'Refusé':
         return 'red';
       default:
-        return 'white'; // Default background color
+        return 'white'; 
     }
   };
   
 
-
+    const acceptedStudents = (students) => {
+       return  students.filter((student) => student.Status === 'Accepté')
+    }
 
 
 
@@ -108,7 +113,7 @@ const StudentPage = () => {
       <div className='statics-before-table'>
         <CardIcon icon="./vision.svg" label="Nombre de visiteurs" count={visitCount} />
         <CardIcon icon="./Inscription.svg" label="Nombre d'inscriptions" count={studentData.length} />
-        <CardIcon icon="./people.svg" label="Nombre de condidats" count={0} />
+        <CardIcon icon="./people.svg" label="Nombre de condidats" count={acceptedStudents(studentData).length} />
       </div>
       <div className={styles.card}>
         <h1>Inscriptions récentes</h1>

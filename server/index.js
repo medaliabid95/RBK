@@ -4,13 +4,15 @@ const cors = require("cors");
 const sequelize = require("./database/configdb");
 const { Sequelize } = require("sequelize");
 const studentRoutes = require("./routes/studentRoutes"); 
-const eventsRoutes=require("./routes/eventsRoutes.js")
+const eventsRoutes=require("./routes/eventsRoutes.js");
 const projectsRoutes=require("./routes/rProjectRoutes");
-const adminRoutes=require("./routes/adminRoutes.js")
-const blogsRoutes=require("./routes/blogsRoutes.js")
-const commentsRoutes=require("./routes/commentsRoutes.js")
+const adminRoutes=require("./routes/adminRoutes.js");
+const blogsRoutes=require("./routes/blogsRoutes.js");
+const commentsRoutes=require("./routes/commentsRoutes.js");
 const visitorRoutes = require('./routes/IncrementVisitors.js');
-const userRoutes=require("./routes/userRoutes.js")
+const userRoutes=require("./routes/userRoutes.js");
+const cohortRoutes = require("./routes/cohortRoutes.js");
+const instructorRoutes = require("./routes/instructorRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -29,7 +31,8 @@ app.use("/events",eventsRoutes)
 app.use("/admin",adminRoutes)
 app.use("/blogs",blogsRoutes)
 app.use("/",commentsRoutes)
-
+app.use("/cohort",cohortRoutes)
+app.use("/instructor",instructorRoutes)
 
 sequelize.sync()
 .then(()=>{
