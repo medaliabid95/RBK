@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 const page = () => {
   const [blogs, setBlogs] = useState([]);
   
+  
   const [refresh, setRefresh] = useState(false);
   const router=useRouter()
   useEffect(() => {
@@ -27,7 +28,7 @@ const page = () => {
   };
   const statCounter = (option) => {
     if (option === "comments") {
-      return blogs.reduce((acc, curr) => acc + curr.comments.length, 0);
+      return 0
     }
     return blogs.reduce((acc, curr) => acc + curr[option], 0);
   };

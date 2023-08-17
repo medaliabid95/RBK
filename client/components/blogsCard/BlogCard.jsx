@@ -7,31 +7,18 @@ import { useRouter } from "next/navigation";
 import moment from "moment";
 import axios from "axios";
 
-const BlogCard = ({ blog, handleVuee }) => {
-  const [likedBlogs, setLikedBlogs] = useState([]);
-  const [comment, setComment] = useState(""); 
+const BlogCard = ({ likedBlogs,blog,handleLikes,handleVuee }) => {
+  const [storedLikes, setStoredLikes] = useState([]);
+
   const [comments, setComments] = useState([]);
+  useEffect(() => {
+        setStoredLikes(JSON.parse(localStorage.getItem("likedBlogs")))
+  }, []);
 
   if (!blog) {
     return null;
   }
   const router = useRouter();
-  useEffect(() => {
-    const storedLikedBlogs =
-      JSON.parse(localStorage.getItem("likedBlogs")) || [];
-    setLikedBlogs(storedLikedBlogs);
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
-      });
-    });
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
   const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
   const handleVue = (id) => {
     axios
@@ -39,47 +26,12 @@ const BlogCard = ({ blog, handleVuee }) => {
       .then((res) => handleVuee())
       .catch((err) => console.log(err));
   };
-  const handleLikes = (id) => {
-    if (!likedBlogs.includes(id)) {
-      axios
-        .put(`http://localhost:3001/blogs/updateLikes/${id}`,{like:"+ 1"})
-        .then((res) => {
-          handleVuee();
+
   
-          setLikedBlogs((prevLikedBlogs) => [...prevLikedBlogs, id]);
-  
-          // Now, after the state is updated, set local storage
-          const updatedLikedBlogs = [...likedBlogs, id];
-          localStorage.setItem("likedBlogs", JSON.stringify(updatedLikedBlogs));
-        })
-        .catch((err) => console.log(err));
-    }else {
-      axios
-        .put(`http://localhost:3001/blogs/updateLikes/${id}`,{like:"- 1"})
-        .then((res) => {
-          handleVuee();
-  
-          setLikedBlogs((prevLikedBlogs) =>{
-            return prevLikedBlogs.filter(like=>like!==id)
-          });
-  
-          // Now, after the state is updated, set local storage
-          const updatedLikedBlogs = likedBlogs.filter(like=>like!==id)
-          localStorage.setItem("likedBlogs", JSON.stringify(updatedLikedBlogs));
-        })
-        .catch((err) => console.log(err));
-    }
-  };
-  const handleCommentSubmit = () => {
-    if (comment.trim() !== "") {
-      // Add the new comment to the comments list
-      setComments((prevComments) => [...prevComments, comment]);
-      // Clear the input field after submitting
-      setComment("");
-    }
-  };
+console.log("card",likedBlogs)
+
   return (
-    <div className="blog-card-cotainer hidden">
+    <div className="blog-card-cotainer ">
       <img
         onClick={() => {
           router.push(`/Blogs/${blog.id}`, { scroll: true });
@@ -115,10 +67,10 @@ const BlogCard = ({ blog, handleVuee }) => {
             </p>
             <p className="vues">{blog.vues} vues</p>
             <p className="comments">{comments.length} commentaire</p>
-          <div className="likes">
-            {blog.likes}
-            <AiFillHeart style={{ fill: "red" }} />
-          </div>
+            <div className="likes">
+              {blog.likes}
+              <AiFillHeart style={{ fill: "red" }} />
+            </div>
           </div>
         </div>
       </div>
