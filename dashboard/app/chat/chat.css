@@ -1,0 +1,34 @@
+.shadow {
+    position:absolute;
+    left: 20%;
+    width: 80%;
+  }
+  /* Chat List */
+.ce-chat-unread-dot{
+  background: #FF007B !important;
+}
+#ce-delete-chat-button{
+  color: #FF007B !important ;
+  border-color: #FF007B !important ;
+}
+#new-chat-plus-button{
+  background: #FF007B !important;
+}
+#ce-send-message-button{
+  background: #FF007B !important;
+}
+#ce-upload-document-icon{
+  color:#FF007B !important ;
+}
+.ce-chat-title-text{
+  color: #FF007B;
+}
+.ce-chat-subtitle-text{
+  color: #FF007B;
+}
+.ce-my-message-bubble{
+  background: #FF007B !important;
+}
+.ce-my-message-timestamp{
+  color: #FF007B !important;
+}

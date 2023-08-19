@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../configdb"); 
+const {comments}=require("./blogsModel")
 
 const User = sequelize.define("Users",{
 username:{
@@ -21,5 +22,12 @@ lastName:{
     allowNull:false
 },
 });
+User.hasMany(comments, {
+    foreignKey: "userId", 
+    onDelete: "CASCADE", 
+  });
+  comments.belongsTo(User, {
+    foreignKey: "userId",
+  });
 
-module.exports = User;
+module.exports = {User,comments};

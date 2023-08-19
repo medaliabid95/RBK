@@ -9,7 +9,6 @@ const Logincomp = () => {
     const [popUp, setPopUp] = useState(false)
     const [errMsg, setErrMsg] = useState("")
     const cookies = new Cookies();
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

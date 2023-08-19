@@ -1,4 +1,4 @@
-const User = require("../database/models/usersModel")
+const {User} = require("../database/models/usersModel")
 const {Sequelize}=require("sequelize")
 module.exports={
     createUser: async(req,res)=>{

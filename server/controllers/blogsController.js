@@ -1,5 +1,5 @@
 const {Sequelize, where}=require("sequelize")
-const {blogs,comments} = require("../database/models/blogsModel.js");
+const {blogs} = require("../database/models/blogsModel.js");
 
 const addBlog = async (req, res) => {
     console.log(req.body)
@@ -13,9 +13,7 @@ const addBlog = async (req, res) => {
 
 const getBlog = async (req, res) => {
     try {
-        const blog = await blogs.findByPk(req.params.id,{
-            include: comments
-        });
+        const blog = await blogs.findByPk(req.params.id);
         if (!blog) {
             res.status(404).json({ message: "Blog not found" });
         } else {
@@ -28,9 +26,7 @@ const getBlog = async (req, res) => {
 
 const getAllBlogs = async (req, res) => {
     try {
-        const allBlogs = await blogs.findAll({
-            include: comments
-        });
+        const allBlogs = await blogs.findAll();
         res.status(200).json(allBlogs);
     } catch (error) {
         res.status(500).json(error);
