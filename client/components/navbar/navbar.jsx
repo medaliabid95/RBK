@@ -4,12 +4,17 @@ import "./navbar.css"
 import { FaBars } from 'react-icons/fa'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Cookies from 'universal-cookie/cjs/Cookies';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { signOut } from 'firebase/auth'
+import { auth } from '../Login-components/firebaseConfig'
 const navbar = () => {
     const [color, setColor] = useState(false)
     const [active, setActive] = useState("")
     const [hamburger, setHamburger] = useState(false)
+    const cookie = new Cookies()
+    const userinfo = cookie.get("userInfo")
     const changeColor = () => {
         if (window.scrollY > 0) {
             setColor(true);
@@ -17,10 +22,16 @@ const navbar = () => {
     }
     window.addEventListener("scroll", changeColor)
     const path = usePathname()
-    if (path === "/Login") {
+    if (path === "/Login" || path === "/Register" || path === "/forgotPassword") {
         return
     }
 
+
+    const signout = () => {
+        signOut(auth)
+        cookie.remove("userInfo")
+        window.location.reload()//! used this beacuse router.push() will distort the css
+    }
     return (
         <header className={color ? "header-nav header-bg" : "header-nav"}>
             <a href="http://localhost:3000/"><img src="RBK-Logo.svg" alt="" className='logo-nav' /></a>
@@ -34,7 +45,7 @@ const navbar = () => {
             </ul>
             <div className='navbar-buttons-container'>
                 {color ? (<Link href={"/postuler"} ><button className='border-btn not-transparent-nav'><span className='text-btn' style={{ color: "white" }}>Inscription</span></button></Link>) : <Link href={"/postuler"} ><button className='border-btn transparent-nav'><span className='text-btn' style={{ color: "white" }}>Inscription</span></button></Link>}
-                {color ? (<Link href={"/Login"}><button className='border-btn not-transparent-nav'  ><span className='text-btn ' style={{ color: "white" }}>Login</span></button></Link>) : <Link href={"/Login"}><button className='border-btn transparent-nav'><span className='text-btn' style={{ color: "white" }}>Login</span></button></Link>}
+                {userinfo ? (color ? (<Link href={"/"}><button className='border-btn not-transparent-nav' onClick={() => signout()} ><span className='text-btn ' style={{ color: "white" }}>Déconnecter</span></button></Link>) : <Link href={"/"}><button className='border-btn transparent-nav' onClick={() => signout()} ><span className='text-btn' style={{ color: "white" }}>Déconnecter</span></button></Link>) : (color ? (<Link href={"/Login"}><button className='border-btn not-transparent-nav'  ><span className='text-btn ' style={{ color: "white" }}>Login</span></button></Link>) : <Link href={"/Login"}><button className='border-btn transparent-nav'><span className='text-btn' style={{ color: "white" }}>Login</span></button></Link>)}
             </div>
             {color ? (hamburger ? (<div className='hamburger-container'><FontAwesomeIcon icon={faX} style={{ color: "black", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(false), setActive("") }} /></div>) : (<div className='hamburger-container'><FaBars style={{ color: "black", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(true); setActive("active") }} /></div>)) : (hamburger ? (<div className='hamburger-container'><FontAwesomeIcon icon={faX} style={{ color: "white", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(false); setActive("") }} /></div>) : (<div className='hamburger-container'><FaBars style={{ color: "white", fontSize: "30px", borderRadius: "10px" }} onClick={() => { setHamburger(true), setActive("active") }} /></div>))}
         </header >

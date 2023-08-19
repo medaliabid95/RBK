@@ -1,49 +1,23 @@
 "use client"
-import React, { useState } from 'react'
-import Cookies from 'universal-cookie/cjs/Cookies';
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import React, { use, useState } from 'react'
+import "../../app/Login/login.css"
+import { sendPasswordResetEmail } from "firebase/auth"
 import { auth } from '../Login-components/firebaseConfig'
-const Logincomp = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+const FPComp = () => {
+    const [email, setEmail] = useState("")
     const [popUp, setPopUp] = useState(false)
-    const [errMsg, setErrMsg] = useState("")
-    const cookies = new Cookies();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const [errPopUp, setErrPopUp] = useState(false)
+    const forgotPassword = async () => {
         try {
-            const user = await signInWithEmailAndPassword(auth, email, password);
-
-            if (user) {
-                if (user.user.emailVerified) {
-                    const token = await user.user.getIdTokenResult(false)
-                    cookies.set("userInfo", token)
-                    window.location.replace("/")//! used this beacuse router.push() will distort the css
-
-                } else {
-                    setPopUp(true)
-                }
-
-            }
-        } catch (err) {
+            await sendPasswordResetEmail(auth, email)
             setPopUp(true)
-            setErrMsg(err.message)
-            console.log(err.message);
+            setErrPopUp(false)
+        } catch (err) {
+            setPopUp(false)
+            setErrPopUp(true)
+            console.log(err);
         }
     }
-    const errorMessage = () => {
-        if (errMsg === "Firebase: Error (auth/invalid-email).") {
-            return "Adresse e-mail invalide"
-        } else if (errMsg === "Firebase: Error (auth/missing-password).") {
-            return "Mot de passe manquant"
-        } else if (errMsg === "Firebase: Error (auth/wrong-password).") {
-            return "Mot de passe incorrect"
-        } else {
-            return "Vérifier votre adresse e-mail"
-        }
-    }
-
     return (
         <div className="login-root">
             <div
@@ -153,35 +127,25 @@ const Logincomp = () => {
                     <div className="formbg-outer">
                         <div className="formbg">
                             <div className="formbg-inner padding-horizontal--48">
-                                <span className="padding-bottom--15">Connectez-vous à votre compte.</span>
+                                <span className="padding-bottom--15"> Vous recevrez le lien vous permettant de réinitialiser votre mot de passe.</span>
                                 <form id="stripe-login">
                                     <div className="field padding-bottom--24">
                                         <label htmlFor="email">Email</label>
                                         <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                                        {popUp ? (<p style={{ color: "green" }}>Un email vous a été envoyé.</p>) : <></>}
+                                        {errPopUp ? (<p style={{ color: "red" }}>Veuillez insérer une adresse email existante.</p>) : <></>}
                                     </div>
                                     <div className="field padding-bottom--24">
-                                        <div className="grid--50-50">
-                                            <label htmlFor="password">Mot de passe</label>
-                                            <div className="reset-pass">
-                                                <a href="/forgotPassword">Mot de passe oublié ?</a>
-                                            </div>
-                                        </div>
-                                        <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                                        {popUp ? (<p style={{ color: 'red' }}>{errorMessage()}</p>) : <></>}
-                                    </div>
-
-                                    <div className="field padding-bottom--24">
-                                        <input type="submit" name="Se connecter" value="Se connecter" onClick={(e) => { handleSubmit(e) }} />
+                                        <input type="submit" name="Continuer" value="Continuer" onClick={(e) => { e.preventDefault(), forgotPassword() }} />
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div className="footer-link padding-top--24">
                             <span>
-                                Vous n'avez pas de compte ? <a href="/Register">S'inscrire</a>
+                                Retour à la
+                                <a href="/Login"> Connexion</a>
                             </span>
-                            <span>Ou</span>
-                            <span> Retournez à la page <a href="/">d'accueil</a></span>
                             <div className="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                                 <span>
                                     <a href="http://localhost:3000/">© ReBootKamp</a>
@@ -201,4 +165,4 @@ const Logincomp = () => {
     )
 }
 
-export default Logincomp
+export default FPComp
