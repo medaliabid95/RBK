@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from  './cohort.css'
-const CohortTable = () => {
+const CohortTable = ({params}) => {
 
     return (
         <div>
-            <table className={styles.table}>
+            {/* <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -31,7 +31,8 @@ const CohortTable = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table> */}
+            dynamicRouter{params.cohortID}
         </div>
     )
 }
