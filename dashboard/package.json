@@ -20,6 +20,7 @@
     "firebase": "^10.1.0",
     "fortawesome": "^0.0.1-security",
     "immutable": "^4.3.2",
+    "javascript-time-ago": "^2.5.9",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
     "next": "13.4.13",
@@ -30,6 +31,7 @@
     "react-dom": "^18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-firebase-hooks": "^5.1.1",
+    "react-hover-video-player": "^10.0.1",
     "react-icons": "^4.10.1",
     "socket.io": "^4.7.2"
   },
