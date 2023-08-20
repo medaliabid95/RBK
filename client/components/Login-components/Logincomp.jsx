@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie/cjs/Cookies';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Login-components/firebaseConfig'
-import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 const Logincomp = () => {
     const [email, setEmail] = useState("");
