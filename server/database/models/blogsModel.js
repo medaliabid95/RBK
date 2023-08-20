@@ -33,6 +33,10 @@ const blogs = sequelize.define(
       type: DataTypes.INTEGER,
       defaultValue: 0,
     },
+    author:{
+      type:DataTypes.STRING,
+      allowNull:false
+    }
   },
   {
     timestamps: true,

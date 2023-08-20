@@ -46,9 +46,9 @@ console.log("card",likedBlogs)
           <RiTimer2Fill /> 2 min read // {formattedDate}
         </p>
         <div className="user-details">
-          <img src="creator.png" alt="avatar" />
+          <img src="/profil.png" alt="avatar" />
           <div className="details">
-            <p>Moez temimi</p>
+            <p>{blog.author}</p>
             <p>Admin</p>
           </div>
         </div>
