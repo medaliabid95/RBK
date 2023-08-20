@@ -11,3 +11,179 @@
   padding: 5px;
   width: 100%;
 }
+.container {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.title {
+  font-size: 3vw;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3%;
+  font-weight: 600;
+}
+.add-cohort {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-right: 90px;
+}
+
+.location {
+  color: #ff007b;
+}
+.cohort-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.cohort {
+  width: 465px;
+  height: 400px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.cohort-header {
+  /* background-color: #f799b9; */
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cohort-header img {
+  opacity: 0.9;
+}
+.cohort-header p {
+  color: #dc5b5b;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+.cohort-header span {
+  text-align: center;
+  margin-top: 15px;
+  color: #ff003d96;
+  font-weight: bold;
+}
+.cohort-name {
+  /* margin: 10%; */
+  font-size: 25px;
+  color: #ff003de3;
+  /* color: #dc5b5b; */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.cohort-name:hover{
+  color: #c90263;
+  font-size: 25.5px;
+  cursor: pointer;
+}
+.cohort-name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  
+  padding: 25px;
+}
+.students-counter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: gray;
+}
+.cohort-body p {
+  margin-left: 4%;
+  font-size: 18px;
+  color: rgb(124, 119, 119);
+  /* color: #dc5b5b; */
+  font-weight: 600;
+}
+.edit-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 31px;
+  right: 29px;
+}
+
+.dropdown p {
+  margin: 2px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color: black;
+  font-size: 17px;
+}
+
+.dropdown p:hover {
+  background-color: #f0f0f0;
+}
+.add-cohort-btn {
+  /* display: flex;
+  align-items: center; */
+  color: #ff007b;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+  padding: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 18px;
+  box-shadow: 0px 0px 8px rgba(230, 17, 212, 0.4);
+  width: max-content;
+  align-self: flex-end;
+  margin-bottom: 75px;
+
+}
+
+.add-cohort-btn svg {
+  margin-right: 5px;
+}
+.update-popup {
+  position: absolute;
+  z-index: 1;
+  right: 37px;
+  top: 37px;
+}
+.Bootstrap{
+  background-color: aqua;
+}
+.Phase-container{
+  background-color: #ff007b;
+    color:white ;
+    padding: 10px;
+    font-size: 16px;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100px;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+}
+.close-popup{
+  
+}

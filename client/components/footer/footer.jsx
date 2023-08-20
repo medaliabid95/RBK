@@ -1,6 +1,12 @@
+"use client"
 import React from 'react'
 import "./footer.css"
+import { usePathname } from 'next/navigation'
 const footer = () => {
+    const path = usePathname()
+    if (path === "/Login" || path === "/Register" || path === "/forgotPassword") {
+        return
+    }
     return (
         <footer>
             <div className='container-footer'>
@@ -15,7 +21,7 @@ const footer = () => {
                         </li>
                         <li className='footer-link aws'><a href="#">Cloud computing AWS re/start</a></li>
                     </ul>
-                   
+
                     <div className='sec nosBootcamps'>
                         <h3>Nos BootCamps</h3>
                         <ul className='footer-links'>

@@ -1,82 +1,86 @@
-'use client'
-import React, { useState } from 'react';
-import './style.css';
+"use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import "./style.css";
 
+import { GrAddCircle } from "react-icons/gr";
+import AddCohortForm from "@/components/addCohort/AddCohort.jsx";
+import axios from "axios"
+import Cohort from "../../components/cohort/Cohort.jsx"
 const CohortManagementPage = () => {
   const [cohorts, setCohorts] = useState([]);
+
+  const [showForm, setShowForm] = useState(false);
+  const [refresh,setRefresh]=useState(false)
+  
+  const location = sessionStorage.getItem("location");
+  useEffect(()=>{
+    axios.get("http://localhost:3001/cohorts/getAll")
+    .then(res=>setCohorts(res.data))
+    .catch(err=>console.error(err))
+  },[refresh])
+  
   const [newCohort, setNewCohort] = useState({
-    name: '',
-    numberOfStudents: 0,
-    numberOfInstructors: 0,
-    session: '',
-    actuelPhase: 'Bootstrap', // Set the default value here
+    name: "",
+    session: "",
+    actuelPhase: "bootstrap",
+   
+    campus:location
+     // Set the default value here
   });
 
   const handleAddCohort = () => {
-    fetch('http://127.0.0.1:3001/cohort/add', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newCohort),
-    })
-      .then(response => response.json())
-      .then(data => {
-        setCohorts(prevCohorts => [...prevCohorts, data]);
-      })
-      .catch(error => {
-        console.error('Error adding cohort:', error);
-      });
+  axios.post("http://localhost:3001/cohorts/add",newCohort)
+  .then(res=>{
+    setRefresh(!refresh)
+    setShowForm(false)
+  })
+  .catch(err=>console.log(err))
+  };
+  const handleDelete=(id)=>{
+    axios.delete(`http://localhost:3001/cohorts/delete/${id}`)
+    .then(res=>setRefresh(!refresh))
+    .catch(err=>console.error(err))
+  }
+  const handleUpdateCohort=(id,content)=>{
+    axios.put(`http://localhost:3001/cohorts/updateOne/${id}`,content)
+    .then(res=>setRefresh(!refresh))
+    .catch(err=>console.log(err))
+  }
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewCohort((prevCohort) => ({ ...prevCohort, [name]: value }));
   };
 
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-    setNewCohort(prevCohort => ({ ...prevCohort, [name]: value }));
-  };
+
+
 
   return (
-    <div className="container">
-      <div className="card">
-        <h2>Add Cohort</h2>
-        <input
-          type="text"
-          name="name"
-          placeholder="Cohort Name"
-          value={newCohort.name}
-          onChange={handleInputChange}
+    <div className="container" >
+      <div className="title">
+        RebootKamp <span className="location">{location}</span> Cohorts
+      </div>
+      <div className="add-cohort">
+      <div className="add-cohort-btn" onClick={() => setShowForm(!showForm)}>
+        <GrAddCircle />
+        Add New Cohort
+      </div>
+      {showForm ? (
+        <AddCohortForm
+        
+          newCohort={newCohort}
+          handleInputChange={handleInputChange}
+          handleAddCohort={handleAddCohort}
         />
-        <input
-          type="number"
-          name="numberOfStudents"
-          placeholder="Number of Students"
-          value={newCohort.numberOfStudents}
-          onChange={handleInputChange}
-        />
-        <input
-          type="number"
-          name="numberOfInstructors"
-          placeholder="Number of Instructors"
-          value={newCohort.numberOfInstructors}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="session"
-          placeholder="Session"
-          value={newCohort.session}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="actuelPhase"
-          placeholder="Phase"
-          value={newCohort.actuelPhase}
-          onChange={handleInputChange}
-        />
-        <button onClick={handleAddCohort}>Add Cohort</button>
+      ):null}
+
+      </div>
+      <div className="cohort-container">
+        {cohorts.map(cohort=><Cohort handleUpdateCohort={handleUpdateCohort}  handleDelete={handleDelete} cohort={cohort}/>)}
       </div>
     </div>
   );
 };
 
 export default CohortManagementPage;
+
