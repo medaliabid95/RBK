@@ -86,10 +86,12 @@ body {
 
 .desc-demo {
     position: relative;
-    margin-left: 3%;
+    margin: 0;
     bottom: 5%;
-    width: 50%;
-    word-break: break-all;
+    margin-left: 5%;
+    max-width: 20%;
+    word-wrap: break-word;
+
 }
 
 .like-button {
@@ -117,8 +119,8 @@ body {
 .like-rp-container {
     width: 200px;
     position: relative;
-    top: -8%;
-    left: 60%;
+    top: -11%;
+    left: 80%;
 }
 
 @keyframes gradient {

@@ -113,7 +113,7 @@ const Sidebar = () => {
               style={{ width: "21px" }}
             />
           </span>
-          <a href="/" className="side-anchor-link">
+          <a href="/homeProjects" className="side-anchor-link">
             Projets récemments publiés
           </a>
           <ul className="side-bar-submenu">
@@ -124,8 +124,8 @@ const Sidebar = () => {
                   style={{ color: "#000000", width: "15px" }}
                 />
               </span>
-              <a href="" className="sb-link">
-                Créer un Projet
+              <a href="/addProject" className="sb-link">
+                Ajouter un Projet
               </a>
             </li>
             <li className="sb-submenu-link">
@@ -135,8 +135,8 @@ const Sidebar = () => {
                   style={{ color: "#000000", width: "15px" }}
                 />
               </span>
-              <a href="" className="sb-link">
-                Gérer Projects
+              <a href="/editProject" className="sb-link">
+                Gérer Projets
               </a>
             </li>
           </ul>
