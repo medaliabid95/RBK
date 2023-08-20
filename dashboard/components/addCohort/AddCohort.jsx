@@ -1,10 +1,11 @@
 "use client"
 import React from "react";
 import './addCohort.css'
+
 const AddCohortForm = ({
   newCohort,
   handleInputChange,
-  handleAddCohort,
+  handleAddCohort
 }) => {
   return (
     <div className="popup">
@@ -17,7 +18,13 @@ const AddCohortForm = ({
           value={newCohort.name}
           onChange={handleInputChange}
         />
-        {/* Other input fields */}
+          
+          <select  value={newCohort.session} name="session" onChange={handleInputChange} >
+            <option value=''>Choisissez une session</option>
+            <option value='Session 1'>Session 1</option>
+            <option value='Session 2'>Session 2</option>
+          </select>
+      
         <button onClick={handleAddCohort}>Add Cohort</button>
       </div>
     </div>
