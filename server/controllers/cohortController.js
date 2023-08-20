@@ -34,20 +34,16 @@ const getCohortById = async (req, res) => {
 };
 
 const updateCohort = async (req, res) => {
-  const cohortId = req.params.id;
-
   try {
-    const [updatedCount, updatedCohorts] = await Cohort.update(req.body, {
-      where: { id: cohortId },
-      returning: true,
-    });
-    if (updatedCount > 0) {
-      res.status(200).json(updatedCohorts[0]);
-    } else {
-      res.status(404).json({ message: 'Cohort not found' });
-    }
+      const cohort = await Cohort.findByPk(req.params.id);
+      if (!cohort) {
+          res.status(404).json({ message: "cohort not found" });
+      } else {
+          await cohort.update(req.body);
+          res.status(200).json(cohort);
+      }
   } catch (error) {
-    res.status(400).json({ message: 'Error updating cohort', error: error.message });
+      res.status(500).json(error);
   }
 };
 
@@ -70,7 +66,7 @@ const deleteCohort = async (req, res) => {
 };
 
 module.exports = {
-  createCohort,
+ createCohort,
   getAllCohorts,
   getCohortById,
   updateCohort,
