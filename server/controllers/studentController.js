@@ -1,5 +1,5 @@
 
-const  Student  = require('../database/models/studentModel');
+const Student = require('../database/models/studentModel');
 
 
 console.log(Student);
@@ -25,7 +25,7 @@ const getStudentByCompus = async (req, res) => {
   const studentCompus = req.params.compus;
 
   try {
-    const student = await Student.findAll({where : {compus :studentCompus }});
+    const student = await Student.findAll({ where: { compus: studentCompus } });
     if (student) {
       res.status(200).json(student);
     } else {
@@ -40,11 +40,11 @@ const updateStudent = async (req, res) => {
   const studentId = req.params.id;
 
   try {
-     await Student.update(req.body, {
+    await Student.update(req.body, {
       where: { id: studentId },
       returning: true,
     });
-      res.status(200).json("updated");
+    res.status(200).json("updated");
   } catch (error) {
     res.status(400).json({ message: 'Error updating student', error: error.message });
   }
@@ -68,9 +68,23 @@ const deleteStudent = async (req, res) => {
   }
 };
 
-
+const getStudentsByCohort = async (req,res) => {
+  const studentCompus = req.body.compus;
+  const studentCohort=req.params.cohort
+  try {
+    const student = await Student.findAll({ where: { compus: studentCompus , CohortId :studentCohort ,Status : "En Cours" } });
+    if (student) {
+      res.status(200).json(student);
+    } else {
+      res.status(404).json({ message: 'Student not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving student', error: error.message });
+  }
+}
 
 module.exports = {
+  getStudentsByCohort,
   createStudent,
   getAllStudents,
   getStudentByCompus,
