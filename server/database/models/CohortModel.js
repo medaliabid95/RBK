@@ -10,11 +10,13 @@ const Cohort = sequelize.define("Cohort", {
   },
   numberOfStudents: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
+    defaultValue:0
   },
   numberOfInstructors: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
+    defaultValue:0
   },
   session : {
     type :DataTypes.STRING,
@@ -23,6 +25,14 @@ const Cohort = sequelize.define("Cohort", {
    actuelPhase: {
     type: DataTypes.ENUM("Bootstrap", "Junior","Senior"),
     allowNull: false,
+  },
+  campus:{
+      type:DataTypes.STRING,
+      allowNull:false
+  },
+  start:{
+    type:DataTypes.DATE,
+    allowNull:true,
   }
 });
 
