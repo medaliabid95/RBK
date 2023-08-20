@@ -43,28 +43,29 @@ const page = ({ params }) => {
   const [currentUser,setCurrentUser]=useState(null)
     const cookie=new Cookies()
     const router=useRouter()
-
+console.log("user",currentUser)
   useEffect(() => {
     if (params.idd) {
       getBlog(params.idd).then((fetchedBlog) => {
         setBlog(fetchedBlog);
-      });
+      })
       getComments(params.idd).then((fetchedComments) => {
         setComments(fetchedComments);
-      });
+      }).catch(err=>console.log(err))
     }
     const token=cookie.get("userInfo")
+    
       if(token){
-        const decoded=jwt_decode(token)
-   
+        const decoded=jwt_decode(token.token)
         setCurrentUser(decoded)
+        
       }
    
   }, [params.idd, refresh]);
 if(comments.length){
   console.log("rafik",comments)
 }
-  if (!blog||!comments.length) {
+  if (!blog) {
     console.log("yess");
     return null;
   }
@@ -82,21 +83,21 @@ if(comments.length){
 
 
 
-  
+  console.log("dd",comments)
 
   return (
     <div className="one-post">
-      <section className="image-blogs-container">
+      {/* <section className="image-blogs-container">
         <img src="/blog.jpg" alt="aws" />
         <Header />
-      </section>
+      </section> */}
       <div className="one-post-container">
         <div className="admin-details">
           <div className="user-info">
             <img src="/profil.png" alt="avatar" />
             <div className="details">
+              <p>{blog.author}</p>
               <p>Admin</p>
-              <p></p>
               <div className="blog-date">
                 <RiTimer2Fill /> 2 min read // {formattedDate}
               </div>

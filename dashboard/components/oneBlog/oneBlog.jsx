@@ -15,7 +15,6 @@ import "./oneBlog.css";
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillImageFill } from "react-icons/bs";
 import { TiDeleteOutline } from "react-icons/ti";
-
 import axios from "axios";
 import { useRouter } from "next/navigation";
 const getBlog = (id) => {
@@ -26,7 +25,6 @@ const getBlog = (id) => {
 
 const oneBlog = ({ id }) => {
   const [blog, setBlog] = useState(null);
-
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [file, setFile] = useState(null);

@@ -1,0 +1,94 @@
+.width-80{
+    width: 80%;
+}
+
+.state {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    
+}
+
+.state-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    align-items: center;
+    width: 22%;
+    gap: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 4px 6px #ff007b24;
+    border-radius: 10px;
+    color: #a7a6a6;
+    font-weight: bold;
+}
+
+.state-item p {
+    color: #ff007b
+}
+
+.blogs-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    gap: 50px;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.search-input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 2.5px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff007b;
+    box-shadow: 0px 0px 8px #ff007b24;
+}
+
+.add-blog-btn {
+    display: flex;
+    align-items: center;
+    color: #ff007b;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    padding: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 18px;
+    box-shadow:  0px 4px 6px #ff007b24;
+    margin-right: 3%;
+}
+
+.add-blog-btn svg {
+    margin-right: 5px;
+}

@@ -14,7 +14,7 @@ const getComments = async (req, res) => {
     });
 
     if (allComments.length === 0) {
-      res.status(400).json("no comments");
+      res.status(400).json([]);
       return;
     }
 

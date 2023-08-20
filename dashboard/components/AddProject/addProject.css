@@ -1,5 +1,4 @@
-
-.add-event-container h1 {
+.add-projcet-container h1 {
     color: #ff007b;
     padding: 5%;
     font-family: Arial, sans-serif;
@@ -123,18 +122,22 @@ label {
     grid-template-rows: repeat(4, 1fr);
 }
 
-.button-post {
+.button-post-project {
     color: whitesmoke;
+    font-weight: bold;
+    font-size: .8vw;
     background-color: #ff007b;
     height: 4vh;
     width: 6vw;
     border: none;
     margin: 2%;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.add-event-container h2 {
+.add-projcet-container h2 {
     color: rgba(0, 0, 0, 0.59);
+    padding-top: 1%;
     padding-bottom: 2%;
     font-size: 1vw;
 }
