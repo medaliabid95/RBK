@@ -17,6 +17,7 @@ const page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [descriptionn, setDesc] = useState("");
+  const name = sessionStorage.getItem("name");
   
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -35,6 +36,7 @@ const page = () => {
         image: imageUrl,
         description: descriptionn,
         content: JSON.stringify(rawContentState),
+        author:name
       })
       .then((res) => router.push("/manageBlogs", { scroll: true }))
       .catch((err) => console.log(err));

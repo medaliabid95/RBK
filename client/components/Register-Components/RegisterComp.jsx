@@ -53,7 +53,7 @@ const RegisterComp = () => {
         let regularExpression = "^[A-Za-z][A-Za-z0-9_]{7,29}$"
         if (e.target.value.match(regularExpression)) {
             setValid({ username: true })
-            set
+
 
         } else setValid({ username: false })
     }
