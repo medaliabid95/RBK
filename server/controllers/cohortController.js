@@ -37,15 +37,13 @@ const updateCohort = async (req, res) => {
   const cohortId = req.params.id;
 
   try {
-    const [updatedCount, updatedCohorts] = await Cohort.update(req.body, {
+    const  updatedCohorts = await Cohort.update(req.body, {
       where: { id: cohortId },
       returning: true,
     });
-    if (updatedCount > 0) {
-      res.status(200).json(updatedCohorts[0]);
-    } else {
+
       res.status(404).json({ message: 'Cohort not found' });
-    }
+
   } catch (error) {
     res.status(400).json({ message: 'Error updating cohort', error: error.message });
   }
