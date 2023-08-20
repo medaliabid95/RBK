@@ -1,15 +1,20 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Cookies from 'universal-cookie/cjs/Cookies';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Login-components/firebaseConfig'
+
 import axios from 'axios';
-const Logincomp = () => {
+const Logincomp = ({params}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [popUp, setPopUp] = useState(false)
     const [errMsg, setErrMsg] = useState("")
+    
+    
     const cookies = new Cookies();
+
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -24,7 +29,14 @@ const Logincomp = () => {
                         .then((res) => {
                             const jwtToken = res.data
                             cookies.set("userInfo", jwtToken)
-                            window.location.replace("/")//! used this beacuse router.push() will distort the css
+                            if(sessionStorage.getItem("previousLocation")){
+                                window.location.replace(sessionStorage.getItem("previousLocation"))
+                                sessionStorage.removeItem("previousLocation")
+
+                            }else{
+                                window.location.replace("/")
+                            }
+                            // window.location.replace("/")//! used this beacuse router.push() will distort the css
                         })
                         .catch((err) => console.log(err))
                 } else {

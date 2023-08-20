@@ -54,7 +54,7 @@ body {
 .aws-description-container {
   width: 90%;
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   background-size: cover;
 }
 
@@ -133,9 +133,7 @@ body {
   margin-top: 20px;
 }
 
-.planning-description {
-  padding: 45px;
-}
+
 
 .planning {
   display: flex;
@@ -356,10 +354,22 @@ body {
   }
 
   .video {
-    width: 37%;
+    width: 40%;
 
   }
-
+.aws-container .playbutton {
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+    left: 49%;
+    font-size: 4vw;
+    cursor: pointer;
+    color: #FF9800;
+    
+}
+.aws-container .video-landing-page{
+  position: relative;
+}
   .planning div {
     width: 48%;
   }
