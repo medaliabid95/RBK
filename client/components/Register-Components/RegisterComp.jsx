@@ -36,24 +36,21 @@ const RegisterComp = () => {
     useEffect(() => {
         axios.get("http://localhost:3001/user/getAll")
             .then((res) => { setAllUsers(res.data) })
+            .catch((err) => console.log(err))
     }, [])
     //*----------------FIREBASE---------------------*/
     //*handling form fields start
     const handlePassword = (e) => {
-        let lowerCase = /[a-z]/g
-        let upperCase = /[A-Z]/g
-        let numbers = /[0-9]/g
-        if (e.target.value.match(lowerCase) && e.target.value.match(upperCase) && e.target.value.match(numbers)) {
+        if (e.target.value.length !== 0) {
             setValid({ password: true })
 
         } else setValid({ password: false })
 
     }
     const handleUsername = (e) => {
-        let regularExpression = "^[A-Za-z][A-Za-z0-9_]{7,29}$"
-        if (e.target.value.match(regularExpression)) {
+        if (e.target.value.length !== 0) {
             setValid({ username: true })
-            set
+
 
         } else setValid({ username: false })
     }

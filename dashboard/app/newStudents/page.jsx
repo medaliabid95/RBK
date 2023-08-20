@@ -81,7 +81,7 @@ const StudentPage = () => {
         return 'black';
     }
   };
-  
+
   const getStatusBackgroundColor = (status) => {
     switch (status) {
       case 'En Cours':
@@ -95,7 +95,7 @@ const StudentPage = () => {
     }
   };
 
-  
+
   const acceptedStudents = (students) => {
     return students.filter((student) => student.Status === 'Accepté')
   }
@@ -106,58 +106,58 @@ const StudentPage = () => {
     return <div className='not-found'>404 not found</div>;
   }
 
-  
-    return (
-      <div>
-        <div className='title'> RebootKamp <span className='location'>{location}</span> Dashboard
-        </div>
-        <div className='statics-before-table'>
-          <CardIcon icon="./vision.svg" label="Nombre de visiteurs" count={visitCount} />
-          <CardIcon icon="./Inscription.svg" label="Nombre d'inscriptions" count={studentData.length} />
-          <CardIcon icon="./people.svg" label="Nombre de condidats" count={acceptedStudents(studentData).length} />
-        </div>
-        <div className={styles.card}>
-          <h1>Inscriptions récentes</h1>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Session</th>
-                <th>Formule</th>
-                <th>Age</th>
-                <th>Ville</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {studentData.map((student, index) => (
-                <tr key={index}>
-                  <td>{`${student.nom} ${student.prenom}`}</td>
-                  <td>{student.phone}</td>
-                  <td>{student.email}</td>
-                  <td>{student.session}</td>
-                  <td>{student.formule}</td>
-                  <td>{student.age}</td>
-                  <td>{student.city}</td>
-                  <td className="statusCell" style={{ color: getStatusColor(student.Status), backgroundColor: getStatusBackgroundColor(student.Status) }}>
-                    <select
-                      value={student.Status}
-                      onChange={(e) => handleStatusChange(e, student.id)}>
-                      <option>En Cours</option>
-                      <option>Accepté</option>
-                      <option>Refusé</option>
-                    </select>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
+  return (
+    <div>
+      <div className='title'> RebootKamp <span className='location'>{location}</span> Dashboard
       </div>
-    );
-  };
+      <div className='statics-before-table'>
+        <CardIcon icon="./vision.svg" label="Nombre de visiteurs" count={visitCount} />
+        <CardIcon icon="./Inscription.svg" label="Nombre d'inscriptions" count={studentData.length} />
+        <CardIcon icon="./people.svg" label="Nombre de condidats" count={acceptedStudents(studentData).length} />
+      </div>
+      <div className={styles.card}>
+        <h1>Inscriptions récentes</h1>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Session</th>
+              <th>Formule</th>
+              <th>Age</th>
+              <th>Ville</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {studentData.map((student, index) => (
+              <tr key={index}>
+                <td>{`${student.nom} ${student.prenom}`}</td>
+                <td>{student.phone}</td>
+                <td>{student.email}</td>
+                <td>{student.session}</td>
+                <td>{student.formule}</td>
+                <td>{student.age}</td>
+                <td>{student.city}</td>
+                <td className="statusCell" style={{ color: getStatusColor(student.Status), backgroundColor: getStatusBackgroundColor(student.Status) }}>
+                  <select
+                    value={student.Status}
+                    onChange={(e) => handleStatusChange(e, student.id)}>
+                    <option>En Cours</option>
+                    <option>Accepté</option>
+                    <option>Refusé</option>
+                  </select>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
 const CardIcon = ({ icon, label, count }) => (
   <div className='card-icon'>

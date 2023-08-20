@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie/cjs/Cookies';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Login-components/firebaseConfig'
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 const Logincomp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -16,10 +18,16 @@ const Logincomp = () => {
 
             if (user) {
                 if (user.user.emailVerified) {
-                    const token = await user.user.getIdTokenResult(false)
-                    cookies.set("userInfo", token)
-                    window.location.replace("/")//! used this beacuse router.push() will distort the css
-
+                    const fireBaseToken = await user.user.getIdTokenResult(false)
+                    axios.post("http://localhost:3001/user/getOne", {
+                        email: fireBaseToken.claims.email
+                    })
+                        .then((res) => {
+                            const jwtToken = res.data
+                            cookies.set("userInfo", jwtToken)
+                            window.location.replace("/")//! used this beacuse router.push() will distort the css
+                        })
+                        .catch((err) => console.log(err))
                 } else {
                     setPopUp(true)
                 }
