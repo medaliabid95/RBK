@@ -1,3 +1,4 @@
+"use client";
 import "./contact.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
@@ -7,11 +8,29 @@ import { AiFillFacebook } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsYoutube } from "react-icons/bs";
-import Imagee from "../../components/contactImage/ContactImage.jsx"
-import Méthodologie from '../../components/contactText/Méthodologie.jsx'
-
+import Imagee from "../../components/contactImage/ContactImage.jsx";
+import Méthodologie from "../../components/contactText/Méthodologie.jsx";
+import { useEffect, useRef } from "react";
 
 const page = () => {
+  const observerRef = useRef(null);
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observerRef.current.unobserve(entry.target); // Stop observing after animation
+        }
+      });
+    });
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => {
+      observerRef.current.observe(el);
+    });
+  return () => {
+      observerRef.current.disconnect();
+    };
+  }, []);
   const iconStyle = {
     color: "#FF007B",
     fontSize: "min(5vw,3.2rem)",
@@ -24,29 +43,28 @@ const page = () => {
         <div className="title">Contact Us</div>
       </section>
       <h1>Qui sommes nous ?</h1>
-      <section className="qui-nous-somme">
-      <Imagee imgSrc="/images/rbk-contact.png" arr1={   [1, 0.5, 0.1, 0]} arr2={[0, 0, -1000, 0]}/>
+      <section className="qui-nous-somme hidden">
+        <Imagee imgSrc="/images/rbk-contact.png" />
         <img className="rbk-imagess" src="/images/rbk-contact.png" alt="" />
         <p className="rotate"></p>
 
         <div className="qui-nous-somme-item">
-         <div>
-          <h3>*Notre formation</h3>
-          <p>
-            Une formation flexible et adaptable à vos besoins. RBK, un réseau
-            d'écoles de code opérant en Tunisie et en Jordanie depuis 2016. Nous
-            avons eu la chance d'apprendre et grandir aux côtés de HACK REACTOR,
-            l'école de code classée N#1 au monde de 2012 à 2020 avec qui nous
-            avons partagé les cursus et l'expertise jusqu'à leur fin 2021.Nous
-            avons aussi collaboré avec OpenClassrooms en étant leur distributeur
-            exclusif en Tunisie. Enfin nous sommes partenaires d'implémentation
-            de AWS pour la formation en cloud re/start
-          </p>
+          <div>
+            <h3>*Notre formation</h3>
+            <p>
+              Une formation flexible et adaptable à vos besoins. RBK, un réseau
+              d'écoles de code opérant en Tunisie et en Jordanie depuis 2016.
+              Nous avons eu la chance d'apprendre et grandir aux côtés de HACK
+              REACTOR, l'école de code classée N#1 au monde de 2012 à 2020 avec
+              qui nous avons partagé les cursus et l'expertise jusqu'à leur fin
+              2021.Nous avons aussi collaboré avec OpenClassrooms en étant leur
+              distributeur exclusif en Tunisie. Enfin nous sommes partenaires
+              d'implémentation de AWS pour la formation en cloud re/start
+            </p>
           </div>
         </div>
-       
       </section>
-      <section className="qui-nous-somme outcomes">
+      <section className="qui-nous-somme outcomes hidden">
         <div className="qui-nous-somme-item ">
           <h3>* It's all about… Outcomes</h3>
           <ul>
@@ -66,20 +84,19 @@ const page = () => {
           </ul>
         </div>
         <p className="rotate"></p>
-        <Imagee  imgSrc="/images/méthodologie.jpg" arr1={  [0, 0.1, 0.5, 1]} arr2={[1000, 1000, 0, 0]}/>
-        {/* <img src="méthodologie.jpg" alt="" /> */}
+        <Imagee imgSrc="/images/méthodologie.jpg" />
       </section>
-      <section className="qui-nous-somme méthodologie">
-      <img className="rbk-imagess" src="/images/workplace.jpg" alt="" />
-        {/* <img src="workplace.jpg" alt="" /> */}
-        <Imagee imgSrc="/images/workplace.jpg" arr1={[1, 0.5, 0.1, 0]} arr2={[0, 0, -1000, 0]}/>
-        
+      <section className="qui-nous-somme méthodologie hidden">
+        <img className="rbk-imagess" src="/images/workplace.jpg" alt="" />
+
+        <Imagee imgSrc="/images/workplace.jpg" />
+
         <p className="rotate"></p>
- <Méthodologie arr1={  [0, 0.1, 0.5, 1]} arr2={[1000, 1000, 0, 0]}/>
+        <Méthodologie />
       </section>
       <section className="contact-form">
         <h1>CONTACT</h1>
-        
+
         <div className="form-container">
           <div className="rbk-infos">
             <div className="info-item">
