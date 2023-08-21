@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import "./manageEvents.css"
 const ManageEvents = () => {
@@ -13,7 +14,7 @@ const ManageEvents = () => {
     const [deleted, setDeleted] = useState(false)
     const [search, setSearch] = useState("")
     const [desiredId, setDesiredId] = useState(0)
-
+    const router = useRouter()
     const toggleModal = () => {
         setModal(!modal);
     };
@@ -44,7 +45,7 @@ const ManageEvents = () => {
 
     const deleteEvent = (id) => {
         axios.delete(`http://localhost:3001/events/delete/${id}`)
-            .then((res) => {toggleModal(); setDeleted(!deleted) })
+            .then((res) => { toggleModal(); setDeleted(!deleted) })
             .catch((err) => alert("failed to delete event"))
     }
 
@@ -67,22 +68,34 @@ const ManageEvents = () => {
                             <div className="modal-content">
                                 <h2>Êtes-vous sûr de vouloir supprimer cet événement !</h2>
                                 <div className='btn-container'>
-                                    <button className="close-modal" onClick={()=>{toggleModal();setDesiredId(0)}}>
-                                    cancel
-                                </button>
-                                <button className='delete-event' onClick={()=>{deleteEvent(desiredId)}}>
-                                    delete
-                                </button>
+                                    <button className="close-modal" onClick={() => { toggleModal(); setDesiredId(0) }}>
+                                        cancel
+                                    </button>
+                                    <button className='delete-event' onClick={() => { deleteEvent(desiredId) }}>
+                                        delete
+                                    </button>
                                 </div>
                             </div>
                         </div>)}
                 </div>
                 <div className='container-container'>
                     <div class="search-input-container">
-                        <input type="text" name="text" class="search-input" onChange={(e) => setSearch(e.target.value)} placeholder="search..." />
+                        <input type="text" name="text" class="search-input" onChange={(e) => setSearch(e.target.value)} placeholder="chercher..." />
                         <span class="icon">
                             <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                         </span>
+                    </div>
+                </div>
+                <div className='add-container'>
+                    <div className='add-staff' onClick={() => router.push(`/manageEvent/addEvent`)} >
+                        <div tabindex="0" class="plusButton">
+                            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                <g mask="url(#mask0_21_345)">
+                                    <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div className='add-staff-text'>Ajouter un evenement </div>
                     </div>
                 </div>
                 {events.map((event) => (
@@ -94,9 +107,9 @@ const ManageEvents = () => {
                         <h1 className='event-title'>{event.title}</h1>
                         <div className='event-paragraph truncate'>{event.description}</div>
                         <Link className='read-more' href={`/manageEvent/${event.id}`}>
-                            <span className='read-more-text'>edit</span>
+                            <span className='read-more-text'>modifier </span>
                         </Link>
-                        <button className='btn-delete' onClick={()=>{toggleModal();setDesiredId(event.id)}} >delete</button>
+                        <button className='btn-delete' onClick={() => { toggleModal(); setDesiredId(event.id) }} >supprimer</button>
                         <img className='event-img' src={event.image} alt="" />
                         <div className='line-after'></div>
                     </div>

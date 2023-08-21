@@ -55,7 +55,7 @@ const oneBlog = ({ id }) => {
         const contentState = convertFromRaw(JSON.parse(fetchedBlog.content)); // Parse the JSON content
         setEditorState(EditorState.createWithContent(contentState));
       })
-      getComments(id).then(res=>setComments(res.data)).catch(err=>console.log(err))
+      getComments(id).then(res=>setComments(res)).catch(err=>console.log(err))
     }
   }, [id, refresh]);
 
@@ -240,7 +240,7 @@ const oneBlog = ({ id }) => {
       </div>
 
       <div className="comments-list">
-        {comments?.map((comment, index) => (
+        {comments.map((comment, index) => (
           <div key={comment.id} className="comment">
             <img src="../profil.png" alt="Avatar" className="avatar" />
             <div className="comment-content">

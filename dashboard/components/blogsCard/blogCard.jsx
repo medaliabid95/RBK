@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useRef} from "react";
+import React,{useState,useRef, useEffect} from "react";
 
 import { RiTimer2Fill } from "react-icons/ri";
 import { AiFillHeart } from "react-icons/ai";
@@ -10,6 +10,12 @@ import { useRouter } from "next/navigation";
 
 const BlogCard = ({ blog,handleRefresh}) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [comments,setComments]=useState([])
+  useEffect(()=>{
+          axios.get(`http://localhost:3001/comments/getAll/${blog.id}`).then((res) =>
+          setComments(res.data)
+        )
+  })
   const dropdownRef = useRef(null);
   const router=useRouter()
   
@@ -80,7 +86,7 @@ const BlogCard = ({ blog,handleRefresh}) => {
               {blog.likes} j'aime
             </p>
             <p className="vues">{blog.vues} vues</p>
-            <p >0 commentaires</p>
+            <p >{comments.length} commentaires</p>
           <div className="likes">
             {blog.likes}
             <AiFillHeart style={{ fill: "red" }} />

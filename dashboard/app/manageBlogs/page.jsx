@@ -21,7 +21,10 @@ const page = () => {
       })
       .catch((error) => {
         console.error("Error fetching blogs:", error);
-      });
+      })
+
+   
+
   }, [refresh]);
   const handleRefresh = () => {
     setRefresh(!refresh);
