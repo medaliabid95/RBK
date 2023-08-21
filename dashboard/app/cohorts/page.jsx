@@ -7,19 +7,23 @@ import { GrAddCircle } from "react-icons/gr";
 import AddCohortForm from "@/components/addCohort/AddCohort.jsx";
 import axios from "axios"
 import Cohort from "../../components/cohort/Cohort.jsx"
+
 const CohortManagementPage = () => {
   const [cohorts, setCohorts] = useState([]);
 
   const [showForm, setShowForm] = useState(false);
   const [refresh,setRefresh]=useState(false)
+
   
   const location = sessionStorage.getItem("location");
   useEffect(()=>{
     axios.get("http://localhost:3001/cohorts/getAll")
     .then(res=>setCohorts(res.data))
     .catch(err=>console.error(err))
+
+    
   },[refresh])
-  
+
   const [newCohort, setNewCohort] = useState({
     name: "",
     session: "",
