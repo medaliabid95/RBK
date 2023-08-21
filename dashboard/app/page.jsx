@@ -27,7 +27,7 @@ const Login = () => {
       sessionStorage.setItem('name', name);
       sessionStorage.setItem('location', compus);
       sessionStorage.setItem('image', image);
-      router.push('/newStudents');
+      router.push('/allStudents');
     }
 
     catch (error) {
