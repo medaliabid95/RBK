@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import Image from "next/image";
 import moment from "moment";
@@ -6,12 +6,24 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import AddCohortForm from "../addCohort/AddCohort.jsx";
 import UpdateCohort from "../updateCohorts/UpdateCohort.jsx";
 import { useRouter } from "next/navigation.js";
+import axios from "axios";
 const cohort = ({ handleDelete, cohort, handleUpdateCohort }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const [showForm, setShowForm] = useState(false);
   const [updateCohort, setUpdateCohort] = useState({});
+  const [students,setStudents]=useState(["dd","dd"])
   const router=useRouter()
+  useEffect(()=>{
+    const fetchStudent = (id) => {
+      axios.post(`http://localhost:3001/students/getByCohort/${id}`, {
+        compus: sessionStorage.getItem("location")
+      })
+        .then((response) => setStudents(response.data))
+        .catch((error) => console.log(error))
+    }
+    fetchStudent(cohort.id)
+  },[])
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUpdateCohort((prevCohort) => ({ ...prevCohort, [name]: value }));
@@ -35,6 +47,7 @@ console.log(cohort);
   const closeUpdateForm = () => {
     setShowForm(false);
   };
+  console.log(cohort)
   return (
     <div className="cohort" >
       <div
@@ -95,7 +108,7 @@ console.log(cohort);
           <h1 className="cohort-name" onClick={()=>router.push(`/cohorts/${cohort.id}`)}>{cohort.name} </h1>
           <div className="students-counter">
             <BsFillPeopleFill />
-            {cohort.numberOfStudents}
+            {students?.length}
           </div>
         </div>
         <p>Créé le : {moment(cohort.createdAt).format("YYYY-MM-DD")}</p>
