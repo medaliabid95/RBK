@@ -163,7 +163,7 @@ const CohortTable = () => {
                   }
                 }}
               >
-                {!instructorsEditStates[instructor.id] ? "Edit" : "Save"}
+                {!instructorsEditStates[instructor.id] ? "Modifier" : "Enregistrer"}
               </button>
             </div>
           ))}
