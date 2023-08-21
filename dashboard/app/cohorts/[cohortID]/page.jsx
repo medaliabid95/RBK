@@ -14,9 +14,10 @@ const CohortTable = () => {
   const [instructors, setInstructors] = useState([])
   const [edit, setEdit] = useState(false);
   const [instructorsEditStates, setInstructorsEditStates] = useState({});
+  const [instructorsNames, setInstructorsNames] = useState({});
   const [name, setName] = useState("")
   const [speciality, setSpeciality] = useState("")
-  const [reserveSpeciality, setReserveSpeciality] = useState("")
+  const [reserveSpeciality, setReserveSpeciality] = useState("developper")
   const [state, setState] = useState(false)
 
   const handleSelectChange = (e) => {
@@ -44,6 +45,13 @@ const CohortTable = () => {
         }, {});
         setInstructors(instructorsData);
         setInstructorsEditStates(editStates);
+
+        // Initialize instructorsNames state
+        const names = {};
+        instructorsData.forEach((instructor) => {
+          names[instructor.id] = instructor.name;
+        });
+        setInstructorsNames(names);
       })
       .catch((error) => console.log(error))
   };
@@ -58,7 +66,7 @@ const CohortTable = () => {
       const updatedSpeciality = speciality.length === 0 ? newReserveSpeciality : speciality;
 
       await axios.put(`http://localhost:3001/instructor/updateOne/${id}`, {
-        name: name,
+        name: instructorsNames[id],
         speciality: updatedSpeciality
       });
 
@@ -111,20 +119,34 @@ const CohortTable = () => {
               {!instructorsEditStates[instructor.id] ? (
                 <span>{instructor.name}</span>
               ) : (
-                <input placeholder="nom" type="text" name="text" class="input" onChange={(e) => setName(e.target.value)} />
+                <input
+                  placeholder="nom"
+                  type="text"
+                  name="text"
+                  class="input"
+                  value={instructorsNames[instructor.id]}  
+                  onChange={(e) => {
+                    const updatedNames = {
+                      ...instructorsNames,
+                      [instructor.id]: e.target.value,
+                    };
+                    setInstructorsNames(updatedNames);
+                  }}
+                />
               )}
               {!instructorsEditStates[instructor.id] ? (
                 <p className="job">{instructor.speciality}</p>
               ) : (
                 <select value={speciality} onChange={handleSelectChange} class="form__field margin">
                   {speciality}
-                  <option value={speciality}>Developper</option>
-                  <option value={speciality}>coordinateur de classe</option>
+                  <option value="developper">Developper</option>
+                  <option value="classe cordinator">coordinateur de classe</option>
                 </select>
               )}
               <button
                 onClick={() => {
                   if (instructorsEditStates[instructor.id]) {
+                    console.log(instructor.id);
                     updateInstructor(instructor.id)
                     const updatedEditStates = {
                       ...instructorsEditStates,
