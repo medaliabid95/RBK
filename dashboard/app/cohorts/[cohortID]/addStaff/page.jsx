@@ -54,7 +54,7 @@ console.log("image", imageUrl);
     else {
         return (
             <div className='add-event-container'>
-                <h1>add Staff</h1>
+                <h1>Ajouter instructeur</h1>
                 <h2>entrer le nom : <span className='required'>*required</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setNom(e.target.value) }} class="form__field w-100" placeholder="nom" />
