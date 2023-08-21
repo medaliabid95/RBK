@@ -75,11 +75,7 @@ const EditEvent = () => {
         const contentState = editorState.getCurrentContent();
         const rawContentState = convertToRaw(contentState);
         const contentPlainText = EditorState.createWithContent(contentState).getCurrentContent().getPlainText();
-        // const form = new FormData()
-        // form.append("file", file)
-        // form.append("upload_preset", "blogging")
-        // const res = await axios.post("https://api.cloudinary.com/v1_1/dx3tuofza/upload", form)
-        // const url = res.data.secure_url
+
         axios.put(`http://localhost:3001/events/updateOne/${id}`, {
             title: title,
             preDescription: preDescription,

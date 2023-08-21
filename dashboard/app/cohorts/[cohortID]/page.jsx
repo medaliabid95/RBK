@@ -1,12 +1,13 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import axios from 'axios'
 import './cohort.css';
 const CohortTable = () => {
+  const router = useRouter();
   const param = useParams()
-  const id = 1
+  const id = param.cohortID
   const compus = sessionStorage.getItem("location")
   const [selectedRows, setSelectedRows] = useState([]);
   const [students, setStudents] = useState([])
@@ -16,6 +17,10 @@ const CohortTable = () => {
   const [name, setName] = useState("")
   const [speciality, setSpeciality] = useState("")
   const [state, setState] = useState(false)
+
+  const handleSelectChange = (e) => {
+    setSpeciality(e.target.value);
+};
 
   const handleSelectionChange = (selectionModel) => {
     setSelectedRows(selectionModel);
@@ -33,7 +38,7 @@ const CohortTable = () => {
       .then((response) => {
         const instructorsData = response.data;
         const editStates = instructorsData.reduce((acc, instructor) => {
-          acc[instructor.id] = false; // Initialize edit state for each instructor
+          acc[instructor.id] = false;
           return acc;
         }, {});
         setInstructors(instructorsData);
@@ -44,14 +49,16 @@ const CohortTable = () => {
 
   const updateInstructor = (id) => {
     axios.get(`http://localhost:3001/instructor/getOne/${id}`)
-    .then((res=>setSpeciality(res.data.speciality)))
-    .catch((err)=>console.log(err))
-    axios.put(`http://localhost:3001/instructor/updateOne/${id}`, {
-      name: name,
-      speciality: speciality
-    })
-      .then((res) => { alert("update successfully"); setEdit(!edit); setState(!state) })
-      .catch((error) => console.log(error))
+      .then((res => {
+        setSpeciality(res.data.speciality)
+        axios.put(`http://localhost:3001/instructor/updateOne/${id}`, {
+          name: name,
+          speciality: speciality
+        })
+          .then((res) => { alert("update successfully"); setEdit(!edit); setState(!state) })
+          .catch((error) => console.log(error))
+      }))
+      .catch((err) => console.log(err))
   }
 
   const StudentColumns = [
@@ -66,16 +73,19 @@ const CohortTable = () => {
   useEffect(() => {
     fetchStudent(id)
     fetchInstructors(id)
+    setSpeciality("developpeur")
   }, [state])
 
   return (
     <div className='main-cohorts-container'>
-      <div className='insert-space'>
-        <button>add instructor</button>
-        <button>add student</button>
+      <div class="eight">
+        <h1>cohort description and management</h1>
       </div>
+      <div className='insert-space'>
+        <div className='add-box' onClick={() => router.push(`./${id}/addStaff`)}>add Staff</div>
+        <div className='add-box' onClick={() => router.push(`./${id}/addStudent`)}>add student</div></div>
       <div className='teacher-table'>
-        <h1>tableau du <span style={{ color: "#FF007B" }}>staff</span></h1>
+        <h1>list du <span style={{ color: "#FF007B" }}>staff</span></h1>
         <div className='cards-container'>
           {instructors.map((instructor) => (
             <div className="card" key={instructor.id}>
@@ -91,7 +101,11 @@ const CohortTable = () => {
               {!instructorsEditStates[instructor.id] ? (
                 <p className="job">{instructor.speciality}</p>
               ) : (
-                <input placeholder="specialité" type="text" name="text" class="input" onChange={(e) => setSpeciality(e.target.value)} />
+                <select value={speciality}  onChange={handleSelectChange} class="form__field">
+                  {speciality}
+                  <option value="developper">Developper</option>
+                  <option value="classe cordinator">coordinateur de classe</option>
+                </select>
               )}
               <button
                 onClick={() => {
@@ -103,13 +117,14 @@ const CohortTable = () => {
                     };
                     setInstructorsEditStates(updatedEditStates);
                   }
-                  else{
-                  const updatedEditStates = {
-                    ...instructorsEditStates,
-                    [instructor.id]: !instructorsEditStates[instructor.id],
-                  };
-                  setInstructorsEditStates(updatedEditStates);
-                }}}
+                  else {
+                    const updatedEditStates = {
+                      ...instructorsEditStates,
+                      [instructor.id]: !instructorsEditStates[instructor.id],
+                    };
+                    setInstructorsEditStates(updatedEditStates);
+                  }
+                }}
               >
                 {!instructorsEditStates[instructor.id] ? "Edit" : "Save"}
               </button>
@@ -118,7 +133,7 @@ const CohortTable = () => {
         </div>
       </div>
       <div className='students-table'>
-        <h1>tableau des <span style={{ color: "#FF007B" }}>etudients</span></h1>
+        <h1>tableau des <span style={{ color: "#FF007B" }}>candidats</span></h1>
         <DataGrid
           rows={students}
           columns={StudentColumns}

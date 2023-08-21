@@ -72,7 +72,7 @@ const getStudentsByCohort = async (req,res) => {
   const studentCompus = req.body.compus;
   const studentCohort=req.params.cohort
   try {
-    const student = await Student.findAll({ where: { compus: studentCompus , CohortId :studentCohort ,Status : "En Cours" } });
+    const student = await Student.findAll({ where: { compus: studentCompus , CohortId :studentCohort ,Status : "Accepté" } });
     if (student) {
       res.status(200).json(student);
     } else {
