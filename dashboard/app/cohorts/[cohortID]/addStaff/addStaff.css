@@ -85,7 +85,7 @@
 
 .add-event-container h1 {
     color: #ff007b;
-    padding: 5%;
+    padding: 3%;
     font-family: Arial, sans-serif;
 }
 
@@ -127,6 +127,8 @@ label {
 
 .button-post {
     display: flex;
+    align-items: center;
+    justify-content: center;
     color: whitesmoke;
     background-color: #ff007b;
     height: 6vh;

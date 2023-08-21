@@ -180,7 +180,7 @@ const Page = () => {
     (
       <div className="contenu">
         <div className="left-side">
-          <img className="image-contenu" src="./week6.jpg" alt="Image" />
+          <img className="image-contenu" src="./wee11.gif" alt="Image" />
           <div className="after-image"></div>
         </div>
         <div className="right-side">
@@ -351,19 +351,19 @@ const Page = () => {
       </div>
 
       {/* last */}
-      <div className="last">
+      <div className="last ">
         <div className="last-title">
           Frais de scolarité et options de <span className="span1">financement</span>
         </div>
         <div className="last-cards">
-          <div className="last-card1">
+          <div className="last-card1 hidden">
             <img className="last-image" src="./image 7.svg" alt="Card 1" />
             <div className="last-description">
               Paiement comptant <span className="span2">6786 TND</span> au lieu de
               <span className="removed" > 11310 TND</span>
             </div>
           </div>
-          <div className="last-card2">
+          <div className="last-card2 hidden">
             <img className="last-image" src="./image 8.svg" alt="Card 2" />
             <div className="last-description">
               Paiement sur 3 fois <span className="span2">2262 TND X 3</span> au lieu de <span className="removed"> 3770 TND x 3</span>

@@ -99,7 +99,7 @@ const CohortTable = () => {
               </g>
             </svg>
           </div>
-          <div className='add-staff-text'>Ajouter instructeur</div>
+          <div className='add-staff-text'>Ajouter un instructeur</div>
         </div>
         <div className='cards-container'>
           {instructors.map((instructor) => (

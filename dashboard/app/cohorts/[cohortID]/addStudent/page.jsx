@@ -67,43 +67,43 @@ const AddStudent = () => {
         return (
             <div className='add-event-container'>
                 <h1 >Ajouter un candidat</h1>
-                <h2>entrer le prenom : <span className='required'>*required</span></h2>
+                <h2>entrer le prenom : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setPrenom(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> prenom </label>
                 </div>
-                <h2>entrer le nom : <span className='required'>*required</span></h2>
+                <h2>entrer le nom : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setNom(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> nom </label>
                 </div>
-                <h2>entrer l'email : <span className='required'>*required</span></h2>
+                <h2>entrer l'email : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setEmail(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> email </label>
                 </div>
-                <h2>entrer l'age : <span className='required'>*required</span></h2>
+                <h2>entrer l'age : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="number" onChange={(e) => { setAge(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> age </label>
                 </div>
-                <h2>entrer l'adress' : <span className='required'>*required</span></h2>
+                <h2>entrer l'adress' : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setAddress(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> adress </label>
                 </div>
-                <h2>entrer le numero : <span className='required'>*required</span></h2>
+                <h2>entrer le numero : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="number" onChange={(e) => { setNumero(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> numero </label>
                 </div>
-                <h2>choisir formule  : <span className='required'>*not required</span></h2>
+                <h2>choisir formule  : <span className='required'></span></h2>
                 <select onChange={(e) => setFormule(e.target.value)} className="form__field w-100">
                     <option value="Temps plein (19 semaines)">Temps plein (19 semaines)</option>
                     <option value="Temps partiel (40 semaines)">Temps partiel (40 semaines)</option>
                 </select>
 
-                <h2>choisir session : <span className='required'>*not required</span></h2>
+                <h2>choisir session : <span className='required'></span></h2>
                 <select onChange={(e) => setSession(e.target.value)} className="form__field w-100">
                     <option value="Session 1">Session 1</option>
                     <option value="Session 2">Session 2</option>
