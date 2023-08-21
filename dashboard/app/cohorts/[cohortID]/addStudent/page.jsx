@@ -43,9 +43,6 @@ const AddStudent = () => {
             .catch((err) => console.log(err))
     }
     const update = async (id) => {
-        const contentState = editorState.getCurrentContent();
-        const rawContentState = convertToRaw(contentState);
-        const contentPlainText = EditorState.createWithContent(contentState).getCurrentContent().getPlainText();
         axios.put(`http://localhost:3001/events/updateOne/${id}`, {
             title: title,
             preDescription: preDescription,

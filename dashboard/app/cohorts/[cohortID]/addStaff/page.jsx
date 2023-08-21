@@ -36,7 +36,6 @@ const AddStaff = () => {
     };
 
     const update = async (id) => {
-        
         axios.post("http://localhost:3001/instructor/add", {
             "name": nom,
             "image": imageUrl,
