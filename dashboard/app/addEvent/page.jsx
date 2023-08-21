@@ -81,17 +81,17 @@ const AddEvent = () => {
         return (
             <div className='add-event-container'>
                 <h1>Creez un nouveau event</h1>
-                <h2>titre du event : <span className='required'>*required</span></h2>
+                <h2>titre du event : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setTitle(e.target.value) }} class="form__field w-100" placeholder="titre" />
                     <label for="name" class="form__label"> titre </label>
                 </div>
-                <h2>sous Description : <span className='required'>*not required</span></h2>
+                <h2>sous Description : <span className='required'></span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => setPreDescription(e.target.value)} class="form__field w-100" placeholder="sous description" />
                     <label for="name" class="form__label"> sous description </label>
                 </div>
-                <h2>ajouter une image : <span className='required'>*required</span></h2>
+                <h2>ajouter une image : <span className='required'>*</span></h2>
                 <div className="image-upload-container">
                     {imageUrl ? (
                         <div className="image-preview">
@@ -133,17 +133,17 @@ const AddEvent = () => {
                         </>
                     )}
                 </div>
-                <h2>adress : <span className='required'>*required</span></h2>
+                <h2>adress : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" class="form__field w-100" onChange={(e) => setAddress(e.target.value)} placeholder="adress" />
                     <label for="name" class="form__label"> adress </label>
                 </div>
-                <h2>date : <span className='required'>*required</span></h2>
+                <h2>date : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" class="form__field w-100" onChange={(e) => setDate(e.target.value)} placeholder="date" />
                     <label for="name" class="form__label">date </label>
                 </div>
-                <h2>description du blog : <span className='required'>*required</span></h2>
+                <h2>description du blog : <span className='required'>*</span></h2>
                 <div className="text-editor">
                     <Editor
                         editorState={editorState}

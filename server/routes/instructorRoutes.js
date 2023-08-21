@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const instructorController = require('../controllers/instructorsController');
 
-
+router.get('/getByCohort/:cohort',instructorController.getInstructorByCohort)
 router.post('/add', instructorController.createInstructor);
 router.get('/getAll', instructorController.getAllInstructors);
 router.get('/getOne/:id', instructorController.getInstructorById);

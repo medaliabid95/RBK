@@ -1,33 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import React,{useRef} from "react";
+import React from "react";
 import styled from "styled-components";
-import { motion, useScroll, useTransform } from "framer-motion";
 
-function Text({arr1,arr2}) {
-  // Import HTMLDivElement type
-  const secRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: secRef,
-    offset: ["start end", "end start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const xTransform = useTransform(
-    scrollYProgress,arr1,arr2
- 
-  );
+function Text() {
+  
 
   return (
-    <TextStyled ref={secRef}>
-      <motion.div
+    
+      <div
         className="image"
-        style={{
-          scale: scale,
-          x: xTransform,
-        }}
+
       >
 
                 <div className="qui-nous-somme-item">
@@ -58,15 +43,10 @@ function Text({arr1,arr2}) {
             </ul>
           </div>
         </div>
-      </motion.div>
-    </TextStyled>
+      </div>
+ 
   );
 }
-const TextStyled = styled.div`
-    .qui-nous-somme-item{
-        width:100%
-    }
 
-}`;
 
 export default Text;

@@ -63,7 +63,7 @@ const CohortManagementPage = () => {
       <div className="add-cohort">
       <div className="add-cohort-btn" onClick={() => setShowForm(!showForm)}>
         <GrAddCircle />
-        Add New Cohort
+        Ajouter une Nouvelle Cohorte 
       </div>
       {showForm ? (
         <AddCohortForm

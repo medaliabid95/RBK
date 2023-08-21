@@ -4,7 +4,6 @@ import VideoPlayer from '@/components/Player/VideoPlayer'
 import "./videoCarouselle.css"
 const videoCarouselle = ({ src, thumbnail, setPlay, play }) => {
     useEffect(() => {
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {

@@ -131,7 +131,7 @@ const page = () => {
         onClick={()=>router.push("/addBlog")}
         className="add-blog-btn">
           <GrAddCircle />
-          Add New Blog
+          Ajouter blog
         </div>
       </div>
       <div className="card-container">

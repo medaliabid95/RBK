@@ -10,7 +10,7 @@ const UpdateCohort = ({cohort,handleInputChange,handleUpdateCohort,id,closeUpdat
   <AiFillCloseCircle/>
   </div>
       <div className="card">
-        <h2>Make Your Change</h2>
+        <h2>Effectuez votre modification</h2>
         <input
           type="text"
           name="name"
@@ -35,7 +35,7 @@ const UpdateCohort = ({cohort,handleInputChange,handleUpdateCohort,id,closeUpdat
         <button onClick={()=>{
           handleUpdateCohort(id,cohort)
           closeUpdateForm()
-          }} >Submit changes</button>
+          }} >Soumettre les modifications</button>
       </div>
     </div>
   )

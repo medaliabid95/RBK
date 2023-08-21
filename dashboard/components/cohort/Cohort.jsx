@@ -31,9 +31,8 @@ const cohort = ({ handleDelete, cohort, handleUpdateCohort }) => {
 
 
   document.addEventListener("mousedown", handleDocumentClick);
-
+console.log(cohort);
   const closeUpdateForm = () => {
-    console.log("tahshe");
     setShowForm(false);
   };
   return (
@@ -69,9 +68,9 @@ const cohort = ({ handleDelete, cohort, handleUpdateCohort }) => {
                   setShowForm(true);
                 }}
               >
-                Edit
+                Modifier
               </p>
-              <p onClick={() => handleDelete(cohort.id)}>Delete</p>
+              <p onClick={() => handleDelete(cohort.id)}>Supprimer</p>
             </div>
           )}
         </div>
@@ -99,11 +98,11 @@ const cohort = ({ handleDelete, cohort, handleUpdateCohort }) => {
             {cohort.numberOfStudents}
           </div>
         </div>
-        <p>Created At : {moment(cohort.createdAt).format("YYYY-MM-DD")}</p>
+        <p>Créé le : {moment(cohort.createdAt).format("YYYY-MM-DD")}</p>
         <p>
-          Start  Date :{"  "}
+        Date de début :{"  "}
           {(cohort.start && moment(cohort.start).format("YYYY-MM-DD")) ||
-            "not Yet"}
+            ". . ."}
         </p>
       </div>
     </div>
