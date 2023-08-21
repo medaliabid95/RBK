@@ -50,10 +50,6 @@ const Page = () => {
 
   return (
     <div className='card-container-1'>
-      <div className="container">
-        <img className="background-image" src="./fullStack.png" alt="Background" />
-        <div className="text-container-1 hidden" >Postuler maintenant et profiter d'une bourse de 40%</div>
-       </div> 
      <div className='card-image-postuler-grid-2'>
       <div className='card-2'>       
         <h1>Réservez votre place en suivant ces quelques étapes simples.</h1>

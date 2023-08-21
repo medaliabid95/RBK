@@ -54,12 +54,7 @@ a {
     flex-direction: column;
 }
 
-.loginbackground{
-    margin: 10% !important;
-}
-.formbg-outer{
-    margin: 8%;
-}
+
 .loginbackground-gridContainer {
     display: -ms-grid;
     display: grid;

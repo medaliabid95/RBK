@@ -35,7 +35,7 @@ const cards = () => {
             axios
                 .put(`http://localhost:3001/projects/updateLikes/${id}`, { like: "+ 1" })
                 .then((res) => {
-
+                    setRefreshLikes(!refreshLikes)
                     setLikedBlogs((prevLikedBlogs) => [...prevLikedBlogs, id]);
 
                     // Now, after the state is updated, set local storage
@@ -47,7 +47,7 @@ const cards = () => {
             axios
                 .put(`http://localhost:3001/projects/updateLikes/${id}`, { like: "- 1" })
                 .then((res) => {
-
+                    setRefreshLikes(!refreshLikes)
                     setLikedBlogs((prevLikedBlogs) => {
                         return prevLikedBlogs.filter(like => like !== id)
                     });
@@ -80,10 +80,10 @@ const cards = () => {
                     </span>
                     <span className='more-details'> <FontAwesomeIcon icon={faCircleInfo} style={{ color: "#ffffff", }} />Plus de détails</span>
                     <p className='desc-demo'>{video.description}</p>
-                    {likedBlogs.includes(video.id) ? (<div className='like-button' onClick={() => { handleLikes(video.id); setRefreshLikes(!refreshLikes) }
+                    {likedBlogs.includes(video.id) ? (<div className='like-button' onClick={() => { console.log("unlike"); handleLikes(video.id); }
                     } ><FontAwesomeIcon className="heart" beat icon={faHeart} style={{
                         color: "red", cursor: "pointer"
-                    }} /></div>) : (<div className='like-button' onClick={() => { handleLikes(video.id); setRefreshLikes(!refreshLikes) }} ><FontAwesomeIcon className="heart" icon={faHeart} /></div>)}
+                    }} /></div>) : (<div className='like-button' onClick={() => { console.log("like"); handleLikes(video.id); }} ><FontAwesomeIcon className="heart" icon={faHeart} /></div>)}
                     {console.log(video.likes)}
                     <div className="like-rp-container">{video.likes} <span className="like-rp">j'aimes</span></div>
                 </div>

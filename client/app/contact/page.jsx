@@ -129,7 +129,7 @@ const page = () => {
               type="text"
               placeholder="Message"
             />
-            <button>Envoyer</button>
+            <button className="envoyer">Envoyer</button>
           </div>
         </div>
       </section>

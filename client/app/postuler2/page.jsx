@@ -84,10 +84,6 @@ const Page = () => {
   return (
     
   <div className='postuler2'>
-     <div className="container">
-        <img className="background-image" src="./fullStack.png" alt="Background" />
-        <div className="text-container hidden" >Postuler maintenant et profiter d'une bourse de 40%</div>
-       </div>
    <div className='card-image-postuler-grid'>
     <div className='card-postuler2'>
       <form onSubmit={handleSubmit} className='form'>

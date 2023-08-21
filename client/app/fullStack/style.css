@@ -46,7 +46,8 @@ html {
   font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
 }
-.hidden{
+
+.hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
@@ -55,11 +56,12 @@ html {
 
 
 
-.show{
+.show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
 }
+
 .announcement {
   background-color: #f0044b;
   display: grid;
@@ -160,6 +162,7 @@ html {
   text-align: center;
   transition: all 0.3s ease;
   background-color: #18191B;
+  cursor: pointer;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20) inset;
 }
 
@@ -438,11 +441,11 @@ html {
 
 @media (max-width: 768px) {
   .Programme {
-    grid-template-rows: auto; 
+    grid-template-rows: auto;
   }
 
   .week {
-    padding: 10px; 
+    padding: 10px;
   }
 }
 
@@ -452,8 +455,8 @@ html {
   }
 
   .selectBar {
-     align-items: center;
-     font-size: x-small;
+    align-items: center;
+    font-size: x-small;
   }
 }
 

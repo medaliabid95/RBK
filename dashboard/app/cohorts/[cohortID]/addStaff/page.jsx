@@ -12,7 +12,7 @@ const AddStaff = () => {
     const name = sessionStorage.getItem('name');
     const [file, setFile] = useState(event.image)
     const [isLoading, setIsLoading] = useState(false);
-    const [speciality,setSpeciality]=useState("")
+    const [speciality,setSpeciality]=useState("developper")
     const [nom, setNom] = useState("")
     const router = useRouter();
     const param = useParams()

@@ -50,7 +50,7 @@ const StudentPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ Status: newStatus }),
+        body: JSON.stringify({ Status: newStatus,CohortId:1 }),
       });
 
       const updatedStudentData = studentData.map((student) => {

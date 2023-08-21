@@ -67,7 +67,7 @@ const handleLikes = (id) => {
   return (
     <div className="blogs-container">
       <section className="image-blogs-container">
-        <img src="/blog.jpg" alt="aws" />
+        <img src="/images/blogs.jpg" alt="aws" />
         <Header title="The Tech Blogs"/>
       </section>
       <section className="main">

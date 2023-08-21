@@ -12,6 +12,7 @@
 
 .image-blogs-container img {
   width: 100%;
+  filter: brightness(90%);
 }
 
 .title {
@@ -19,7 +20,7 @@
   top: 40%;
   transform: translate(0, -50%);
   color: white;
-  font-size: 8vw;
+  font-size: 6vw;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;

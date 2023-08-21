@@ -13,7 +13,7 @@ const page = ({ params }) => {
     const [videoUrl, setVideoUrl] = useState("");
     const [description, setDescription] = useState("")
     const [team, setTeam] = useState("")
-    const [link, setLink] = useState("") 
+    const [link, setLink] = useState("")
     const id = params.editProjectId
     useEffect(() => {
         axios.get(`http://localhost:3001/projects/getOne/${id}`)
@@ -155,7 +155,7 @@ const page = ({ params }) => {
                 />
                 <div>{jsonHtml}</div>
             </div>
-            <button className='button-post-project' onClick={() => updateProject()}>Ajoutez</button>
+            <button className='button-post-project' onClick={() => updateProject()}>Modifier</button>
         </div>
     )
 }
