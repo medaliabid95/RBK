@@ -7,12 +7,21 @@ import { useRouter } from "next/navigation";
 import moment from "moment";
 import axios from "axios";
 
-const BlogCard = ({ likedBlogs,blog,handleLikes,handleVuee }) => {
+const BlogCard = ({ likedBlogs, blog, handleLikes, handleVuee }) => {
   const [storedLikes, setStoredLikes] = useState([]);
 
   const [comments, setComments] = useState([]);
   useEffect(() => {
-        setStoredLikes(JSON.parse(localStorage.getItem("likedBlogs")))
+    setStoredLikes(JSON.parse(localStorage.getItem("likedBlogs")));
+
+    axios
+      .get(`http://localhost:3001/comments/getAll/${blog.id}`)
+      .then((res) => {
+        if (res.data.length) {
+          setComments(res.data);
+          console.log("comment got itt")
+        }
+      }).catch(err=>console.log(err))
   }, []);
 
   if (!blog) {
@@ -27,8 +36,7 @@ const BlogCard = ({ likedBlogs,blog,handleLikes,handleVuee }) => {
       .catch((err) => console.log(err));
   };
 
-  
-console.log("card",likedBlogs)
+  console.log("card", likedBlogs);
 
   return (
     <div className="blog-card-cotainer ">
