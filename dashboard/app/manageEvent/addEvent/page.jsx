@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import "./addEvent.css"
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { BsFillImageFill } from "react-icons/bs";
 import { Editor } from "react-draft-wysiwyg";
@@ -20,6 +21,7 @@ const AddEvent = () => {
     const [preDescription, setPreDescription] = useState("")
     const [adress, setAddress] = useState('')
     const [date, setDate] = useState('')
+    const router = useRouter()
 
     const onEditorStateChange = (editorState) => {
         setEditorState(editorState);
@@ -69,8 +71,7 @@ const AddEvent = () => {
                 setAddress("");
                 setDate("");
                 setEditorState(EditorState.createEmpty())
-                alert("event added successfully")
-                window.location.reload()
+                router.push("/manageEvent")
             })
             .catch((err) => alert("failed to add event"))
     }
@@ -91,7 +92,7 @@ const AddEvent = () => {
                     <input type="text" onChange={(e) => setPreDescription(e.target.value)} class="form__field w-100" placeholder="sous description" />
                     <label for="name" class="form__label"> sous description </label>
                 </div>
-                <h2>ajouter une image : <span className='required'>*</span></h2>
+                
                 <div className="image-upload-container">
                     {imageUrl ? (
                         <div className="image-preview">
