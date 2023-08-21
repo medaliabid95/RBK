@@ -49,8 +49,8 @@ const BlogCard = ({ blog,handleRefresh}) => {
         {showDropdown && (
           <div ref={dropdownRef} className="dropdown">
             {/* Dropdown content */}
-            <p onClick={()=>router.push(`/manageBlogs/${blog.id}`)}>Edit</p>
-            <p onClick={()=>handleDeleteBlog(blog.id)}>Delete</p>
+            <p onClick={()=>router.push(`/manageBlogs/${blog.id}`)}>Modifier</p>
+            <p onClick={()=>handleDeleteBlog(blog.id)}>Supprimer</p>
           </div>
         )}
       </div>

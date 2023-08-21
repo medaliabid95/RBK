@@ -10,7 +10,7 @@ const AddCohortForm = ({
   return (
     <div className="popup">
       <div className="card">
-        <h2>Add Cohort</h2>
+        <h2>Ajouter une cohorte</h2>
         <input
           type="text"
           name="name"
@@ -25,7 +25,7 @@ const AddCohortForm = ({
             <option value='Session 2'>Session 2</option>
           </select>
       
-        <button onClick={handleAddCohort}>Add Cohort</button>
+        <button onClick={handleAddCohort}>Ajouter une cohorte</button>
       </div>
     </div>
   );
