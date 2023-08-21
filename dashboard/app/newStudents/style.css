@@ -13,18 +13,21 @@ option {
 }
 
 
-body {
- 
+.firstPage {
   font-family: Arial, sans-serif;
+
+}
+
+.first-title-css{
+  font-size: 3vw !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 3% !important;
+  width: 100% !important;
 }
 
 
-.title {
-  font-size: 3vw;
-  margin: 0 auto;
-  text-align: center;
-  padding: 3%;
-}
+
 
 
 .location {

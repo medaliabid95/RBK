@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import styles from './style.css';
-
+import CardIcon from '@/components/CardIcon/page.jsx';
 
 const StudentPage = () => {
   const [studentData, setStudentData] = useState([]);
@@ -108,8 +108,8 @@ const StudentPage = () => {
 
 
   return (
-    <div>
-      <div className='title'> RebootKamp <span className='location'>{location}</span> Dashboard
+    <div className='first-page'>
+      <div className='first-title-css'> RebootKamp <span className='location'>{location}</span> Dashboard
       </div>
       <div className='statics-before-table'>
         <CardIcon icon="./vision.svg" label="Nombre de visiteurs" count={visitCount} />
@@ -159,12 +159,6 @@ const StudentPage = () => {
   );
 };
 
-const CardIcon = ({ icon, label, count }) => (
-  <div className='card-icon'>
-    <img src={icon} alt="" />
-    <span>{label}</span>
-    <span id="visits">{count}</span>
-  </div>
-);
+
 
 export default StudentPage;

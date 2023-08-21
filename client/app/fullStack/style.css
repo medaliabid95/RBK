@@ -438,7 +438,11 @@ html {
 
 @media (max-width: 768px) {
   .Programme {
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto; 
+  }
+
+  .week {
+    padding: 10px; 
   }
 }
 
@@ -448,8 +452,8 @@ html {
   }
 
   .selectBar {
-    flex-direction: column;
-    align-items: center;
+     align-items: center;
+     font-size: x-small;
   }
 }
 

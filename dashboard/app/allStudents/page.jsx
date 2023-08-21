@@ -90,7 +90,7 @@ const StudentPage = () => {
         </div>
       </div>
       <div className={styles.card}>
-        <h1>inscriptions récentes</h1>
+        <h1>Inscriptions récentes</h1>
         <table className={styles.table}>
           <thead>
             <tr>
