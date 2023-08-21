@@ -25,7 +25,7 @@ const Continuer = () => {
             <h1 className="intro-title">Alternance et <span className="rose">Mobilité internationale</span></h1>
                 
                     <p className="intro-paragraph">RBK offre un soutien personnalisé à chaque diplômé souhaitant poursuivre ses études à l'étranger dans l'un de nos établissements partenaires grâce à notre département de mobilité internationale.</p>
-                    <button>S'inscrie</button>
+                    <button className="S-inscrie">S'inscrie</button>
                 
                 <img className="globe" src="globe.png" alt="" />
             </div>

@@ -35,17 +35,12 @@ const getInstructorById = async (req, res) => {
 
 const updateInstructor = async (req, res) => {
   const instructorId = req.params.id;
-
   try {
-    const [updatedCount, updatedInstructors] = await Instructor.update(req.body, {
+    const updatedInstructors = await Instructor.update(req.body, {
       where: { id: instructorId },
       returning: true,
     });
-    if (updatedCount > 0) {
-      res.status(200).json(updatedInstructors[0]);
-    } else {
-      res.status(404).json({ message: 'Instructor not found' });
-    }
+      res.status(200).json(updatedInstructors);
   } catch (error) {
     res.status(400).json({ message: 'Error updating instructor', error: error.message });
   }
@@ -69,7 +64,22 @@ const deleteInstructor = async (req, res) => {
   }
 };
 
+const getInstructorByCohort = async (req, res) => {
+  const cohortId = req.params.cohort
+  try {
+    const instructor = await Instructor.findAll({where:{CohortId:cohortId  }});
+    if (instructor) {
+      res.status(200).json(instructor);
+    } else {
+      res.status(404).json({ message: 'Instructor not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving instructor', error: error.message });
+  }
+}
+
 module.exports = {
+  getInstructorByCohort,
   createInstructor,
   getAllInstructors,
   getInstructorById,

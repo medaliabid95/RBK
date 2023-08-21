@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const studentController = require('../controllers/studentController');
 
-
+router.post('/getByCohort/:cohort',studentController.getStudentsByCohort)
 router.post('/add', studentController.createStudent);
 router.get('/getAll', studentController.getAllStudents);
 router.get('/getOne/:compus', studentController.getStudentByCompus);
