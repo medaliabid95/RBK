@@ -32,8 +32,9 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .one-post{
-    width: 100%;
-    padding-bottom: 10%;
+  width: 100%;
+  padding-bottom: 10%;
+  margin: 9% auto;
 
 }
 .user-info{
@@ -157,9 +158,9 @@
   }
   
   .comment-name {
-    font-weight: bold;
     color: gray;
     margin-bottom: 5px;
+    align-self: center;
   }
   
   .comment-text {

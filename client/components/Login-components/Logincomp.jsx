@@ -1,14 +1,20 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Cookies from 'universal-cookie/cjs/Cookies';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Login-components/firebaseConfig'
-const Logincomp = () => {
+
+import axios from 'axios';
+const Logincomp = ({params}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [popUp, setPopUp] = useState(false)
     const [errMsg, setErrMsg] = useState("")
+    
+    
     const cookies = new Cookies();
+
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -16,10 +22,23 @@ const Logincomp = () => {
 
             if (user) {
                 if (user.user.emailVerified) {
-                    const token = await user.user.getIdTokenResult(false)
-                    cookies.set("userInfo", token)
-                    window.location.replace("/")//! used this beacuse router.push() will distort the css
+                    const fireBaseToken = await user.user.getIdTokenResult(false)
+                    axios.post("http://localhost:3001/user/getOne", {
+                        email: fireBaseToken.claims.email
+                    })
+                        .then((res) => {
+                            const jwtToken = res.data
+                            cookies.set("userInfo", jwtToken)
+                            if(sessionStorage.getItem("previousLocation")){
+                                window.location.replace(sessionStorage.getItem("previousLocation"))
+                                sessionStorage.removeItem("previousLocation")
 
+                            }else{
+                                window.location.replace("/")
+                            }
+                            // window.location.replace("/")//! used this beacuse router.push() will distort the css
+                        })
+                        .catch((err) => console.log(err))
                 } else {
                     setPopUp(true)
                 }

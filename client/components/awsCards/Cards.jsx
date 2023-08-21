@@ -1,23 +1,26 @@
 "use client"
-import React,{useEffect} from 'react'
+import React,{useEffect, useRef} from 'react'
 import "./cards.css"
 
 const Cards = () => {
-    useEffect(() => {
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show")
-                }
-                else {
-                    entry.target.classList.remove("show")
-                }
-            })
-        })
-        const hiddenElements = document.querySelectorAll(".hidden")
-        hiddenElements.forEach((el) => observer.observe(el))
-    })
+  const observerRef = useRef(null);
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observerRef.current.unobserve(entry.target); // Stop observing after animation
+        }
+      });
+    });
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => {
+      observerRef.current.observe(el);
+    });
+  return () => {
+      observerRef.current.disconnect();
+    };
+  }, [])
   return (
     <div className="cards-container">
     <div className="card-item hidden">

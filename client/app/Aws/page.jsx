@@ -1,33 +1,26 @@
-
 import "./aws.css";
 import talent from "../../public/talent.json";
 import formation from "../../public/formation.json";
 import diplome from "../../public/diplome.json";
 import competence from "../../public/competence.json";
-import VideoPlayer from "@/components/Player/VideoPlayer";
 import Lottiee from "../../components/animations/Animation";
-import Header from "@/components/AwsHeader/header.jsx";   
-import AWS from '../../components/RbkTitle/RbkAws.jsx'    
+import Header from "@/components/AwsHeader/header.jsx";
+import AWS from "../../components/RbkTitle/RbkAws.jsx";
 import Cards from "@/components/awsCards/Cards.jsx";
-
-
-
-
+import AwsVideo from "@/components/AwsVideo/aws.jsx";
 
 const Page = () => {
-  
   return (
     <div className="aws-container">
       <section className="image-aws-container">
         <img src="./aws2.png" alt="aws" />
-        <Header/>
+        <Header />
       </section>
       <section className="aws-description-container">
-      <AWS/>
+        <AWS />
         <div className="description-container">
           <div className="steps-container">
             <div className="step">
-              
               <Lottiee animation={talent} />
               <p>
                 Entrez en contact avec des employeurs et démarrez votre carrière
@@ -41,9 +34,10 @@ const Page = () => {
               </p>
             </div>
           </div>
-          <VideoPlayer
-            videoSrc="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4"
-            thumbnailSrc="whatiscomputing.png"
+    
+          <AwsVideo
+            src="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4"
+            thumbnail="whatiscomputing.png"
           />
           <div className="steps-container">
             <div className="step diplome">
@@ -95,8 +89,7 @@ const Page = () => {
             </p>
           </div>
           <div className="video">
-           
-            <img  src="./Video.png" alt="video" />
+            <img src="./Video.png" alt="video" />
           </div>
         </div>
       </section>
@@ -110,7 +103,7 @@ const Page = () => {
           compétences en Linux, Python, en réseau, en sécurité et en bases de
           données relationnelles.
         </p>
-<Cards/>
+        <Cards />
       </section>
       <section className="critères">
         <div className="criteres-title">
@@ -146,8 +139,6 @@ const Page = () => {
           <button className="planining-btn">S'inscrire</button>
         </div>
       </section>
-
-
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 .add-event-container h1 {
     color: #ff007b;
     padding: 5%;
@@ -35,6 +36,7 @@ img {
     transition: background-color 0.3s;
     z-index: 1;
 }
+
 .upload-button {
     background-color: #ff007b;
     color: white;
@@ -43,7 +45,8 @@ img {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
+}
+
 .change-image:hover {
     background-color: #0056b3;
 }

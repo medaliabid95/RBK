@@ -10,7 +10,8 @@ import moment from "moment";
 import Header from "../../../components/blogsHeader/Header.jsx";
 import jwt_decode from "jwt-decode";
 import Cookies from "universal-cookie";
-import { useRouter } from "next/navigation";
+import {useRouter } from "next/navigation";
+
 const getBlog = (id) => {
   return fetch(`http://localhost:3001/blogs/getOne/${id}`).then((res) =>
     res.json()
@@ -22,7 +23,7 @@ const getComments = (blogId) => {
   );
 };
 
-const addComment = (blogId, content,userId) => {
+const addComment = (blogId, content, userId) => {
   return fetch(`http://localhost:3001/comments/${blogId}/${userId}`, {
     method: "POST",
     headers: {
@@ -32,39 +33,49 @@ const addComment = (blogId, content,userId) => {
   }).then((res) => res.json());
 };
 
-
-
-
 const page = ({ params }) => {
   const [blog, setBlog] = useState(null);
   const [Comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [refresh, setRefresh] = useState(false);
-  const [currentUser,setCurrentUser]=useState(null)
-    const cookie=new Cookies()
-    const router=useRouter()
+  const [currentUser, setCurrentUser] = useState(null);
+  const [location,setlocation]=useState(null)
+  const cookie = new Cookies();
 
+  const router = useRouter();
+  
   useEffect(() => {
+    sessionStorage.setItem("navbar","nested")
     if (params.idd) {
       getBlog(params.idd).then((fetchedBlog) => {
         setBlog(fetchedBlog);
       });
-      getComments(params.idd).then((fetchedComments) => {
-        setComments(fetchedComments);
-      });
+      getComments(params.idd)
+        .then((fetchedComments) => {
+          setComments(fetchedComments);
+        })
+        .catch((err) => console.log(err));
     }
-    const token=cookie.get("userInfo")
-      if(token){
-        const decoded=jwt_decode(token)
-   
-        setCurrentUser(decoded)
-      }
-   
+    const token = cookie.get("userInfo");
+
+    if (token) {
+      const decoded = jwt_decode(token);
+      setCurrentUser(decoded);
+    }
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem("navbar");
+    };
+  
+    window.addEventListener("beforeunload", handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [params.idd, refresh]);
-if(comments.length){
-  console.log("rafik",comments)
-}
-  if (!blog||!comments.length) {
+  if (comments.length) {
+    console.log("rafik", comments);
+  }
+  if (!blog) {
     console.log("yess");
     return null;
   }
@@ -73,30 +84,30 @@ if(comments.length){
   const formattedDate = moment(blog.createdAt).format("MMMM D, YYYY");
   const handleCommentSubmit = async () => {
     if (Comment.trim() !== "") {
-      const newComment = await addComment(blog.id, Comment,currentUser.id);
-  
-      setComment("");setRefresh(!refresh);
+      const newComment = await addComment(blog.id, Comment, currentUser.id);
+
+      setComment("");
+      setRefresh(!refresh);
     }
+    
   };
 
+  const handleLogin = () => {
+    const location=window.location.href
+    sessionStorage.setItem("previousLocation", location);
 
-
-
-  
+    router.push(`/Login`)
+  };
 
   return (
     <div className="one-post">
-      <section className="image-blogs-container">
-        <img src="/blog.jpg" alt="aws" />
-        <Header />
-      </section>
       <div className="one-post-container">
         <div className="admin-details">
           <div className="user-info">
             <img src="/profil.png" alt="avatar" />
             <div className="details">
+              <p>{blog.author}</p>
               <p>Admin</p>
-              <p></p>
               <div className="blog-date">
                 <RiTimer2Fill /> 2 min read // {formattedDate}
               </div>
@@ -118,7 +129,17 @@ if(comments.length){
           value={Comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        {currentUser?<button onClick={handleCommentSubmit}>Commenter</button>:<button onClick={()=>router.push("/Login")}>Se connecter</button>}
+        {currentUser ? (
+          <button onClick={handleCommentSubmit}>Commenter</button>
+        ) : (
+          <button
+            onClick={handleLogin
+              
+            }
+          >
+            Se connecter
+          </button>
+        )}
       </div>
       <div className="comments-list">
         {comments.map((comment, index) => (
@@ -127,14 +148,16 @@ if(comments.length){
             <div className="comment-content">
               <div className="comment-header">
                 <div>
-                  <p className="comment-name">{comment["User"]["firstName"]} {comment["User"].lastName}</p>
+                  <p className="comment-name">
+                    {comment["User"]["firstName"]} {comment["User"].lastName}
+                  </p>
                   <p>{comment.content}</p>
-                  
-
                 </div>
               </div>
             </div>
-            <p className="comment-name">{moment(comment.createdAt).fromNow()}</p>
+            <p className="comment-name">
+              {moment(comment.createdAt).fromNow()}
+            </p>
           </div>
         ))}
       </div>
