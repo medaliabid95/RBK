@@ -98,7 +98,7 @@ const CohortTable = () => {
   return (
     <div className='main-cohorts-container'>
       <div className='teacher-table'>
-        <h1>list des <span style={{ color: "#FF007B" }}>instructeurs</span></h1>
+        <h1>List des <span style={{ color: "#FF007B" }}>instructeurs</span></h1>
         <div className='add-staff' onClick={() => router.push(`./${id}/addStaff`)} >
           <div tabindex="0" class="plusButton">
             <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -140,7 +140,7 @@ const CohortTable = () => {
                 <select value={speciality} onChange={handleSelectChange} class="form__field margin">
                   {speciality}
                   <option value="developper">Developper</option>
-                  <option value="classe cordinator">coordinateur de classe</option>
+                  <option value="classe cordinator">Coordinateur de classe</option>
                 </select>
               )}
               <button
@@ -170,7 +170,7 @@ const CohortTable = () => {
         </div>
       </div>
       <div className='students-table'>
-        <h1>list des <span style={{ color: "#FF007B" }}>candidats</span></h1>
+        <h1>List des <span style={{ color: "#FF007B" }}>candidats</span></h1>
         <div className='add-staff' onClick={() => router.push(`./${id}/addStudent`)}>
           <div tabindex="0" class="plusButton">
             <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">

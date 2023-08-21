@@ -20,21 +20,18 @@
   padding: 0rem 15px;
 }
 
-.form__field {
-  .margin {
-    width: 62%;
-    margin-top: 2%;
-    height: 25px;
-    margin-left: 20%;
-    border: 1px solid silver !important;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: #313a46;
-    height: 40px;
-    padding: 0rem 15px;
-  }
+.margin {
+  width: 62%;
+  margin-top: 2%;
+  height: 25px;
+  margin-left: 20%;
+  border: 1px solid silver !important;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #313a46;
+  height: 40px;
+  padding: 0rem 15px;
 }
-
 .form__field::placeholder {
   color: transparent;
 }

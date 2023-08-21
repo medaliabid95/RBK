@@ -89,8 +89,8 @@ body {
     margin: 0;
     bottom: 5%;
     margin-left: 5%;
-    max-width: 20%;
     word-wrap: break-word;
+    display: -webkit-box;
 
 }
 

@@ -59,6 +59,12 @@ const page = ({ params }) => {
             .catch((err) => console.log(err));
     };
 
+    const deleteProject = () => {
+        axios.delete(`http://localhost:3001/projects/deleteOne/${id}`)
+            .then((res) => window.location.replace("/homeProjects"))
+            .catch((err) => console.log(err))
+    }
+
     const updateProject = () => {
         const contentState = editorState.getCurrentContent();
         const rawContentState = convertToRaw(contentState);
@@ -156,6 +162,7 @@ const page = ({ params }) => {
                 <div>{jsonHtml}</div>
             </div>
             <button className='button-post-project' onClick={() => updateProject()}>Modifier</button>
+            <button className='button-post-project' onClick={() => deleteProject()}>Supprimer</button>
         </div>
     )
 }

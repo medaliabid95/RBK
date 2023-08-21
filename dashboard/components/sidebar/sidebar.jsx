@@ -116,30 +116,6 @@ const Sidebar = () => {
           <a href="/homeProjects" className="side-anchor-link">
             Projets récemments publiés
           </a>
-          <ul className="side-bar-submenu">
-            <li className="sb-submenu-link">
-              <span className="sub-menu-icon">
-                <FontAwesomeIcon
-                  icon={faPlus}
-                  style={{ color: "#000000", width: "15px" }}
-                />
-              </span>
-              <a href="/addProject" className="sb-link">
-                Ajouter un Projet
-              </a>
-            </li>
-            <li className="sb-submenu-link">
-              <span className="sub-menu-icon">
-                <FontAwesomeIcon
-                  icon={faListCheck}
-                  style={{ color: "#000000", width: "15px" }}
-                />
-              </span>
-              <a href="/editProject" className="sb-link">
-                Gérer Projets
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
       <div className="profile-container">

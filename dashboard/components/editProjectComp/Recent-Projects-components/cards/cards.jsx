@@ -12,7 +12,6 @@ const cards = () => {
     const [refreshLikes, setRefreshLikes] = useState(false)
     const [data, setData] = useState(null)
     const router = useRouter()
-    const [likedBlogs, setLikedBlogs] = useState([]);
     const [timeAgo, setTimeAgo] = useState(null)
     useEffect(() => {
         TimeAgo.addDefaultLocale(en)
