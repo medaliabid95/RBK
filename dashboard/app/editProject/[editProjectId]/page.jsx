@@ -13,9 +13,7 @@ const page = ({ params }) => {
     const [videoUrl, setVideoUrl] = useState("");
     const [description, setDescription] = useState("")
     const [team, setTeam] = useState("")
-    const [link, setLink] = useState("")
-    const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState([])
+    const [link, setLink] = useState("") 
     const id = params.editProjectId
     useEffect(() => {
         axios.get(`http://localhost:3001/projects/getOne/${id}`)

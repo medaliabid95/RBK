@@ -53,13 +53,13 @@ a {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-/* dashboard css*/
-/* .loginbackground{
+
+.loginbackground{
     margin: 10% !important;
 }
 .formbg-outer{
     margin: 8%;
-} */
+}
 .loginbackground-gridContainer {
     display: -ms-grid;
     display: grid;

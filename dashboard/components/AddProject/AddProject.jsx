@@ -83,7 +83,7 @@ const AddProject = () => {
                         <button onClick={() => setVideoUrl("")} className="change-image">
                             Changer la video
                         </button>
-                        <img src={videoUrl} alt="Uploaded" />
+                        <video src={videoUrl} alt="Uploaded" />
                     </div>
                 ) : (
                     <>

@@ -53,7 +53,7 @@ const Sidebar = () => {
           <span>
             <FontAwesomeIcon icon={faInbox} style={{ width: "21px" }} />
           </span>
-          <a href="/" className="side-anchor-link">
+          <a href="/chat" className="side-anchor-link">
             Tous les messages
           </a>
         </li>
@@ -62,7 +62,7 @@ const Sidebar = () => {
           <span>
             <FontAwesomeIcon icon={faPeopleGroup} style={{ width: "21px" }} />
           </span>
-          <a href="/" className="side-anchor-link">
+          <a href="/cohorts" className="side-anchor-link">
             Cohorts
           </a>
         </li>
