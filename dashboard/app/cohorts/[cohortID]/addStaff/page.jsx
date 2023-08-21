@@ -64,7 +64,6 @@ console.log("image", imageUrl);
                     <option value="developper">Developper</option>
                     <option value="classe cordinator">coordinateur de classe</option>
                 </select>
-                <h2>ajouter une image : <span className='required'>*</span></h2>
                 <div className="image-upload-container">
                     {imageUrl ? (
                         <div className="image-preview">
@@ -106,7 +105,7 @@ console.log("image", imageUrl);
                         </>
                     )}
                 </div>
-                <button className='button-post' onClick={(e) => { { update(id); router.push(`/cohorts/${id}`) } }}>save changes</button>
+                <button className='button-post' onClick={(e) => { { update(id); router.push(`/cohorts/${id}`) } }}>Enregistrer</button>
             </div>
         )
     }

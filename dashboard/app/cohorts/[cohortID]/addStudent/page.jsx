@@ -84,10 +84,10 @@ const AddStudent = () => {
                     <input type="number" onChange={(e) => { setAge(e.target.value) }} class="form__field w-100" placeholder="nom" />
                     <label for="name" class="form__label"> age </label>
                 </div>
-                <h2>entrer l'adress' : <span className='required'>*</span></h2>
+                <h2>entrer l'adresse' : <span className='required'>*</span></h2>
                 <div class="form__group">
                     <input type="text" onChange={(e) => { setAddress(e.target.value) }} class="form__field w-100" placeholder="nom" />
-                    <label for="name" class="form__label"> adress </label>
+                    <label for="name" class="form__label"> adresse </label>
                 </div>
                 <h2>entrer le numero : <span className='required'>*</span></h2>
                 <div class="form__group">
@@ -105,7 +105,7 @@ const AddStudent = () => {
                     <option value="Session 1">Session 1</option>
                     <option value="Session 2">Session 2</option>
                 </select>
-                <button className='button-post' onClick={(e) =>{addStudent();router.push(`/cohorts/${id}`)}}>save changes</button>
+                <button className='button-post' onClick={(e) =>{addStudent();router.push(`/cohorts/${id}`)}}>Enregistrer</button>
             </div>
         )
     }

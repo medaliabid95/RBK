@@ -174,7 +174,7 @@ const EditEvent = () => {
                     />
                     <div>{jsonHtml}</div>
                 </div>
-                <button className='button-post' onClick={(e) => { update(id) }}>save changes</button>
+                <button className='button-post' onClick={(e) => { update(id) }}>enregistrer</button>
             </div>
         )
     }
