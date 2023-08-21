@@ -22,6 +22,11 @@ const getBlog = (id) => {
     res.json()
   );
 };
+const getComments = (blogId) => {
+  return fetch(`http://localhost:3001/comments/getAll/${blogId}`).then((res) =>
+    res.json()
+  );
+};
 
 const oneBlog = ({ id }) => {
   const [blog, setBlog] = useState(null);
@@ -33,7 +38,7 @@ const oneBlog = ({ id }) => {
   const [descriptionn, setDesc] = useState("");
   const [refresh, setRefresh] = useState(false);
   const [editTitle, setTitleEdit] = useState(false);
-
+  const [comments,setComments]=useState([])
   const router = useRouter();
 
   const [editorState, setEditorState] = useState(
@@ -49,7 +54,8 @@ const oneBlog = ({ id }) => {
         setDesc(fetchedBlog.description);
         const contentState = convertFromRaw(JSON.parse(fetchedBlog.content)); // Parse the JSON content
         setEditorState(EditorState.createWithContent(contentState));
-      });
+      })
+      getComments(id).then(res=>setComments(res.data)).catch(err=>console.log(err))
     }
   }, [id, refresh]);
 
@@ -234,7 +240,7 @@ const oneBlog = ({ id }) => {
       </div>
 
       <div className="comments-list">
-        {blog.comments.map((comment, index) => (
+        {comments?.map((comment, index) => (
           <div key={comment.id} className="comment">
             <img src="../profil.png" alt="Avatar" className="avatar" />
             <div className="comment-content">

@@ -48,6 +48,7 @@ body {
     font-size: 1.2vw;
     color: black;
     border-bottom: 1px solid#ccc;
+    display: flex;
 }
 
 .side-anchor-link {
@@ -96,12 +97,15 @@ body {
     display: none;
     list-style: none;
     transition: .3s ease-in-out;
+    margin-top: 30px;
 }
 
 .sb-submenu-link {
     padding: 5px 20px;
-    padding-left: 20%;
+    padding-left: 10%;
     font-size: 1vw;
+    
+    width: 120%;
 }
 
 .side-anchor-link {
