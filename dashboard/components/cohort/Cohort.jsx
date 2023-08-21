@@ -31,7 +31,7 @@ const cohort = ({ handleDelete, cohort, handleUpdateCohort }) => {
 
 
   document.addEventListener("mousedown", handleDocumentClick);
-
+console.log(cohort);
   const closeUpdateForm = () => {
     console.log("tahshe");
     setShowForm(false);

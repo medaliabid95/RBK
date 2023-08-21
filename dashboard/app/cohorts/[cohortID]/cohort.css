@@ -1,12 +1,13 @@
 .eight {
   padding-bottom: 5%;
 }
+
 .form__group {
   position: relative;
   margin-bottom: 1%;
 }
 
-.form__field {
+.margin {
   width: 62%;
   margin-top: 2%;
   height: 25px;
@@ -17,6 +18,21 @@
   color: #313a46;
   height: 40px;
   padding: 0rem 15px;
+}
+
+.form__field {
+  .margin {
+    width: 62%;
+    margin-top: 2%;
+    height: 25px;
+    margin-left: 20%;
+    border: 1px solid silver !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #313a46;
+    height: 40px;
+    padding: 0rem 15px;
+  }
 }
 
 .form__field::placeholder {
@@ -61,6 +77,7 @@
   top: -10px;
   transition: 0.2s;
 }
+
 .eight h1 {
   text-align: center;
 
@@ -82,25 +99,104 @@
   background-color: #f8f8f8;
 }
 
+.add-staff {
+  width: 18vw;
+  margin-left: 2%;
+  display: flex;
+  margin-bottom: 3%;
+}
+.add-staff:hover {
+  cursor: pointer;
+}
+.add-staff-text{
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-left: 2%;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 1.5vw;
+  font-weight: 700;
+}
 
-.insert-space {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
+/* Note that you only needs to edit the *
+config to customize the button! */
+
+.plusButton {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent #FF007B transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton>.plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+  fill: white;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
 }
 
 
-
 .main-cohorts-container {
+  padding: 3%;
   position: absolute;
   width: 80%;
   left: 20%;
+  background-color: #F3EEEE;
 }
 
 .cards-container {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
 }
 
@@ -114,10 +210,14 @@
   padding: 2%;
 }
 
+.data-grid {
+  background-color: white;
+}
+
 .card {
   width: 190px;
   height: 254px;
-  background:whitesmoke;
+  background: whitesmoke;
   border-radius: 15px;
   margin: 3%;
   /* box-shadow: 0px 1px 90px 0px #FF007B; */

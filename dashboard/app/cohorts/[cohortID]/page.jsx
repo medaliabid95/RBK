@@ -16,11 +16,12 @@ const CohortTable = () => {
   const [instructorsEditStates, setInstructorsEditStates] = useState({});
   const [name, setName] = useState("")
   const [speciality, setSpeciality] = useState("")
+  const [reserveSpeciality, setReserveSpeciality] = useState("")
   const [state, setState] = useState(false)
 
   const handleSelectChange = (e) => {
     setSpeciality(e.target.value);
-};
+  };
 
   const handleSelectionChange = (selectionModel) => {
     setSelectedRows(selectionModel);
@@ -47,19 +48,28 @@ const CohortTable = () => {
       .catch((error) => console.log(error))
   };
 
-  const updateInstructor = (id) => {
-    axios.get(`http://localhost:3001/instructor/getOne/${id}`)
-      .then((res => {
-        setSpeciality(res.data.speciality)
-        axios.put(`http://localhost:3001/instructor/updateOne/${id}`, {
-          name: name,
-          speciality: speciality
-        })
-          .then((res) => { alert("update successfully"); setEdit(!edit); setState(!state) })
-          .catch((error) => console.log(error))
-      }))
-      .catch((err) => console.log(err))
-  }
+  const updateInstructor = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:3001/instructor/getOne/${id}`);
+      const instructorData = response.data;
+      const newReserveSpeciality = instructorData.speciality;
+      setReserveSpeciality(newReserveSpeciality);
+
+      const updatedSpeciality = speciality.length === 0 ? newReserveSpeciality : speciality;
+
+      await axios.put(`http://localhost:3001/instructor/updateOne/${id}`, {
+        name: name,
+        speciality: updatedSpeciality
+      });
+
+      alert("Update successful");
+      setEdit(!edit);
+      setState(!state);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   const StudentColumns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -73,19 +83,24 @@ const CohortTable = () => {
   useEffect(() => {
     fetchStudent(id)
     fetchInstructors(id)
-    setSpeciality("developpeur")
   }, [state])
+
+
 
   return (
     <div className='main-cohorts-container'>
-      <div class="eight">
-        <h1>cohort description and management</h1>
-      </div>
-      <div className='insert-space'>
-        <div className='add-box' onClick={() => router.push(`./${id}/addStaff`)}>add Staff</div>
-        <div className='add-box' onClick={() => router.push(`./${id}/addStudent`)}>add student</div></div>
       <div className='teacher-table'>
-        <h1>list du <span style={{ color: "#FF007B" }}>staff</span></h1>
+        <h1>list des <span style={{ color: "#FF007B" }}>instructeurs</span></h1>
+        <div className='add-staff' onClick={() => router.push(`./${id}/addStaff`)} >
+          <div tabindex="0" class="plusButton">
+            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+              <g mask="url(#mask0_21_345)">
+                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+              </g>
+            </svg>
+          </div>
+          <div className='add-staff-text'>Ajouter instructeur</div>
+        </div>
         <div className='cards-container'>
           {instructors.map((instructor) => (
             <div className="card" key={instructor.id}>
@@ -101,10 +116,10 @@ const CohortTable = () => {
               {!instructorsEditStates[instructor.id] ? (
                 <p className="job">{instructor.speciality}</p>
               ) : (
-                <select value={speciality}  onChange={handleSelectChange} class="form__field">
+                <select value={speciality} onChange={handleSelectChange} class="form__field margin">
                   {speciality}
-                  <option value="developper">Developper</option>
-                  <option value="classe cordinator">coordinateur de classe</option>
+                  <option value={speciality}>Developper</option>
+                  <option value={speciality}>coordinateur de classe</option>
                 </select>
               )}
               <button
@@ -133,8 +148,19 @@ const CohortTable = () => {
         </div>
       </div>
       <div className='students-table'>
-        <h1>tableau des <span style={{ color: "#FF007B" }}>candidats</span></h1>
+        <h1>list des <span style={{ color: "#FF007B" }}>candidats</span></h1>
+        <div className='add-staff' onClick={() => router.push(`./${id}/addStudent`)}>
+          <div tabindex="0" class="plusButton">
+            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+              <g mask="url(#mask0_21_345)">
+                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+              </g>
+            </svg>
+          </div>
+          <div className='add-staff-text'>Ajouter un candidat</div>
+        </div>
         <DataGrid
+          className='data-grid'
           rows={students}
           columns={StudentColumns}
           pageSize={5}
