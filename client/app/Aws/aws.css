@@ -4,6 +4,8 @@ nextjs-portal {
   display: none;
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -26,10 +28,10 @@ body {
 
 .title {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translate(0, -50%);
-  color: whitesmoke;
-  font-size: 5vw;
+  color: #F58620;
+  font-size: 4.4vw;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
@@ -44,7 +46,6 @@ body {
 .aws-rbk-title {
   margin-top: 3%;
   text-align: center;
-  font-family: "Space Grotesk";
 }
 
 .aws-rbk-title img {
@@ -64,11 +65,10 @@ body {
   margin: 0 auto;
   font-weight: 600;
   font-size: 14px;
-  font-family: "Space Grotesk";
 }
 
 .aws-rbk-title p span {
-  background-color: #f89e2d;
+  background-color: #F58620;
   color: white;
 }
 
@@ -126,7 +126,6 @@ body {
   margin: 20px auto;
   line-height: 2;
   padding: 60px;
-  font-family: "Space Grotesk";
 }
 
 .content {
@@ -139,6 +138,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
+  align-items: center;
 }
 
 .planning div {
@@ -153,7 +153,7 @@ body {
 }
 
 .planning-title span {
-  color: #f89e2d;
+  color: #F58620;
 }
 
 .planning-content {
@@ -202,7 +202,7 @@ body {
 
 .programme {
   width: 100%;
-  background-color: #f89e2d;
+  background-color:#F58620 ;
 }
 
 .programme h2 {
@@ -244,7 +244,6 @@ body {
 
 .card-item p {
   color: #f89e2d;
-  font-family: "Space Grotesk";
   font-size: 1.5vw;
   font-weight: 500;
 }
@@ -301,7 +300,7 @@ body {
   }
 
   .about {
-    width: 70%;
+    width: 50%;
     padding: 50px;
   }
 
@@ -327,7 +326,7 @@ body {
   }
 
   .about {
-    width: 70%;
+    width: 50%;
     padding: 60px;
   }
 
@@ -364,7 +363,7 @@ body {
     left: 49%;
     font-size: 4vw;
     cursor: pointer;
-    color: #FF9800;
+    color:#F58620 ;
     
 }
 .aws-container .video-landing-page{
@@ -451,7 +450,7 @@ body {
 }
 
 .planining-btn {
-  background-color: #f89e2d;
+  background-color:#F58620 ;
   color: white;
   border: none;
   padding: 10px;

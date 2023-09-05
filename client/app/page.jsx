@@ -46,6 +46,12 @@ const page = () => {
                         <p>Profitez d'une bourse exceptionnelle de -40%</p>
                         <p>Profitez d'une bourse exceptionnelle de -40%</p>
                         <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
+                        <p>Profitez d'une bourse exceptionnelle de -40%</p>
                     </div>
                 </div>
             </section >

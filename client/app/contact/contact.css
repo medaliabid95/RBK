@@ -13,12 +13,13 @@ nextjs-portal {
 h1 {
   margin: 5vh 0 0 0;
   font-size: max(4vw, 1.6rem);
+  color: #7E489B;
 }
 
 .contact-container h3 {
   font-size: max(2.2vw, 1.3rem);
   margin-bottom: max(0.95rem, 0.5rem);
-  color: #ff007b;
+  color: #E91180;
   font-weight: bold;
 }
 
@@ -50,7 +51,7 @@ p {
   transform: translate(0, -50%);
   color: whitesmoke;
   font-size: 7vw;
-  font-weight: 900;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -120,7 +121,7 @@ p {
   color: white;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(255, 0, 123, 0.82);
-  font-family: Space Grotesk;
+  
   font-weight: bold;
   letter-spacing: 2px;
   word-wrap: break-word;
@@ -197,7 +198,7 @@ p {
 
 .form button {
   width: 30%;
-  background-color: #ff007b;
+  background-color: #E91180;
   color: white;
   margin-top: 20px;
   float: right;
@@ -206,7 +207,7 @@ p {
   border: none;
   padding: 0.5vw;
   border-radius: 5px;
-  font-family: Space Grotesk;
+  
 }
 
 @media (max-width: 1200px) {

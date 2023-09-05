@@ -118,8 +118,8 @@
 .text-btn-7 {
     color: white;
     font-size: 17px;
-    font-family: Space Grotesk;
-    font-weight: 500;
+    
+    font-weight: 900;
     letter-spacing: 0.22px;
     word-wrap: break-word;
 
@@ -187,10 +187,8 @@
 
 
 .text-btn-8 {
-    color: white;
-    font-size: 17px;
-    font-family: Space Grotesk;
-    font-weight: 500;
+    color: white;    
+    font-weight: 900;
     letter-spacing: 0.22px;
     word-wrap: break-word;
 

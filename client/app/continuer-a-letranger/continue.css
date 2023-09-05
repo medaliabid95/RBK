@@ -135,7 +135,7 @@
             font-size: 3.3vw;
             font-family: Space Grotesk; ;
             height: 100%;
-            background-color: #FF007B;
+            background-color: #E91180;
             border: none;
             border-radius: 10px;
             grid-row-start: 9;
@@ -354,7 +354,7 @@
             font-size: 1vw;
             font-family: Space Grotesk; ;
             height: 100%;
-            background-color: #FF007B;
+            background-color:#E91180;
             border: none;
             border-radius: 10px;
             grid-row-start: 21;
@@ -579,7 +579,7 @@
             font-size: 1.3vw;
             font-family: Space Grotesk; ;
             height: 100%;
-            background-color: #FF007B;
+            background-color:  #E91180;;
             border: none;
             border-radius: 10px;
             grid-row-start: 21;
@@ -722,7 +722,7 @@
 
 
     .rose {
-        color: #FF007B;
+        color: #E91180;
     }
 
 
@@ -791,7 +791,7 @@
     .arrow-one {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        background-color: #FF007B;
+        background-color: #E91180;
         border-radius: 15px;
     }
 
@@ -888,7 +888,7 @@
         justify-content: center;
         text-align: center;
         gap: 10px;
-        background: #FF007B;
+        background:  #E91180;
         color: #e8e8e8;
         padding: 20px;
         line-height: 1.5;

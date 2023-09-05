@@ -1,0 +1,8 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* If you want to override other elements as well */
+  h1, h2, h3, p,li,a,div,span,button {
+    font-family: 'Poppins', sans-serif !important;
+  }

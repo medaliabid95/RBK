@@ -1,4 +1,3 @@
-"use client";
 import "./contact.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
@@ -9,28 +8,11 @@ import { BsLinkedin } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsYoutube } from "react-icons/bs";
 import Imagee from "../../components/contactImage/ContactImage.jsx";
-import Méthodologie from "../../components/contactText/Méthodologie.jsx";
-import { useEffect, useRef } from "react";
+
+
 
 const page = () => {
-  const observerRef = useRef(null);
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observerRef.current.unobserve(entry.target); // Stop observing after animation
-        }
-      });
-    });
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el) => {
-      observerRef.current.observe(el);
-    });
-  return () => {
-      observerRef.current.disconnect();
-    };
-  }, []);
+
   const iconStyle = {
     color: "#FF007B",
     fontSize: "min(5vw,3.2rem)",
@@ -43,14 +25,14 @@ const page = () => {
         <div className="title">Contact Us</div>
       </section>
       <h1>Qui sommes nous ?</h1>
-      <section className="qui-nous-somme hidden">
-        <Imagee imgSrc="/images/rbk-contact.png" />
-        <img className="rbk-imagess" src="/images/rbk-contact.png" alt="" />
+      <section className="qui-nous-somme ">
+        <Imagee imgSrc="/computerStudends.jpg" />
+        
         <p className="rotate"></p>
 
         <div className="qui-nous-somme-item">
           <div>
-            <h3>*Notre formation</h3>
+            <h3>Notre formation</h3>
             <p>
               Une formation flexible et adaptable à vos besoins. RBK, un réseau
               d'écoles de code opérant en Tunisie et en Jordanie depuis 2016.
@@ -64,9 +46,9 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="qui-nous-somme outcomes hidden">
+      <section className="qui-nous-somme outcomes ">
         <div className="qui-nous-somme-item ">
-          <h3>* It's all about… Outcomes</h3>
+          <h3> It's all about… Outcomes</h3>
           <ul>
             <li>
               1 000+ Diplômés depuis notre création (700 en Tunisie et 300 en
@@ -86,13 +68,46 @@ const page = () => {
         <p className="rotate"></p>
         <Imagee imgSrc="/images/méthodologie.jpg" />
       </section>
-      <section className="qui-nous-somme méthodologie hidden">
+      <section className="qui-nous-somme méthodologie ">
         <img className="rbk-imagess" src="/images/workplace.jpg" alt="" />
 
         <Imagee imgSrc="/images/workplace.jpg" />
 
         <p className="rotate"></p>
-        <Méthodologie />
+        <div
+        className="image"
+
+      >
+
+                <div className="qui-nous-somme-item">
+          <div>
+            <h3>Notre méthodologie</h3>
+            <ul>
+              <li>Basée sur une plateforme hybride de training dédiée</li>
+              <li>
+                Un apprentissage pratique basé sur la réalisation de projets et
+                axée sur les besoins du marché de l’emploi
+              </li>
+              <li>
+                S'adapte à la demande du marché de l’emploi en créant
+                continuellement de nouveaux programmes
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Les programmes comprennent :</h3>
+            <ul>
+              <li>Des compétences techniques,</li>
+              <li>Des Compétences durables (soft skills),</li>
+              <li>Les bonnes pratiques professionnelles.</li>
+              <li>Un accompagnement permanent des apprenants par des coachs</li>
+              <li>Des mentors métier pour garantir la qualité</li>
+              <li>Un suivi psycho émotionnel</li>
+              <li>Un lien communautaire puissant</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       </section>
       <section className="contact-form">
         <h1>CONTACT</h1>
@@ -123,7 +138,7 @@ const page = () => {
               <input type="text" placeholder="Prenom" />
               <input type="text" placeholder="Nom de Famille" />
             </div>
-            <input className="email-input" type="text" placeholder="Email *" />
+            <input className="email-input" type="text" placeholder="Email " />
             <input
               className="message-input"
               type="text"

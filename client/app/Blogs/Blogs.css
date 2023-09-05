@@ -19,8 +19,8 @@
   top: 40%;
   transform: translate(0, -50%);
   color: white;
-  font-size: 8vw;
-  font-weight: 900;
+  font-size: 5vw;
+  /* font-weight: 900; */
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -115,7 +115,7 @@
 .interaction div {
   color: gray;
 }
-.dropdown {
+.blogs-dropdown {
   margin-left: 14%;
   background: #7b1fa2;
   color: #fff;
@@ -141,10 +141,12 @@
   padding: 0;
   position: absolute;
   left: 0;
-  opacity: 0;
+  opacity: 1;
   text-align: center;
   top: 0;
-  visibility: hidden;
+  visibility: hidden;           
+
+  
   z-index: -99999;
 }
 .dropdown-menu li {
@@ -152,8 +154,7 @@
   display: inline-block;
   width: 100%;
   text-decoration: none;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+
 }
 
 .dropdown-menu li:first-child {
@@ -165,7 +166,7 @@
   color: #fff;
 }
 
-.dropdown:hover .dropdown-menu {
+.blogs-dropdown:hover .dropdown-menu {
   background: #7b1fa2;
   opacity: 1;
   visibility: visible;
