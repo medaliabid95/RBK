@@ -41,7 +41,7 @@ const navbar = () => {
   return (
     <header className={color ? "header-nav header-bg" : "header-nav"}>
       <a href="http://localhost:3000/">
-        <img src="../RBK-Logo.svg" alt="" className="logo-nav" />
+        <img src="../rbkLogo.png" alt="" className="logo-nav" />
       </a>
       <ul className={`nav-links ${active}`}>
         {color ? (

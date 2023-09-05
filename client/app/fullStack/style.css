@@ -26,7 +26,7 @@ html {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  background-color: #f0044b;
+  background-color:#E91180;
 }
 
 .background-image {
@@ -61,7 +61,7 @@ html {
   transform: translateX(0);
 }
 .announcement {
-  background-color: #f0044b;
+  background-color: #E91180;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(191px, 1fr));
   width: 100%;
@@ -335,7 +335,7 @@ html {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #ff0044bb;
+  background-color: #E91180;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -520,7 +520,7 @@ html {
 
 
 .bourse {
-  background-color: #f0044b;
+  background-color: #E91180;
   display: flex;
   justify-content: center;
   align-items: center;

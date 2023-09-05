@@ -3,9 +3,10 @@ import talent from "../../public/talent.json";
 import formation from "../../public/formation.json";
 import diplome from "../../public/diplome.json";
 import competence from "../../public/competence.json";
+import Meeting from "../../public/Meeting.json";
 import Lottiee from "../../components/animations/Animation";
-import Header from "@/components/AwsHeader/header.jsx";
-import AWS from "../../components/RbkTitle/RbkAws.jsx";
+
+
 import Cards from "@/components/awsCards/Cards.jsx";
 import AwsVideo from "@/components/AwsVideo/aws.jsx";
 
@@ -14,10 +15,17 @@ const Page = () => {
     <div className="aws-container">
       <section className="image-aws-container">
         <img src="./aws2.png" alt="aws" />
-        <Header />
+        <div className="title">AWS Certified Cloud practitioner</div>
       </section>
       <section className="aws-description-container">
-        <AWS />
+        <div className="aws-rbk-title">
+          <img src="./RBK.png" alt="Rbk" />
+          <img src="./awsRestart.png" alt="aws" />
+          <p>
+            Apprenez le cloud computing et lancez votre carrière dans le cloud
+            avec <span>AWS re/Start</span>
+          </p>
+        </div>
         <div className="description-container">
           <div className="steps-container">
             <div className="step">
@@ -34,7 +42,7 @@ const Page = () => {
               </p>
             </div>
           </div>
-    
+
           <AwsVideo
             src="https://video.wixstatic.com/video/dd4762_08fb877dbb7c4c77b72b62ada7b52a9e/480p/mp4/file.mp4"
             thumbnail="whatiscomputing.png"
@@ -89,7 +97,7 @@ const Page = () => {
             </p>
           </div>
           <div className="video">
-            <img src="./Video.png" alt="video" />
+          <Lottiee animation={Meeting} />
           </div>
         </div>
       </section>

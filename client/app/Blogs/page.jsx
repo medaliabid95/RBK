@@ -72,6 +72,7 @@ const handleLikes = (id) => {
       </section>
       <section className="main">
         <FilterBlog />
+       
         {blogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} handleVuee={handleVuee} handleLikes={handleLikes} likedBlogs={likedBlogs} />
         ))}

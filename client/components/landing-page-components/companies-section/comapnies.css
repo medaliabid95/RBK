@@ -24,6 +24,7 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    color: #7E489B;
 }
 
 @media (max-width:1200px) {

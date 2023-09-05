@@ -5,8 +5,9 @@ const FilterBlog = () => {
     const [blog,setBlog]=useState("Tous les posts")
   return (
     <div>
-      <div className="dropdown">
-      Tous les posts
+    
+      <div className="blogs-dropdown">
+      {blog}
         <ul className="dropdown-menu">
           <li onClick={(e)=>setBlog(e.target.textContent)} >
            Tous les posts
