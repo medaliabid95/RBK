@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 
-const sequelize = new Sequelize("rbk","root", "firemanfireman@@", {
+const sequelize = new Sequelize("rbk", "root", "NewPassword", {
 
   host: "localhost",
   dialect: "mysql",
@@ -10,7 +10,9 @@ const sequelize = new Sequelize("rbk","root", "firemanfireman@@", {
 
 sequelize
   .query('CREATE DATABASE IF NOT EXISTS `rbk`;') 
-  .then(() => {console.log("db connected")})
+  .then(() => {
+    console.log("db connected");
+  })
   .catch((error) => {
     console.error('Unable to create the database:', error);
     sequelize.close();
